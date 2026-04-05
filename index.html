@@ -189,6 +189,50 @@ a{color:inherit;text-decoration:none}
 .comp-tbl td:first-child{font-weight:500;color:var(--text)}
 .comp-tbl td:last-child,.comp-tbl th:last-child{background:rgba(201,168,76,.06);font-weight:600}
 .ck{color:#2a9d5c;font-weight:700}.cx{color:#c0392b}
+/* NESTED NAV DROPDOWN */
+.nav-dd-item{position:relative}
+.nav-dd-item>a{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.nav-dd-item>a::after{content:'›';font-size:14px;color:rgba(255,255,255,.4)}
+.nav-sub{position:absolute;left:100%;top:0;min-width:220px;background:var(--navy-mid);border:1px solid rgba(201,168,76,.2);border-radius:var(--rad);padding:6px 0;opacity:0;pointer-events:none;transform:translateX(-4px);transition:var(--tr);z-index:1000}
+.nav-dd-item:hover .nav-sub{opacity:1;pointer-events:all;transform:translateX(0)}
+.nav-sub a{display:block;padding:8px 16px;font-size:12px;color:rgba(255,255,255,.65);white-space:nowrap}
+.nav-sub a:hover{background:rgba(201,168,76,.08);color:var(--gold)}
+.nav-sub-section{padding:6px 16px 3px;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.25);margin-top:4px}
+/* MOBILE ACCORDION */
+.mob-parent{display:flex;align-items:center;justify-content:space-between;padding:15px 28px;font-size:15px;color:rgba(255,255,255,.8);cursor:pointer;border-bottom:1px solid rgba(255,255,255,.06)}
+.mob-parent-arr{font-size:12px;color:rgba(255,255,255,.35);transition:var(--tr)}
+.mob-parent.open .mob-parent-arr{transform:rotate(90deg);color:var(--gold)}
+.mob-children{display:none;background:rgba(0,0,0,.2)}
+.mob-children.open{display:block}
+.mob-child{display:block;padding:11px 28px 11px 40px;font-size:13px;color:rgba(255,255,255,.58);cursor:pointer;border-bottom:1px solid rgba(255,255,255,.04)}
+.mob-child:active{color:var(--gold)}
+
+.cat-intro{padding:32px 0 8px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.cat-intro-title{font-family:var(--font-h);font-size:20px;font-weight:600;color:var(--navy)}
+.cat-intro-count{font-size:12px;color:var(--mid);padding:4px 12px;border:1px solid var(--g200);border-radius:100px}
+.cat-back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--gold);cursor:pointer;margin-bottom:20px;margin-top:8px;background:none;border:none;font-family:var(--font-b);padding:0}
+.cat-back:hover{opacity:.75}
+.org-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px;padding:32px 0 56px}
+.org-card{background:var(--white);border:1px solid var(--g200);border-radius:6px;padding:22px 20px;cursor:pointer;transition:var(--tr);position:relative;overflow:hidden}
+.org-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 6px 20px rgba(10,22,40,.07)}
+.org-card-n{font-family:var(--font-h);font-size:44px;font-weight:700;color:rgba(201,168,76,.15);line-height:1;margin-bottom:6px}
+.org-card-name{font-family:var(--font-h);font-size:17px;font-weight:600;color:var(--navy);margin-bottom:4px;line-height:1.2}
+.org-card-badge{display:inline-block;font-size:10px;font-weight:600;color:var(--gold);letter-spacing:.5px;margin-top:6px}
+.org-card-arr{position:absolute;bottom:16px;right:16px;font-size:16px;color:var(--gold);opacity:0;transition:var(--tr)}
+.org-card:hover .org-card-arr{opacity:1;transform:translateX(3px)}
+@media(max-width:600px){.org-grid{grid-template-columns:1fr 1fr}}
+
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:38px;height:38px;cursor:pointer;padding:4px;background:none;border:none}
+.hamburger span{display:block;height:2px;background:var(--white);border-radius:2px;transition:var(--tr)}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-menu{display:none;position:fixed;top:66px;left:0;right:0;bottom:0;background:var(--navy);z-index:998;overflow-y:auto;padding:24px 0}
+.mob-menu.open{display:block}
+.mob-item{display:block;padding:15px 28px;font-size:15px;color:rgba(255,255,255,.8);cursor:pointer;border-bottom:1px solid rgba(255,255,255,.06);transition:var(--tr)}
+.mob-item:active{color:var(--gold)}
+.mob-section{padding:10px 28px 6px;font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:8px}
+.mob-cta{margin:24px 28px 0;display:block;text-align:center;padding:14px;background:var(--gold);color:var(--navy);border-radius:var(--rad);font-weight:600;font-size:14px;cursor:pointer}
 @media(max-width:900px){
   .pillars,.plat-grid,.caps-grid{grid-template-columns:1fr 1fr}
   .founders-grid,.contact-grid,.foot-grid{grid-template-columns:1fr}
@@ -205,6 +249,7 @@ a{color:inherit;text-decoration:none}
   .h-stat-val{font-size:30px}
   .pillars,.plat-grid,.caps-grid,.founders-grid{grid-template-columns:1fr}
   .nav-links{display:none}
+  .hamburger{display:flex}
   .sec{padding:56px 0}
   .det-hero{padding:80px 0 40px}
   .det-name{font-size:clamp(28px,8vw,48px)}
@@ -224,7 +269,42 @@ a{color:inherit;text-decoration:none}
       <li class="nav-dd-wrap">
         <button class="nav-btn">Products ▾</button>
         <div class="nav-dd">
-          <a onclick="nav('products','kapzopro')">Kapzo Pro™ Platform</a>
+
+          <!-- Kapzo Pro → organs -->
+          <div class="nav-dd-item">
+            <a onclick="nav('products','kapzopro')">Kapzo Pro™ Platform</a>
+            <div class="nav-sub">
+              <div class="nav-sub-section">Oral Supplements · 24 SKUs</div>
+              <a onclick="navToCat('kapzopro','brain')">Brain &amp; Nervous System</a>
+              <a onclick="navToCat('kapzopro','eye')">Eye</a>
+              <a onclick="navToCat('kapzopro','heart')">Heart &amp; Vasculature</a>
+              <a onclick="navToCat('kapzopro','kidney')">Kidney &amp; Urinary</a>
+              <a onclick="navToCat('kapzopro','liver')">Liver</a>
+              <a onclick="navToCat('kapzopro','thyroid')">Thyroid</a>
+              <a onclick="navToCat('kapzopro','gut')">Gut &amp; Digestive</a>
+              <a onclick="navToCat('kapzopro','metabolic')">Metabolic / Endocrine</a>
+              <a onclick="navToCat('kapzopro','repro')">Reproductive &amp; Hormonal</a>
+              <a onclick="navToCat('kapzopro','prostate')">Prostate</a>
+              <a onclick="navToCat('kapzopro','hair')">Hair</a>
+              <a onclick="navToCat('kapzopro','musculo')">Musculoskeletal</a>
+              <a onclick="navToCat('kapzopro','respiratory')">Respiratory</a>
+              <a onclick="navToCat('kapzopro','performance')">Performance</a>
+              <a onclick="navToCat('kapzopro','longevity')">Longevity</a>
+            </div>
+          </div>
+
+          <!-- KapzoStratum → body areas -->
+          <div class="nav-dd-item">
+            <a onclick="nav('products','kapzostratum')">KapzoStratum™</a>
+            <div class="nav-sub">
+              <div class="nav-sub-section">Personal Care · 5 SKUs</div>
+              <a onclick="navToCat('kapzostratum','scalp_hair')">Scalp &amp; Hair</a>
+              <a onclick="navToCat('kapzostratum','underarm')">Underarm</a>
+              <a onclick="navToCat('kapzostratum','intimate')">Intimate Skin</a>
+              <a onclick="navToCat('kapzostratum','body')">Body Skin</a>
+            </div>
+          </div>
+
           <a onclick="nav('products','kapzosphere')">KapzoSphere™</a>
           <a onclick="nav('products','kapzobase')">KapzoBase™</a>
           <a onclick="nav('products','gheeplus')">GheePlus™</a>
@@ -236,8 +316,60 @@ a{color:inherit;text-decoration:none}
       <li><a onclick="nav('capabilities')">Capabilities</a></li>
       <li><a onclick="nav('contact')" class="nav-cta">Request Sample</a></li>
     </ul>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mob-menu">
+  <div class="mob-section">Products</div>
+
+  <!-- Kapzo Pro accordion -->
+  <div class="mob-parent" onclick="toggleMobAccordion('acc-pro',this)">
+    Kapzo Pro™ Platform <span class="mob-parent-arr">›</span>
+  </div>
+  <div class="mob-children" id="acc-pro">
+    <div class="mob-child" onclick="mobNavCat('kapzopro','brain')">Brain &amp; Nervous System</div>
+    <div class="mob-child" onclick="mobNavCat('kapzopro','eye')">Eye</div>
+    <div class="mob-child" onclick="mobNavCat('kapzopro','heart')">Heart &amp; Vasculature</div>
+    <div class="mob-child" onclick="mobNavCat('kapzopro','kidney')">Kidney &amp; Urinary</div>
+    <div class="mob-child" onclick="mobNavCat('kapzopro','liver')">Liver</div>
+    <div class="mob-child" onclick="mobNavCat('kapzopro','thyroid')">Thyroid</div>
+    <div class="mob-child" onclick="mobNavCat('kapzopro','gut')">Gut &amp; Digestive</div>
+    <div class="mob-child" onclick="mobNavCat('kapzopro','metabolic')">Metabolic / Endocrine</div>
+    <div class="mob-child" onclick="mobNavCat('kapzopro','repro')">Reproductive &amp; Hormonal</div>
+    <div class="mob-child" onclick="mobNavCat('kapzopro','prostate')">Prostate</div>
+    <div class="mob-child" onclick="mobNavCat('kapzopro','hair')">Hair</div>
+    <div class="mob-child" onclick="mobNavCat('kapzopro','musculo')">Musculoskeletal</div>
+    <div class="mob-child" onclick="mobNavCat('kapzopro','respiratory')">Respiratory</div>
+    <div class="mob-child" onclick="mobNavCat('kapzopro','performance')">Performance</div>
+    <div class="mob-child" onclick="mobNavCat('kapzopro','longevity')">Longevity</div>
+  </div>
+
+  <!-- KapzoStratum accordion -->
+  <div class="mob-parent" onclick="toggleMobAccordion('acc-stratum',this)">
+    KapzoStratum™ <span class="mob-parent-arr">›</span>
+  </div>
+  <div class="mob-children" id="acc-stratum">
+    <div class="mob-child" onclick="mobNavCat('kapzostratum','scalp_hair')">Scalp &amp; Hair</div>
+    <div class="mob-child" onclick="mobNavCat('kapzostratum','underarm')">Underarm</div>
+    <div class="mob-child" onclick="mobNavCat('kapzostratum','intimate')">Intimate Skin</div>
+    <div class="mob-child" onclick="mobNavCat('kapzostratum','body')">Body Skin</div>
+  </div>
+
+  <div class="mob-item" onclick="mobNav('products','kapzosphere')">KapzoSphere™</div>
+  <div class="mob-item" onclick="mobNav('products','kapzobase')">KapzoBase™</div>
+  <div class="mob-item" onclick="mobNav('products','gheeplus')">GheePlus™</div>
+  <div class="mob-item" onclick="mobNav('products','jaggerplus')">JaggerPlus™</div>
+  <div class="mob-item" onclick="mobNav('products','psyllium')">Kapzo Psyllium</div>
+
+  <div class="mob-section">Company</div>
+  <div class="mob-item" onclick="mobNav('about')">About Us</div>
+  <div class="mob-item" onclick="mobNav('capabilities')">Capabilities</div>
+  <div class="mob-cta" onclick="mobNav('contact')">Request Sample</div>
+</div>
 
 <!-- HOME -->
 <div id="page-home" class="page active">
@@ -251,8 +383,8 @@ a{color:inherit;text-decoration:none}
         <button class="btn btn-outline" onclick="nav('contact')">Request Sample</button>
       </div>
       <div class="h-stats">
-        <div><div class="h-stat-val">6</div><div class="h-stat-lbl">Ingredient Platforms</div></div>
-        <div><div class="h-stat-val">17+</div><div class="h-stat-lbl">White-Label SKUs</div></div>
+        <div><div class="h-stat-val">7</div><div class="h-stat-lbl">Ingredient Platforms</div></div>
+        <div><div class="h-stat-val">24+</div><div class="h-stat-lbl">White-Label SKUs</div></div>
         <div><div class="h-stat-val">4</div><div class="h-stat-lbl">Global Markets Served</div></div>
         <div><div class="h-stat-val">NIT</div><div class="h-stat-lbl">Trichy R&D Partner</div></div>
       </div>
@@ -289,7 +421,7 @@ a{color:inherit;text-decoration:none}
       <div class="lbl">Our Platforms</div>
       <div class="hdg">Six platforms. One supplier relationship.</div>
       <div class="gline"></div>
-      <p class="sub">From white-label supplements to sensory delivery systems and food ingredient platforms — six distinct categories from a single facility with one point of contact, one NDA, and one documentation package.</p>
+      <p class="sub">From white-label supplements to sensory delivery systems, food ingredients, and personal care — seven distinct categories from a single facility with one point of contact, one NDA, and one documentation package.</p>
       <div class="plat-grid" id="home-plats"></div>
     </div>
   </section>
@@ -308,14 +440,19 @@ a{color:inherit;text-decoration:none}
 <div id="page-products" class="page">
   <div class="prod-header">
     <div class="wrap">
-      <div class="lbl">Product Platforms</div>
+      <div class="lbl" id="prod-lbl">Product Platforms</div>
       <div id="prod-hdg" class="hdg"></div>
       <div id="prod-sub" style="font-size:14px;color:var(--mid);max-width:600px;line-height:1.7;margin-top:8px"></div>
       <div class="ptabs" id="prod-tabs"></div>
     </div>
   </div>
   <div class="wrap">
-    <div class="sku-grid" id="sku-grid"></div>
+    <div id="prod-cats"></div>
+    <div id="prod-sku-wrap" style="display:none">
+      <button class="cat-back" id="cat-back-btn" onclick="backToCategories()">← All Categories</button>
+      <div class="sku-grid" id="sku-grid"></div>
+    </div>
+    <div class="sku-grid" id="sku-grid-direct"></div>
   </div>
   <footer class="footer" id="prod-footer"></footer>
 </div>
@@ -484,31 +621,40 @@ a{color:inherit;text-decoration:none}
             <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.7">500g lab samples shipped within 10 business days. Full COA and TDS included at no charge. Trial batch MOQ typically 50–100kg depending on platform and SKU.</p>
           </div>
         </div>
-        <div class="cf">
-          <div class="frow">
-            <input type="text" placeholder="First Name">
-            <input type="text" placeholder="Last Name">
+        <div class="cf" id="contact-form-wrap">
+          <div id="form-success" style="display:none;padding:32px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.3);border-radius:6px;text-align:center">
+            <div style="font-size:28px;margin-bottom:12px">✓</div>
+            <div style="font-family:var(--font-h);font-size:22px;color:var(--white);margin-bottom:8px">Inquiry Received</div>
+            <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.6">Your enquiry has been submitted. We'll respond within 1–2 business days. You can also reach us directly at <strong style="color:var(--gold)">arun@kapzobioactives.com</strong></p>
+            <button class="btn btn-outline" style="margin-top:20px" onclick="resetForm()">Send Another</button>
           </div>
-          <input type="email" placeholder="Business Email">
-          <input type="text" placeholder="Company Name">
-          <select>
-            <option value="" disabled selected>Country / Market</option>
-            <option>United States</option><option>United Kingdom</option><option>Germany</option>
-            <option>Australia</option><option>New Zealand</option><option>UAE</option>
-            <option>Canada</option><option>France</option><option>Netherlands</option><option>Other</option>
-          </select>
-          <select>
-            <option value="" disabled selected>Platform of Interest</option>
-            <option>Kapzo Pro™ Platform (Supplements)</option>
-            <option>KapzoSphere™ (Sensory Delivery)</option>
-            <option>KapzoBase™ (Beverage Engineering)</option>
-            <option>GheePlus™</option>
-            <option>JaggerPlus™</option>
-            <option>Kapzo Psyllium</option>
-            <option>Custom / Multiple Platforms</option>
-          </select>
-          <textarea placeholder="Tell us about your product requirement, volume estimate, and any specific formulation needs."></textarea>
-          <button class="btn btn-gold" style="width:100%;justify-content:center">Submit Inquiry →</button>
+          <div id="form-fields">
+            <div class="frow">
+              <input id="cf-fname" type="text" placeholder="First Name">
+              <input id="cf-lname" type="text" placeholder="Last Name">
+            </div>
+            <input id="cf-email" type="email" placeholder="Business Email *" required>
+            <input id="cf-company" type="text" placeholder="Company Name">
+            <select id="cf-country">
+              <option value="" disabled selected>Country / Market</option>
+              <option>United States</option><option>United Kingdom</option><option>Germany</option>
+              <option>Australia</option><option>New Zealand</option><option>UAE</option>
+              <option>Canada</option><option>France</option><option>Netherlands</option><option>Other</option>
+            </select>
+            <select id="cf-platform">
+              <option value="" disabled selected>Platform of Interest</option>
+              <option>Kapzo Pro™ Platform (Supplements)</option>
+              <option>KapzoSphere™ (Sensory Delivery)</option>
+              <option>KapzoBase™ (Beverage Engineering)</option>
+              <option>GheePlus™</option>
+              <option>JaggerPlus™</option>
+              <option>Kapzo Psyllium</option>
+              <option>Custom / Multiple Platforms</option>
+            </select>
+            <textarea id="cf-message" placeholder="Tell us about your product requirement, volume estimate, and any specific formulation needs."></textarea>
+            <div id="form-error" style="display:none;font-size:12px;color:#e07070;margin-bottom:10px">Please enter your business email to continue.</div>
+            <button class="btn btn-gold" style="width:100%;justify-content:center" onclick="submitForm()">Submit Inquiry →</button>
+          </div>
         </div>
       </div>
     </div>
@@ -520,7 +666,8 @@ a{color:inherit;text-decoration:none}
 // ─── DATA ───────────────────────────────────────────────────────────────────
 
 const PLATFORMS = [
-  {id:'kapzopro', name:'Kapzo Pro™ Platform', icon:'⚗️', tag:'17 White-Label Supplement SKUs', desc:'Complete supplement portfolio covering CNS & mental wellness, metabolic health, joint & sports, reproductive health, and organ support — with full US/EU regulatory documentation.'},
+  {id:'kapzopro', name:'Kapzo Pro™ Platform', icon:'⚗️', tag:'17 White-Label Supplement SKUs', desc:'Complete supplement portfolio covering CNS & mental wellness, metabolic health, joint & sports, reproductive health, and organ support — with full regulatory documentation for all major markets.'},
+  {id:'kapzostratum', name:'KapzoStratum™', icon:'🧴', tag:'5 Personal Care SKUs', desc:'Clinical personal care ingredient platform — body, scalp, intimate skin, and hair. Science-led formulations built on published clinical evidence, proprietary delivery, and genuine category differentiation.'},
   {id:'kapzosphere', name:'KapzoSphere™', icon:'🔵', tag:'7 Sensory Delivery Products', desc:'Precision-engineered sensory delivery ingredients for oral consumer products, confectionery, and nicotine delivery formats. Every product solves a specific, measurable organoleptic problem that commodity ingredients cannot.'},
   {id:'kapzobase', name:'KapzoBase™', icon:'🥃', tag:'6-Layer Sensory System', desc:'A proprietary multi-layer sensory engineering system for premium spirits and beverage manufacturers. Delivers a sequenced temporal experience from first contact through to sustained finish.'},
   {id:'gheeplus', name:'GheePlus™', icon:'✨', tag:'23 SKUs · 3 Tiers', desc:'Precision-delivered ghee ingredient platform: carrier systems, functional bioactive co-loads (K2, CLA, Butyrate, D3K2), and flavour fat systems for bakery and snack applications.'},
@@ -530,12 +677,12 @@ const PLATFORMS = [
 
 const PLATFORM_META = {
   kapzopro:{
-    hdg:'Kapzo Pro™ Platform', sub:'17 science-backed white-label supplement SKUs. Each formulated with clinical-grade ingredients at published effective doses, complete regulatory documentation, and a B2B supply structure built for US and EU market entry.',
-    tabs:['All SKUs','CNS & Mental Wellness','Metabolic Health','Joint & Sports','Reproductive & Hormonal','Organ Support & Longevity']
+    hdg:'Kapzo Pro™ Platform', sub:'24 white-label oral supplement SKUs across 14 organ systems — each formulated at published clinical doses with full regulatory documentation.',
+    tabs:[], useCats:true
   },
   kapzosphere:{
     hdg:'KapzoSphere™', sub:'Seven precision-engineered sensory delivery ingredients, each designed to solve a specific, measurable performance problem in oral consumer products, confectionery, nicotine delivery formats, and nutraceuticals.',
-    tabs:['All Products','Cooling Systems','pH & Alkalinity','Sequential Release','Aroma & Sensation']
+    tabs:['All Products','Cooling & Freshness','pH & Alkalinity','Sequential Release','Aroma & Sensation']
   },
   kapzobase:{
     hdg:'KapzoBase™', sub:'A six-layer proprietary sensory system for premium spirits and beverage manufacturers. Engineered to deliver a sequenced temporal sensory profile — from immediate activation at first contact through to sustained finish.',
@@ -543,7 +690,7 @@ const PLATFORM_META = {
   },
   gheeplus:{
     hdg:'GheePlus™', sub:'A 23-SKU precision-delivered ghee ingredient platform across three value tiers: carrier systems, functional bioactive co-loads, and flavour fat systems for snack and bakery applications.',
-    tabs:['All Products','Tier 1 · Platform Carriers','Tier 2 · Functional Co-Loads','Tier 3 · Flavour Fat Systems']
+    tabs:['All Products','Carrier Systems','Functional Co-Loads','Flavour Fat Systems']
   },
   jaggerplus:{
     hdg:'JaggerPlus™ MG-100', sub:'Amorphous matrix stabilised jaggery and palm sugar ingredient system. Shelf-stable, free-flowing powder that eliminates crystallisation — the primary technical barrier to using jaggery in modern food and supplement formats.',
@@ -551,9 +698,39 @@ const PLATFORM_META = {
   },
   psyllium:{
     hdg:'Kapzo Psyllium', sub:'Psyllium husk and seed powder platform for pharmaceutical, food, and nutraceutical applications. Full analytical documentation and regulatory support for all major international market requirements.',
-    tabs:['All Products','Husk Products','Seed Products']
+    tabs:['All Products','Food & Nutraceutical Grade','Pharmaceutical Grade']
+  },
+  kapzostratum:{
+    hdg:'KapzoStratum™', sub:'Five clinical personal care ingredients across scalp, hair, underarm, intimate skin, and body — built on published clinical evidence, proprietary delivery science, and genuine category white space.',
+    tabs:[], useCats:true
   }
 };
+
+// ─── CATEGORY MAPS (3-level navigation) ────────────────────────────────────
+const ORGAN_CATS = [
+  {id:'brain',    name:'Brain & Nervous System', skus:['calmcore','focuscore','somnamax','impulsecore']},
+  {id:'eye',      name:'Eye',                    skus:['visioncore_d','visioncore_a']},
+  {id:'heart',    name:'Heart & Vasculature',    skus:['cardioguard']},
+  {id:'kidney',   name:'Kidney & Urinary',       skus:['renalguard']},
+  {id:'liver',    name:'Liver',                  skus:['hepatguard']},
+  {id:'thyroid',  name:'Thyroid',                skus:['thyroguard']},
+  {id:'gut',      name:'Gut & Digestive',        skus:['transitmax']},
+  {id:'metabolic',name:'Metabolic / Endocrine',  skus:['satietyglp','metaguard','cravezero','glucoguard']},
+  {id:'repro',    name:'Reproductive & Hormonal',skus:['virimax','femimax','follimax']},
+  {id:'prostate', name:'Prostate',               skus:['prostacare']},
+  {id:'musculo',  name:'Musculoskeletal',         skus:['jointmax']},
+  {id:'respiratory',name:'Respiratory',          skus:['respircore']},
+  {id:'performance',name:'Performance',          skus:['premax','postmax']},
+  {id:'longevity',name:'Cellular / Longevity',   skus:['longevimax']},
+];
+
+const STRATUM_CATS = [
+  {id:'scalp_hair', name:'Scalp & Hair',         skus:['scalpsync','bondrestore']},
+  {id:'underarm',   name:'Underarm',             skus:['sagecalm']},
+  {id:'intimate',   name:'Intimate Skin',        skus:['toneq']},
+  {id:'body',       name:'Body Skin',            skus:['ashzero']},
+];
+
 
 const SKUS = {
   // ─── KAPZO PRO ───
@@ -704,7 +881,7 @@ const SKUS = {
     diffs:['Inositol at 40:1 myo:d-chiro ratio — the validated clinical ratio from the Unfer meta-analysis and ISGE consensus.','CoQ10 as ubiquinol 200mg — IVF-adjacent positioning. Women over 35 cannot efficiently convert ubiquinone.','5-MTHF methylfolate — not folic acid. Works for all women including 40% with MTHFR variants.','Maca gelatinised — not raw maca. Processing form specified because raw maca causes GI distress.','One formula covering fertility AND perimenopause — unprecedented commercial positioning.'],
     supply:[['White Label RTM','Full 8g sachet (mixed berry or peach, Reb M sweetened). MOQ 100kg (~12,500 sachets).'],['Inositol Booster Add-On','Standalone 2g myo-inositol sachet for PCOS-specific upsell. MOQ 50kg.'],['Custom','Black cohosh removal for fertility-only positioning, vegan capsule variant on request.']]
   },
-  follimax:{platform:'kapzopro',cat:'Reproductive & Hormonal',name:'FolliMax Pro™',tagline:'Clinical-Grade Male Hair & Scalp Health Formula',fmt:'3 Vegetarian Capsules',price:'$1.80–2.20/serving',margin:'~72%',moq:'100kg',
+  follimax:{platform:'kapzopro',cat:'Hair',name:'FolliMax Pro™',tagline:'Clinical-Grade Male Hair & Scalp Health Formula',fmt:'3 Vegetarian Capsules',price:'$1.80–2.20/serving',margin:'~72%',moq:'100kg',
     problem:'Pattern hair loss affects 50% of men by 50. Finasteride carries documented sexual side effect risk that a significant cohort refuses. And the supplement category\'s response is almost entirely biotin: a vitamin with no published evidence for androgenetic alopecia, sold at 10,000mcg doses that serve no biological purpose beyond the label. The clinical non-hormonal DHT-blocking stack exists in the literature. Four published RCTs. Four independent mechanisms. Never assembled into a single B2B product.',
     solution:'FolliMax Pro™ targets four distinct mechanisms: DHT inhibition, follicular oxidative protection, follicle cell activation, and keratin structural substrate.',
     mechanisms:[
@@ -766,6 +943,95 @@ const SKUS = {
     ],
     diffs:['Seven non-redundant pathways in a single daily format — not single-ingredient products requiring a multi-SKU stack.','Taste-masked Ca-AKG: the only commercially viable RTM format at 1g dose — previously impossible without proprietary delivery.','TMG paired with NR — the methylation safeguard absent from every NR competitor. Documented clinical rationale.','Urolithin A 500mg + PQQ 20mg: the only product pairing mitophagy clearance with mitochondrial biogenesis simultaneously.','Yuzu-Passionfruit flavour system designed to mask all botanical and mineral bitterness at this ingredient payload.'],
     supply:[['White Label Complete','Full 6.8g blend. Trial MOQ 50kg (~7,352 servings). Commercial MOQ 100kg.'],['Active Fraction Only','Longevity active stack supplied without excipient base. Client blends with own carrier.'],['Custom','Dose adjustment, additional actives, alternate flavour or capsule conversion on request.']]
+  },
+
+  // ─── NEW KAPZO PRO SKUS ───────────────────────────────────────────────────
+  visioncore:{platform:'kapzopro',cat:'Eye',name:'VisionCore Pro™',tagline:'Engineered for the Screen-Age Eye — Macular, Ciliary & Photoreceptor Support',fmt:'1 Softgel Daily',price:'Enquire',margin:'Strong',moq:'100kg',
+    problem:'Screen time exceeds 10 hours daily for a significant proportion of urban working adults globally. Sustained near-focus, blue light exposure, and reduced blink rates cause oxidative stress at the retinal pigment epithelium, deplete macular carotenoid pigment, and produce the cluster of symptoms known as digital eye strain — fatigue, blur, headache, and difficulty switching focus. No mainstream supplement has addressed this as a primary clinical category.',
+    solution:'VisionCore Pro™ targets three anatomically distinct sites — the macula, the ciliary muscle, and the rod photoreceptors — using four clinically validated ingredients including two globally recognised branded actives.',
+    mechanisms:[
+      {lbl:'Macula',name:'Lutemax 2020® 14mg',desc:'The only branded ingredient supplying all three macular carotenoids (lutein 10mg, zeaxanthin 2mg, meso-zeaxanthin 2mg) from a single source. 12+ clinical trials on macular pigment optical density and visual performance.'},
+      {lbl:'Ciliary Muscle',name:'AstaReal® Astaxanthin 6mg',desc:'Pharma-grade microalgae astaxanthin — the only astaxanthin brand with RCT evidence specifically on ciliary muscle accommodation fatigue reduction. Addresses the focusing mechanism behind screen-induced strain.'},
+      {lbl:'Photoreceptor',name:'Bilberry Extract 160mg (25% anthocyanins)',desc:'Supports rhodopsin regeneration — the visual cycle pigment responsible for dim-light and transition recovery. Bilberry anthocyanins are the most studied botanical for rod photoreceptor support.'},
+      {lbl:'Retinal Support',name:'Zinc Citrate 5mg + Riboflavin B2 10mg',desc:'Zinc supports retinol transport to the retina. Riboflavin is the photoreceptor energy cofactor — deficiency is directly associated with light sensitivity and eye fatigue.'},
+    ],
+    diffs:['Lutemax 2020® — three macular carotenoids from a single source. Most competitors supply lutein only.','AstaReal® astaxanthin: the only brand with a ciliary accommodation RCT — directly addressing screen strain at the muscle level.','Three anatomically non-overlapping mechanisms in a single softgel.','Softgel format in lipid base (sunflower oil) — all actives are fat-soluble; absorption is optimised by the delivery format.','FSSAI-permitted. No Schedule H classification. No disease claims required.'],
+    supply:[['White Label Softgel','Full softgel in sunflower oil base. 30-count or 60-count options. MOQ 100kg.'],['Custom','Higher Lutemax dose, astaxanthin step-up, or combined SKU2 Advanced format on request.']]
+  },
+
+  visioncore_a:{platform:'kapzopro',cat:'Eye',name:'VisionCore Pro™ Advanced',tagline:'AREDS2-Aligned AMD Protection + Complete Digital Eye Defence — Beta-Carotene Free',fmt:'1 Softgel Daily',price:'Enquire',margin:'Strong',moq:'100kg',
+    problem:'Age-related macular degeneration is the leading cause of irreversible vision loss in adults over 50 globally. The AREDS2 trial established a specific formulation for slowing AMD progression — but legacy supplements in this category still use the AREDS1 beta-carotene formula, which increases lung cancer risk in smokers by up to 28% (CARET trial). No Indian supplement has combined AREDS2-aligned AMD protection with a digital eye strain stack in a single beta-carotene-free formula.',
+    solution:'VisionCore Pro™ Advanced delivers the complete VisionCore Pro™ digital eye stack alongside an AREDS2-aligned macular protection matrix — with Kashmiri saffron as the moat ingredient and explicit beta-carotene exclusion.',
+    mechanisms:[
+      {lbl:'Macular Carotenoids',name:'Lutemax 2020® 28mg (Lutein 20mg + Zeaxanthin 4mg + Meso-Z 4mg)',desc:'AREDS2-aligned carotenoid dose — double the SKU1 dose. Macular pigment optical density restoration at the clinically studied level for AMD risk reduction.'},
+      {lbl:'AMD Moat Ingredient',name:'Kashmiri Saffron Extract 20mg',desc:'Falsini et al. and Marangoni et al. Italian RCTs: saffron supplementation improves photoreceptor function, contrast sensitivity, and early AMD progression metrics. No competing Indian AMD supplement has foregrounded Kashmiri saffron. Indian-origin supply chain advantage.'},
+      {lbl:'Ciliary & Fatigue',name:'AstaReal® Astaxanthin 6mg + Bilberry 160mg',desc:'Complete digital eye strain coverage carried forward from SKU1 — ciliary muscle accommodation and rhodopsin regeneration.'},
+      {lbl:'AREDS2 Antioxidant Matrix',name:'Vitamin C 250mg + Vitamin E 100IU + Zinc 25mg + Copper 1mg',desc:'AREDS2-validated antioxidant quartet for macular oxidative defence. Zinc and copper in the AREDS2 ratio — copper included specifically to prevent zinc-induced copper deficiency at this dose.'},
+    ],
+    diffs:['Beta-carotene free — explicitly stated on label. Safe for current and ex-smokers. No competing Indian AMD supplement has made this the primary positioning claim.','Kashmiri saffron 20mg: category differentiator — no other Indian supplement leads with saffron for AMD. India-origin supply chain.','AREDS2-aligned — not AREDS1. Brings the formula in line with current clinical evidence, not 1992 trial data.','Covers both screen-era strain (AstaReal® astaxanthin) and age-related macular defence in a single daily softgel.','Lutemax 2020® at 28mg vs 14mg in SKU1 — the AMD-appropriate dose.'],
+    supply:[['White Label Softgel','Full softgel in lipid base. MOQ 100kg. Beta-carotene-free status verifiable on COA.'],['Custom','Saffron dose adjustment, combined blister pack with SKU1, or ophthalmology clinic gifting pack format on request.']]
+  },
+
+  cardioguard:{platform:'kapzopro',cat:'Heart & Vasculature',name:'CardioGuard Pro™',tagline:'Five-Mechanism Complete Arterial Defence Formula',fmt:'2 Capsules Daily',price:'Enquire',margin:'Strong',moq:'100kg',
+    problem:'Cardiovascular supplements fail in two ways: most address a single risk marker (just cholesterol, or just homocysteine), and most use commodity ingredient forms with poor bioavailability at doses chosen for label cost rather than clinical evidence. The result is a category full of products that cannot demonstrate meaningful blood test outcomes. CardioGuard Pro™ is built to deliver outcomes visible on the next blood panel.',
+    solution:'CardioGuard Pro™ addresses five independent arterial risk pathways simultaneously — lipid modulation, arterial calcification, endothelial function, fibrinolysis, and homocysteine — with no mechanism overlapping another.',
+    mechanisms:[
+      {lbl:'Lipid Modulation',name:'Bergamot Polyphenol Fraction 500mg + Berberine (Extended-Release) 500mg',desc:'Two completely independent lipid-lowering pathways: bergamot activates AMPK (reduces hepatic cholesterol synthesis), berberine inhibits PCSK9 (same target as new injectable cholesterol drugs). Italian RCTs on bergamot: 30–40% LDL reduction, 29% triglyceride reduction, 22% HDL increase. Additive effect, zero mechanism redundancy.'},
+      {lbl:'Arterial Calcification',name:'MenaQ7® Vitamin K2 MK-7 180mcg',desc:'The only clinically studied K2 form for arterial calcification reversal. Activates matrix Gla protein to direct calcium away from arterial walls into bone. MenaQ7® RCT: significant arterial stiffness reduction vs placebo at 3 years.'},
+      {lbl:'Fibrinolysis',name:'Nattokinase 2,000 FU',desc:'Directly dissolves fibrin clots and reduces whole blood viscosity. Addresses the coagulation dimension of cardiovascular risk — absent from most supplement formulations.'},
+      {lbl:'Homocysteine',name:'5-MTHF 400mcg + Methylcobalamin B12 500mcg + P-5-P B6 25mg',desc:'Complete activated B-vitamin triad for homocysteine remethylation. Methylfolate bypasses the MTHFR polymorphism (present in ~40% of population). Homocysteine is an independent CV risk factor absent from most cardiovascular supplement formulas.'},
+      {lbl:'Mitochondrial & Vascular',name:'CoQ10 Ubiquinol 100mg + Grape Seed OPC 150mg + Magnesium Glycinate 200mg',desc:'Ubiquinol for cardiac mitochondrial energy — critical for statin users who deplete CoQ10. Grape seed OPC for endothelial nitric oxide support and LDL oxidation prevention. Magnesium glycinate for vascular smooth muscle relaxation.'},
+    ],
+    diffs:['Dual lipid mechanism: bergamot (AMPK) + extended-release berberine (PCSK9) — two independent pathways, additive LDL reduction, no equivalent combination in global supplements.','MenaQ7® K2 MK-7: the only K2 brand with a 3-year arterial stiffness RCT. Not commodity K2.','Homocysteine coverage via activated B-triad — the independent CV risk factor absent from most competitor formulas.','Nattokinase at 2,000 FU — addresses fibrin and blood viscosity, a mechanism no mainstream cardiovascular supplement includes.','Ubiquinol specifically — 2–3x more bioavailable than ubiquinone — especially relevant for the statin user market.'],
+    supply:[['White Label Complete','Full 2-capsule blend. MOQ 100kg.'],['Lipid Stack Only','Bergamot + extended-release berberine pre-blend. MOQ 50kg.'],['Custom','Statin-support variant (higher CoQ10), dose adjustments on request.']]
+  },
+
+  renalguard:{platform:'kapzopro',cat:'Kidney & Urinary',name:'RenalGuard Pro™',tagline:'Three-Target Kidney Defence — Stone Prevention, UTI Prevention, Kidney Function Protection',fmt:'Once-Daily Dissolvable Sachet',price:'Enquire',margin:'Strong',moq:'100kg',
+    problem:'Kidney supplements are almost entirely reactive — taken after a diagnosis. The prevention opportunity is enormous: roughly 1 in 10 adults will have a kidney stone in their lifetime, recurrence rates exceed 50% within 10 years, and the UTI recurrence rate in women who have had one episode is 30% within 6 months. Standard advice — "drink more water, reduce oxalates" — is insufficient. No supplement has addressed stone prevention, UTI prevention, and kidney function protection in a single daily format.',
+    solution:'RenalGuard Pro™ delivers nine actives across three non-overlapping kidney defence targets in a once-daily sachet dissolved in 300–400ml water — where the water itself is part of the mechanism.',
+    mechanisms:[
+      {lbl:'Stone Prevention',name:'Potassium Citrate + Magnesium Citrate + Vitamin B6 P-5-P + Chanca Piedra',desc:'Four-point attack on stone formation: potassium citrate alkalinises urine (inhibits calcium oxalate crystallisation), magnesium citrate binds dietary oxalate in the gut, P-5-P reduces endogenous oxalate synthesis, Chanca Piedra inhibits crystal aggregation. The 300–400ml water with the sachet directly reduces urinary supersaturation.'},
+      {lbl:'UTI Prevention',name:'D-Mannose + Cranberry Extract 36mg PAC',desc:'Two complementary anti-adhesion mechanisms targeting different E. coli strains. D-Mannose competitively binds type 1 fimbriae. Cranberry proanthocyanidins block P-fimbriated E. coli. Non-antibiotic — does not contribute to antimicrobial resistance.'},
+      {lbl:'Kidney Function',name:'Astragalus membranaceus 500mg (70% polysaccharides) + Quercetin',desc:'Astragalus reduces proteinuria and tubular inflammation — the most clinically studied botanical for nephroprotection. Quercetin provides renal antioxidant defence via NF-κB inhibition in nephron tissue.'},
+    ],
+    diffs:['Three non-overlapping kidney targets in one daily dose — stone, UTI, and function protection simultaneously.','Sachet format is clinical, not cosmetic: D-Mannose and cranberry PAC reach peak urinary concentration faster in solution; potassium citrate delivers superior bioavailability dissolved vs compressed.','Water as mechanism: the 300–400ml dissolution volume is a therapeutic component, not just a hydration suggestion.','Astragalus at 500mg standardised dose — the only clinically studied nephroprotective botanical at this specification.','Non-antibiotic UTI prevention: directly addresses the antimicrobial resistance concern that is driving demand globally.'],
+    supply:[['White Label Sachet','Full dissolvable sachet formulation. MOQ 100kg.'],['Custom','UTI-only or stone-only format, dose adjustments, flavour variants on request.']]
+  },
+
+  thyroguard:{platform:'kapzopro',cat:'Thyroid',name:'ThyroGuard Pro™',tagline:'Iodine-Free Thyroid Support — Formulated for Hashimoto\'s and Autoimmune Thyroid Conditions',fmt:'3 Capsules Daily',price:'Enquire',margin:'Strong',moq:'100kg',
+    problem:'Most thyroid supplements contain iodine at 150–1,000mcg per serving. For the iodine-deficient hypothyroid patient, this is appropriate. For Hashimoto\'s — which accounts for the majority of hypothyroidism cases in developed markets — excess iodine worsens thyroid peroxidase antibody production and can accelerate follicular destruction. Every thyroid supplement formulated with high-dose iodine is serving the wrong patient. The Hashimoto\'s consumer — the largest thyroid segment — has never had a supplement designed specifically for her.',
+    solution:'ThyroGuard Pro™ is iodine-free by clinical design. It addresses thyroid health through three mechanistic targets without introducing iodine — hormone synthesis substrate supply, T4-to-T3 conversion optimisation, and TPO antibody reduction.',
+    mechanisms:[
+      {lbl:'Hormone Substrate',name:'L-Tyrosine 500mg + Selenium Selenomethionine 200mcg',desc:'L-Tyrosine provides the amino acid backbone for T3 and T4 synthesis — both hormones are iodinated tyrosine derivatives. Selenium is the essential cofactor for thyroid peroxidase function. These address raw material supply without iodine addition.'},
+      {lbl:'T4 → T3 Conversion',name:'Selenium 200mcg + Zinc Bisglycinate 15mg',desc:'Selenium activates the deiodinase enzymes (DIO1, DIO2) that convert inactive T4 to active T3 at peripheral tissue. Zinc is a required cofactor for deiodinase activity. This conversion step fails in many clinically managed hypothyroid patients despite normal TSH.'},
+      {lbl:'TPO Antibody Reduction',name:'Selenium 200mcg + Myo-Inositol 1,200mg + Ashwagandha 300mg + Vitamin D3 2,000IU',desc:'Selenium selenomethionine is the only nutraceutical with robust RCT evidence (multiple trials) for reducing TPO antibody titre. Myo-Inositol synergises with selenium (Nordio et al. data). Ashwagandha for TSH normalisation and adrenal co-regulation. D3 for autoimmune modulation.'},
+    ],
+    diffs:['Iodine-free is not an omission — it is stated explicitly as the primary positioning claim. Label carries: "Iodine-free. Formulated for Hashimoto\'s and autoimmune thyroid conditions."','Selenium selenomethionine: the only nutraceutical with published RCT evidence for TPO antibody titre reduction — the most measurable outcome in Hashimoto\'s management.','T4-to-T3 conversion specifically addressed — where many levothyroxine patients fail despite normal TSH.','Targets the Hashimoto\'s patient — the largest thyroid supplement consumer globally — who has been ignored by iodine-containing formulas.','No competitor has made iodine exclusion the primary differentiator at scale. ThyroGuard Pro™ owns this position.'],
+    supply:[['White Label Complete','Full 3-capsule blend. MOQ 100kg.'],['Custom','Adjusted selenium dose, additional adaptogens, or split AM/PM capsule format on request.']]
+  },
+
+  glucoguard:{platform:'kapzopro',cat:'Metabolic / Endocrine',name:'GlucoGuard Pro™',tagline:'Pre-Meal Postprandial Glucose Management Formula — Three-Mechanism Architecture',fmt:'2 Capsules, 15–20 min before meals',price:'Enquire',margin:'Strong',moq:'100kg',
+    problem:'CGM (continuous glucose monitoring) has made postprandial glucose spikes visible to a new consumer segment that previously had no idea they were occurring. Fasting glucose can be normal, HbA1c can be normal — yet the 30–90 minute post-meal excursion after rice, roti, or bread regularly reaches 160–180 mg/dL. This spike is now recognised as an independent cardiovascular and metabolic risk factor. The consumer wants something they take before eating — not a once-daily maintenance supplement. No product has been built specifically for this timing mechanic and this consumer.',
+    solution:'GlucoGuard Pro™ uses six ingredients across three non-overlapping mechanisms to slow carbohydrate digestion, reduce intestinal glucose absorption, and enhance peripheral glucose uptake — creating a blunted postprandial curve without pharmaceutical intervention. Taken 15–20 minutes before the two largest carbohydrate meals.',
+    mechanisms:[
+      {lbl:'Digestion Inhibition',name:'Mulberry Leaf Extract 750mg (2% DNJ) + White Kidney Bean 500mg (3,000 AIU)',desc:'Sequential inhibition at two stages. Mulberry DNJ inhibits alpha-glucosidase at the intestinal brush border (same mechanistic target as acarbose). White kidney bean inhibits alpha-amylase in the mouth and duodenum. These two work at different points — not redundant. Pre-meal timing is a pharmacokinetic requirement, not a convenience instruction.'},
+      {lbl:'Absorption Modulation',name:'Gymnema sylvestre 400mg (75% gymnemic acids) + Ceylon Cinnamon 250mg',desc:'Gymnema reduces intestinal glucose absorption via SGLT modulation and modulates the incretin response to sugar. Ceylon cinnamon slows gastric emptying and improves post-meal glucose perception — the familiar ingredient that closes the consumer feedback loop.'},
+      {lbl:'Peripheral Uptake',name:'Banaba Leaf Extract 200mg (1% corosolic acid) + Chromium Picolinate 200mcg',desc:'Banaba promotes GLUT4 glucose transporter translocation to skeletal muscle surfaces — increasing peripheral glucose uptake rate. Chromium picolinate enhances insulin receptor signalling downstream. Banaba requires the 15-minute pre-meal window for GLUT4 signalling to initiate.'},
+    ],
+    diffs:['Pre-meal timing mechanic is the category-creating differentiator — GlucoGuard Pro™ is built around a specific dosing window that no once-daily glucose supplement addresses.','Three non-overlapping mechanisms: digestion inhibition, absorption modulation, and peripheral uptake — most competitors address one.','Mulberry DNJ at 750mg: the most clinically studied botanical for alpha-glucosidase inhibition, at the validated dose.','CGM-era positioning: targets the consumer who has seen their own postprandial spike and wants to act on it.','Suitable for pre-diabetic, insulin-resistant, and health-conscious carbohydrate-managing adults without pharmaceutical positioning.'],
+    supply:[['White Label Complete','Full 2-capsule blend. MOQ 100kg.'],['Custom','Dose adjustments, single-capsule convenience format, or RTM sachet variant on request.']]
+  },
+
+  prostacare:{platform:'kapzopro',cat:'Prostate',name:'ProstaCare Pro™',tagline:'Engineered Prostate Defence — DHT Reduction, Urinary Relief, and Antioxidant Tissue Protection',fmt:'1 Capsule Morning + 1 Capsule Evening (1-0-1)',price:'Enquire',margin:'Strong',moq:'100kg',
+    problem:'Men aged 40 and above experiencing early urinary changes — hesitancy, mild frequency, reduced flow, nocturia — are underserved by a supplement category that offers either vague Ayurvedic blends or overcomplicated multi-ingredient stacks with no speed-of-effect rationale. Most prostate supplements also fail in practice because they deliver only long-term mechanisms: the consumer sees no early effect and discontinues before clinical benefits accumulate.',
+    solution:'ProstaCare Pro™ combines fast-acting urinary relief ingredients with long-term DHT modulation and antioxidant tissue defence in a 1-0-1 split dosing protocol specifically designed for nocturia management.',
+    mechanisms:[
+      {lbl:'Weeks 1–3 (Early Relief)',name:'Pumpkin Seed Extract 500mg daily',desc:'Bladder muscle tone improvement and early urinary flow benefit — the fastest-acting mechanism in the formula. Provides the perceptible early outcome that prevents discontinuation before long-term actives accumulate.'},
+      {lbl:'Weeks 4–8 (DHT Modulation)',name:'Saw Palmetto 320mg (85–95% FA) + Beta-Sitosterol 100mg + Stinging Nettle Root 300mg',desc:'5-alpha reductase inhibition — the same target as pharmaceutical finasteride, at nutritional doses. Saw palmetto at 85–95% fatty acids: the active fraction. Stinging nettle root modulates sex hormone-binding globulin (SHBG) independently. Urinary symptom score reduction accumulates over 4–8 weeks.'},
+      {lbl:'Weeks 8+ (Tissue Defence)',name:'LycoRed® Lycopene 15mg + Pygeum 100mg (14% triterpenes) + Zinc Citrate 15mg',desc:'LycoRed®: globally recognised lycopene with clinical dossier for prostate health. The prostate has the highest lycopene and zinc concentration of any organ — deficiency in both is directly linked to BPH progression. Pygeum anti-inflammatory remodelling of prostate tissue.'},
+    ],
+    diffs:['1-0-1 split dosing: morning and evening coverage specifically designed for nocturia — most competitors are once-daily.','Three-phase speed stratification communicated to consumer: early relief (weeks 1–3), DHT modulation (weeks 4–8), long-term defence (weeks 8+) — prevents discontinuation.','LycoRed® lycopene: clinical dossier-backed brand ingredient vs commodity lycopene. HCP recommender credibility.','Saw palmetto at 85–95% fatty acid standardisation — the active fraction. Not generic berry powder.','No iodine, no proprietary blends, no underdosed label presence — clinical transparency as positioning.'],
+    supply:[['White Label Complete','Full formula as hard capsule. MOQ 100kg.'],['Custom','Vegetarian or gelatin shell, dose adjustments, LycoRed® dose step-up on request.']]
   },
   // ─── KAPZOSPHERE ───
   alkasync:{platform:'kapzosphere',cat:'pH & Alkalinity',name:'AlkaSync™',tagline:'Precision pH-Buffering Microbead System',fmt:'Free-flowing spherical microbeads',price:'Enquire',margin:'Strong',moq:'Enquire',
@@ -856,6 +1122,66 @@ const PLATFORM_PRODUCTS = {
       content:`<div class="d-section"><div class="d-title">The Problem JaggerPlus™ Solves</div><p class="d-text">Raw jaggery and palm sugar are hygroscopic, prone to crystallisation, and difficult to incorporate into modern food and supplement manufacturing processes. Granules clump, cake, and vary batch-to-batch in moisture content and appearance. This has kept authentic jaggery — one of the most sought-after natural sweeteners among clean-label buyers across US, EU, and ANZ markets — largely out of industrial formulation.</p><p class="d-text">JaggerPlus™ MG-100 solves this through a proprietary amorphous matrix stabilisation process — converting jaggery and palm sugar into a free-flowing, shelf-stable powder that eliminates crystallisation, moisture uptake, and batch variability. Rebaudioside M is used as the sweetener system for clean-label compatibility across all target markets.</p><div class="d-title">Product Specifications</div><table class="sup-table"><tbody><tr><td>Format</td><td>Free-flowing granular powder</td></tr><tr><td>Sweetener</td><td>Rebaudioside M (≥95%)</td></tr><tr><td>Shelf Life</td><td>18 months under defined storage conditions</td></tr><tr><td>Moisture</td><td>&lt;5% (controlled)</td></tr><tr><td>Flow Properties</td><td>Free-flowing, no caking, no crystallisation</td></tr><tr><td>Applications</td><td>Functional food, supplement industry, beverage, bakery</td></tr><tr><td>Markets</td><td>US, EU, Canada, Australia/NZ</td></tr></tbody></table></div>`
     }
   ],
+  kapzostratum:[
+    {id:'ashzero',cat:'Body Care',name:'AshZero™',tagline:'Optical + Biological Body Milk — instant ash elimination and 12-hour sustained hydration.',fmt:'200ml pump bottle (oil-in-water emulsion)',price:'Enquire',moq:'Enquire',
+      problem:'Ashy skin on deeper skin tones is an optical phenomenon — dehydrated surface corneocytes scatter light unevenly, creating a grey-white cast against deeply pigmented underlying tissue. Standard body lotions apply humectants to the surface but without an intact ceramide barrier, moisture is lost to transepidermal evaporation within 1–2 hours. The consumer feels immediate softness that vanishes by midday — not because the product failed chemically, but because the barrier was never repaired.',
+      solution:'AshZero™ addresses both failure modes simultaneously — optical correction at the surface within 60 seconds, and a 12-hour sustained biological hydration system that rebuilds the ceramide barrier rather than masking the problem.',
+      mechanisms:[
+        {lbl:'Layer 1 (0–60s)',name:'Instant Optical Correction',desc:'Treated silica microspheres pre-wetted in a caprylic/capric triglyceride carrier convert diffuse light scatter into even reflection. Ash disappears visibly within 60 seconds of application.'},
+        {lbl:'Layer 2 (1–12h)',name:'Ceramide Barrier Repair',desc:'3:1:1 ceramide ratio (Ceramide NP : AP : EOP) matching the natural stratum corneum lipid ratio — rebuilds the barrier that prevents transepidermal moisture loss.'},
+        {lbl:'Layer 3 (1–12h)',name:'Deep Hydration Delivery',desc:'Low-MW Sodium Hyaluronate (<50 kDa) penetrates to the dermis to bind water at depth. High-MW HA forms an occlusive film at the surface.'},
+        {lbl:'Layer 4 (ongoing)',name:'Sustained Moisture Release',desc:'Proprietary friction-release glycerin beadlets embedded in the formula release additional humectant throughout the day — triggered by clothing movement and body heat.'},
+      ],
+      diffs:['First body milk to combine instant optical ash correction with biological hydration that lasts 12 hours — not 90 minutes.','Ceramide 3:1:1 ratio matches stratum corneum natural lipid architecture — repairs the barrier rather than coating over it.','Friction-release humectant delivery: sustained moisture release triggered by movement — no midday reapplication needed.','Fitzpatrick III–VI primary positioning — a dramatically underserved segment in premium body care globally.','Zero white cast formulation — the pre-wetted silica system is engineered specifically to be invisible on dark skin.'],
+      supply:[['White Label','Full 200ml oil-in-water emulsion. Client supplies pump bottle and label. Fragrance-free base or custom fragrance on request.'],['Custom','Shade-matched optical correction intensity, alternate humectant systems, or SPF-added variant on request.']]
+    },
+    {id:'sagecalm',cat:'Body Care',name:'SageCalm™',tagline:'Sweat-Moderating Underarm Roll-On — M3 receptor botanical modulation without aluminium.',fmt:'50ml roll-on (26mm PP or stainless steel ball)',price:'Enquire',moq:'Enquire',
+      problem:'The natural deodorant movement has created a frustrated consumer. Millions have left aluminium antiperspirants and switched to natural deodorants — only to find that baking soda causes dermatitis, crystal salt offers almost no control, charcoal has strong marketing and minimal mechanism, and every essential oil formula fails within 2 hours. Critically: none address sweat volume. The consumer sweats through her natural deodorant and returns to aluminium, defeated. No clinical alternative existed — until SageCalm.',
+      solution:'SageCalm™ moderates sweat volume through a clinically validated botanical M3 receptor mechanism — without blocking a single sweat duct — and controls odor through postbiotic microbiome science rather than masking fragrance. It is neither a traditional antiperspirant nor a traditional deodorant. It is a new category.',
+      mechanisms:[
+        {lbl:'Layer 1',name:'Sage Diterpene M3 Modulation',desc:'Sweating is triggered by acetylcholine binding to M3 receptors on eccrine gland cells. Sage diterpenes act on these receptors, moderating the calcium signal. Gland reduces output without being blocked. Thermoregulation is preserved. Builds progressively over 5–10 days to peak effect. Bommer et al. (2011): 50% reduction in hyperhidrosis severity at 4 weeks.'},
+        {lbl:'Layer 2',name:'Postbiotic Odor Neutralisation',desc:'Underarm odor is produced when skin bacteria metabolise eccrine and apocrine secretions. Lactobacillus ferment filtrate postbiotics rebalance the underarm microbiome — reducing the specific bacterial populations responsible for odor generation. Not masking. Actual source control.'},
+        {lbl:'Layer 3',name:'Sustained Astringency',desc:'Encapsulated tannic acid in a sustained-release format provides mechanical astringency through the day — a third layer of sweat moderation that does not require receptor engagement.'},
+      ],
+      diffs:['Sage standardised to minimum 2.5% rosmarinic acid + 0.5% ursolic acid by HPLC — batch-to-batch efficacy guaranteed by specification.','M3 receptor mechanism is the same target as prescription anticholinergic hyperhidrosis drugs — achieved via botanical cosmetic route.','100% aluminium-free, baking soda-free, alcohol-free — addresses every specific frustration the natural deodorant consumer has already experienced.','Postbiotic odor control: source-level microbiome rebalancing rather than fragrance masking.','Category-creating positioning: not a deodorant, not an antiperspirant — a sweat moderator.'],
+      supply:[['White Label','Full 50ml roll-on formula. PP or stainless steel ball applicator. Client supplies outer label.'],['Custom','Fragrance customisation, alternate astringent system, men\'s or gender-neutral positioning variant on request.']]
+    },
+    {id:'toneq',cat:'Intimate Care',name:'TonEQ™',tagline:'Clinical Skin Tone Correction Serum — hydroquinone-free, intimate skin safe, three-driver coverage.',fmt:'30ml / 50ml airless pump serum',price:'Enquire',moq:'Enquire',
+      problem:'Uneven skin tone in intimate and friction zones is among the most searched personal care concerns globally yet one of the least honestly addressed. The consumer has tried: random fairness creams not formulated for intimate skin pH, kojic acid soaps that irritate, prescription hydroquinone with rebound anxiety, or nothing — because the category felt too embarrassing. What has never existed is a product that takes the concern seriously, is formulated correctly for intimate skin biology, and uses clinically validated actives at safe concentrations.',
+      solution:'TonEQ™ is the only clinical serum addressing all three biological drivers of intimate zone darkening simultaneously — friction-induced melanocyte stimulation, hormonal melanocyte hyperactivity, and post-inflammatory residue — without hydroquinone, fragrance, or compromise.',
+      mechanisms:[
+        {lbl:'Driver 1',name:'Encapsulated Azelaic Acid 5%',desc:'Friction chronically triggers keratinocyte release of pro-inflammatory cytokines (IL-1α, TNF-α) that upregulate melanocyte activity. Azelaic acid\'s anti-inflammatory mechanism interrupts this cascade directly. Encapsulated for sustained release and improved skin tolerance at intimate skin pH.'},
+        {lbl:'Driver 2',name:'Tranexamic Acid 2.5%',desc:'Intimate skin has higher density of estrogen and androgen receptors. PCOS, pregnancy, and oral contraceptive use drive melanogenesis via MC1R pathway upregulation. Tranexamic acid is the only cosmetic active with published evidence on hormonally-driven pigmentation specifically.'},
+        {lbl:'Driver 3',name:'Alpha-Arbutin 1.5% + Niacinamide 4%',desc:'Alpha-arbutin targets tyrosinase — the rate-limiting enzyme in melanin synthesis — to reduce post-inflammatory residue from folliculitis and friction. Niacinamide inhibits melanosome transfer at the keratinocyte junction and provides barrier support for intimate skin.'},
+      ],
+      diffs:['Three-driver coverage: friction, hormonal, and post-inflammatory — most competitors address one.','Encapsulated azelaic acid: sustained release format increases tolerance on intimate skin compared to immediate-release.','Hydroquinone-free — eliminates the primary consumer anxiety associated with skin tone correction products.','Specifically formulated for intimate skin pH — unlike general brightening serums applied off-label.','Fragrance-free, intimate-safe: a category where fragrance is a formulation error, not a feature.'],
+      supply:[['White Label','Full airless pump serum — 30ml or 50ml. Client supplies outer design.'],['Custom','Active concentration adjustments within cosmetic limits, alternate carrier system, branded ingredient substitutions on request.']]
+    },
+    {id:'bondrestore',cat:'Scalp & Hair',name:'BondRestore™',tagline:'Weekly Structural Hair Repair Treatment — cuticle, cortex, and internal moisture addressed simultaneously.',fmt:'Weekly leave-on mask, rinse after 20 minutes',price:'Enquire',moq:'Enquire',
+      problem:'By the time hair feels soft, brittle, or snapping, two separate damage events have already occurred: the cuticle\'s outermost lipid layer (18-MEA) has been cleaved — hair is now rough, hydrophilic, and tangle-prone; and internal disulfide bonds in the cortex have been broken by oxidative damage, heat, or chemical treatment — the hair\'s structural backbone is compromised. Standard conditioners coat the surface. Oils add slip. Protein treatments temporarily fill gaps. None address structural repair at a molecular level.',
+      solution:'BondRestore™ is a weekly structural repair treatment combining 18-MEA cuticle restoration, cystine-based cortex crosslinking, and NMF-mimetic internal hydration — three independent molecular repair mechanisms in a single formula.',
+      mechanisms:[
+        {lbl:'Mechanism 1',name:'18-MEA Analog — Cuticle Lipid Restoration',desc:'18-methyleicosanoic acid is the lipid nature bonds to every hair cuticle cell. Heat, bleaching, and alkaline shampoos chemically cleave it. The 18-MEA analog re-deposits this lipid layer onto damaged cuticle, measurably restoring surface hydrophobicity. Contact angle restoration from ~40° (damaged) to ~90° (healthy) confirmed in re-deposition studies.'},
+        {lbl:'Mechanism 2',name:'Cystine Dipeptide — Cortex Bond Crosslinking',desc:'Disulfide (-S-S-) bridges in the cortex provide hair tensile strength. Oxidative stress and chemical processing break these bridges — the hair loses structural integrity and becomes soft and breakage-prone. Cystine dipeptides penetrate the cortex and re-form these crosslinks, restoring tensile strength measurably within 1–3 weekly applications.'},
+        {lbl:'Mechanism 3',name:'NMF Amino Complex — Internal Moisture Replenishment',desc:'The cortex\'s own moisture-binding amino acid pool (Natural Moisturising Factor) is depleted by damage — the hair cannot hold water internally even when conditioned externally. NMF-mimetic amino acid complex restores internal water-binding capacity, reducing brittleness from the inside out.'},
+        {lbl:'Stability',name:'Protected Active Delivery',desc:'The 18-MEA analog and cystine actives are stabilised in a protected delivery matrix — preventing premature oxidation and ensuring efficacy is maintained through the product\'s shelf life.'},
+      ],
+      diffs:['Three independent molecular repair mechanisms in one weekly treatment — no other consumer product combines all three.','18-MEA analog: the ingredient that premium professional salon brands have used exclusively — now in a consumer white-label format.','Cystine dipeptide crosslinking: same mechanism as professional bond-building salon treatments, without the in-salon price point.','Protected active delivery: 18-MEA and cystine remain stable — not oxidised before they reach the hair shaft.','Clear positioning: weekly treatment, 20 minutes, measurable structural improvement — not a conditioner.'],
+      supply:[['White Label','Full mask formulation. Client supplies packaging design and fragrance brief.'],['Custom','Intensity levels (maintenance vs intensive repair), fragrance system, rinse-off vs extended leave-on variant on request.']]
+    },
+    {id:'scalpsync',cat:'Scalp & Hair',name:'ScalpSync™',tagline:'Daily Scalp Serum — photo-protected melatonin and scalp postbiotic for follicle biology and microbiome balance.',fmt:'Leave-on scalp serum, daily application',price:'Enquire',moq:'Enquire',
+      problem:'The modern hair fall consumer has tried dermatologist-recommended shampoos, biotin supplements, and DHT-blocking oils — with marginal results. Two upstream root causes are rarely addressed by any product on the market: oxidative damage at the follicle bulb shortening the anagen (growth) phase, and Malassezia-driven scalp inflammation silently miniaturising follicles over months. ScalpSync addresses both — with ingredients carrying peer-reviewed clinical evidence — in a single daily serum.',
+      solution:'ScalpSync™ is the first daily scalp serum combining a photo-protected melatonin delivery system and a scalp postbiotic microbiome modulator — two clinically studied mechanisms that no general cosmetics brand has assembled in a single formula.',
+      mechanisms:[
+        {lbl:'Mechanism 1',name:'Photo-Protected Melatonin 0.05%',desc:'Melatonin is produced naturally in the scalp and acts as the follicle\'s antioxidant shield. Stress, pollution, and age deplete local melatonin. Delivered in a protective matrix ensuring it reaches follicle tissue intact rather than photo-degrading before it can act. Fischer et al. (BJD 2004) and Dreher et al. (2005): topical melatonin at 0.003–0.1% statistically reduces hair fall scores vs placebo at 6 months.'},
+        {lbl:'Mechanism 2',name:'Scalp Postbiotic Complex',desc:'When Malassezia overgrows, it triggers chronic low-grade scalp inflammation that silently shrinks follicles. Lactobacillus ferment filtrate + Vitreoscilla ferment postbiotics rebalance the scalp ecosystem without antifungal drug classification. Vitreoscilla lysate: 43% improvement in scalp microbiome diversity at 8 weeks. Lactobacillus ferment: 60–70% Malassezia suppression in scalp models.'},
+        {lbl:'Supporting',name:'Niacinamide 2% + Zinc PCA 0.5% + Panthenol 1%',desc:'Niacinamide for scalp barrier support and anti-inflammatory activity. Zinc PCA for sebum regulation and additional Malassezia control. Panthenol for scalp comfort and itch reduction.'},
+      ],
+      diffs:['Photo-protected melatonin: delivery system ensures active reaches follicle tissue intact — unprotected topical melatonin degrades before penetration.','First formula combining follicle antioxidant defence (melatonin) with scalp microbiome rebalancing (postbiotic) — two independent mechanisms in one product.','No drug claims, no hormonal interference, no side effects — clinical efficacy without prescription-adjacent positioning anxiety.','Malassezia control via postbiotic (not antifungal) — avoids drug classification while addressing the primary inflammatory driver of follicle miniaturisation.','Premium clinical cosmetic positioning: leave-on serum, not a shampoo additive — higher perceived efficacy and daily compliance ritual.'],
+      supply:[['White Label','Full leave-on serum formulation. Client supplies applicator design and outer packaging.'],['Custom','Melatonin concentration within cosmetic limits, alternate postbiotic strains, fragrance-free or light fragrance variant on request.']]
+    }
+  ]
+,
   psyllium:[
     {id:'psyllium_husk',cat:'Psyllium Platform',name:'Kapzo Psyllium — Husk Products',tagline:'GMP-manufactured psyllium husk powder in multiple grades for pharmaceutical, food, and nutraceutical applications.',fmt:'Bulk powder',price:'Enquire',moq:'Enquire',
       content:`<div class="d-section"><div class="d-title">Kapzo Psyllium Husk Range</div><p class="d-text">GMP-manufactured psyllium husk products across three grades — PsyliFine™, PsyliFlow™, and PsyliPure™ — covering pharmaceutical, food, and nutraceutical applications. Each grade is produced under GMP-certified conditions with full analytical documentation for US, EU, Canada, and Australia/NZ market entry.</p><table class="sup-table"><thead><tr><th>SKU</th><th>Product</th><th>Grade / Application</th><th>Key Specification</th></tr></thead><tbody><tr><td>PsyliFine™</td><td>Psyllium Husk Powder Fine</td><td>Food grade — supplement powders, RTM blends</td><td>80–100 mesh. Low heavy metals. Consistent colour and particle uniformity.</td></tr><tr><td>PsyliFlow™</td><td>Psyllium Husk Powder — Enhanced Flow</td><td>Nutraceutical grade — improved flow, low dust, capsule and sachet filling</td><td>Precision particle engineering for uniform size and improved blend compatibility. Reduced dusting and improved fill weight consistency.</td></tr><tr><td>PsyliPure™</td><td>Psyllium Seed Husk — High Purity</td><td>Pharmaceutical grade — capsule and tablet applications</td><td>≥98% purity, pharmacopoeial specification, full analytical package.</td></tr></tbody></table><div class="d-title" style="margin-top:24px">Documentation</div><p class="d-text">Full COA per batch, TDS, MSDS, COO, allergen declaration, heavy metals testing per USP/EU Pharmacopoeia limits. US FDA dietary supplement documentation. EU novel food and traditional food ingredient compliance guidance on request. Australia TGA and Canada NHP documentation support available.</p></div>`
@@ -868,7 +1194,12 @@ let currentPage = 'home';
 let currentPlatform = 'kapzopro';
 let currentSku = null;
 
+// ─── NAVIGATION HISTORY ─────────────────────────────────────────────────────
+let navHistory = [];
+
 function nav(page, param) {
+  // Push current state to history before navigating
+  if (currentPage) navHistory.push({page: currentPage, platform: currentPlatform, sku: currentSku});
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + page).classList.add('active');
   currentPage = page;
@@ -876,6 +1207,55 @@ function nav(page, param) {
   if (page === 'products') { currentPlatform = param || 'kapzopro'; renderProducts(currentPlatform); }
   if (page === 'product') { currentSku = param; renderProduct(param); }
   renderFooters();
+}
+
+function goBack() {
+  if (navHistory.length === 0) { nav('home'); return; }
+  const prev = navHistory.pop();
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + prev.page).classList.add('active');
+  currentPage = prev.page;
+  window.scrollTo(0,0);
+  if (prev.page === 'products') { currentPlatform = prev.platform; renderProducts(prev.platform); }
+  if (prev.page === 'product') { currentSku = prev.sku; renderProduct(prev.sku); }
+  renderFooters();
+}
+
+function navToCat(platformId, catId) {
+  nav('products', platformId);
+  // After nav renders the category grid, immediately select the category
+  setTimeout(() => selectCategory(platformId, catId), 0);
+}
+
+function toggleMobAccordion(id, btn) {
+  const el = document.getElementById(id);
+  const isOpen = el.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.mob-children').forEach(c => c.classList.remove('open'));
+  document.querySelectorAll('.mob-parent').forEach(b => b.classList.remove('open'));
+  if (!isOpen) {
+    el.classList.add('open');
+    btn.classList.add('open');
+  }
+}
+
+function mobNavCat(platformId, catId) {
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('mob-menu').classList.remove('open');
+  navToCat(platformId, catId);
+}
+
+function toggleMenu() {
+  const btn = document.getElementById('hamburger');
+  const menu = document.getElementById('mob-menu');
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+}
+
+function mobNav(page, param) {
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('mob-menu').classList.remove('open');
+  nav(page, param);
 }
 
 function renderFooters() {
@@ -894,6 +1274,7 @@ function renderFooters() {
           <li><a onclick="nav('products','gheeplus')">GheePlus™</a></li>
           <li><a onclick="nav('products','jaggerplus')">JaggerPlus™</a></li>
           <li><a onclick="nav('products','psyllium')">Kapzo Psyllium</a></li>
+          <li><a onclick="nav('products','kapzostratum')">KapzoStratum™</a></li>
         </ul>
       </div>
       <div>
@@ -941,115 +1322,149 @@ function renderProducts(platformId) {
   const meta = PLATFORM_META[platformId];
   document.getElementById('prod-hdg').textContent = meta.hdg;
   document.getElementById('prod-sub').textContent = meta.sub;
+  document.getElementById('prod-tabs').innerHTML = '';
 
-  // Build tabs
-  const tabsEl = document.getElementById('prod-tabs');
-  tabsEl.innerHTML = meta.tabs.map((t,i) => `<button class="ptab ${i===0?'active':''}" onclick="filterSkus('${platformId}','${t}',this)">${t}</button>`).join('');
+  // Reset layout
+  document.getElementById('prod-cats').innerHTML = '';
+  document.getElementById('prod-sku-wrap').style.display = 'none';
+  document.getElementById('sku-grid-direct').innerHTML = '';
+  document.getElementById('sku-grid').innerHTML = '';
+
+  if (meta.useCats) {
+    // 3-level: show category grid
+    const cats = platformId === 'kapzopro' ? ORGAN_CATS : STRATUM_CATS;
+    renderCategoryGrid(platformId, cats);
+  } else {
+    // Direct tab + SKU grid
+    const tabsEl = document.getElementById('prod-tabs');
+    tabsEl.innerHTML = meta.tabs.map((t,i) =>
+      `<button class="ptab ${i===0?'active':''}" onclick="filterSkusDirect('${platformId}','${t}',this)">${t}</button>`
+    ).join('');
+    renderSkuGridDirect(platformId, meta.tabs[0]);
+  }
+}
+
+function renderCategoryGrid(platformId, cats) {
+  const el = document.getElementById('prod-cats');
+  el.innerHTML = `<div class="org-grid">${cats.map(c => {
+    const count = c.skus.length;
+    const skuIds = c.skus;
+    // get names from SKUS or PLATFORM_PRODUCTS.kapzostratum
+    const names = skuIds.map(id => {
+      if (SKUS[id]) return SKUS[id].name;
+      const pp = (PLATFORM_PRODUCTS.kapzostratum||[]).find(p => p.id === id);
+      return pp ? pp.name : id;
+    });
+    return `<div class="org-card" onclick="selectCategory('${platformId}','${c.id}')">
+      <div class="org-card-n">${count}</div>
+      <div class="org-card-name">${c.name}</div>
+      <div class="org-card-badge">${names.slice(0,2).join(' · ')}${names.length > 2 ? ' +' + (names.length-2) : ''}</div>
+      <div class="org-card-arr">→</div>
+    </div>`;
+  }).join('')}</div>`;
+}
+
+function selectCategory(platformId, catId) {
+  const cats = platformId === 'kapzopro' ? ORGAN_CATS : STRATUM_CATS;
+  const cat = cats.find(c => c.id === catId);
+  if (!cat) return;
+
+  // Hide category grid, show SKU wrap
+  document.getElementById('prod-cats').innerHTML = '';
+  const wrap = document.getElementById('prod-sku-wrap');
+  wrap.style.display = 'block';
+
+  // Update back button label
+  document.getElementById('cat-back-btn').textContent = `← ${PLATFORM_META[platformId].hdg}`;
+
+  // Update header
+  document.getElementById('prod-hdg').textContent = cat.name;
+  document.getElementById('prod-sub').textContent = '';
 
   // Build SKU grid
-  renderSkuGrid(platformId, 'All SKUs');
-}
-
-function filterSkus(platformId, filter, btn) {
-  document.querySelectorAll('.ptab').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  renderSkuGrid(platformId, filter);
-}
-
-function renderSkuGrid(platformId, filter) {
   const el = document.getElementById('sku-grid');
-
-  // Kapzo Pro
-  if (platformId === 'kapzopro') {
-    const catMap = {
-      'CNS & Mental Wellness':['calmcore','focuscore','impulsecore','somnamax'],
-      'Metabolic Health':['satietyglp','metaguard','cravezero'],
-      'Joint & Sports':['jointmax','premax','postmax'],
-      'Reproductive & Hormonal':['virimax','femimax','follimax'],
-      'Organ Support & Longevity':['hepatguard','respircore','transitmax','longevimax']
-    };
-    let skuIds = [];
-    if (filter === 'All SKUs') { skuIds = Object.values(catMap).flat(); }
-    else { skuIds = catMap[filter] || Object.values(catMap).flat(); }
-    el.innerHTML = skuIds.map(id => {
+  const items = cat.skus.map(id => {
+    // Check SKUS
+    if (SKUS[id]) {
       const s = SKUS[id];
-      if (!s) return '';
       return `<div class="sku-card" onclick="nav('product','${id}')">
         <div class="sku-cat">${s.cat}</div>
         <div class="sku-name">${s.name}</div>
         <p class="sku-tag">${s.tagline}</p>
-        <div class="sku-foot">
-          <span class="sku-fmt">${s.fmt}</span>
-          <span class="sku-view">View Details →</span>
-        </div>
+        <div class="sku-foot"><span class="sku-fmt">${s.fmt}</span><span class="sku-view">View Details →</span></div>
       </div>`;
-    }).join('');
-    return;
-  }
+    }
+    // Check PLATFORM_PRODUCTS.kapzostratum
+    const pp = (PLATFORM_PRODUCTS.kapzostratum||[]).find(p => p.id === id);
+    if (pp) return `<div class="sku-card" onclick="nav('product','${id}')">
+      <div class="sku-cat">${pp.cat}</div>
+      <div class="sku-name">${pp.name}</div>
+      <p class="sku-tag">${pp.tagline}</p>
+      <div class="sku-foot"><span class="sku-fmt">${pp.fmt}</span><span class="sku-view">View Details →</span></div>
+    </div>`;
+    return '';
+  });
+  el.innerHTML = items.join('');
+  window.scrollTo(0, 0);
+}
 
-  // KapzoSphere
+function backToCategories() {
+  const platformId = currentPlatform;
+  document.getElementById('prod-sku-wrap').style.display = 'none';
+  document.getElementById('sku-grid').innerHTML = '';
+  const meta = PLATFORM_META[platformId];
+  document.getElementById('prod-hdg').textContent = meta.hdg;
+  document.getElementById('prod-sub').textContent = meta.sub;
+  const cats = platformId === 'kapzopro' ? ORGAN_CATS : STRATUM_CATS;
+  renderCategoryGrid(platformId, cats);
+  window.scrollTo(0, 0);
+}
+
+function filterSkusDirect(platformId, filter, btn) {
+  document.querySelectorAll('.ptab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderSkuGridDirect(platformId, filter);
+}
+
+function renderSkuGridDirect(platformId, filter) {
+  const el = document.getElementById('sku-grid-direct');
+
+  const mkCard = (id, s) => `<div class="sku-card" onclick="nav('product','${id}')">
+    <div class="sku-cat">${s.cat}</div>
+    <div class="sku-name">${s.name}</div>
+    <p class="sku-tag">${s.tagline}</p>
+    <div class="sku-foot"><span class="sku-fmt">${s.fmt}</span><span class="sku-view">View Details →</span></div>
+  </div>`;
+
+  const mkPpCard = (p) => `<div class="sku-card" onclick="nav('product','${p.id}')">
+    <div class="sku-cat">${p.cat}</div>
+    <div class="sku-name">${p.name}</div>
+    <p class="sku-tag">${p.tagline}</p>
+    <div class="sku-foot"><span class="sku-fmt">${p.fmt}</span><span class="sku-view">View Details →</span></div>
+  </div>`;
+
   if (platformId === 'kapzosphere') {
     const catMap = {
-      'Cooling Systems':['cryolayer','arcticdure','cryobase'],
+      'Cooling & Freshness':['cryolayer','arcticdure','cryobase'],
       'pH & Alkalinity':['alkasync'],
       'Sequential Release':['flowseq'],
       'Aroma & Sensation':['aromavault','zingcore']
     };
-    let skuIds = filter === 'All Products' ? Object.values(catMap).flat() : (catMap[filter] || Object.values(catMap).flat());
-    el.innerHTML = skuIds.map(id => {
-      const s = SKUS[id];
-      return `<div class="sku-card" onclick="nav('product','${id}')">
-        <div class="sku-cat">${s.cat}</div>
-        <div class="sku-name">${s.name}</div>
-        <p class="sku-tag">${s.tagline}</p>
-        <div class="sku-foot">
-          <span class="sku-fmt">${s.fmt}</span>
-          <span class="sku-view">View Details →</span>
-        </div>
-      </div>`;
-    }).join('');
+    const ids = filter === 'All Products' ? Object.values(catMap).flat() : (catMap[filter] || Object.values(catMap).flat());
+    el.innerHTML = ids.map(id => mkCard(id, SKUS[id])).join('');
     return;
   }
-
-  // KapzoBase
-  if (platformId === 'kapzobase') {
-    const s = SKUS.kapzobase;
-    el.innerHTML = `<div class="sku-card" onclick="nav('product','kapzobase')">
-      <div class="sku-cat">${s.cat}</div>
-      <div class="sku-name">${s.name}</div>
-      <p class="sku-tag">${s.tagline}</p>
-      <div class="sku-foot">
-        <span class="sku-fmt">${s.fmt}</span>
-        <span class="sku-view">View Details →</span>
-      </div>
-    </div>`;
+  if (platformId === 'kapzobase') { el.innerHTML = mkCard('kapzobase', SKUS.kapzobase); return; }
+  if (platformId === 'gheeplus') {
+    const catMap = {'Carrier Systems':['gheeplus_t1'],'Functional Co-Loads':['gheeplus_t2'],'Flavour Fat Systems':['gheeplus_t3']};
+    const ids = filter === 'All Products' ? ['gheeplus_t1','gheeplus_t2','gheeplus_t3'] : (catMap[filter] || ['gheeplus_t1','gheeplus_t2','gheeplus_t3']);
+    el.innerHTML = ids.map(id => { const p = PLATFORM_PRODUCTS.gheeplus.find(x => x.id === id); return p ? mkPpCard(p) : ''; }).join('');
     return;
   }
-
-  // GheePlus, JaggerPlus, Psyllium
-  if (PLATFORM_PRODUCTS[platformId]) {
-    const prods = PLATFORM_PRODUCTS[platformId];
-    const filterMap = {
-      'Tier 1 · Platform Carriers': 'gheeplus_t1',
-      'Tier 2 · Functional Co-Loads': 'gheeplus_t2',
-      'Tier 3 · Flavour Fat Systems': 'gheeplus_t3'
-    };
-    const filtered = (filter === 'All Products' || filter === 'All Products' || filter === 'Product Overview' || filter === 'All Products' || !filterMap[filter])
-      ? prods
-      : prods.filter(p => p.id === filterMap[filter]);
-    el.innerHTML = filtered.map(p => `
-      <div class="sku-card" onclick="nav('product','${p.id}')">
-        <div class="sku-cat">${p.cat}</div>
-        <div class="sku-name">${p.name}</div>
-        <p class="sku-tag">${p.tagline}</p>
-        <div class="sku-foot">
-          <span class="sku-fmt">${p.fmt}</span>
-          <span class="sku-view">View Details →</span>
-        </div>
-      </div>
-    `).join('');
-  }
+  if (platformId === 'jaggerplus') { el.innerHTML = mkPpCard(PLATFORM_PRODUCTS.jaggerplus[0]); return; }
+  if (platformId === 'psyllium') { el.innerHTML = mkPpCard(PLATFORM_PRODUCTS.psyllium[0]); return; }
 }
+
 
 // ─── PRODUCT DETAIL ──────────────────────────────────────────────────────────
 function renderProduct(id) {
@@ -1068,10 +1483,56 @@ function renderProduct(id) {
   }
 
   if (isPlatformProd && ppData) {
+    // If structured data (problem/mechanisms/diffs) use the same rich template as SKUS
+    if (ppData.problem) {
+      const mechsHTML = (ppData.mechanisms||[]).map(m => `
+        <div class="mech-card">
+          <div class="mech-lbl">${m.lbl}</div>
+          <div class="mech-name">${m.name}</div>
+          <p class="mech-desc">${m.desc}</p>
+        </div>`).join('');
+      const diffsHTML = (ppData.diffs||[]).map(d => `
+        <li class="diff-item">
+          <div class="diff-chk">✓</div>
+          <div class="diff-txt">${d}</div>
+        </li>`).join('');
+      const supplyHTML = (ppData.supply||[]).map(([model,detail]) => `
+        <tr><td>${model}</td><td>${detail}</td></tr>`).join('');
+      el.innerHTML = `
+        <div class="det-hero">
+          <div class="wrap">
+            <div class="det-back" onclick="goBack()">← Back to Products</div>
+            <div class="det-cat">${ppData.cat}</div>
+            <div class="det-name">${ppData.name}</div>
+            <p class="det-tagline">${ppData.tagline}</p>
+            <div class="det-stats">
+              <div class="det-stat"><div class="det-s-lbl">Format</div><div class="det-s-val">${ppData.fmt}</div></div>
+              <div class="det-stat"><div class="det-s-lbl">B2B Price</div><div class="det-s-val">${ppData.price}</div></div>
+              <div class="det-stat"><div class="det-s-lbl">MOQ</div><div class="det-s-val">${ppData.moq}</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="det-body"><div class="wrap">
+          <div class="d-section"><div class="d-title">The Problem</div><p class="d-text">${ppData.problem}</p></div>
+          <div class="d-section"><div class="d-title">The Solution</div><p class="d-text">${ppData.solution}</p><div class="mech-grid">${mechsHTML}</div></div>
+          ${diffsHTML ? `<div class="d-section"><div class="d-title">What Makes This Different</div><ul class="diff-list">${diffsHTML}</ul></div>`:''}
+          ${supplyHTML ? `<div class="d-section"><div class="d-title">B2B Supply Models</div><table class="sup-table"><thead><tr><th>Supply Model</th><th>Detail</th></tr></thead><tbody>${supplyHTML}</tbody></table></div>`:''}
+          <div class="d-section" style="background:var(--warm);padding:40px;border-radius:6px;margin-top:40px">
+            <div class="d-title">Request Sample</div>
+            <p class="d-text">Lab samples shipped within 10 business days. Full COA and TDS included at no charge.</p>
+            <div style="display:flex;gap:14px;flex-wrap:wrap">
+              <button class="btn btn-gold" onclick="nav('contact')">Request Sample →</button>
+              <button class="btn btn-navy" onclick="nav('contact')">Technical Inquiry</button>
+            </div>
+          </div>
+        </div></div>`;
+      return;
+    }
+    // Legacy content-string branch (GheePlus, JaggerPlus, Psyllium)
     el.innerHTML = `
       <div class="det-hero">
         <div class="wrap">
-          <div class="det-back" onclick="history.back()">← Back to Products</div>
+          <div class="det-back" onclick="goBack()">← Back to Products</div>
           <div class="det-cat">${ppData.cat}</div>
           <div class="det-name">${ppData.name}</div>
           <p class="det-tagline">${ppData.tagline}</p>
@@ -1091,8 +1552,7 @@ function renderProduct(id) {
             <button class="btn btn-gold" onclick="nav('contact')">Contact Us →</button>
           </div>
         </div>
-      </div>
-    `;
+      </div>`;
     return;
   }
 
@@ -1120,7 +1580,7 @@ function renderProduct(id) {
   el.innerHTML = `
     <div class="det-hero">
       <div class="wrap">
-        <div class="det-back" onclick="history.back()">← Back to Products</div>
+        <div class="det-back" onclick="goBack()">← Back to Products</div>
         <div class="det-cat">${s.cat}</div>
         <div class="det-name">${s.name}</div>
         <p class="det-tagline">${s.tagline}</p>
@@ -1171,7 +1631,77 @@ function renderProduct(id) {
   `;
 }
 
-// ─── INIT ────────────────────────────────────────────────────────────────────
+// ─── CONTACT FORM ────────────────────────────────────────────────────────────
+function submitForm() {
+  const email = document.getElementById('cf-email').value.trim();
+  const errEl = document.getElementById('form-error');
+  if (!email || !email.includes('@')) {
+    errEl.style.display = 'block';
+    document.getElementById('cf-email').focus();
+    return;
+  }
+  errEl.style.display = 'none';
+
+  const fname    = document.getElementById('cf-fname').value.trim();
+  const lname    = document.getElementById('cf-lname').value.trim();
+  const company  = document.getElementById('cf-company').value.trim();
+  const country  = document.getElementById('cf-country').value;
+  const platform = document.getElementById('cf-platform').value;
+  const message  = document.getElementById('cf-message').value.trim();
+
+  // ── FORMSPREE ENDPOINT ──────────────────────────────────────────────────
+  // 1. Sign up free at https://formspree.io
+  // 2. Create a new form → copy your endpoint URL
+  // 3. Replace the placeholder below with your actual endpoint
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+  // ────────────────────────────────────────────────────────────────────────
+
+  const btn = document.querySelector('#form-fields .btn-gold');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+
+  fetch(FORMSPREE_ENDPOINT, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+    body: JSON.stringify({
+      name: [fname, lname].filter(Boolean).join(' ') || 'Not provided',
+      email,
+      company: company || 'Not provided',
+      country: country || 'Not specified',
+      platform: platform || 'Not specified',
+      message: message || '(no message)'
+    })
+  })
+  .then(r => r.json())
+  .then(data => {
+    if (data.ok || data.next) {
+      document.getElementById('form-fields').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    } else {
+      throw new Error('Submission failed');
+    }
+  })
+  .catch(() => {
+    btn.textContent = 'Submit Inquiry →';
+    btn.disabled = false;
+    errEl.textContent = 'Submission failed. Please email us directly at arun@kapzobioactives.com';
+    errEl.style.display = 'block';
+  });
+}
+
+function resetForm() {
+  document.getElementById('cf-fname').value = '';
+  document.getElementById('cf-lname').value = '';
+  document.getElementById('cf-email').value = '';
+  document.getElementById('cf-company').value = '';
+  document.getElementById('cf-country').selectedIndex = 0;
+  document.getElementById('cf-platform').selectedIndex = 0;
+  document.getElementById('cf-message').value = '';
+  document.getElementById('form-fields').style.display = 'block';
+  document.getElementById('form-success').style.display = 'none';
+}
+
+
 renderHomePlatforms();
 renderFooters();
 </script>
