@@ -75,7 +75,7 @@ a{color:inherit;text-decoration:none}
 .pillar-desc{font-size:13px;color:var(--mid);line-height:1.65}
 
 /* PLATFORM CARDS */
-.plat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.plat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
 .plat-card{background:var(--white);border:1px solid var(--g200);border-radius:6px;padding:30px;cursor:pointer;transition:var(--tr);position:relative}
 .plat-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 8px 28px rgba(10,22,40,.08)}
 .plat-icon{font-size:28px;margin-bottom:16px}
@@ -270,9 +270,9 @@ a{color:inherit;text-decoration:none}
         <button class="nav-btn">Products ▾</button>
         <div class="nav-dd">
 
-          <!-- Kapzo Pro → organs -->
+          <!-- KapzoHumPro -->
           <div class="nav-dd-item">
-            <a onclick="nav('products','kapzopro')">Kapzo Pro™ Platform</a>
+            <a onclick="nav('products','kapzopro')">KapzoHumPro™</a>
             <div class="nav-sub">
               <div class="nav-sub-section">Oral Supplements · 24 SKUs</div>
               <a onclick="navToCat('kapzopro','brain')">Brain &amp; Nervous System</a>
@@ -293,9 +293,9 @@ a{color:inherit;text-decoration:none}
             </div>
           </div>
 
-          <!-- KapzoStratum → body areas -->
+          <!-- KapzoHumStratum -->
           <div class="nav-dd-item">
-            <a onclick="nav('products','kapzostratum')">KapzoStratum™</a>
+            <a onclick="nav('products','kapzostratum')">KapzoHumStratum™</a>
             <div class="nav-sub">
               <div class="nav-sub-section">Personal Care · 5 SKUs</div>
               <a onclick="navToCat('kapzostratum','scalp_hair')">Scalp &amp; Hair</a>
@@ -305,11 +305,27 @@ a{color:inherit;text-decoration:none}
             </div>
           </div>
 
-          <a onclick="nav('products','kapzosphere')">KapzoSphere™</a>
-          <a onclick="nav('products','kapzobase')">KapzoBase™</a>
-          <a onclick="nav('products','gheeplus')">GheePlus™</a>
-          <a onclick="nav('products','jaggerplus')">JaggerPlus™</a>
-          <a onclick="nav('products','psyllium')">Kapzo Psyllium</a>
+          <!-- Kapzo Precision Systems -->
+          <div class="nav-dd-item">
+            <a onclick="nav('products','kapzosphere')">Kapzo Precision Systems™</a>
+            <div class="nav-sub">
+              <div class="nav-sub-section">Engineered Delivery Platforms</div>
+              <a onclick="nav('products','kapzosphere')">KapzoSphere™ — Sensory Delivery</a>
+              <a onclick="nav('products','kapzobase')">KapzoBase™ — Beverage Engineering</a>
+            </div>
+          </div>
+
+          <!-- KapzoNatCore -->
+          <div class="nav-dd-item">
+            <a onclick="nav('products','gheeplus')">KapzoNatCore™</a>
+            <div class="nav-sub">
+              <div class="nav-sub-section">Origin Ingredient Platforms</div>
+              <a onclick="nav('products','gheeplus')">GheePlus™</a>
+              <a onclick="nav('products','jaggerplus')">JaggerPlus™</a>
+              <a onclick="nav('products','psyllium')">Kapzo Psyllium</a>
+            </div>
+          </div>
+
         </div>
       </li>
       <li><a onclick="nav('about')">About Us</a></li>
@@ -326,9 +342,8 @@ a{color:inherit;text-decoration:none}
 <div class="mob-menu" id="mob-menu">
   <div class="mob-section">Products</div>
 
-  <!-- Kapzo Pro accordion -->
   <div class="mob-parent" onclick="toggleMobAccordion('acc-pro',this)">
-    Kapzo Pro™ Platform <span class="mob-parent-arr">›</span>
+    KapzoHumPro™ <span class="mob-parent-arr">›</span>
   </div>
   <div class="mob-children" id="acc-pro">
     <div class="mob-child" onclick="mobNavCat('kapzopro','brain')">Brain &amp; Nervous System</div>
@@ -348,9 +363,8 @@ a{color:inherit;text-decoration:none}
     <div class="mob-child" onclick="mobNavCat('kapzopro','longevity')">Longevity</div>
   </div>
 
-  <!-- KapzoStratum accordion -->
   <div class="mob-parent" onclick="toggleMobAccordion('acc-stratum',this)">
-    KapzoStratum™ <span class="mob-parent-arr">›</span>
+    KapzoHumStratum™ <span class="mob-parent-arr">›</span>
   </div>
   <div class="mob-children" id="acc-stratum">
     <div class="mob-child" onclick="mobNavCat('kapzostratum','scalp_hair')">Scalp &amp; Hair</div>
@@ -359,11 +373,22 @@ a{color:inherit;text-decoration:none}
     <div class="mob-child" onclick="mobNavCat('kapzostratum','body')">Body Skin</div>
   </div>
 
-  <div class="mob-item" onclick="mobNav('products','kapzosphere')">KapzoSphere™</div>
-  <div class="mob-item" onclick="mobNav('products','kapzobase')">KapzoBase™</div>
-  <div class="mob-item" onclick="mobNav('products','gheeplus')">GheePlus™</div>
-  <div class="mob-item" onclick="mobNav('products','jaggerplus')">JaggerPlus™</div>
-  <div class="mob-item" onclick="mobNav('products','psyllium')">Kapzo Psyllium</div>
+  <div class="mob-parent" onclick="toggleMobAccordion('acc-precision',this)">
+    Kapzo Precision Systems™ <span class="mob-parent-arr">›</span>
+  </div>
+  <div class="mob-children" id="acc-precision">
+    <div class="mob-child" onclick="mobNav('products','kapzosphere')">KapzoSphere™ — Sensory Delivery</div>
+    <div class="mob-child" onclick="mobNav('products','kapzobase')">KapzoBase™ — Beverage Engineering</div>
+  </div>
+
+  <div class="mob-parent" onclick="toggleMobAccordion('acc-natcore',this)">
+    KapzoNatCore™ <span class="mob-parent-arr">›</span>
+  </div>
+  <div class="mob-children" id="acc-natcore">
+    <div class="mob-child" onclick="mobNav('products','gheeplus')">GheePlus™</div>
+    <div class="mob-child" onclick="mobNav('products','jaggerplus')">JaggerPlus™</div>
+    <div class="mob-child" onclick="mobNav('products','psyllium')">Kapzo Psyllium</div>
+  </div>
 
   <div class="mob-section">Company</div>
   <div class="mob-item" onclick="mobNav('about')">About Us</div>
@@ -377,15 +402,15 @@ a{color:inherit;text-decoration:none}
     <div class="hero-c">
       <div class="h-lbl">Precision Ingredient Manufacturing · B2B Supply</div>
       <h1 class="h-title">Formulations that<br><em>no one else</em> is doing</h1>
-      <p class="h-sub">Six ingredient platforms built on proprietary delivery science. Where the clinical evidence leads, we formulate — at doses, forms, and release profiles the market hasn't seen.</p>
+      <p class="h-sub">Four platform groups. 29+ SKUs. One GMP-certified facility — human supplements, personal care, engineered delivery systems, and origin food ingredients.</p>
       <div class="h-btns">
         <button class="btn btn-gold" onclick="document.getElementById('all-platforms').scrollIntoView({behavior:'smooth'})">Explore Platforms</button>
         <button class="btn btn-outline" onclick="nav('contact')">Request Sample</button>
       </div>
       <div class="h-stats">
-        <div><div class="h-stat-val">7</div><div class="h-stat-lbl">Ingredient Platforms</div></div>
-        <div><div class="h-stat-val">24+</div><div class="h-stat-lbl">White-Label SKUs</div></div>
-        <div><div class="h-stat-val">4</div><div class="h-stat-lbl">Global Markets Served</div></div>
+        <div><div class="h-stat-val">4</div><div class="h-stat-lbl">Platform Groups</div></div>
+        <div><div class="h-stat-val">29+</div><div class="h-stat-lbl">B2B SKUs</div></div>
+        <div><div class="h-stat-val">4</div><div class="h-stat-lbl">Global Markets</div></div>
         <div><div class="h-stat-val">NIT</div><div class="h-stat-lbl">Trichy R&D Partner</div></div>
       </div>
     </div>
@@ -419,9 +444,9 @@ a{color:inherit;text-decoration:none}
   <section class="sec sec-alt" id="all-platforms">
     <div class="wrap">
       <div class="lbl">Our Platforms</div>
-      <div class="hdg">Six platforms. One supplier relationship.</div>
+      <div class="hdg">Four platform groups. One supplier.</div>
       <div class="gline"></div>
-      <p class="sub">From white-label supplements to sensory delivery systems, food ingredients, and personal care — seven distinct categories from a single facility with one point of contact, one NDA, and one documentation package.</p>
+      <p class="sub">Human supplements, personal care, engineered sensory delivery, and origin food ingredients — from a single GMP-certified facility with one point of contact and one documentation package.</p>
       <div class="plat-grid" id="home-plats"></div>
     </div>
   </section>
@@ -618,7 +643,7 @@ a{color:inherit;text-decoration:none}
           <div class="ci-item"><div class="ci-icon">🌐</div><div><div class="ci-lbl">Website</div><div class="ci-val">kapzobioactives.com</div></div></div>
           <div style="margin-top:32px;padding:24px;border:1px solid rgba(201,168,76,.2);border-radius:6px">
             <div style="font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px">Sample Policy</div>
-            <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.7">500g lab samples shipped within 10 business days. Full COA and TDS included at no charge. Trial batch MOQ typically 50–100kg depending on platform and SKU.</p>
+            <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.7">500g lab samples shipped within 10 business days. Full COA and TDS included at no charge. Samples and technical data sheets available on request.</p>
           </div>
         </div>
         <div class="cf" id="contact-form-wrap">
@@ -666,42 +691,39 @@ a{color:inherit;text-decoration:none}
 // ─── DATA ───────────────────────────────────────────────────────────────────
 
 const PLATFORMS = [
-  {id:'kapzopro', name:'Kapzo Pro™ Platform', icon:'⚗️', tag:'17 White-Label Supplement SKUs', desc:'Complete supplement portfolio covering CNS & mental wellness, metabolic health, joint & sports, reproductive health, and organ support — with full regulatory documentation for all major markets.'},
-  {id:'kapzostratum', name:'KapzoStratum™', icon:'🧴', tag:'5 Personal Care SKUs', desc:'Clinical personal care ingredient platform — body, scalp, intimate skin, and hair. Science-led formulations built on published clinical evidence, proprietary delivery, and genuine category differentiation.'},
-  {id:'kapzosphere', name:'KapzoSphere™', icon:'🔵', tag:'7 Sensory Delivery Products', desc:'Precision-engineered sensory delivery ingredients for oral consumer products, confectionery, and nicotine delivery formats. Every product solves a specific, measurable organoleptic problem that commodity ingredients cannot.'},
-  {id:'kapzobase', name:'KapzoBase™', icon:'🥃', tag:'6-Layer Sensory System', desc:'A proprietary multi-layer sensory engineering system for premium spirits and beverage manufacturers. Delivers a sequenced temporal experience from first contact through to sustained finish.'},
-  {id:'gheeplus', name:'GheePlus™', icon:'✨', tag:'23 SKUs · 3 Tiers', desc:'Precision-delivered ghee ingredient platform: carrier systems, functional bioactive co-loads (K2, CLA, Butyrate, D3K2), and flavour fat systems for bakery and snack applications.'},
-  {id:'jaggerplus', name:'JaggerPlus™', icon:'🌿', tag:'MG-100', desc:'Amorphous matrix stabilised jaggery and palm sugar ingredient. Shelf-stable, free-flowing, zero crystallisation — for food, beverage, and supplement applications globally.'},
-  {id:'psyllium', name:'Kapzo Psyllium', icon:'🌾', tag:'6 SKUs · Export Grade', desc:'Pharmaceutical and food grade psyllium husk and seed powder platform. Full analytical documentation and regulatory support for all major international markets as standard.'},
+  {id:'kapzopro', name:'KapzoHumPro™', icon:'⚗️', tag:'24 Oral Supplement SKUs · 15 Organ Systems', desc:'Science-led white-label oral supplements across 15 organ systems — brain, eye, heart, kidney, liver, thyroid, gut, metabolic, reproductive, prostate, hair, musculoskeletal, respiratory, performance, and longevity. Every SKU at published clinical doses.'},
+  {id:'kapzostratum', name:'KapzoHumStratum™', icon:'🧴', tag:'5 Personal Care SKUs · 4 Body Areas', desc:'Clinical personal care ingredients for scalp, hair, underarm, intimate skin, and body — built on published clinical evidence, proprietary delivery science, and genuine category white space.'},
+  {id:'kapzosphere', name:'Kapzo Precision Systems™', icon:'🔬', tag:'KapzoSphere™ + KapzoBase™', desc:'Proprietary engineered ingredient delivery platforms. KapzoSphere™ — seven precision sensory delivery systems for oral consumer products. KapzoBase™ — six-layer beverage sensory engineering system. No equivalent delivery architecture exists in the Indian ingredient market.'},
+  {id:'gheeplus', name:'KapzoNatCore™', icon:'🌿', tag:'GheePlus™ · JaggerPlus™ · Kapzo Psyllium', desc:'Origin food ingredient platforms built on authentic Indian raw materials — microencapsulated ghee (23 SKUs across 3 tiers), amorphous jaggery & palm sugar powder, and pharmaceutical-to-food grade psyllium husk.'},
 ];
 
 const PLATFORM_META = {
   kapzopro:{
-    hdg:'Kapzo Pro™ Platform', sub:'24 white-label oral supplement SKUs across 14 organ systems — each formulated at published clinical doses with full regulatory documentation.',
+    hdg:'KapzoHumPro™', sub:'24 white-label oral supplement SKUs across 15 organ systems — each formulated at published clinical doses with full regulatory documentation.',
     tabs:[], useCats:true
   },
   kapzosphere:{
-    hdg:'KapzoSphere™', sub:'Seven precision-engineered sensory delivery ingredients, each designed to solve a specific, measurable performance problem in oral consumer products, confectionery, nicotine delivery formats, and nutraceuticals.',
+    hdg:'KapzoSphere™ — Sensory Delivery', sub:'Seven precision-engineered sensory delivery ingredients, each designed to solve a specific, measurable performance problem in oral consumer products, confectionery, nicotine delivery formats, and nutraceuticals.',
     tabs:['All Products','Cooling & Freshness','pH & Alkalinity','Sequential Release','Aroma & Sensation']
   },
   kapzobase:{
-    hdg:'KapzoBase™', sub:'A six-layer proprietary sensory system for premium spirits and beverage manufacturers. Engineered to deliver a sequenced temporal sensory profile — from immediate activation at first contact through to sustained finish.',
+    hdg:'KapzoBase™ — Beverage Engineering', sub:'A six-layer proprietary sensory system for premium spirits and beverage manufacturers. Engineered to deliver a sequenced temporal sensory profile — from immediate activation at first contact through to sustained finish.',
     tabs:['Overview']
   },
   gheeplus:{
-    hdg:'GheePlus™', sub:'A 23-SKU precision-delivered ghee ingredient platform across three value tiers: carrier systems, functional bioactive co-loads, and flavour fat systems for snack and bakery applications.',
+    hdg:'GheePlus™ · KapzoNatCore™', sub:'A 23-SKU precision-delivered ghee ingredient platform across three value tiers: carrier systems, functional bioactive co-loads, and flavour fat systems for snack and bakery applications.',
     tabs:['All Products','Carrier Systems','Functional Co-Loads','Flavour Fat Systems']
   },
   jaggerplus:{
-    hdg:'JaggerPlus™ MG-100', sub:'Amorphous matrix stabilised jaggery and palm sugar ingredient system. Shelf-stable, free-flowing powder that eliminates crystallisation — the primary technical barrier to using jaggery in modern food and supplement formats.',
+    hdg:'JaggerPlus™ · KapzoNatCore™', sub:'Amorphous matrix stabilised jaggery and palm sugar ingredient system. Shelf-stable, free-flowing powder that eliminates crystallisation — the primary technical barrier to using jaggery in modern food and supplement formats.',
     tabs:['Product Overview']
   },
   psyllium:{
-    hdg:'Kapzo Psyllium', sub:'Psyllium husk and seed powder platform for pharmaceutical, food, and nutraceutical applications. Full analytical documentation and regulatory support for all major international market requirements.',
+    hdg:'Kapzo Psyllium · KapzoNatCore™', sub:'Psyllium husk and seed powder platform for pharmaceutical, food, and nutraceutical applications. Full analytical documentation and regulatory support for all major international market requirements.',
     tabs:['All Products','Food & Nutraceutical Grade','Pharmaceutical Grade']
   },
   kapzostratum:{
-    hdg:'KapzoStratum™', sub:'Five clinical personal care ingredients across scalp, hair, underarm, intimate skin, and body — built on published clinical evidence, proprietary delivery science, and genuine category white space.',
+    hdg:'KapzoHumStratum™', sub:'Five clinical personal care ingredients across scalp, hair, underarm, intimate skin, and body — built on published clinical evidence, proprietary delivery science, and genuine category white space.',
     tabs:[], useCats:true
   }
 };
@@ -734,7 +756,7 @@ const STRATUM_CATS = [
 
 const SKUS = {
   // ─── KAPZO PRO ───
-  calmcore:{platform:'kapzopro',cat:'CNS & Mental Wellness',name:'CalmCore Pro™',tagline:'Cortisol & HPA Axis Regulation Formula',fmt:'3 Capsules / 8g RTM Sachet',price:'$1.80–2.00/serving',margin:'~75%',moq:'100kg',
+  calmcore:{platform:'kapzopro',cat:'CNS & Mental Wellness',name:'CalmCore Pro™',tagline:'Cortisol & HPA Axis Regulation Formula',fmt:'3 Capsules / 8g RTM Sachet',
     problem:'Cortisol dysregulation is one of the most prevalent yet underserved categories in modern nutrition — presenting as wired-but-tired syndrome, visceral fat accumulation, afternoon energy crashes, and evening anxiety. The supplement market\'s response has been almost entirely inadequate: single-ingredient adaptogens at generic specification, undisclosed proprietary blends, and mineral products that address only the downstream symptom. The complete four-point HPA axis intervention stack has never been assembled into a single white-label product.',
     solution:'CalmCore Pro™ targets four distinct intervention points on the HPA axis simultaneously — the hypothalamus, pituitary, adrenal gland, and peripheral stress response.',
     mechanisms:[
@@ -745,9 +767,9 @@ const SKUS = {
       {lbl:'Neurotransmitter',name:'L-Theanine 200mg',desc:'Alpha brain wave activity. GABA elevation. Calm sustained focus.'},
     ],
     diffs:['KSM-66 at 600mg specifically — not 300mg. The stress-validated dose, not the sleep dose.','Phosphatidylserine at 400mg from sunflower, not soy — allergen-free and non-GMO.','Rhodiola standardised to both 3% rosavins AND 1% salidroside — two markers, not one.','Holy Basil: India-exclusive supply chain. Zero Chinese replication risk.','Stimulant-free. No caffeine. Explicitly formulated for morning daytime use.'],
-    supply:[['White Label (Capsule)','3-cap HPMC blend. Client supplies bottle and label. MOQ 100kg (~35,000 servings).'],['White Label (RTM Powder)','8g citrus sachet. Client supplies sachet design and label. MOQ 100kg.'],['Adaptogen Stack Only','KSM-66 + Rhodiola + Holy Basil pre-processed blend. Client adds PS and theanine.'],['Custom','Dose adjustments, additional adaptogens, or women\'s variant (add Shatavari) on request.']]
+    supply:[['White Label (Capsule)','3-cap HPMC blend. Client supplies bottle and label.'],['White Label (RTM Powder)','8g citrus sachet. Client supplies sachet design and label.'],['Adaptogen Stack Only','KSM-66 + Rhodiola + Holy Basil pre-processed blend. Client adds PS and theanine.'],['Custom','Dose adjustments, additional adaptogens, or women\'s variant (add Shatavari) on request.']]
   },
-  focuscore:{platform:'kapzopro',cat:'CNS & Mental Wellness',name:'FocusCore Pro™',tagline:'Adult Attention, Focus & Cognitive Performance Formula',fmt:'4 Vegetarian Capsules',price:'$1.80–2.00/serving',margin:'~70%',moq:'100kg',
+  focuscore:{platform:'kapzopro',cat:'CNS & Mental Wellness',name:'FocusCore Pro™',tagline:'Adult Attention, Focus & Cognitive Performance Formula',fmt:'4 Vegetarian Capsules',
     problem:'Adult attention and focus disorders represent one of the fastest-growing neurological categories across global markets. The supplement market\'s response: stimulant-dominated energy blends with no dopaminergic mechanism, underdosed adaptogens in proprietary blends, and generic nootropic stacks built from label-copying rather than clinical literature. The complete non-stimulant attention support stack exists in the clinical evidence base. Nobody has assembled it into a single B2B white-label product.',
     solution:'FocusCore Pro™ targets four independent biological mechanisms supporting sustained attention, working memory, task initiation, and mental clarity — with zero caffeine.',
     mechanisms:[
@@ -758,9 +780,9 @@ const SKUS = {
       {lbl:'Receptor Support',name:'Phosphatidylserine 200mg + L-Theanine 200mg',desc:'Dopamine receptor sensitivity and alpha brain wave activity.'},
     ],
     diffs:['Saffron 30mg standardised to 3.5% safranal + 2% crocin — the only B2B formula leading with methylphenidate comparison RCT data.','Alpha-GPC AND Citicoline at 200mg each — complementary pathways, stronger combined effect.','Bacopa at 50% bacosides — not 20% or generic powder. The active fraction at clinical specification.','L-Tyrosine at 2,000mg free form — not 500mg label presence. Built to work on day one.','Zero caffeine in a focus formula — the absence is the differentiator.'],
-    supply:[['White Label Complete','4-capsule HPMC blend. Client supplies bottle and label. MOQ 100kg (~27,000 servings).'],['Cholinergic Stack Only','Alpha-GPC + Citicoline + Bacopa pre-processed. Client adds Tyrosine and micronutrients.'],['Custom','Dose adjustments, Lion\'s Mane addition, or 50mg caffeine variant on request.']]
+    supply:[['White Label Complete','4-capsule HPMC blend. Client supplies bottle and label.'],['Cholinergic Stack Only','Alpha-GPC + Citicoline + Bacopa pre-processed. Client adds Tyrosine and micronutrients.'],['Custom','Dose adjustments, Lion\'s Mane addition, or 50mg caffeine variant on request.']]
   },
-  impulsecore:{platform:'kapzopro',cat:'CNS & Mental Wellness',name:'ImpulseCore Pro™',tagline:'Impulse & Behavioural Control Formula',fmt:'Capsule / Sachet',price:'Enquire',margin:'Strong',moq:'50kg',
+  impulsecore:{platform:'kapzopro',cat:'CNS & Mental Wellness',name:'ImpulseCore Pro™',tagline:'Impulse & Behavioural Control Formula',fmt:'Capsule / Sachet',
     problem:'Compulsive behavioural patterns — including habit-driven eating, compulsive internet use, and stress-driven gratification seeking — share the same neurobiological architecture as substance addiction: dopamine-driven reinforcement loops, glutamate-mediated craving, and prefrontal inhibitory failure. No purpose-formulated supplement exists for this buyer. The supplement market serves the enhancement side of behavioural health exclusively — not the control side.',
     solution:'ImpulseCore Pro™ targets three failure points in the compulsive behaviour loop simultaneously — craving generation, impulse threshold, and hedonic deficit — through a 9-ingredient neuroscience stack.',
     mechanisms:[
@@ -771,9 +793,9 @@ const SKUS = {
       {lbl:'Neural Stabiliser',name:'Magnesium Glycinate 200mg',desc:'Systemic neural stabiliser across all three mechanisms.'},
     ],
     diffs:['Odor-masked NAC is the core formulation differentiator — shelf-stable and consumer-acceptable. Not achievable with standard commodity NAC.','Category-creating position: no direct commercial competitor in the impulse/urge control supplement category.','Three-mechanism coverage: craving, impulse threshold, and hedonic deficit simultaneously.','Regulator-safe framing: structure/function claims for DSHEA and EU compliance.','Adjacent to the recovery app ecosystem — digital health platforms with supplement affiliate models.'],
-    supply:[['White Label','Bulk blended powder or filled HPMC capsules. MOQ 50kg bulk.'],['Custom','Label customisation, dose adjustment, full white-label available.']]
+    supply:[['White Label','Bulk blended powder or filled HPMC capsules bulk.'],['Custom','Label customisation, dose adjustment, full white-label available.']]
   },
-  somnamax:{platform:'kapzopro',cat:'CNS & Mental Wellness',name:'SomnaMax Pro™',tagline:'Multi-Pathway Non-Melatonin Sleep Formula',fmt:'7g RTM Sachet / 3 Capsules',price:'$1.80–2.00/serving',margin:'~75–80%',moq:'100kg',
+  somnamax:{platform:'kapzopro',cat:'CNS & Mental Wellness',name:'SomnaMax Pro™',tagline:'Multi-Pathway Non-Melatonin Sleep Formula',fmt:'7g RTM Sachet / 3 Capsules',
     problem:'The global sleep supplement market is built on two inadequate solutions: supraphysiological melatonin (5–10mg vs the evidence-based 0.3–0.5mg), and single-ingredient magnesium that leaves three other sleep pathways unaddressed. A growing, vocal consumer segment globally knows this and is actively searching for a credible, science-backed alternative.',
     solution:'SomnaMax Pro™ is a non-melatonin sleep formula targeting four independent biological pathways: GABA potentiation, core body temperature reduction, evening cortisol suppression, and NMDA regulation with melatonin cofactor support.',
     mechanisms:[
@@ -783,9 +805,9 @@ const SKUS = {
       {lbl:'Cofactor Support',name:'Magnesium Glycinate 750mg + L-Theanine 200mg',desc:'Essential cofactor for endogenous melatonin synthesis. Neural hyperexcitability reduction.'},
     ],
     diffs:['Apigenin at 50mg from 98% pure chamomile — not generic chamomile at 400mg (which contains ~1–2mg actual apigenin).','Glycine 3g: the thermoregulation mechanism most sleep formulators have never read.','KSM-66 at 300mg — the sleep-specific dose from the Langade 2019 RCT. Not the 600mg testosterone dose used everywhere.','No melatonin — the absence is the product\'s primary positioning statement.','Bedtime ritual RTM format: warm honey chamomile drink drives daily compliance.'],
-    supply:[['White Label RTM','7g honey chamomile blend. Client supplies sachet design. MOQ 100kg (~14,300 sachets).'],['White Label Capsule','3-capsule HPMC blend. Client supplies bottle. MOQ 100kg (~25,000 servings).'],['GABA Stack Only','Apigenin + Lemon Balm + Taurine as pre-processed blend. Client adds glycine and magnesium.'],['Custom','Alternate botanicals, dose adjustments, or flavour variants on request.']]
+    supply:[['White Label RTM','7g honey chamomile blend. Client supplies sachet design.'],['White Label Capsule','3-capsule HPMC blend. Client supplies bottle.'],['GABA Stack Only','Apigenin + Lemon Balm + Taurine as pre-processed blend. Client adds glycine and magnesium.'],['Custom','Alternate botanicals, dose adjustments, or flavour variants on request.']]
   },
-  satietyglp:{platform:'kapzopro',cat:'Metabolic Health',name:'SatietyGLP Max™',tagline:'Natural GLP-1 Support Drink Powder',fmt:'30g Stick Pack (RTM)',price:'$1.50–2.00/serving',margin:'~55%',moq:'500kg',
+  satietyglp:{platform:'kapzopro',cat:'Metabolic Health',name:'SatietyGLP Max™',tagline:'Natural GLP-1 Support Drink Powder',fmt:'30g Stick Pack (RTM)',
     problem:'GLP-1 receptor agonist drugs deliver remarkable outcomes but at prohibitive monthly cost, they are inaccessible to the vast majority who need metabolic support. Globally, hundreds of millions are managing prediabetes, metabolic syndrome, or weight-related health concerns. The drug reaches only a fraction of this population. Nobody has built an affordable, science-backed daily drink that activates the same biological pathways through food-based mechanisms.',
     solution:'SatietyGLP Max™ is a 30g daily RTM drink powder formulated across three natural mechanisms that support the body\'s own satiety and metabolic regulation systems.',
     mechanisms:[
@@ -794,9 +816,9 @@ const SKUS = {
       {lbl:'Mechanism 3',name:'Protein Incretin Trigger',desc:'12g whey protein per serving directly stimulates GLP-1, GIP, and PYY secretion from enteroendocrine cells.'},
     ],
     diffs:['Three-pathway natural GLP-1 support — not a single fibre or single protein product.','Sodium alginate specifically for ileal brake activation — a mechanism absent from all competing products.','~$50/month retail vs $1,000+/month for pharmaceutical GLP-1 drugs.','Clean label: Rebaudioside M + Monk Fruit. Zero sugar. Zero glycaemic impact.','30g stick pack format — daily habit product, high compliance, strong repeat purchase.'],
-    supply:[['White Label Complete','Full 30g blend. Client supplies packaging spec and brand design. MOQ 500kg.'],['Active Fraction Only','Encapsulated botanical + metabolic stack. Client blends with own protein base.'],['Trial Batch','MOQ 100kg (~3,333 servings). 4–6 weeks lead time.']]
+    supply:[['White Label Complete','Full 30g blend. Client supplies packaging spec and brand design.'],['Active Fraction Only','Encapsulated botanical + metabolic stack. Client blends with own protein base.']]
   },
-  metaguard:{platform:'kapzopro',cat:'Metabolic Health',name:'MetaGuard Pro™',tagline:'GLP-1 Drug Support Formula',fmt:'13.5g Stick Pack (RTM)',price:'$1.80–2.00/serving',margin:'~65%',moq:'500kg',
+  metaguard:{platform:'kapzopro',cat:'Metabolic Health',name:'MetaGuard Pro™',tagline:'GLP-1 Drug Support Formula',fmt:'13.5g Stick Pack (RTM)',
     problem:'GLP-1 drugs deliver remarkable weight loss but create five biological problems no supplement brand has addressed in a single product: 25–40% of weight lost is lean muscle; gallbladder risk is significantly elevated; nausea affects 40–50% of users; severe caloric restriction depletes micronutrients; and rapid fluid shifts deplete electrolytes. This is a global unmet need wherever GLP-1 therapy is prescribed.',
     solution:'MetaGuard Pro™ is formulated across five evidence-based support mechanisms designed to work alongside GLP-1 drug therapy.',
     mechanisms:[
@@ -807,9 +829,9 @@ const SKUS = {
       {lbl:'Electrolyte Balance',name:'Sodium 200mg + Potassium Citrate 200mg',desc:'Addresses drug-related fatigue and dizziness from rapid fluid shifts.'},
     ],
     diffs:['Five-mechanism coverage in a single product — first in category globally.','Ginger extract in a proprietary odor-masked, sustained-release format — direct reuse from SatietyGLP Max without the raw ginger bitterness.','Companion positioning: SatietyGLP Max + MetaGuard = complete GLP-1 market coverage from one supplier.','Citrus Burst flavour system — orange + lemon + ginger. Consumer-friendly format.','Covers both drug users and VLCD/bariatric surgery patients without drug association.'],
-    supply:[['White Label Complete','Full 13.5g blend. MOQ 500kg.'],['Muscle Stack Only','Creatine + Leucine + HMB as pre-blended instantised stack. MOQ 100kg.'],['Trial Batch','MOQ 100kg (~7,400 servings). 4–6 weeks lead time.']]
+    supply:[['White Label Complete','Full 13.5g blend.'],['Muscle Stack Only','Creatine + Leucine + HMB as pre-blended instantised stack.']]
   },
-  cravezero:{platform:'kapzopro',cat:'Metabolic Health',name:'CraveZero Pro™',tagline:'Stop Snacking Without Willpower',fmt:'Capsule',price:'Enquire',margin:'Strong',moq:'100kg',
+  cravezero:{platform:'kapzopro',cat:'Metabolic Health',name:'CraveZero Pro™',tagline:'Stop Snacking Without Willpower',fmt:'Capsule',
     problem:'Most appetite control supplements target physiological hunger. CraveZero Pro™ targets a completely different consumer: the person who eats not because they are hungry, but because of stress, boredom, emotional triggers, or habitual reward-seeking. This consumer is not served by GLP-1 companion products or traditional fat burners.',
     solution:'CraveZero Pro™ addresses all four neurochemical and hormonal root causes of unnecessary eating simultaneously.',
     mechanisms:[
@@ -819,9 +841,9 @@ const SKUS = {
       {lbl:'Stress Eating',name:'KSM-66® + L-Theanine',desc:'Cortisol control — breaks the biochemical chain linking stress to food-seeking behaviour.'},
     ],
     diffs:['Berberine in a proprietary GI-tolerant delivery format unavailable from commodity manufacturers.','Four-mechanism coverage: the only formula addressing all root causes of non-hunger eating.','Stimulant-free: suitable for clean-label and natural positioning across all major markets.','Clear separation from GLP-1 products — occupies a distinct category position.','Bundle opportunity with SatietyGLP Max™: physiological + psychological appetite control in one protocol.'],
-    supply:[['White Label','Full capsule blend. MOQ 100kg.'],['Custom','Dose adjustments, branded ingredient substitutions on request.']]
+    supply:[['White Label','Full capsule blend.'],['Custom','Dose adjustments, branded ingredient substitutions on request.']]
   },
-  jointmax:{platform:'kapzopro',cat:'Joint & Sports',name:'JointMax Pro™',tagline:'Five-Mechanism Joint Health System',fmt:'5g Stick Pack (RTM)',price:'Enquire',margin:'~55%',moq:'50kg',
+  jointmax:{platform:'kapzopro',cat:'Joint & Sports',name:'JointMax Pro™',tagline:'Five-Mechanism Joint Health System',fmt:'5g Stick Pack (RTM)',
     problem:'Glucosamine and chondroitin — the category standard for three decades — were tested in the NIH-funded GAIT trial (NEJM, 2006): for the largest segment of joint supplement buyers, they performed no better than placebo. The global market has continued as if this result did not exist. The science has moved forward. JointMax Pro™ is built entirely from that forward position.',
     solution:'JointMax Pro™ addresses five distinct joint health mechanisms simultaneously — cartilage immune protection, 5-LOX anti-inflammation, synovial lubrication, neuroinflammatory pain modulation, and cartilage matrix synthesis.',
     mechanisms:[
@@ -832,9 +854,9 @@ const SKUS = {
       {lbl:'Mechanism 5',name:'MSM 1,500mg + Vitamin C 200mg',desc:'Organic sulfur for GAG synthesis. Vitamin C as obligate collagen hydroxylase cofactor.'},
     ],
     diffs:['UC-II 40mg: outperformed 2,700mg glucosamine + chondroitin in head-to-head RCT.','BosPure® sourced directly from Arjuna Natural — NSF, Kosher, Halal, Prop 65 certified. Named ingredient co-branding available.','HA molecular weight >1MDa specified and confirmed per COA — most competitors declare neither.','um-PEA 400mg D90 <10μm: only the ultramicronized grade has the human RCT data.','No glucosamine. No chondroitin. Tart Cherry RTM format drives daily habit.'],
-    supply:[['White Label Complete','Full 5g blend in nitrogen-flushed foil stick pack. Trial MOQ 50kg (~10,000 servings).'],['Active Fraction Only','Five-mechanism active blend without flavour system.'],['Custom','Dose modification, alternate flavour (citrus ginger), or 4-capsule conversion on request.']]
+    supply:[['White Label Complete','Full 5g blend in nitrogen-flushed foil stick pack. Trial.'],['Active Fraction Only','Five-mechanism active blend without flavour system.'],['Custom','Dose modification, alternate flavour (citrus ginger), or 4-capsule conversion on request.']]
   },
-  premax:{platform:'kapzopro',cat:'Joint & Sports',name:'PreMax Pro™',tagline:'Three-Phase Engineered Pre-Workout',fmt:'16g Scoop (Tub / Pouch)',price:'$1.60–1.90/serving',margin:'~60%',moq:'500kg',
+  premax:{platform:'kapzopro',cat:'Joint & Sports',name:'PreMax Pro™',tagline:'Three-Phase Engineered Pre-Workout',fmt:'16g Scoop (Tub / Pouch)',
     problem:'Every pre-workout in global markets releases every ingredient simultaneously — caffeine, pump agents, and endurance compounds all hitting at once, peaking together, and crashing together. The structural problem: pre-workout formulas have not changed architecturally in two decades. Better ingredients have been added. The release sequence has never been engineered.',
     solution:'PreMax Pro™ is built on a three-phase sequenced release architecture — each phase encoded into a distinct delivery system within a single powder blend.',
     mechanisms:[
@@ -843,9 +865,9 @@ const SKUS = {
       {lbl:'Phase 3 (60–75 min)',name:'Beta-Alanine Activation Signal',desc:'Sequenced beta-alanine paresthesia confirms carnosine loading is active for the back half of the session.'},
     ],
     diffs:['Three-phase sequenced release: the only pre-workout with an engineered experience timeline.','Sustained-release caffeine: 3–4h duration. No crash at the 45-minute wall.','Proprietary manufacturing process encodes both caffeine and beta-alanine into separate release phases — not replicable by commodity toll manufacturers.','Full clinical ingredient doses — no proprietary blend concealment.','No synthetic stimulant stack: no DMAA, no synephrine, no adrenal compounds.'],
-    supply:[['White Label Complete','Full 16g blend. MOQ 500kg.'],['Sequenced Active Stack Only','Sustained-release caffeine + sequenced beta-alanine as pre-blended stack. MOQ 100kg.'],['Trial Batch','MOQ 100kg (~6,250 servings). 4–6 weeks lead time.']]
+    supply:[['White Label Complete','Full 16g blend.'],['Sequenced Active Stack Only','Sustained-release caffeine + sequenced beta-alanine as pre-blended stack.']]
   },
-  postmax:{platform:'kapzopro',cat:'Joint & Sports',name:'PostMax Pro™',tagline:'Clinical Recovery Formula',fmt:'12g Scoop (Tub / Pouch)',price:'$1.40–1.60/serving',margin:'~60%',moq:'500kg',
+  postmax:{platform:'kapzopro',cat:'Joint & Sports',name:'PostMax Pro™',tagline:'Clinical Recovery Formula',fmt:'12g Scoop (Tub / Pouch)',
     problem:'Post-workout recovery supplements fail in two ways globally: protein tubs marketed as "recovery" when protein intake is already well covered, and creatine blends with no acute felt outcome. The gymgoer training 4–6x/week needs to be ready for the next session. The felt experience of reduced DOMS the next morning — driven by tart cherry extract at clinical dose — is the mechanism that drives repeat purchase.',
     solution:'PostMax Pro™ delivers four mechanisms each targeting a specific, felt aspect of recovery.',
     mechanisms:[
@@ -855,9 +877,9 @@ const SKUS = {
       {lbl:'Rehydration',name:'Coconut Water Powder 1.5g',desc:'Natural electrolyte matrix. Clean label positioning.'},
     ],
     diffs:['RTD-stable creatine: the only viable creatine format for liquid beverage applications — opens an entirely new product category for creatine supplementation.','Tart cherry at 480mg clinical dose — one of the most under-deployed ingredients in post-workout despite clear RCT evidence across EU and international literature.','PreMax + PostMax system: zero ingredient overlap. One supplier, two SKUs, one NDA, one COA package.','No testosterone language, no hormonal claims — clean evidence-based positioning for any market.','Watermelon / Mixed Berry / Unflavoured format options.'],
-    supply:[['White Label Complete','Full 12g blend. MOQ 500kg.'],['Encapsulated Creatine Only','Standalone RTD-stable creatine monohydrate. MOQ 100kg.'],['System Bundle','PreMax + PostMax combined supply. Single NDA, matched flavour systems.']]
+    supply:[['White Label Complete','Full 12g blend.'],['Encapsulated Creatine Only','Standalone RTD-stable creatine monohydrate.'],['System Bundle','PreMax + PostMax combined supply. Single NDA, matched flavour systems.']]
   },
-  virimax:{platform:'kapzopro',cat:'Reproductive & Hormonal',name:'ViriMax Pro™',tagline:'Comprehensive Male Reproductive Health Formula',fmt:'4 Vegetarian Capsules / 10g Sachet',price:'$1.80–2.20/serving',margin:'~58%',moq:'100kg',
+  virimax:{platform:'kapzopro',cat:'Reproductive & Hormonal',name:'ViriMax Pro™',tagline:'Comprehensive Male Reproductive Health Formula',fmt:'4 Vegetarian Capsules / 10g Sachet',
     problem:'Global sperm counts have declined more than 50% over 40 years. Testosterone declines 1–2% per year after 30. The supplement market\'s response: proprietary blends with underdosed actives, generic forms with poor bioavailability, and formulas built around label cost rather than clinical evidence. No B2B blend currently offers ubiquinol CoQ10, KSM-66, Primavie shilajit, selenomethionine at 100mcg, and 5-MTHF methylfolate in a single formula.',
     solution:'ViriMax Pro™ operates across four biological pathways: Ayurvedic hormonal foundation, sperm motility engine, oxidative protection, and hormonal micronutrient foundation.',
     mechanisms:[
@@ -867,9 +889,9 @@ const SKUS = {
       {lbl:'Micronutrient Foundation',name:'Zinc 20mg + D3 2000IU + B6 P5P + 5-MTHF 400mcg + Boron 3mg',desc:'Essential cofactors. Bioavailable forms throughout.'},
     ],
     diffs:['CoQ10 as ubiquinol specifically — 2–3x more bioavailable than ubiquinone. Stated on label.','Primavie Shilajit: standardised, purified, patented form with human RCT — not generic shilajit powder.','5-MTHF methylfolate: works for 100% of users including MTHFR variants. Folic acid does not.','NAC at 600mg in a male fertility formula — clinical dose from the morphology RCTs. Absent from all major competing formulas.','One supplier, three products: ViriMax + FemiMax + FolliMax. Complete men\'s and women\'s wellness portfolio.'],
-    supply:[['White Label Complete','Full formula as capsule blend or RTM powder. MOQ 100kg.'],['Ayurvedic Trifecta Only','Ashwagandha + Shilajit + Fenugreek as pre-processed, taste-masked blend.'],['Trial Batch','MOQ 100kg (~20,000 servings). Sample: 500g lab sample within 10 days.']]
+    supply:[['White Label Complete','Full formula as capsule blend or RTM powder.'],['Ayurvedic Trifecta Only','Ashwagandha + Shilajit + Fenugreek as pre-processed, taste-masked blend.']]
   },
-  femimax:{platform:'kapzopro',cat:'Reproductive & Hormonal',name:'FemiMax Pro™',tagline:'Comprehensive Female Hormonal Health Formula',fmt:'8g RTM Powder Sachet / 4 Capsules',price:'$1.80–2.20/serving',margin:'~67%',moq:'100kg',
+  femimax:{platform:'kapzopro',cat:'Reproductive & Hormonal',name:'FemiMax Pro™',tagline:'Comprehensive Female Hormonal Health Formula',fmt:'8g RTM Powder Sachet / 4 Capsules',
     problem:'The US women\'s health supplement market underdelivers on inositol (wrong ratio, underdosed), ignores CoQ10 ubiquinol for egg quality, and continues to use folic acid despite a decade of MTHFR evidence. Nearly every brand designs two separate products for fertility and perimenopause — missing the enormous commercial opportunity of the woman who is 40, navigating irregular cycles, managing PCOS, and starting to worry about bone density simultaneously.',
     solution:'FemiMax Pro™ is formulated across four biological layers: female hormonal foundation, egg quality and ovarian support, hormonal transition support, and structural micronutrients — one formula, two life stages.',
     mechanisms:[
@@ -879,9 +901,9 @@ const SKUS = {
       {lbl:'Micronutrients',name:'D3 + K2 MK-7 + Iron Bisglycinate + Selenium + 5-MTHF + B6 P5P + B12',desc:'Every cofactor in its bioavailable form.'},
     ],
     diffs:['Inositol at 40:1 myo:d-chiro ratio — the validated clinical ratio from the Unfer meta-analysis and ISGE consensus.','CoQ10 as ubiquinol 200mg — IVF-adjacent positioning. Women over 35 cannot efficiently convert ubiquinone.','5-MTHF methylfolate — not folic acid. Works for all women including 40% with MTHFR variants.','Maca gelatinised — not raw maca. Processing form specified because raw maca causes GI distress.','One formula covering fertility AND perimenopause — unprecedented commercial positioning.'],
-    supply:[['White Label RTM','Full 8g sachet (mixed berry or peach, Reb M sweetened). MOQ 100kg (~12,500 sachets).'],['Inositol Booster Add-On','Standalone 2g myo-inositol sachet for PCOS-specific upsell. MOQ 50kg.'],['Custom','Black cohosh removal for fertility-only positioning, vegan capsule variant on request.']]
+    supply:[['White Label RTM','Full 8g sachet (mixed berry or peach, Reb M sweetened).'],['Inositol Booster Add-On','Standalone 2g myo-inositol sachet for PCOS-specific upsell.'],['Custom','Black cohosh removal for fertility-only positioning, vegan capsule variant on request.']]
   },
-  follimax:{platform:'kapzopro',cat:'Hair',name:'FolliMax Pro™',tagline:'Clinical-Grade Male Hair & Scalp Health Formula',fmt:'3 Vegetarian Capsules',price:'$1.80–2.20/serving',margin:'~72%',moq:'100kg',
+  follimax:{platform:'kapzopro',cat:'Hair',name:'FolliMax Pro™',tagline:'Clinical-Grade Male Hair & Scalp Health Formula',fmt:'3 Vegetarian Capsules',
     problem:'Pattern hair loss affects 50% of men by 50. Finasteride carries documented sexual side effect risk that a significant cohort refuses. And the supplement category\'s response is almost entirely biotin: a vitamin with no published evidence for androgenetic alopecia, sold at 10,000mcg doses that serve no biological purpose beyond the label. The clinical non-hormonal DHT-blocking stack exists in the literature. Four published RCTs. Four independent mechanisms. Never assembled into a single B2B product.',
     solution:'FolliMax Pro™ targets four distinct mechanisms: DHT inhibition, follicular oxidative protection, follicle cell activation, and keratin structural substrate.',
     mechanisms:[
@@ -891,9 +913,9 @@ const SKUS = {
       {lbl:'Keratin Substrate',name:'L-Cysteine 500mg + L-Methionine 300mg + Zinc Bisglycinate 15mg',desc:'Rate-limiting amino acids for keratin synthesis.'},
     ],
     diffs:['Pumpkin seed oil at 400mg specifically — the Cho 2014 RCT dose. Not rounded down to save cost.','Saw palmetto standardised to 85% fatty acids — the active fraction. Not generic berry powder.','Tocotrienol at 100mg EVNol-grade specifically — the Beoy 2010 RCT used Carotech Evnol. Not generic mixed tocopherols.','Procyanidin B-2 at 50mg: category differentiator. Nearly no competitor has even heard of this ingredient.','No biotin on the front panel — the scientific positioning statement.'],
-    supply:[['White Label Complete','Full 3-capsule HPMC blend. MOQ 100kg (~50,000 servings).'],['DHT Stack Only','Pumpkin seed + saw palmetto + beta-sitosterol pre-blend. MOQ 50kg.'],['Sample Policy','500g lab sample within 10 days at no charge. Full COA and TDS included.']]
+    supply:[['White Label Complete','Full 3-capsule HPMC blend.'],['DHT Stack Only','Pumpkin seed + saw palmetto + beta-sitosterol pre-blend.']]
   },
-  hepatguard:{platform:'kapzopro',cat:'Organ Support & Longevity',name:'HepaGuard Pro™',tagline:'Clinical-Grade Multi-Mechanism Liver Support',fmt:'3 Capsules',price:'Trial Batch',margin:'~60%',moq:'100kg',
+  hepatguard:{platform:'kapzopro',cat:'Organ Support & Longevity',name:'HepaGuard Pro™',tagline:'Clinical-Grade Multi-Mechanism Liver Support',fmt:'3 Capsules',
     problem:'NAFLD is the most prevalent chronic liver condition in the industrialised world — estimated to affect more than a third of adults across developed markets globally. The March 2024 FDA approval of Rezdiffra (resmetirom) marks the same inflection point for liver health that Ozempic created for metabolic health: drug approval drives consumer awareness, consumer awareness drives supplement demand. The existing market response — underdosed commodity milk thistle or single-ingredient TUDCA capsules — leaves a wide-open clinical formulation gap.',
     solution:'HepaGuard Pro™ delivers 2,100mg of active payload across three validated mechanistic pathways, with precision delivery engineering applied to every ingredient where bioavailability or GI tolerability is a limiting factor.',
     mechanisms:[
@@ -902,9 +924,9 @@ const SKUS = {
       {lbl:'Oxidative & Inflammatory',name:'Tocotrienols 200mg + Quercetin Phytosome 250mg',desc:'NF-κB suppression, hepatic stellate cell inhibition, antifibrotic, ROS scavenging.'},
     ],
     diffs:['Three independent mechanisms in a single capsule — not layered single-ingredient products requiring multiple SKUs.','Berberine in an extended-release format that significantly improves GI tolerability — the primary reason consumers discontinue standard berberine.','Silymarin as phytosome, quercetin as phytosome — bioavailability-enhanced forms throughout.','EFSA-approved choline health claim as EU regulatory anchor: "contributes to normal lipid metabolism."','Rezdiffra approval created the consumer awareness wave globally. HepaGuard Pro™ is the supplement response.'],
-    supply:[['White Label Complete','Full 3-capsule blend. MOQ 500kg.'],['Trial Batch','MOQ 100kg (~13,700 servings). 4–5 weeks lead time.'],['Custom','Alternate actives, adjusted doses, TUDCA-free EU variant available.']]
+    supply:[['White Label Complete','Full 3-capsule blend.'],['Custom','Alternate actives, adjusted doses, TUDCA-free EU variant available.']]
   },
-  respircore:{platform:'kapzopro',cat:'Organ Support & Longevity',name:'RespiCore Pro™',tagline:'Advanced Multi-Mechanism Respiratory Support Formula',fmt:'3 Capsules',price:'Trial Batch',margin:'~65%',moq:'100kg',
+  respircore:{platform:'kapzopro',cat:'Organ Support & Longevity',name:'RespiCore Pro™',tagline:'Advanced Multi-Mechanism Respiratory Support Formula',fmt:'3 Capsules',
     problem:'Regulatory scrutiny of NAC supplements has created a formulation white space no competitor has filled with a clinically coherent multi-mechanism alternative. Simultaneously, hundreds of millions globally live with asthma, COPD, or post-viral airway symptoms. NAC addressed only the oxidative component — and partially at that. The market has no product that addresses mucus burden, oxidative stress, and airway inflammation simultaneously with precision-engineered ingredients.',
     solution:'RespiCore Pro™ delivers 1,985mg of active payload across four validated mechanistic pathways — mucolytic clearance, Nrf2/glutathione activation, airway anti-inflammation, and immune modulation — with delivery engineering applied where bioavailability and stability are critical.',
     mechanisms:[
@@ -914,9 +936,9 @@ const SKUS = {
       {lbl:'Immune Modulation',name:'Vitamin D3 2,000 IU',desc:'EFSA-approved immune function claim. Th2 suppression and airway immune calibration.'},
     ],
     diffs:['Proprietary glucoraphanin/myrosinase co-release system: no competitor offers controlled in-situ sulforaphane generation. Process patent pathway under development.','Acid-protected bromelain: enzyme activity fully preserved — standard bromelain degrades completely in the gastric environment.','Global airway positioning: long-COVID, asthma, COPD, and seasonal airway inflammation covered without NAC regulatory risk.','Dual regulatory anchor: Vitamin D3 (approved immune function claim) + Ivy Leaf (EMA HMPC monograph for bronchial catarrh) — covers multiple frameworks simultaneously.','Zero NAC exposure — the product is built for the post-NAC regulatory era.'],
-    supply:[['White Label Complete','Full 3-capsule precision-delivered blend. MOQ 500kg.'],['Trial Batch','MOQ 100kg (~13,700 servings). 4–5 weeks lead time.'],['Custom','Adjusted doses, alternate botanicals, EU-tuned variant on request.']]
+    supply:[['White Label Complete','Full 3-capsule precision-delivered blend.'],['Custom','Adjusted doses, alternate botanicals, EU-tuned variant on request.']]
   },
-  transitmax:{platform:'kapzopro',cat:'Organ Support & Longevity',name:'TransitMax Pro™',tagline:'Multi-Mechanism Gut Motility & Microbiome Formula',fmt:'9.7g Stick Pack (RTM, once nightly)',price:'Enquire',margin:'~60%',moq:'500kg',
+  transitmax:{platform:'kapzopro',cat:'Organ Support & Longevity',name:'TransitMax Pro™',tagline:'Multi-Mechanism Gut Motility & Microbiome Formula',fmt:'9.7g Stick Pack (RTM, once nightly)',
     problem:'Constipation is not a single-cause condition — it typically involves insufficient stool bulk, dysbiotic microbiome, reduced enteric serotonin signalling, impaired bile-flow reflexes, and slow transit time simultaneously. The supplement market addresses this almost exclusively with single-mechanism products. No mainstream B2B brand has addressed all five physiological failure modes in a single product.',
     solution:'TransitMax Pro™ is a 7-ingredient once-nightly formula targeting five independent physiological mechanisms — the only stimulant-free, non-habit-forming product combining a synbiotic design with an enteric serotonin trigger, osmotic softening, and Ayurvedic prokinetic support.',
     mechanisms:[
@@ -927,9 +949,9 @@ const SKUS = {
       {lbl:'Prokinetic & Bile-Flow',name:'Triphala 600mg + Artichoke Leaf 640mg',desc:'India-exclusive Triphala via cholinergic pathways. Artichoke at the 640mg clinically studied dose for bile secretion.'},
     ],
     diffs:['5-HTP enteric serotonin mechanism absent from every competing constipation supplement globally.','HN019 at exactly 17.2B CFU — the dose from the Waller 2011 strain-specific transit time RCT.','Triphala: India-exclusive three-fruit Ayurvedic prokinetic. No Chinese replication.','100% stimulant-free — safe for indefinite daily use, unlike senna or bisacodyl.','Nightly sachet format — compliance-building habit. Mild central serotonin support aids sleep onset.'],
-    supply:[['White Label Complete','Full ~9.7g sachet blend. MOQ 500kg.'],['Trial Batch','MOQ as per enquiry. 8–10 weeks lead time from formulation sign-off.']]
+    supply:[['White Label Complete','Full ~9.7g sachet blend.']]
   },
-  longevimax:{platform:'kapzopro',cat:'Organ Support & Longevity',name:'LongeviMax Pro™',tagline:'Seven-Pathway Longevity RTM Formula',fmt:'6.8g Stick Pack (RTM)',price:'$4.00–6.00/serving',margin:'High',moq:'50kg',
+  longevimax:{platform:'kapzopro',cat:'Organ Support & Longevity',name:'LongeviMax Pro™',tagline:'Seven-Pathway Longevity RTM Formula',fmt:'6.8g Stick Pack (RTM)',
     problem:'The longevity supplement market has fractured into single-ingredient silos: Timeline\'s Mitopure at $149/month for mitophagy alone. Tru Niagen at $79/month for NAD+ alone. Primeadine at $99/month for autophagy alone. A consumer buying all three spends $327/month — and still misses methylation protection, sirtuin activation, epigenetic clock support, and mitochondrial antioxidant protection entirely.',
     solution:'LongeviMax Pro™ addresses seven scientifically distinct and mechanistically non-redundant biological aging pathways in a single 6.8g daily stick pack.',
     mechanisms:[
@@ -942,11 +964,11 @@ const SKUS = {
       {lbl:'Pathway 7',name:'Ergothioneine 10mg — Mitochondrial Shield',desc:'Dedicated evolutionary transporter concentrating it in highest oxidative-stress tissues. FDA GRAS 2019. EFSA Novel Food 2017.'},
     ],
     diffs:['Seven non-redundant pathways in a single daily format — not single-ingredient products requiring a multi-SKU stack.','Taste-masked Ca-AKG: the only commercially viable RTM format at 1g dose — previously impossible without proprietary delivery.','TMG paired with NR — the methylation safeguard absent from every NR competitor. Documented clinical rationale.','Urolithin A 500mg + PQQ 20mg: the only product pairing mitophagy clearance with mitochondrial biogenesis simultaneously.','Yuzu-Passionfruit flavour system designed to mask all botanical and mineral bitterness at this ingredient payload.'],
-    supply:[['White Label Complete','Full 6.8g blend. Trial MOQ 50kg (~7,352 servings). Commercial MOQ 100kg.'],['Active Fraction Only','Longevity active stack supplied without excipient base. Client blends with own carrier.'],['Custom','Dose adjustment, additional actives, alternate flavour or capsule conversion on request.']]
+    supply:[['White Label Complete','Full 6.8g blend. Trial. Commercial.'],['Active Fraction Only','Longevity active stack supplied without excipient base. Client blends with own carrier.'],['Custom','Dose adjustment, additional actives, alternate flavour or capsule conversion on request.']]
   },
 
   // ─── NEW KAPZO PRO SKUS ───────────────────────────────────────────────────
-  visioncore:{platform:'kapzopro',cat:'Eye',name:'VisionCore Pro™',tagline:'Engineered for the Screen-Age Eye — Macular, Ciliary & Photoreceptor Support',fmt:'1 Softgel Daily',price:'Enquire',margin:'Strong',moq:'100kg',
+  visioncore:{platform:'kapzopro',cat:'Eye',name:'VisionCore Pro™',tagline:'Engineered for the Screen-Age Eye — Macular, Ciliary & Photoreceptor Support',fmt:'1 Softgel Daily',
     problem:'Screen time exceeds 10 hours daily for a significant proportion of urban working adults globally. Sustained near-focus, blue light exposure, and reduced blink rates cause oxidative stress at the retinal pigment epithelium, deplete macular carotenoid pigment, and produce the cluster of symptoms known as digital eye strain — fatigue, blur, headache, and difficulty switching focus. No mainstream supplement has addressed this as a primary clinical category.',
     solution:'VisionCore Pro™ targets three anatomically distinct sites — the macula, the ciliary muscle, and the rod photoreceptors — using four clinically validated ingredients including two globally recognised branded actives.',
     mechanisms:[
@@ -956,10 +978,10 @@ const SKUS = {
       {lbl:'Retinal Support',name:'Zinc Citrate 5mg + Riboflavin B2 10mg',desc:'Zinc supports retinol transport to the retina. Riboflavin is the photoreceptor energy cofactor — deficiency is directly associated with light sensitivity and eye fatigue.'},
     ],
     diffs:['Lutemax 2020® — three macular carotenoids from a single source. Most competitors supply lutein only.','AstaReal® astaxanthin: the only brand with a ciliary accommodation RCT — directly addressing screen strain at the muscle level.','Three anatomically non-overlapping mechanisms in a single softgel.','Softgel format in lipid base (sunflower oil) — all actives are fat-soluble; absorption is optimised by the delivery format.','FSSAI-permitted. No Schedule H classification. No disease claims required.'],
-    supply:[['White Label Softgel','Full softgel in sunflower oil base. 30-count or 60-count options. MOQ 100kg.'],['Custom','Higher Lutemax dose, astaxanthin step-up, or combined SKU2 Advanced format on request.']]
+    supply:[['White Label Softgel','Full softgel in sunflower oil base. 30-count or 60-count options.'],['Custom','Higher Lutemax dose, astaxanthin step-up, or combined SKU2 Advanced format on request.']]
   },
 
-  visioncore_a:{platform:'kapzopro',cat:'Eye',name:'VisionCore Pro™ Advanced',tagline:'AREDS2-Aligned AMD Protection + Complete Digital Eye Defence — Beta-Carotene Free',fmt:'1 Softgel Daily',price:'Enquire',margin:'Strong',moq:'100kg',
+  visioncore_a:{platform:'kapzopro',cat:'Eye',name:'VisionCore Pro™ Advanced',tagline:'AREDS2-Aligned AMD Protection + Complete Digital Eye Defence — Beta-Carotene Free',fmt:'1 Softgel Daily',
     problem:'Age-related macular degeneration is the leading cause of irreversible vision loss in adults over 50 globally. The AREDS2 trial established a specific formulation for slowing AMD progression — but legacy supplements in this category still use the AREDS1 beta-carotene formula, which increases lung cancer risk in smokers by up to 28% (CARET trial). No Indian supplement has combined AREDS2-aligned AMD protection with a digital eye strain stack in a single beta-carotene-free formula.',
     solution:'VisionCore Pro™ Advanced delivers the complete VisionCore Pro™ digital eye stack alongside an AREDS2-aligned macular protection matrix — with Kashmiri saffron as the moat ingredient and explicit beta-carotene exclusion.',
     mechanisms:[
@@ -969,10 +991,10 @@ const SKUS = {
       {lbl:'AREDS2 Antioxidant Matrix',name:'Vitamin C 250mg + Vitamin E 100IU + Zinc 25mg + Copper 1mg',desc:'AREDS2-validated antioxidant quartet for macular oxidative defence. Zinc and copper in the AREDS2 ratio — copper included specifically to prevent zinc-induced copper deficiency at this dose.'},
     ],
     diffs:['Beta-carotene free — explicitly stated on label. Safe for current and ex-smokers. No competing Indian AMD supplement has made this the primary positioning claim.','Kashmiri saffron 20mg: category differentiator — no other Indian supplement leads with saffron for AMD. India-origin supply chain.','AREDS2-aligned — not AREDS1. Brings the formula in line with current clinical evidence, not 1992 trial data.','Covers both screen-era strain (AstaReal® astaxanthin) and age-related macular defence in a single daily softgel.','Lutemax 2020® at 28mg vs 14mg in SKU1 — the AMD-appropriate dose.'],
-    supply:[['White Label Softgel','Full softgel in lipid base. MOQ 100kg. Beta-carotene-free status verifiable on COA.'],['Custom','Saffron dose adjustment, combined blister pack with SKU1, or ophthalmology clinic gifting pack format on request.']]
+    supply:[['White Label Softgel','Full softgel in lipid base. Beta-carotene-free status verifiable on COA.'],['Custom','Saffron dose adjustment, combined blister pack with SKU1, or ophthalmology clinic gifting pack format on request.']]
   },
 
-  cardioguard:{platform:'kapzopro',cat:'Heart & Vasculature',name:'CardioGuard Pro™',tagline:'Five-Mechanism Complete Arterial Defence Formula',fmt:'2 Capsules Daily',price:'Enquire',margin:'Strong',moq:'100kg',
+  cardioguard:{platform:'kapzopro',cat:'Heart & Vasculature',name:'CardioGuard Pro™',tagline:'Five-Mechanism Complete Arterial Defence Formula',fmt:'2 Capsules Daily',
     problem:'Cardiovascular supplements fail in two ways: most address a single risk marker (just cholesterol, or just homocysteine), and most use commodity ingredient forms with poor bioavailability at doses chosen for label cost rather than clinical evidence. The result is a category full of products that cannot demonstrate meaningful blood test outcomes. CardioGuard Pro™ is built to deliver outcomes visible on the next blood panel.',
     solution:'CardioGuard Pro™ addresses five independent arterial risk pathways simultaneously — lipid modulation, arterial calcification, endothelial function, fibrinolysis, and homocysteine — with no mechanism overlapping another.',
     mechanisms:[
@@ -983,10 +1005,10 @@ const SKUS = {
       {lbl:'Mitochondrial & Vascular',name:'CoQ10 Ubiquinol 100mg + Grape Seed OPC 150mg + Magnesium Glycinate 200mg',desc:'Ubiquinol for cardiac mitochondrial energy — critical for statin users who deplete CoQ10. Grape seed OPC for endothelial nitric oxide support and LDL oxidation prevention. Magnesium glycinate for vascular smooth muscle relaxation.'},
     ],
     diffs:['Dual lipid mechanism: bergamot (AMPK) + extended-release berberine (PCSK9) — two independent pathways, additive LDL reduction, no equivalent combination in global supplements.','MenaQ7® K2 MK-7: the only K2 brand with a 3-year arterial stiffness RCT. Not commodity K2.','Homocysteine coverage via activated B-triad — the independent CV risk factor absent from most competitor formulas.','Nattokinase at 2,000 FU — addresses fibrin and blood viscosity, a mechanism no mainstream cardiovascular supplement includes.','Ubiquinol specifically — 2–3x more bioavailable than ubiquinone — especially relevant for the statin user market.'],
-    supply:[['White Label Complete','Full 2-capsule blend. MOQ 100kg.'],['Lipid Stack Only','Bergamot + extended-release berberine pre-blend. MOQ 50kg.'],['Custom','Statin-support variant (higher CoQ10), dose adjustments on request.']]
+    supply:[['White Label Complete','Full 2-capsule blend.'],['Lipid Stack Only','Bergamot + extended-release berberine pre-blend.'],['Custom','Statin-support variant (higher CoQ10), dose adjustments on request.']]
   },
 
-  renalguard:{platform:'kapzopro',cat:'Kidney & Urinary',name:'RenalGuard Pro™',tagline:'Three-Target Kidney Defence — Stone Prevention, UTI Prevention, Kidney Function Protection',fmt:'Once-Daily Dissolvable Sachet',price:'Enquire',margin:'Strong',moq:'100kg',
+  renalguard:{platform:'kapzopro',cat:'Kidney & Urinary',name:'RenalGuard Pro™',tagline:'Three-Target Kidney Defence — Stone Prevention, UTI Prevention, Kidney Function Protection',fmt:'Once-Daily Dissolvable Sachet',
     problem:'Kidney supplements are almost entirely reactive — taken after a diagnosis. The prevention opportunity is enormous: roughly 1 in 10 adults will have a kidney stone in their lifetime, recurrence rates exceed 50% within 10 years, and the UTI recurrence rate in women who have had one episode is 30% within 6 months. Standard advice — "drink more water, reduce oxalates" — is insufficient. No supplement has addressed stone prevention, UTI prevention, and kidney function protection in a single daily format.',
     solution:'RenalGuard Pro™ delivers nine actives across three non-overlapping kidney defence targets in a once-daily sachet dissolved in 300–400ml water — where the water itself is part of the mechanism.',
     mechanisms:[
@@ -995,10 +1017,10 @@ const SKUS = {
       {lbl:'Kidney Function',name:'Astragalus membranaceus 500mg (70% polysaccharides) + Quercetin',desc:'Astragalus reduces proteinuria and tubular inflammation — the most clinically studied botanical for nephroprotection. Quercetin provides renal antioxidant defence via NF-κB inhibition in nephron tissue.'},
     ],
     diffs:['Three non-overlapping kidney targets in one daily dose — stone, UTI, and function protection simultaneously.','Sachet format is clinical, not cosmetic: D-Mannose and cranberry PAC reach peak urinary concentration faster in solution; potassium citrate delivers superior bioavailability dissolved vs compressed.','Water as mechanism: the 300–400ml dissolution volume is a therapeutic component, not just a hydration suggestion.','Astragalus at 500mg standardised dose — the only clinically studied nephroprotective botanical at this specification.','Non-antibiotic UTI prevention: directly addresses the antimicrobial resistance concern that is driving demand globally.'],
-    supply:[['White Label Sachet','Full dissolvable sachet formulation. MOQ 100kg.'],['Custom','UTI-only or stone-only format, dose adjustments, flavour variants on request.']]
+    supply:[['White Label Sachet','Full dissolvable sachet formulation.'],['Custom','UTI-only or stone-only format, dose adjustments, flavour variants on request.']]
   },
 
-  thyroguard:{platform:'kapzopro',cat:'Thyroid',name:'ThyroGuard Pro™',tagline:'Iodine-Free Thyroid Support — Formulated for Hashimoto\'s and Autoimmune Thyroid Conditions',fmt:'3 Capsules Daily',price:'Enquire',margin:'Strong',moq:'100kg',
+  thyroguard:{platform:'kapzopro',cat:'Thyroid',name:'ThyroGuard Pro™',tagline:'Iodine-Free Thyroid Support — Formulated for Hashimoto\'s and Autoimmune Thyroid Conditions',fmt:'3 Capsules Daily',
     problem:'Most thyroid supplements contain iodine at 150–1,000mcg per serving. For the iodine-deficient hypothyroid patient, this is appropriate. For Hashimoto\'s — which accounts for the majority of hypothyroidism cases in developed markets — excess iodine worsens thyroid peroxidase antibody production and can accelerate follicular destruction. Every thyroid supplement formulated with high-dose iodine is serving the wrong patient. The Hashimoto\'s consumer — the largest thyroid segment — has never had a supplement designed specifically for her.',
     solution:'ThyroGuard Pro™ is iodine-free by clinical design. It addresses thyroid health through three mechanistic targets without introducing iodine — hormone synthesis substrate supply, T4-to-T3 conversion optimisation, and TPO antibody reduction.',
     mechanisms:[
@@ -1007,10 +1029,10 @@ const SKUS = {
       {lbl:'TPO Antibody Reduction',name:'Selenium 200mcg + Myo-Inositol 1,200mg + Ashwagandha 300mg + Vitamin D3 2,000IU',desc:'Selenium selenomethionine is the only nutraceutical with robust RCT evidence (multiple trials) for reducing TPO antibody titre. Myo-Inositol synergises with selenium (Nordio et al. data). Ashwagandha for TSH normalisation and adrenal co-regulation. D3 for autoimmune modulation.'},
     ],
     diffs:['Iodine-free is not an omission — it is stated explicitly as the primary positioning claim. Label carries: "Iodine-free. Formulated for Hashimoto\'s and autoimmune thyroid conditions."','Selenium selenomethionine: the only nutraceutical with published RCT evidence for TPO antibody titre reduction — the most measurable outcome in Hashimoto\'s management.','T4-to-T3 conversion specifically addressed — where many levothyroxine patients fail despite normal TSH.','Targets the Hashimoto\'s patient — the largest thyroid supplement consumer globally — who has been ignored by iodine-containing formulas.','No competitor has made iodine exclusion the primary differentiator at scale. ThyroGuard Pro™ owns this position.'],
-    supply:[['White Label Complete','Full 3-capsule blend. MOQ 100kg.'],['Custom','Adjusted selenium dose, additional adaptogens, or split AM/PM capsule format on request.']]
+    supply:[['White Label Complete','Full 3-capsule blend.'],['Custom','Adjusted selenium dose, additional adaptogens, or split AM/PM capsule format on request.']]
   },
 
-  glucoguard:{platform:'kapzopro',cat:'Metabolic / Endocrine',name:'GlucoGuard Pro™',tagline:'Pre-Meal Postprandial Glucose Management Formula — Three-Mechanism Architecture',fmt:'2 Capsules, 15–20 min before meals',price:'Enquire',margin:'Strong',moq:'100kg',
+  glucoguard:{platform:'kapzopro',cat:'Metabolic / Endocrine',name:'GlucoGuard Pro™',tagline:'Pre-Meal Postprandial Glucose Management Formula — Three-Mechanism Architecture',fmt:'2 Capsules, 15–20 min before meals',
     problem:'CGM (continuous glucose monitoring) has made postprandial glucose spikes visible to a new consumer segment that previously had no idea they were occurring. Fasting glucose can be normal, HbA1c can be normal — yet the 30–90 minute post-meal excursion after rice, roti, or bread regularly reaches 160–180 mg/dL. This spike is now recognised as an independent cardiovascular and metabolic risk factor. The consumer wants something they take before eating — not a once-daily maintenance supplement. No product has been built specifically for this timing mechanic and this consumer.',
     solution:'GlucoGuard Pro™ uses six ingredients across three non-overlapping mechanisms to slow carbohydrate digestion, reduce intestinal glucose absorption, and enhance peripheral glucose uptake — creating a blunted postprandial curve without pharmaceutical intervention. Taken 15–20 minutes before the two largest carbohydrate meals.',
     mechanisms:[
@@ -1019,10 +1041,10 @@ const SKUS = {
       {lbl:'Peripheral Uptake',name:'Banaba Leaf Extract 200mg (1% corosolic acid) + Chromium Picolinate 200mcg',desc:'Banaba promotes GLUT4 glucose transporter translocation to skeletal muscle surfaces — increasing peripheral glucose uptake rate. Chromium picolinate enhances insulin receptor signalling downstream. Banaba requires the 15-minute pre-meal window for GLUT4 signalling to initiate.'},
     ],
     diffs:['Pre-meal timing mechanic is the category-creating differentiator — GlucoGuard Pro™ is built around a specific dosing window that no once-daily glucose supplement addresses.','Three non-overlapping mechanisms: digestion inhibition, absorption modulation, and peripheral uptake — most competitors address one.','Mulberry DNJ at 750mg: the most clinically studied botanical for alpha-glucosidase inhibition, at the validated dose.','CGM-era positioning: targets the consumer who has seen their own postprandial spike and wants to act on it.','Suitable for pre-diabetic, insulin-resistant, and health-conscious carbohydrate-managing adults without pharmaceutical positioning.'],
-    supply:[['White Label Complete','Full 2-capsule blend. MOQ 100kg.'],['Custom','Dose adjustments, single-capsule convenience format, or RTM sachet variant on request.']]
+    supply:[['White Label Complete','Full 2-capsule blend.'],['Custom','Dose adjustments, single-capsule convenience format, or RTM sachet variant on request.']]
   },
 
-  prostacare:{platform:'kapzopro',cat:'Prostate',name:'ProstaCare Pro™',tagline:'Engineered Prostate Defence — DHT Reduction, Urinary Relief, and Antioxidant Tissue Protection',fmt:'1 Capsule Morning + 1 Capsule Evening (1-0-1)',price:'Enquire',margin:'Strong',moq:'100kg',
+  prostacare:{platform:'kapzopro',cat:'Prostate',name:'ProstaCare Pro™',tagline:'Engineered Prostate Defence — DHT Reduction, Urinary Relief, and Antioxidant Tissue Protection',fmt:'1 Capsule Morning + 1 Capsule Evening (1-0-1)',
     problem:'Men aged 40 and above experiencing early urinary changes — hesitancy, mild frequency, reduced flow, nocturia — are underserved by a supplement category that offers either vague Ayurvedic blends or overcomplicated multi-ingredient stacks with no speed-of-effect rationale. Most prostate supplements also fail in practice because they deliver only long-term mechanisms: the consumer sees no early effect and discontinues before clinical benefits accumulate.',
     solution:'ProstaCare Pro™ combines fast-acting urinary relief ingredients with long-term DHT modulation and antioxidant tissue defence in a 1-0-1 split dosing protocol specifically designed for nocturia management.',
     mechanisms:[
@@ -1031,10 +1053,10 @@ const SKUS = {
       {lbl:'Weeks 8+ (Tissue Defence)',name:'LycoRed® Lycopene 15mg + Pygeum 100mg (14% triterpenes) + Zinc Citrate 15mg',desc:'LycoRed®: globally recognised lycopene with clinical dossier for prostate health. The prostate has the highest lycopene and zinc concentration of any organ — deficiency in both is directly linked to BPH progression. Pygeum anti-inflammatory remodelling of prostate tissue.'},
     ],
     diffs:['1-0-1 split dosing: morning and evening coverage specifically designed for nocturia — most competitors are once-daily.','Three-phase speed stratification communicated to consumer: early relief (weeks 1–3), DHT modulation (weeks 4–8), long-term defence (weeks 8+) — prevents discontinuation.','LycoRed® lycopene: clinical dossier-backed brand ingredient vs commodity lycopene. HCP recommender credibility.','Saw palmetto at 85–95% fatty acid standardisation — the active fraction. Not generic berry powder.','No iodine, no proprietary blends, no underdosed label presence — clinical transparency as positioning.'],
-    supply:[['White Label Complete','Full formula as hard capsule. MOQ 100kg.'],['Custom','Vegetarian or gelatin shell, dose adjustments, LycoRed® dose step-up on request.']]
+    supply:[['White Label Complete','Full formula as hard capsule.'],['Custom','Vegetarian or gelatin shell, dose adjustments, LycoRed® dose step-up on request.']]
   },
   // ─── KAPZOSPHERE ───
-  alkasync:{platform:'kapzosphere',cat:'pH & Alkalinity',name:'AlkaSync™',tagline:'Precision pH-Buffering Microbead System',fmt:'Free-flowing spherical microbeads',price:'Enquire',margin:'Strong',moq:'Enquire',
+  alkasync:{platform:'kapzosphere',cat:'pH & Alkalinity',name:'AlkaSync™',tagline:'Precision pH-Buffering Microbead System',fmt:'Free-flowing spherical microbeads',
     problem:'Every oral product that depends on alkaloid bioavailability relies on an alkaline agent. The industry standard — raw Calcium Hydroxide (slaked lime) — delivers an oral pH of 11–12, a caustic range that damages mucosal tissue with repeated exposure. It is hygroscopic, reactive with other blend components, and under increasing regulatory scrutiny globally. No engineered alternative existed. Until AlkaSync™.',
     solution:'AlkaSync™ is an engineered pH-buffering bead combining two complementary alkaline compounds — Sodium Bicarbonate and Sodium Carbonate — in a precision-controlled sequential release format. Target oral pH: 8.8–9.2. Safe, predictable, and modulated — unlike the immediate caustic spike of raw calcium hydroxide.',
     mechanisms:[
@@ -1045,42 +1067,42 @@ const SKUS = {
     diffs:['Target oral pH 8.8–9.2 vs Calcium Hydroxide\'s caustic 11–12 — within the bioavailability window without tissue damage risk.','Both compounds food-grade GRAS and FSSAI compliant. No regulatory barrier to adoption.','Engineered release profile: pH rise is modulated and controlled, not an immediate irreversible spike.','Eliminates reactive neutralisation with Kattha (catechu) in the same blend — a problem that raw lime cannot avoid.','GMP-manufactured with batch-level COA. Fully specifiable and reproducible.'],
     supply:[['B2B Bulk Supply','COA, TDS, and full regulatory documentation per batch.'],['Custom','Release profile, particle size, or specification adjustments on request.']]
   },
-  cryolayer:{platform:'kapzosphere',cat:'Cooling Systems',name:'CryoLayer™',tagline:'Immediate-Onset Cooling Sensation Bead',fmt:'Free-flowing spherical microbeads',price:'Enquire',margin:'Strong',moq:'Enquire',
+  cryolayer:{platform:'kapzosphere',cat:'Cooling Systems',name:'CryoLayer™',tagline:'Immediate-Onset Cooling Sensation Bead',fmt:'Free-flowing spherical microbeads',
     problem:'Standard menthol crystals in oral consumer products deliver an uncontrolled, erratic cooling profile — intense at first contact, dissipating unpredictably based on dissolution rate, moisture, and temperature. The result is an inconsistent consumer experience that cannot be specified or reproduced batch-to-batch.',
     solution:'CryoLayer™ is an immediate-onset cooling bead delivering a controlled, reproducible TRP channel activation experience from first contact with saliva.',
     mechanisms:[{lbl:'Core',name:'Menthol / Natural Cooling Active',desc:'India-origin natural menthol from Uttar Pradesh.'},{lbl:'Shell',name:'Fast-Dissolve Wall System',desc:'Controlled dissolution on saliva contact — reproducible onset every time.'},{lbl:'Profile',name:'Immediate Onset',desc:'Full cooling sensation from first few seconds of product contact.'}],
     diffs:['Standardised active payload: defined menthol content per gram confirmed on COA.','Reproducible onset: batch-to-batch consistency not achievable with raw menthol crystals.','Free-flowing powder: easy incorporation into blend without agglomeration.','Authenticated India-origin menthol supply chain. Fully traceable provenance.','Target industries: oral confectionery, mouth freshener, nicotine delivery formats, nutraceuticals.'],
     supply:[['B2B Supply','Bulk microbeads. COA, TDS per batch. Custom particle size on request.']]
   },
-  arcticdure:{platform:'kapzosphere',cat:'Cooling Systems',name:'ArcticDure™',tagline:'Sustained-Duration Extended Cooling System',fmt:'Free-flowing spherical microbeads',price:'Enquire',margin:'Strong',moq:'Enquire',
+  arcticdure:{platform:'kapzosphere',cat:'Cooling Systems',name:'ArcticDure™',tagline:'Sustained-Duration Extended Cooling System',fmt:'Free-flowing spherical microbeads',
     problem:'Immediate cooling sensations in oral products typically last 60–90 seconds before fading. For products consumed over 5–10 minutes, the cooling experience disappears before the product does — creating a disconnected consumer experience and a missed opportunity for lasting sensory brand association.',
     solution:'ArcticDure™ is an extended-release cooling bead engineered to deliver a sustained cooling sensation across the full product consumption window — not just the first few seconds.',
     mechanisms:[{lbl:'Core',name:'Menthol / Extended Cooling Complex',desc:'Blend of cooling actives with optimised release kinetics.'},{lbl:'Shell',name:'Modified-Release Wall System',desc:'Controlled hydrophilic matrix release extends active exposure across 5–10 minutes.'},{lbl:'Profile',name:'Sustained Duration',desc:'Cooling onset at 30–60 seconds, sustained through product lifetime.'}],
     diffs:['Extended duration: 5–10 minute cooling window vs 60–90 second standard menthol.','Engineered release curve: defined onset delay and sustained plateau.','Compatible with immediate CryoLayer™ for layered cooling protocols.','Batch-level COA. Standardised active payload confirmed per batch.','Applications: chewing products, nicotine pouches, gum, extended-use oral confectionery.'],
     supply:[['B2B Supply','Bulk microbeads. Custom release profile on request.']]
   },
-  cryobase:{platform:'kapzosphere',cat:'Cooling Systems',name:'CryoBase™',tagline:'Base-Note Background Cooling System',fmt:'Free-flowing spherical microbeads',price:'Enquire',margin:'Strong',moq:'Enquire',
+  cryobase:{platform:'kapzosphere',cat:'Cooling Systems',name:'CryoBase™',tagline:'Base-Note Background Cooling System',fmt:'Free-flowing spherical microbeads',
     problem:'Strong immediate cooling can overwhelm the primary flavour system of an oral product. Many manufacturers want a cooling signature that supports and enhances the product experience without dominating it — a background freshness that lingers rather than a foreground sensation.',
     solution:'CryoBase™ is a low-intensity background cooling bead designed as a base layer to add a persistent freshness note without dominating the primary flavour experience.',
     mechanisms:[{lbl:'Core',name:'Low-Intensity Cooling Active',desc:'Reduced menthol payload and cooling agonist blend optimised for background sensation.'},{lbl:'Profile',name:'Sustained Background',desc:'Persistent low-intensity freshness note across the full consumption window.'}],
     diffs:['Designed to layer with CryoLayer™ (immediate) and ArcticDure™ (sustained) for a complete three-phase cooling architecture.','Background intensity: does not compete with primary flavour or aroma systems.','Persistent duration: longer lasting than immediate cooling beads.','Ideal for beverage manufacturing, confectionery, and nutraceutical formats.'],
     supply:[['B2B Supply','Bulk microbeads. System bundle with CryoLayer™ and ArcticDure™ available.']]
   },
-  flowseq:{platform:'kapzosphere',cat:'Sequential Release',name:'FlowSeq™',tagline:'Sequential Multi-Phase Flavour Release System',fmt:'Free-flowing spherical microbeads',price:'Enquire',margin:'Strong',moq:'Enquire',
+  flowseq:{platform:'kapzosphere',cat:'Sequential Release',name:'FlowSeq™',tagline:'Sequential Multi-Phase Flavour Release System',fmt:'Free-flowing spherical microbeads',
     problem:'Conventional flavour delivery in oral products is a single-event: all flavour compounds release simultaneously, peak immediately, and fade together. There is no way to create a sequential flavour narrative — a first note, a mid note, a finish — within a single product using commodity flavour supply.',
     solution:'FlowSeq™ encodes a sequential flavour release timeline into a single blended ingredient using a proprietary multi-phase delivery architecture, enabling a designed flavour journey across the full consumption window.',
     mechanisms:[{lbl:'Phase 1',name:'Immediate First Note',desc:'Fast-releasing component. Flavour burst on first contact — opens the sensory experience.'},{lbl:'Phase 2',name:'Mid Note Unfold',desc:'Intermediate-release component. Flavour character develops at 60–90 seconds into consumption.'},{lbl:'Phase 3',name:'Sustained Finish',desc:'Slow-release component. Sustained tail note across the full product lifetime.'}],
     diffs:['Sequenced flavour narrative in a single blended ingredient — no additional complexity required in the customer\'s manufacturing process.','Compatible with any flavour system: natural, nature-identical, or synthetic.','Three-phase timeline fully customisable: onset, mid-note, and finish timing engineered to specification.','Applications: mouth fresheners, oral confectionery, chewing products, nicotine pouches.'],
     supply:[['B2B Supply','Bulk three-population blend. Custom flavour loading and release timelines on request.']]
   },
-  aromavault:{platform:'kapzosphere',cat:'Aroma & Sensation',name:'AromaVault™',tagline:'Precision Aroma Encapsulation System',fmt:'Free-flowing spherical microbeads',price:'Enquire',margin:'Strong',moq:'Enquire',
+  aromavault:{platform:'kapzosphere',cat:'Aroma & Sensation',name:'AromaVault™',tagline:'Precision Aroma Encapsulation System',fmt:'Free-flowing spherical microbeads',
     problem:'Volatile aroma compounds evaporate during manufacturing and storage, depleting the intended sensory experience before the product even reaches the consumer. Conventional flavour blending cannot prevent this loss without adversely affecting flavour stability or shelf life.',
     solution:'AromaVault™ traps volatile aroma compounds in a precision-engineered protective matrix, locking them in during manufacturing and storage, then releasing them precisely on mechanical action — chewing, crushing, or dissolution.',
     mechanisms:[{lbl:'Protection',name:'Stability Through Processing',desc:'Volatile aroma compounds fully retained through high-heat manufacturing, compression, and blending conditions.'},{lbl:'Trigger',name:'Mechanical Release on Use',desc:'Aroma burst released on chewing, crushing, or product dissolution — exactly at the moment of consumer contact.'},{lbl:'Shelf Life',name:'18–24 Month Retention',desc:'Aroma payload stable under defined storage conditions across commercial shelf life windows.'}],
     diffs:['Authenticated origin aroma sources: cardamom from Idukki district and other verified botanical origins with traceable supply chain provenance.','Standardised active payload per gram — specifiable and reproducible batch-to-batch. COA-confirmed.','Release only on mechanical trigger — aroma stays locked until the moment of consumer use.','Applications: pan masala and mouth freshener products, confectionery, specialty oral consumer formats.'],
     supply:[['B2B Supply','Custom aroma loading. Multiple botanical options available.']]
   },
-  zingcore:{platform:'kapzosphere',cat:'Aroma & Sensation',name:'ZingCore™',tagline:'Spilanthol-Based Tingle & Buzz Sensation Bead',fmt:'Free-flowing spherical microbeads',price:'Enquire',margin:'Strong',moq:'Enquire',
+  zingcore:{platform:'kapzosphere',cat:'Aroma & Sensation',name:'ZingCore™',tagline:'Spilanthol-Based Tingle & Buzz Sensation Bead',fmt:'Free-flowing spherical microbeads',
     problem:'The oral consumer product category has relied on menthol as its primary sensory active for decades. A genuinely distinct tingling and buzzing oral sensation — one that creates a unique, memorable, and highly differentiated consumer experience — has not been available as a standardised, specifiable B2B ingredient.',
     solution:'ZingCore™ harnesses spilanthol from Spilanthes acmella — an India-exclusive botanical source — to deliver a distinctive tingling, numbing, and buzzing oral sensation. Precision-delivered for controlled release onset and standardised active payload per batch.',
     mechanisms:[{lbl:'Active',name:'Spilanthol (Spilanthes acmella)',desc:'India-exclusive. Northeast India botanical source. The TRP channel agonist behind the distinctive tingle-buzz oral sensation.'},{lbl:'Delivery',name:'Controlled-Release Format',desc:'Precision-engineered for consistent release profile and standardised active payload per gram — reproducible batch-to-batch.'},{lbl:'Sensation Profile',name:'Tingle-Buzz-Numbing',desc:'Distinct from menthol. Creates a unique, memorable sensory signature that no commodity ingredient replicates.'}],
@@ -1088,7 +1110,7 @@ const SKUS = {
     supply:[['B2B Supply','Bulk microbeads. Custom spilanthol payload specification on request.']]
   },
   // ─── KAPZOBASE ───
-  kapzobase:{platform:'kapzobase',cat:'Beverage Engineering',name:'KapzoBase™',tagline:'Alcohol Experience Engineering System for Premium Spirits',fmt:'Free-flowing microbead powder',price:'Enquire',margin:'Strong',moq:'Enquire',
+  kapzobase:{platform:'kapzobase',cat:'Beverage Engineering',name:'KapzoBase™',tagline:'Alcohol Experience Engineering System for Premium Spirits',fmt:'Free-flowing microbead powder',
     problem:'Standard spirits production relies on barrel aging infrastructure to build complexity, warmth, and finish character. Young spirits or ENA-based products lack the layered temporal experience that consumers associate with premium quality. No ingredient system has been available that delivers a sequenced, multi-phase sensory experience through a single addition at the bottling stage — without the time, capital, or margin cost of barrel aging.',
     solution:'KapzoBase™ is a proprietary six-layer sensory engineering system for premium spirits and beverage manufacturers. Added at the bottling stage, it delivers a sequenced temporal sensory experience replicating the organoleptic profile of premium barrel-aged products — without aging infrastructure.',
     mechanisms:[
@@ -1107,23 +1129,23 @@ const SKUS = {
 // GheePlus, JaggerPlus, Psyllium as platform-level products (not individual SKUs)
 const PLATFORM_PRODUCTS = {
   gheeplus:[
-    {id:'gheeplus_t1',cat:'Tier 1 · Platform Carriers',name:'GheePlus™ Carrier Systems',tagline:'Five precision-delivered ghee powder carriers — standard, ultra, keto, enteric, and instantized release formats.',fmt:'Free-flowing powder',price:'Enquire',moq:'Enquire',
+    {id:'gheeplus_t1',cat:'Tier 1 · Platform Carriers',name:'GheePlus™ Carrier Systems',tagline:'Five precision-delivered ghee powder carriers — standard, ultra, keto, enteric, and instantized release formats.',fmt:'Free-flowing powder',
       content:`<div class="d-section"><div class="d-title">Five Platform Carrier SKUs</div><table class="sup-table"><thead><tr><th>SKU</th><th>Name</th><th>Wall System</th><th>Fat Load</th><th>Key Specification</th><th>Application</th></tr></thead><tbody><tr><td>GP-101</td><td>Standard</td><td>Maltodextrin DE18</td><td>65%</td><td>Surface fat &lt;8%, 12 months shelf life</td><td>Bakery premixes, curry mixes</td></tr><tr><td>GP-102</td><td>Ultra</td><td>OSA Starch + WPI</td><td>70%</td><td>Surface fat &lt;2%, 24 months</td><td>Flavour houses, nutraceutical CMOs</td></tr><tr><td>GP-103</td><td>Keto</td><td>WPI + OSA Starch</td><td>75%</td><td>High fat load, protein co-delivery</td><td>Keto meal replacements, sports nutrition</td></tr><tr><td>GP-104</td><td>Enteric (Shellac)</td><td>Indian lac shellac</td><td>68%</td><td>pH &gt;7.0 release, butyrate + CLA delivery</td><td>Gut health supplements, pharma nutra</td></tr><tr><td>GP-105</td><td>Instantized</td><td>Gum Arabic + Lecithin</td><td>60%</td><td>Cold water dispersible, reconstitution &lt;30sec</td><td>Instant beverages, RTD mixes</td></tr></tbody></table><div class="d-title" style="margin-top:32px">Spotlight: GP-104 GheePlus™ Enteric</div><p class="d-text">Shellac-encapsulated ghee using Indian lac-derived shellac — the world's only commercially available shellac-encapsulated ghee product identified globally. India holds a structural global monopoly on raw lac insect supply. The enteric pH &gt;7.0 wall delivers butyrate (colonocyte fuel source) and CLA directly to the intestinal absorption site. Patentable formulation with NIT Trichy R&D validation pathway.</p></div>`
     },
-    {id:'gheeplus_t2',cat:'Tier 2 · Functional Co-Loads',name:'GheePlus™ Functional Systems',tagline:'Five bioactive-enriched ghee carrier systems — K2, CLA, Butyrate, D3K2, and A+D co-loads.',fmt:'Free-flowing powder',price:'Enquire',moq:'Enquire',
+    {id:'gheeplus_t2',cat:'Tier 2 · Functional Co-Loads',name:'GheePlus™ Functional Systems',tagline:'Five bioactive-enriched ghee carrier systems — K2, CLA, Butyrate, D3K2, and A+D co-loads.',fmt:'Free-flowing powder',
       content:`<div class="d-section"><div class="d-title">Why Ghee as a Bioactive Fat Carrier</div><p class="d-text">Fat-soluble vitamins (A, D, E, K2) require a fat matrix for absorption. Delivery in native ghee achieves substantially higher bioavailability than aqueous or simple powder blends. Buffalo ghee is a natural source of CLA — no synthetic enrichment required. India-origin ghee carries strong recognition among US and EU clean-label buyers and cannot be authentically replicated from Chinese, European, or Oceanic dairy.</p><div class="d-title">Five Functional Co-Load SKUs</div><table class="sup-table"><thead><tr><th>SKU</th><th>Name</th><th>Bioactive</th><th>Health Platform</th><th>Target Application</th></tr></thead><tbody><tr><td>GP-201</td><td>GheePlus™ K2</td><td>Vitamin K2 (MK-7)</td><td>Bone health</td><td>Bone health capsules, vitamin blends</td></tr><tr><td>GP-202</td><td>GheePlus™ CLA</td><td>Concentrated CLA</td><td>Metabolic health</td><td>Sports nutrition, weight management</td></tr><tr><td>GP-203</td><td>GheePlus™ Butyrate</td><td>SCFA-enriched ghee</td><td>Gut health</td><td>Gut health supplements</td></tr><tr><td>GP-204</td><td>GheePlus™ D3K2</td><td>D3 + K2 co-encapsulated</td><td>Immunity + bone</td><td>Premium supplement stacks</td></tr><tr><td>GP-205</td><td>GheePlus™ A+D</td><td>Vitamins A + D</td><td>Pediatric / maternal</td><td>Infant formula, women's health</td></tr></tbody></table></div>`
     },
-    {id:'gheeplus_t3',cat:'Tier 3 · Flavour Fat Systems',name:'GheePlus™ Flavour Fat Systems',tagline:'Thirteen ghee-based encapsulated flavour carrier systems for snack seasonings and bakery — savory, bakery, and premium specialty.',fmt:'Free-flowing powder',price:'Enquire',moq:'Enquire',
+    {id:'gheeplus_t3',cat:'Tier 3 · Flavour Fat Systems',name:'GheePlus™ Flavour Fat Systems',tagline:'Thirteen ghee-based encapsulated flavour carrier systems for snack seasonings and bakery — savory, bakery, and premium specialty.',fmt:'Free-flowing powder',
       content:`<div class="d-section"><div class="d-title">Why Ghee as a Flavour Carrier</div><p class="d-text">Fat is the primary carrier for lipophilic aroma compounds. GheePlus™ Flavour Fat Systems deliver ghee's native volatile profile — diacetyl, delta-lactones, free fatty acids — in a shelf-stable, free-flowing powder designed for industrial seasoning and bakery formulation.</p><div class="d-title">Savory Systems (SKUs GF-301 to GF-305)</div><table class="sup-table"><thead><tr><th>SKU</th><th>Name</th><th>Flavour</th><th>Primary Application</th></tr></thead><tbody><tr><td>GF-301</td><td>Butter Popcorn</td><td>Diacetyl-forward buttery aroma</td><td>Popcorn seasoning, snack coatings</td></tr><tr><td>GF-302</td><td>Roasted Garlic</td><td>Caramelised garlic on ghee base</td><td>Savory snacks, marinades</td></tr><tr><td>GF-303</td><td>Curry Butter</td><td>Turmeric, cumin, ghee warmth</td><td>Indian snacks, instant curry mixes</td></tr><tr><td>GF-304</td><td>Onion Cream</td><td>Roasted onion with dairy roundness</td><td>Soup bases, dip mixes</td></tr><tr><td>GF-305</td><td>Smoked Butter</td><td>Hickory smoke on ghee carrier</td><td>Chips, crackers, premium popcorn</td></tr></tbody></table><div class="d-title" style="margin-top:24px">Bakery Systems (SKUs GF-401 to GF-404)</div><table class="sup-table"><thead><tr><th>SKU</th><th>Name</th><th>Flavour</th><th>Application</th></tr></thead><tbody><tr><td>GF-401</td><td>Croissant Fat</td><td>Lactic + buttery lamination note</td><td>Croissant premix, laminated dough</td></tr><tr><td>GF-402</td><td>Brioche Butter</td><td>Sweet cream with yeast warmth</td><td>Brioche, enriched dough</td></tr><tr><td>GF-403</td><td>Cookie Butter</td><td>Brown butter + lactone-forward</td><td>Cookie dough premixes</td></tr><tr><td>GF-404</td><td>Roti Ghee</td><td>Authentic Indian ghee top note</td><td>Roti and paratha mixes</td></tr></tbody></table><div class="d-title" style="margin-top:24px">Premium & Specialty Systems (SKUs GF-501 to GF-503)</div><table class="sup-table"><thead><tr><th>SKU</th><th>Name</th><th>Flavour</th><th>Application</th></tr></thead><tbody><tr><td>GF-501</td><td>Truffle Butter</td><td>Black truffle on ghee fat base</td><td>Premium snacks, gourmet seasoning</td></tr><tr><td>GF-502</td><td>Herb Butter</td><td>Rosemary, thyme, ghee</td><td>Frozen premium meals, specialty bakery</td></tr><tr><td>GF-503</td><td>Cheese Butter</td><td>Aged cheddar with ghee roundness</td><td>Cheese puffs, cracker seasoning</td></tr></tbody></table></div>`
     }
   ],
   jaggerplus:[
-    {id:'jaggerplus_mg100',cat:'Food Ingredient',name:'JaggerPlus™ MG-100',tagline:'Amorphous Matrix Stabilised Jaggery & Palm Sugar Ingredient',fmt:'Free-flowing granular powder',price:'Enquire',moq:'Enquire',
+    {id:'jaggerplus_mg100',cat:'Food Ingredient',name:'JaggerPlus™ MG-100',tagline:'Amorphous Matrix Stabilised Jaggery & Palm Sugar Ingredient',fmt:'Free-flowing granular powder',
       content:`<div class="d-section"><div class="d-title">The Problem JaggerPlus™ Solves</div><p class="d-text">Raw jaggery and palm sugar are hygroscopic, prone to crystallisation, and difficult to incorporate into modern food and supplement manufacturing processes. Granules clump, cake, and vary batch-to-batch in moisture content and appearance. This has kept authentic jaggery — one of the most sought-after natural sweeteners among clean-label buyers across US, EU, and ANZ markets — largely out of industrial formulation.</p><p class="d-text">JaggerPlus™ MG-100 solves this through a proprietary amorphous matrix stabilisation process — converting jaggery and palm sugar into a free-flowing, shelf-stable powder that eliminates crystallisation, moisture uptake, and batch variability. Rebaudioside M is used as the sweetener system for clean-label compatibility across all target markets.</p><div class="d-title">Product Specifications</div><table class="sup-table"><tbody><tr><td>Format</td><td>Free-flowing granular powder</td></tr><tr><td>Sweetener</td><td>Rebaudioside M (≥95%)</td></tr><tr><td>Shelf Life</td><td>18 months under defined storage conditions</td></tr><tr><td>Moisture</td><td>&lt;5% (controlled)</td></tr><tr><td>Flow Properties</td><td>Free-flowing, no caking, no crystallisation</td></tr><tr><td>Applications</td><td>Functional food, supplement industry, beverage, bakery</td></tr><tr><td>Markets</td><td>US, EU, Canada, Australia/NZ</td></tr></tbody></table></div>`
     }
   ],
   kapzostratum:[
-    {id:'ashzero',cat:'Body Care',name:'AshZero™',tagline:'Optical + Biological Body Milk — instant ash elimination and 12-hour sustained hydration.',fmt:'200ml pump bottle (oil-in-water emulsion)',price:'Enquire',moq:'Enquire',
+    {id:'ashzero',cat:'Body Care',name:'AshZero™',tagline:'Optical + Biological Body Milk — instant ash elimination and 12-hour sustained hydration.',fmt:'200ml pump bottle (oil-in-water emulsion)',
       problem:'Ashy skin on deeper skin tones is an optical phenomenon — dehydrated surface corneocytes scatter light unevenly, creating a grey-white cast against deeply pigmented underlying tissue. Standard body lotions apply humectants to the surface but without an intact ceramide barrier, moisture is lost to transepidermal evaporation within 1–2 hours. The consumer feels immediate softness that vanishes by midday — not because the product failed chemically, but because the barrier was never repaired.',
       solution:'AshZero™ addresses both failure modes simultaneously — optical correction at the surface within 60 seconds, and a 12-hour sustained biological hydration system that rebuilds the ceramide barrier rather than masking the problem.',
       mechanisms:[
@@ -1135,7 +1157,7 @@ const PLATFORM_PRODUCTS = {
       diffs:['First body milk to combine instant optical ash correction with biological hydration that lasts 12 hours — not 90 minutes.','Ceramide 3:1:1 ratio matches stratum corneum natural lipid architecture — repairs the barrier rather than coating over it.','Friction-release humectant delivery: sustained moisture release triggered by movement — no midday reapplication needed.','Fitzpatrick III–VI primary positioning — a dramatically underserved segment in premium body care globally.','Zero white cast formulation — the pre-wetted silica system is engineered specifically to be invisible on dark skin.'],
       supply:[['White Label','Full 200ml oil-in-water emulsion. Client supplies pump bottle and label. Fragrance-free base or custom fragrance on request.'],['Custom','Shade-matched optical correction intensity, alternate humectant systems, or SPF-added variant on request.']]
     },
-    {id:'sagecalm',cat:'Body Care',name:'SageCalm™',tagline:'Sweat-Moderating Underarm Roll-On — M3 receptor botanical modulation without aluminium.',fmt:'50ml roll-on (26mm PP or stainless steel ball)',price:'Enquire',moq:'Enquire',
+    {id:'sagecalm',cat:'Body Care',name:'SageCalm™',tagline:'Sweat-Moderating Underarm Roll-On — M3 receptor botanical modulation without aluminium.',fmt:'50ml roll-on (26mm PP or stainless steel ball)',
       problem:'The natural deodorant movement has created a frustrated consumer. Millions have left aluminium antiperspirants and switched to natural deodorants — only to find that baking soda causes dermatitis, crystal salt offers almost no control, charcoal has strong marketing and minimal mechanism, and every essential oil formula fails within 2 hours. Critically: none address sweat volume. The consumer sweats through her natural deodorant and returns to aluminium, defeated. No clinical alternative existed — until SageCalm.',
       solution:'SageCalm™ moderates sweat volume through a clinically validated botanical M3 receptor mechanism — without blocking a single sweat duct — and controls odor through postbiotic microbiome science rather than masking fragrance. It is neither a traditional antiperspirant nor a traditional deodorant. It is a new category.',
       mechanisms:[
@@ -1146,7 +1168,7 @@ const PLATFORM_PRODUCTS = {
       diffs:['Sage standardised to minimum 2.5% rosmarinic acid + 0.5% ursolic acid by HPLC — batch-to-batch efficacy guaranteed by specification.','M3 receptor mechanism is the same target as prescription anticholinergic hyperhidrosis drugs — achieved via botanical cosmetic route.','100% aluminium-free, baking soda-free, alcohol-free — addresses every specific frustration the natural deodorant consumer has already experienced.','Postbiotic odor control: source-level microbiome rebalancing rather than fragrance masking.','Category-creating positioning: not a deodorant, not an antiperspirant — a sweat moderator.'],
       supply:[['White Label','Full 50ml roll-on formula. PP or stainless steel ball applicator. Client supplies outer label.'],['Custom','Fragrance customisation, alternate astringent system, men\'s or gender-neutral positioning variant on request.']]
     },
-    {id:'toneq',cat:'Intimate Care',name:'TonEQ™',tagline:'Clinical Skin Tone Correction Serum — hydroquinone-free, intimate skin safe, three-driver coverage.',fmt:'30ml / 50ml airless pump serum',price:'Enquire',moq:'Enquire',
+    {id:'toneq',cat:'Intimate Care',name:'TonEQ™',tagline:'Clinical Skin Tone Correction Serum — hydroquinone-free, intimate skin safe, three-driver coverage.',fmt:'30ml / 50ml airless pump serum',
       problem:'Uneven skin tone in intimate and friction zones is among the most searched personal care concerns globally yet one of the least honestly addressed. The consumer has tried: random fairness creams not formulated for intimate skin pH, kojic acid soaps that irritate, prescription hydroquinone with rebound anxiety, or nothing — because the category felt too embarrassing. What has never existed is a product that takes the concern seriously, is formulated correctly for intimate skin biology, and uses clinically validated actives at safe concentrations.',
       solution:'TonEQ™ is the only clinical serum addressing all three biological drivers of intimate zone darkening simultaneously — friction-induced melanocyte stimulation, hormonal melanocyte hyperactivity, and post-inflammatory residue — without hydroquinone, fragrance, or compromise.',
       mechanisms:[
@@ -1157,7 +1179,7 @@ const PLATFORM_PRODUCTS = {
       diffs:['Three-driver coverage: friction, hormonal, and post-inflammatory — most competitors address one.','Encapsulated azelaic acid: sustained release format increases tolerance on intimate skin compared to immediate-release.','Hydroquinone-free — eliminates the primary consumer anxiety associated with skin tone correction products.','Specifically formulated for intimate skin pH — unlike general brightening serums applied off-label.','Fragrance-free, intimate-safe: a category where fragrance is a formulation error, not a feature.'],
       supply:[['White Label','Full airless pump serum — 30ml or 50ml. Client supplies outer design.'],['Custom','Active concentration adjustments within cosmetic limits, alternate carrier system, branded ingredient substitutions on request.']]
     },
-    {id:'bondrestore',cat:'Scalp & Hair',name:'BondRestore™',tagline:'Weekly Structural Hair Repair Treatment — cuticle, cortex, and internal moisture addressed simultaneously.',fmt:'Weekly leave-on mask, rinse after 20 minutes',price:'Enquire',moq:'Enquire',
+    {id:'bondrestore',cat:'Scalp & Hair',name:'BondRestore™',tagline:'Weekly Structural Hair Repair Treatment — cuticle, cortex, and internal moisture addressed simultaneously.',fmt:'Weekly leave-on mask, rinse after 20 minutes',
       problem:'By the time hair feels soft, brittle, or snapping, two separate damage events have already occurred: the cuticle\'s outermost lipid layer (18-MEA) has been cleaved — hair is now rough, hydrophilic, and tangle-prone; and internal disulfide bonds in the cortex have been broken by oxidative damage, heat, or chemical treatment — the hair\'s structural backbone is compromised. Standard conditioners coat the surface. Oils add slip. Protein treatments temporarily fill gaps. None address structural repair at a molecular level.',
       solution:'BondRestore™ is a weekly structural repair treatment combining 18-MEA cuticle restoration, cystine-based cortex crosslinking, and NMF-mimetic internal hydration — three independent molecular repair mechanisms in a single formula.',
       mechanisms:[
@@ -1169,7 +1191,7 @@ const PLATFORM_PRODUCTS = {
       diffs:['Three independent molecular repair mechanisms in one weekly treatment — no other consumer product combines all three.','18-MEA analog: the ingredient that premium professional salon brands have used exclusively — now in a consumer white-label format.','Cystine dipeptide crosslinking: same mechanism as professional bond-building salon treatments, without the in-salon price point.','Protected active delivery: 18-MEA and cystine remain stable — not oxidised before they reach the hair shaft.','Clear positioning: weekly treatment, 20 minutes, measurable structural improvement — not a conditioner.'],
       supply:[['White Label','Full mask formulation. Client supplies packaging design and fragrance brief.'],['Custom','Intensity levels (maintenance vs intensive repair), fragrance system, rinse-off vs extended leave-on variant on request.']]
     },
-    {id:'scalpsync',cat:'Scalp & Hair',name:'ScalpSync™',tagline:'Daily Scalp Serum — photo-protected melatonin and scalp postbiotic for follicle biology and microbiome balance.',fmt:'Leave-on scalp serum, daily application',price:'Enquire',moq:'Enquire',
+    {id:'scalpsync',cat:'Scalp & Hair',name:'ScalpSync™',tagline:'Daily Scalp Serum — photo-protected melatonin and scalp postbiotic for follicle biology and microbiome balance.',fmt:'Leave-on scalp serum, daily application',
       problem:'The modern hair fall consumer has tried dermatologist-recommended shampoos, biotin supplements, and DHT-blocking oils — with marginal results. Two upstream root causes are rarely addressed by any product on the market: oxidative damage at the follicle bulb shortening the anagen (growth) phase, and Malassezia-driven scalp inflammation silently miniaturising follicles over months. ScalpSync addresses both — with ingredients carrying peer-reviewed clinical evidence — in a single daily serum.',
       solution:'ScalpSync™ is the first daily scalp serum combining a photo-protected melatonin delivery system and a scalp postbiotic microbiome modulator — two clinically studied mechanisms that no general cosmetics brand has assembled in a single formula.',
       mechanisms:[
@@ -1183,7 +1205,7 @@ const PLATFORM_PRODUCTS = {
   ]
 ,
   psyllium:[
-    {id:'psyllium_husk',cat:'Psyllium Platform',name:'Kapzo Psyllium — Husk Products',tagline:'GMP-manufactured psyllium husk powder in multiple grades for pharmaceutical, food, and nutraceutical applications.',fmt:'Bulk powder',price:'Enquire',moq:'Enquire',
+    {id:'psyllium_husk',cat:'Psyllium Platform',name:'Kapzo Psyllium — Husk Products',tagline:'GMP-manufactured psyllium husk powder in multiple grades for pharmaceutical, food, and nutraceutical applications.',fmt:'Bulk powder',
       content:`<div class="d-section"><div class="d-title">Kapzo Psyllium Husk Range</div><p class="d-text">GMP-manufactured psyllium husk products across three grades — PsyliFine™, PsyliFlow™, and PsyliPure™ — covering pharmaceutical, food, and nutraceutical applications. Each grade is produced under GMP-certified conditions with full analytical documentation for US, EU, Canada, and Australia/NZ market entry.</p><table class="sup-table"><thead><tr><th>SKU</th><th>Product</th><th>Grade / Application</th><th>Key Specification</th></tr></thead><tbody><tr><td>PsyliFine™</td><td>Psyllium Husk Powder Fine</td><td>Food grade — supplement powders, RTM blends</td><td>80–100 mesh. Low heavy metals. Consistent colour and particle uniformity.</td></tr><tr><td>PsyliFlow™</td><td>Psyllium Husk Powder — Enhanced Flow</td><td>Nutraceutical grade — improved flow, low dust, capsule and sachet filling</td><td>Precision particle engineering for uniform size and improved blend compatibility. Reduced dusting and improved fill weight consistency.</td></tr><tr><td>PsyliPure™</td><td>Psyllium Seed Husk — High Purity</td><td>Pharmaceutical grade — capsule and tablet applications</td><td>≥98% purity, pharmacopoeial specification, full analytical package.</td></tr></tbody></table><div class="d-title" style="margin-top:24px">Documentation</div><p class="d-text">Full COA per batch, TDS, MSDS, COO, allergen declaration, heavy metals testing per USP/EU Pharmacopoeia limits. US FDA dietary supplement documentation. EU novel food and traditional food ingredient compliance guidance on request. Australia TGA and Canada NHP documentation support available.</p></div>`
     }
   ]
@@ -1268,13 +1290,10 @@ function renderFooters() {
       <div>
         <div class="foot-col-title">Platforms</div>
         <ul class="foot-links">
-          <li><a onclick="nav('products','kapzopro')">Kapzo Pro™ Platform</a></li>
-          <li><a onclick="nav('products','kapzosphere')">KapzoSphere™</a></li>
-          <li><a onclick="nav('products','kapzobase')">KapzoBase™</a></li>
-          <li><a onclick="nav('products','gheeplus')">GheePlus™</a></li>
-          <li><a onclick="nav('products','jaggerplus')">JaggerPlus™</a></li>
-          <li><a onclick="nav('products','psyllium')">Kapzo Psyllium</a></li>
-          <li><a onclick="nav('products','kapzostratum')">KapzoStratum™</a></li>
+          <li><a onclick="nav('products','kapzopro')">KapzoHumPro™</a></li>
+          <li><a onclick="nav('products','kapzostratum')">KapzoHumStratum™</a></li>
+          <li><a onclick="nav('products','kapzosphere')">Kapzo Precision Systems™</a></li>
+          <li><a onclick="nav('products','gheeplus')">KapzoNatCore™</a></li>
         </ul>
       </div>
       <div>
@@ -1507,8 +1526,6 @@ function renderProduct(id) {
             <p class="det-tagline">${ppData.tagline}</p>
             <div class="det-stats">
               <div class="det-stat"><div class="det-s-lbl">Format</div><div class="det-s-val">${ppData.fmt}</div></div>
-              <div class="det-stat"><div class="det-s-lbl">B2B Price</div><div class="det-s-val">${ppData.price}</div></div>
-              <div class="det-stat"><div class="det-s-lbl">MOQ</div><div class="det-s-val">${ppData.moq}</div></div>
             </div>
           </div>
         </div>
@@ -1538,8 +1555,6 @@ function renderProduct(id) {
           <p class="det-tagline">${ppData.tagline}</p>
           <div class="det-stats">
             <div class="det-stat"><div class="det-s-lbl">Format</div><div class="det-s-val">${ppData.fmt}</div></div>
-            <div class="det-stat"><div class="det-s-lbl">B2B Price</div><div class="det-s-val">${ppData.price}</div></div>
-            <div class="det-stat"><div class="det-s-lbl">MOQ</div><div class="det-s-val">${ppData.moq}</div></div>
           </div>
         </div>
       </div>
@@ -1586,9 +1601,7 @@ function renderProduct(id) {
         <p class="det-tagline">${s.tagline}</p>
         <div class="det-stats">
           <div class="det-stat"><div class="det-s-lbl">Format</div><div class="det-s-val">${s.fmt}</div></div>
-          <div class="det-stat"><div class="det-s-lbl">B2B Price (FOB India)</div><div class="det-s-val">${s.price}</div></div>
-          <div class="det-stat"><div class="det-s-lbl">Gross Margin</div><div class="det-s-val">${s.margin}</div></div>
-          <div class="det-stat"><div class="det-s-lbl">Trial Batch MOQ</div><div class="det-s-val">${s.moq}</div></div>
+          
         </div>
       </div>
     </div>
