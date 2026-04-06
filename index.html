@@ -330,7 +330,7 @@ a{color:inherit;text-decoration:none}
       </li>
       <li><a onclick="nav('about')">About Us</a></li>
       <li><a onclick="nav('capabilities')">Capabilities</a></li>
-      <li><a onclick="nav('contact')" class="nav-cta">Request Sample</a></li>
+      <li><a onclick="nav('contact')" class="nav-cta">Contact Us</a></li>
     </ul>
     <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -393,7 +393,7 @@ a{color:inherit;text-decoration:none}
   <div class="mob-section">Company</div>
   <div class="mob-item" onclick="mobNav('about')">About Us</div>
   <div class="mob-item" onclick="mobNav('capabilities')">Capabilities</div>
-  <div class="mob-cta" onclick="mobNav('contact')">Request Sample</div>
+  <div class="mob-cta" onclick="mobNav('contact')">Contact Us</div>
 </div>
 
 <!-- HOME -->
@@ -405,7 +405,7 @@ a{color:inherit;text-decoration:none}
       <p class="h-sub">Four platform groups. 29+ SKUs. One GMP-certified facility — human supplements, personal care, engineered delivery systems, and origin food ingredients.</p>
       <div class="h-btns">
         <button class="btn btn-gold" onclick="document.getElementById('all-platforms').scrollIntoView({behavior:'smooth'})">Explore Platforms</button>
-        <button class="btn btn-outline" onclick="nav('contact')">Request Sample</button>
+        
       </div>
       <div class="h-stats">
         <div><div class="h-stat-val">4</div><div class="h-stat-lbl">Platform Groups</div></div>
@@ -454,8 +454,8 @@ a{color:inherit;text-decoration:none}
   <div class="cta-band">
     <div class="wrap">
       <h2>Ready to begin a B2B conversation?</h2>
-      <p>Lab samples shipped within 10 days. Full COA and TDS included at no charge.</p>
-      <button class="btn btn-navy" onclick="nav('contact')">Contact Us →</button>
+      <p>Reach out to discuss formulation requirements, technical specifications, or a product evaluation.</p>
+      <button class="btn btn-navy" onclick="nav('contact')">Get in Touch →</button>
     </div>
   </div>
   <footer class="footer" id="home-footer"></footer>
@@ -549,7 +549,7 @@ a{color:inherit;text-decoration:none}
   <div class="cta-band">
     <div class="wrap">
       <h2>Start a conversation with our team</h2>
-      <p>Sample requests, technical inquiries, and custom formulation discussions welcome.</p>
+      <p>Technical inquiries and formulation discussions welcome.</p>
       <button class="btn btn-navy" onclick="nav('contact')">Contact Us →</button>
     </div>
   </div>
@@ -633,7 +633,7 @@ a{color:inherit;text-decoration:none}
   <section class="sec sec-navy" style="padding-top:120px">
     <div class="wrap">
       <div class="lbl">Contact</div>
-      <div class="hdg">Start a B2B conversation</div>
+      <div class="hdg">Start a conversation</div>
       <div class="gline"></div>
       <div class="contact-grid">
         <div>
@@ -641,11 +641,7 @@ a{color:inherit;text-decoration:none}
           <div class="ci-item"><div class="ci-icon">📞</div><div><div class="ci-lbl">Phone</div><div class="ci-val">+91 638 398 1422</div></div></div>
           <div class="ci-item"><div class="ci-icon">✉️</div><div><div class="ci-lbl">Email</div><div class="ci-val">arun@kapzobioactives.com<br>kapzobioactives@gmail.com</div></div></div>
           <div class="ci-item"><div class="ci-icon">🌐</div><div><div class="ci-lbl">Website</div><div class="ci-val">kapzobioactives.com</div></div></div>
-          <div style="margin-top:32px;padding:24px;border:1px solid rgba(201,168,76,.2);border-radius:6px">
-            <div style="font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px">Sample Policy</div>
-            <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.7">500g lab samples shipped within 10 business days. Full COA and TDS included at no charge. Samples and technical data sheets available on request.</p>
           </div>
-        </div>
         <div class="cf" id="contact-form-wrap">
           <div id="form-success" style="display:none;padding:32px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.3);border-radius:6px;text-align:center">
             <div style="font-size:28px;margin-bottom:12px">✓</div>
@@ -730,20 +726,21 @@ const PLATFORM_META = {
 
 // ─── CATEGORY MAPS (3-level navigation) ────────────────────────────────────
 const ORGAN_CATS = [
-  {id:'brain',    name:'Brain & Nervous System', skus:['calmcore','focuscore','somnamax','impulsecore']},
-  {id:'eye',      name:'Eye',                    skus:['visioncore_d','visioncore_a']},
-  {id:'heart',    name:'Heart & Vasculature',    skus:['cardioguard']},
-  {id:'kidney',   name:'Kidney & Urinary',       skus:['renalguard']},
-  {id:'liver',    name:'Liver',                  skus:['hepatguard']},
-  {id:'thyroid',  name:'Thyroid',                skus:['thyroguard']},
-  {id:'gut',      name:'Gut & Digestive',        skus:['transitmax']},
-  {id:'metabolic',name:'Metabolic / Endocrine',  skus:['satietyglp','metaguard','cravezero','glucoguard']},
-  {id:'repro',    name:'Reproductive & Hormonal',skus:['virimax','femimax','follimax']},
-  {id:'prostate', name:'Prostate',               skus:['prostacare']},
-  {id:'musculo',  name:'Musculoskeletal',         skus:['jointmax']},
-  {id:'respiratory',name:'Respiratory',          skus:['respircore']},
-  {id:'performance',name:'Performance',          skus:['premax','postmax']},
-  {id:'longevity',name:'Cellular / Longevity',   skus:['longevimax']},
+  {id:'brain',      name:'Brain & Nervous System', skus:['calmcore','focuscore','somnamax','impulsecore']},
+  {id:'eye',        name:'Eye',                    skus:['visioncore','visioncore_a']},
+  {id:'heart',      name:'Heart & Vasculature',    skus:['cardioguard']},
+  {id:'kidney',     name:'Kidney & Urinary',       skus:['renalguard']},
+  {id:'liver',      name:'Liver',                  skus:['hepatguard']},
+  {id:'thyroid',    name:'Thyroid',                skus:['thyroguard']},
+  {id:'gut',        name:'Gut & Digestive',        skus:['transitmax']},
+  {id:'metabolic',  name:'Metabolic / Endocrine',  skus:['satietyglp','metaguard','cravezero','glucoguard']},
+  {id:'repro',      name:'Reproductive & Hormonal',skus:['virimax','femimax']},
+  {id:'prostate',   name:'Prostate',               skus:['prostacare']},
+  {id:'hair',       name:'Hair',                   skus:['follimax']},
+  {id:'musculo',    name:'Musculoskeletal',         skus:['jointmax']},
+  {id:'respiratory',name:'Respiratory',            skus:['respircore']},
+  {id:'performance',name:'Performance',            skus:['premax','postmax']},
+  {id:'longevity',  name:'Longevity',              skus:['longevimax']},
 ];
 
 const STRATUM_CATS = [
@@ -1534,14 +1531,7 @@ function renderProduct(id) {
           <div class="d-section"><div class="d-title">The Solution</div><p class="d-text">${ppData.solution}</p><div class="mech-grid">${mechsHTML}</div></div>
           ${diffsHTML ? `<div class="d-section"><div class="d-title">What Makes This Different</div><ul class="diff-list">${diffsHTML}</ul></div>`:''}
           ${supplyHTML ? `<div class="d-section"><div class="d-title">B2B Supply Models</div><table class="sup-table"><thead><tr><th>Supply Model</th><th>Detail</th></tr></thead><tbody>${supplyHTML}</tbody></table></div>`:''}
-          <div class="d-section" style="background:var(--warm);padding:40px;border-radius:6px;margin-top:40px">
-            <div class="d-title">Request Sample</div>
-            <p class="d-text">Lab samples shipped within 10 business days. Full COA and TDS included at no charge.</p>
-            <div style="display:flex;gap:14px;flex-wrap:wrap">
-              <button class="btn btn-gold" onclick="nav('contact')">Request Sample →</button>
-              <button class="btn btn-navy" onclick="nav('contact')">Technical Inquiry</button>
-            </div>
-          </div>
+          <div class="d-section" style="background:var(--warm);padding:40px;border-radius:6px;margin-top:40px"><div class="d-title">Interested in this product?</div><p class="d-text">Contact our team to discuss formulation requirements, regulatory documentation, and supply specifications.</p><button class="btn btn-gold" onclick="nav('contact')">Get in Touch →</button></div>
         </div></div>`;
       return;
     }
@@ -1562,9 +1552,9 @@ function renderProduct(id) {
         <div class="wrap">
           ${ppData.content}
           <div class="d-section">
-            <div class="d-title">Request Sample or Technical Inquiry</div>
-            <p class="d-text">Contact our team to discuss specifications, sampling, and custom requirements.</p>
-            <button class="btn btn-gold" onclick="nav('contact')">Contact Us →</button>
+            <div class="d-title">Interested in this product?</div>
+            <p class="d-text">Contact our team to discuss formulation requirements, technical specifications, and supply details.</p>
+            <button class="btn btn-gold" onclick="nav('contact')">Get in Touch →</button>
           </div>
         </div>
       </div>`;
@@ -1631,14 +1621,7 @@ function renderProduct(id) {
             <strong style="color:var(--navy)">Documentation:</strong> COA, COO, TDS, MSDS, Allergen Declaration, Regulatory Dossier
           </div>
         </div>` : ''}
-        <div class="d-section" style="background:var(--warm);padding:40px;border-radius:6px;margin-top:40px">
-          <div class="d-title">Request Sample</div>
-          <p class="d-text">500g lab sample shipped within 10 business days at no charge. Full COA and TDS included.</p>
-          <div style="display:flex;gap:14px;flex-wrap:wrap">
-            <button class="btn btn-gold" onclick="nav('contact')">Request Sample →</button>
-            <button class="btn btn-navy" onclick="nav('contact')">Technical Inquiry</button>
-          </div>
-        </div>
+        <div class="d-section" style="background:var(--warm);padding:40px;border-radius:6px;margin-top:40px"><div class="d-title">Interested in this product?</div><p class="d-text">Contact our team to discuss formulation requirements, regulatory documentation, and supply specifications.</p><button class="btn btn-gold" onclick="nav('contact')">Get in Touch →</button></div>
       </div>
     </div>
   `;
