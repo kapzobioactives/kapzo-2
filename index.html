@@ -2135,6 +2135,23 @@ function nav(page, param) {
   renderFooters();
 }
 
+function navToAllPlatforms() {
+  // Deactivate all pages
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  // Activate home
+  document.getElementById('page-home').classList.add('active');
+  currentPage = 'home';
+  // Push history so goBack works
+  navHistory = [];
+  renderFooters();
+  // Scroll to platforms section synchronously — no setTimeout, no flash
+  const el = document.getElementById('all-platforms');
+  if (el) {
+    const top = el.getBoundingClientRect().top + window.pageYOffset;
+    window.scrollTo(0, top);
+  }
+}
+
 function goBack() {
   if (navHistory.length === 0) { nav('home'); return; }
   const prev = navHistory.pop();
@@ -2255,7 +2272,7 @@ function renderProducts(platformId) {
 
   // Always show "← All Platforms" at top of products page
   document.getElementById('prod-platform-back').innerHTML =
-    '<button class="cat-back" onclick="nav(\'home\');setTimeout(()=>document.getElementById(\'all-platforms\').scrollIntoView({behavior:\'instant\'}),80)" style="margin-bottom:4px">← All Platforms</button>';
+    '<button class="cat-back" onclick="navToAllPlatforms()" style="margin-bottom:4px">← All Platforms</button>';
 
   if (meta.useCats) {
     // 3-level: show category grid
@@ -2346,7 +2363,7 @@ function backToCategories() {
   const cats = platformId === 'kapzopro' ? ORGAN_CATS : STRATUM_CATS;
   renderCategoryGrid(platformId, cats);
   document.getElementById('prod-platform-back').innerHTML =
-    '<button class="cat-back" onclick="nav(\'home\');setTimeout(()=>document.getElementById(\'all-platforms\').scrollIntoView({behavior:\'instant\'}),80)" style="margin-bottom:4px">← All Platforms</button>';
+    '<button class="cat-back" onclick="navToAllPlatforms()" style="margin-bottom:4px">← All Platforms</button>';
   window.scrollTo(0, 0);
 }
 
