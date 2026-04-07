@@ -187,7 +187,7 @@ a{color:inherit;text-decoration:none}
 .comp-tbl td{padding:10px 12px;border-bottom:1px solid var(--g100);color:var(--mid)}
 .comp-tbl tr:nth-child(even) td{background:var(--warm)}
 .comp-tbl td:first-child{font-weight:500;color:var(--text)}
-.comp-tbl td:last-child,.comp-tbl th:last-child{background:rgba(201,168,76,.06);font-weight:600}
+.comp-tbl td:last-child,.comp-tbl th:last-child{background:rgba(201,168,76,.06);font-weight:600}.comp-tbl th:last-child{color:var(--gold);font-size:12px;letter-spacing:.3px}
 .ck{color:#2a9d5c;font-weight:700}.cx{color:#c0392b}
 /* NESTED NAV DROPDOWN */
 .nav-dd-item{position:relative}
@@ -215,7 +215,7 @@ a{color:inherit;text-decoration:none}
 .org-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px;padding:32px 0 56px}
 .org-card{background:var(--white);border:1px solid var(--g200);border-radius:6px;padding:22px 20px;cursor:pointer;transition:var(--tr);position:relative;overflow:hidden}
 .org-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 6px 20px rgba(10,22,40,.07)}
-.org-card-n{font-family:var(--font-h);font-size:44px;font-weight:700;color:rgba(201,168,76,.15);line-height:1;margin-bottom:6px}
+.org-card-n{font-family:var(--font-h);font-size:44px;font-weight:700;color:rgba(201,168,76,.38);line-height:1;margin-bottom:6px}
 .org-card-name{font-family:var(--font-h);font-size:17px;font-weight:600;color:var(--navy);margin-bottom:4px;line-height:1.2}
 .org-card-badge{display:inline-block;font-size:10px;font-weight:600;color:var(--gold);letter-spacing:.5px;margin-top:6px}
 .org-card-arr{position:absolute;bottom:16px;right:16px;font-size:16px;color:var(--gold);opacity:0;transition:var(--tr)}
@@ -257,6 +257,44 @@ a{color:inherit;text-decoration:none}
   .det-stat{min-width:100px;padding:14px 16px}
   .two-col-caps{grid-template-columns:1fr!important}
 }
+
+/* ═══ EXPANDED DETAIL SECTIONS ═══ */
+.moat-section{background:rgba(201,168,76,.05);border:1px solid rgba(201,168,76,.22);border-radius:6px;padding:28px;margin-bottom:40px}
+.moat-title{font-family:var(--font-h);font-size:22px;font-weight:600;color:var(--navy);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.moat-title::before{content:'';display:inline-block;width:3px;height:22px;background:var(--gold);border-radius:2px}
+.moat-grid{display:grid;gap:10px}
+.moat-item{display:flex;gap:12px;align-items:flex-start}
+.moat-star{color:var(--gold);font-size:16px;flex-shrink:0;margin-top:2px;font-weight:700}
+.moat-txt{font-size:13px;color:var(--text);line-height:1.62}
+.moat-txt b{color:var(--navy);font-weight:600}
+
+/* Ingredient Architecture Table */
+.ing-wrap{overflow-x:auto;margin-bottom:32px}
+.ing-table{width:100%;border-collapse:collapse;font-size:12px;min-width:700px}
+.ing-table th{background:var(--navy);color:var(--white);padding:10px 12px;text-align:left;font-size:9.5px;font-weight:600;letter-spacing:.7px;text-transform:uppercase;word-break:break-word}
+.ing-table td{padding:10px 12px;border-bottom:1px solid var(--g100);vertical-align:top;line-height:1.55;color:var(--mid);word-break:break-word;overflow-wrap:anywhere}
+.ing-table tr:nth-child(even) td{background:var(--warm)}
+.ing-table td.ing-lbl{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
+.ing-table td.ing-name{font-weight:600;color:var(--navy);font-size:12px;word-break:break-word}
+.ing-table td.ing-signal{font-size:11.5px;color:var(--navy);font-style:italic}
+
+/* Claims */
+.claims-section{margin-bottom:40px}
+.claims-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:13px;margin-top:14px}
+.claim-card{padding:16px 18px;border:1px solid var(--g200);border-radius:5px;background:var(--warm)}
+.claim-type{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:7px}
+.claim-text{font-size:12px;color:var(--text);line-height:1.6}
+
+/* Comparison */
+.comp-section{margin-bottom:40px}
+.comp-note{font-size:11px;color:var(--mid);margin-top:10px;font-style:italic}
+
+/* Det stats extra */
+.det-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border:1px solid rgba(201,168,76,.35);border-radius:100px;font-size:11px;color:var(--gold);margin-right:6px;margin-bottom:6px}
+.det-badges{margin-top:18px;flex-wrap:wrap;display:flex}
+
+@media(max-width:700px){.ing-table{min-width:520px}.claims-grid{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -639,14 +677,14 @@ a{color:inherit;text-decoration:none}
         <div>
           <div class="ci-item"><div class="ci-icon">📍</div><div><div class="ci-lbl">Address</div><div class="ci-val">Kapzo Bioactives Pvt. Ltd.<br>SIDCO Industrial Estate<br>Tiruchirappalli, Tamil Nadu, India</div></div></div>
           <div class="ci-item"><div class="ci-icon">📞</div><div><div class="ci-lbl">Phone</div><div class="ci-val">+91 638 398 1422</div></div></div>
-          <div class="ci-item"><div class="ci-icon">✉️</div><div><div class="ci-lbl">Email</div><div class="ci-val">arun@kapzobioactives.com<br>kapzobioactives@gmail.com</div></div></div>
+          <div class="ci-item"><div class="ci-icon">✉️</div><div><div class="ci-lbl">Email</div><div class="ci-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6c0d1e19022c070d1c16030e05030d0f18051a091f420f0301">[email&#160;protected]</a><br><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="046f65747e6b666d6b6567706d726177446369656d682a676b69">[email&#160;protected]</a></div></div></div>
           <div class="ci-item"><div class="ci-icon">🌐</div><div><div class="ci-lbl">Website</div><div class="ci-val">kapzobioactives.com</div></div></div>
           </div>
         <div class="cf" id="contact-form-wrap">
           <div id="form-success" style="display:none;padding:32px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.3);border-radius:6px;text-align:center">
             <div style="font-size:28px;margin-bottom:12px">✓</div>
             <div style="font-family:var(--font-h);font-size:22px;color:var(--white);margin-bottom:8px">Inquiry Received</div>
-            <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.6">Your enquiry has been submitted. We'll respond within 1–2 business days. You can also reach us directly at <strong style="color:var(--gold)">arun@kapzobioactives.com</strong></p>
+            <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.6">Your enquiry has been submitted. We'll respond within 1–2 business days. You can also reach us directly at <strong style="color:var(--gold)"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1b7a696e755b707a6b61747972747a786f726d7e6835787476">[email&#160;protected]</a></strong></p>
             <button class="btn btn-outline" style="margin-top:20px" onclick="resetForm()">Send Another</button>
           </div>
           <div id="form-fields">
@@ -683,7 +721,7 @@ a{color:inherit;text-decoration:none}
   <footer class="footer" id="contact-footer"></footer>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ─── DATA ───────────────────────────────────────────────────────────────────
 
 const PLATFORMS = [
@@ -1208,6 +1246,869 @@ const PLATFORM_PRODUCTS = {
   ]
 };
 
+
+// ─── SKU EXTENDED DATA (moat, ingredients, comp, claims, badges) ────────────
+(function(){
+  const E = {
+    calmcore:{
+      stats:[{lbl:'Format',val:'HPMC Capsule / RTM Sachet'},{lbl:'HPA Intervention Levels',val:'4 Simultaneous'}],
+      badges:['Zero Sedatives','Daytime Formula','KSM-66® Certified','Soy-Free PS'],
+      moat:[
+        'KSM-66® at 600mg — the stress and cortisol-validated dose. 300mg is the sleep dose. Most market formulas use 300mg for stress because they haven\'t read the RCTs.',
+        'Holy Basil 300mg at 2% ursolic acid: India-exclusive dual mechanism — 11β-HSD1 inhibition of peripheral cortisol reactivation, plus glycaemic stabilisation breaking the insulin-cortisol loop. Absent from all Western-formulated cortisol products.',
+        'Phosphatidylserine at 400mg from sunflower (not soy): reduces pituitary ACTH output — the upstream command ordering cortisol production. Independent of KSM-66. Silent soy-free + non-GMO double upgrade.',
+        'Rhodiola standardised to both 3% rosavins AND 1% salidroside — dual-fraction HPLC confirmed. Generic rosavins-only Rhodiola is rejected at intake. The salidroside fraction is the dopaminergic differentiator.',
+        'Zero sedatives — explicitly formulated for daytime use. Absence of valerian or passionflower is a clinical decision, not an omission.'
+      ],
+      ingredients:[
+        {lbl:'Adrenal',name:'KSM-66® Ashwagandha 600mg',spec:'5% withanolides HPLC, spray dried 2:1 maltodextrin, moisture ≤3%, shared batch efficiency across platform.',mechanism:'HPA feedback loop modulation — reduces adrenal cortisol synthesis at source. US Patent 8,377,474.',evidence:'Chandrasekhar 2012; Choudhary 2017; ≥6 RCTs. 20–30% serum cortisol reduction; PSS + HAM-A improvement.',signal:'600mg = stress-validated RCT dose. 300mg = sleep dose. Specifying 600mg proves you read the actual cortisol studies, not competitor labels.'},
+        {lbl:'Pituitary',name:'Phosphatidylserine 400mg (Sunflower)',spec:'Native powder, non-soy, non-GMO, allergen-free. 20% PS standardised.',mechanism:'Reduces pituitary ACTH output — the upstream command ordering adrenal cortisol production. Independent of KSM-66.',evidence:'Monteleone 1990: blunted cortisol/ACTH to exercise stress. Starks 2008. FDA Qualified Health Claim 21 CFR 101.72 (PS + cognitive function).',signal:'400mg = RCT dose. Sunflower = soy-free + non-GMO — two silent label upgrades in one raw material specification.'},
+        {lbl:'Hypothalamic',name:'Rhodiola Rosea 200mg',spec:'3% rosavins + 1% salidroside, BOTH fractions HPLC confirmed per batch. Generic rosavins-only Rhodiola rejected.',mechanism:'Modulates hypothalamic stress appraisal before HPA cascade initiates. Salidroside: dopaminergic pathway.',evidence:'Darbinyan 2000 (physician fatigue); Shevtsov 2003 (military cadets); Olsson 2009 burnout RCT.',signal:'Dual-fraction spec signals you read past the first PubMed result. Generic = rosavins only.'},
+        {lbl:'Peripheral',name:'Holy Basil 300mg',spec:'Ocimum tenuiflorum, 2% ursolic acid. OSA starch microencapsulation — bitterness fully masked.',mechanism:'11β-HSD1 inhibition: blocks peripheral cortisol reactivation from inactive cortisone. Glycaemic stabilisation: severs insulin-cortisol loop.',evidence:'Mondal 2011 (stress + fasting glucose). Ursolic acid 11β-HSD1 mechanism established.',signal:'India-exclusive supply chain. Western formulators lack proximity advantage. The insulin-cortisol mechanism 99% of formulas miss.'},
+        {lbl:'Neural',name:'L-Theanine 200mg',spec:'Free form, water-soluble. Native powder.',mechanism:'Alpha-wave induction + GABA/serotonin elevation. Calm focus without sedation — daytime-correct.',evidence:'Kimura 2007 (alpha wave EEG); multiple RCTs calm focus. FDA GRAS GRN 000209.',signal:'No drowsiness at 200mg — daytime context is critical. Sedative reputation is a dose and context misunderstanding.'}
+      ],
+      comp:{headers:['Feature','Generic Ashwagandha','Premium Blend (Market)','CalmCore Pro™'],rows:[
+        ['Ashwagandha dose','300mg generic 2.5%','KSM-66 at 300mg (cost-reduced)','KSM-66® 600mg — stress/cortisol-validated RCT dose. 300mg = sleep. 600mg = stress.'],
+        ['HPA coverage','1 level (adrenal only)','1–2 levels, underdosed','4 Simultaneous: adrenal + pituitary + hypothalamic + peripheral. No other formula covers all four.'],
+        ['Holy Basil','ABSENT','ABSENT — no India supply','300mg at 2% ursolic acid — India-exclusive. 11β-HSD1 + insulin-cortisol loop. Mechanism competitors miss.'],
+        ['Sedatives included','Often (valerian, passionflower)','Mixed — some sedate','ZERO — explicit daytime formula. Absence is the clinical decision.']
+      ]},
+      claims:[
+        {type:'Structure/Function (US)',text:'Supports healthy cortisol balance and stress response* — KSM-66®, PS, Rhodiola, Holy Basil (S/F, DSHEA)'},
+        {type:'Cognitive (US)',text:'Supports mental clarity and sustained focus under stress* — Rhodiola, L-Theanine, KSM-66®'},
+        {type:'Factual Label',text:'No caffeine | No sedatives | No soy | Vegan | Non-GMO | GMP-certified | KSM-66® 600mg per serving'},
+        {type:'FDA QHC (PS)',text:'Phosphatidylserine 400mg — FDA Qualified Health Claim 21 CFR 101.72: may reduce risk of cognitive dysfunction'}
+      ]
+    },
+
+    focuscore:{
+      stats:[{lbl:'Format',val:'4 HPMC Capsules'},{lbl:'Stimulants',val:'Zero Caffeine'},{lbl:'Cholinergic Coverage',val:'Dual (Alpha-GPC + Citicoline)'}],
+      badges:['Zero Caffeine','Zero Stimulants','Dual Cholinergic','Saffron vs Methylphenidate RCT'],
+      moat:[
+        'Saffron 30mg vs methylphenidate — Akhondzadeh 2004 head-to-head RCT: saffron comparable to Ritalin in ADHD attention scores. No stimulant. No scheduling. No prescription. This single RCT is absent from all competing nootropic formulas on the B2B market.',
+        'Dual cholinergic — Alpha-GPC 200mg provides direct choline for ACh synthesis; Citicoline 200mg provides uridine + D2 receptor upregulation. Different mechanisms, not redundant. Single cholinergic misses half the cognitive benefit.',
+        'L-Tyrosine at 2,000mg — the stress and catecholamine depletion dose from military/high-demand RCTs. Under 500mg is label presence. 2g means you read Neri 1995.',
+        'Zero caffeine — the absence is the differentiator. Every competitor nootropic leads with caffeine.'
+      ],
+      ingredients:[
+        {lbl:'Catecholamine',name:'L-Tyrosine (Free Form) 2,000mg',spec:'Pharmaceutical grade. 2g dose = military cold/stress cognitive RCT dose (not label amount).',mechanism:'Dopamine + norepinephrine precursor at the clinical-dose level for high-demand cognition.',evidence:'Neri 1995: 150mg/kg military; Lieberman 2003: tyramine depletion reversal at 2g.',signal:'2g = you read the Neri 1995 cold stress RCT. Under 500mg is label presence.'},
+        {lbl:'Cholinergic 1',name:'Alpha-GPC 50% 200mg',spec:'Native powder 50% active. Hygroscopic — added second-to-last before final blend.',mechanism:'Direct choline for acetylcholine synthesis in neurons. Most bioavailable choline source for CNS.',evidence:'Parnetti 2001 Alpha-GPC cognition RCT; Cannella 1993 alpha-GPC + cognitive aging.',signal:'Alpha-GPC = ACh precursor; Citicoline = D2 + uridine. Both needed for complete coverage.'},
+        {lbl:'Cholinergic 2',name:'CDP-Choline (Citicoline) 200mg',spec:'≥98% citicoline HPLC confirmed.',mechanism:'D2 receptor upregulation + uridine → neuronal membrane synthesis. Distinct from Alpha-GPC.',evidence:'Secades + Lorenzo: D2 upregulation review. McGlade 2012 brain energy.',signal:'Both cholinergics = complete coverage. Alpha-GPC alone or Citicoline alone misses half the benefit.'},
+        {lbl:'Attention',name:'Saffron 30mg (Lepticrosalide-std)',spec:'Same Inoreal source as CraveZero/ImpulseCore.',mechanism:'DA/5HT dual reuptake — focus + mood. PS 200mg: neuronal membrane + ACTH blunting.',evidence:'Akhondzadeh 2004: saffron vs methylphenidate — comparable at 30mg/day.',signal:'Saffron vs Ritalin comparison is the single most impactful clinical statement in nootropics.'},
+        {lbl:'Attention',name:'Phosphatidylserine 200mg (Sunflower)',spec:'Non-soy. Shared raw material with CalmCore.',mechanism:'Neuronal membrane integrity + pituitary ACTH reduction upstream.',evidence:'FDA Qualified Health Claim 21 CFR 101.72: PS may reduce risk of cognitive dysfunction.',signal:'FDA QHC is the strongest regulatory claim in the cognitive category.'},
+        {lbl:'Neural Resilience',name:'Bacopa Monnieri 300mg (45% bacosides)',spec:'45% bacosides A+B HPLC. 4–6 week onset.',mechanism:'ACh/serotonin modulation + memory consolidation over 4–6 weeks.',evidence:'Pase 2012 Bacopa meta-analysis: memory consolidation, cognitive performance.',signal:'4–6wk onset must be on label directions. Patient education is part of the product specification.'},
+        {lbl:'Neural Resilience',name:"Lion's Mane 500mg (30% polysaccharides)",spec:'10:1 extract, 30% polysaccharides.',mechanism:'NGF stimulation + neuroplasticity.',evidence:'Mori 2009 NGF + human RCT.',signal:"Lion's Mane signals neuroplasticity investment beyond basic cholinergics."}
+      ],
+      comp:{headers:['Feature','Caffeine-Based Nootropic','Mushroom/Adaptogen (Market)','FocusCore Pro™'],rows:[
+        ['Stimulant profile','Caffeine-dependent — jitter, crash, tolerance','Stimulant-free but single-mechanism','ZERO caffeine | Zero stimulants | Zero crash — Saffron + L-Tyrosine = clean dopaminergic focus'],
+        ['Cholinergic coverage','Absent or single (Alpha-GPC OR Citicoline)','Absent','Dual: Alpha-GPC 200mg + Citicoline 200mg — ACh synthesis + D2 upregulation'],
+        ['Clinical benchmark','No head-to-head vs pharma','No head-to-head vs pharma','Saffron 30mg vs methylphenidate (Akhondzadeh 2004) — no stimulant, no scheduling'],
+        ['L-Tyrosine dose','Absent or token (<500mg)','Absent','L-Tyrosine 2,000mg — military stress RCT dose']
+      ]},
+      claims:[
+        {type:'Structure/Function (US)',text:'Supports healthy attention and cognitive performance* — L-Tyrosine, Alpha-GPC, Citicoline, Saffron (S/F, DSHEA)'},
+        {type:'FDA QHC (PS)',text:'Phosphatidylserine 200mg — FDA Qualified Health Claim 21 CFR 101.72: may reduce risk of cognitive dysfunction (21 CFR 101.72)'},
+        {type:'Factual Label',text:'Zero caffeine | Zero stimulants | L-Tyrosine 2g per serving | Alpha-GPC 200mg | Citicoline 200mg | Vegan | GMP-certified'}
+      ]
+    },
+
+    somnamax:{
+      stats:[{lbl:'Format',val:'7g RTM Stick Pack / HPMC Capsule'},{lbl:'Melatonin',val:'Zero — No Exogenous Melatonin'},{lbl:'Pathways Targeted',val:'4 Independent'}],
+      badges:['Zero Melatonin','Stimulant-Free','RTM Bedtime Ritual','KSM-66® Sleep Dose'],
+      moat:[
+        'No melatonin — the absence IS the positioning. Every competitor leads with melatonin. Choosing not to is the formula\'s strongest differentiator and opens markets where melatonin is regulated or restricted.',
+        'Apigenin at 98% purity — generic chamomile 400mg delivers ≈1–2mg actual apigenin. 50mg at 98% standardisation = true GABA-A receptor occupancy at a predictable dose.',
+        'Glycine 3g thermoregulation — most formulators have never read the Bannai RCT. Peripheral vasodilation lowers core body temperature 1–2°C. Mechanism entirely independent of GABA/cortisol/sedation.',
+        'KSM-66® at 300mg (sleep-specific dose, not 600mg stress dose) — proves R&D director read Langade 2019 specifically, not generic ashwagandha literature.',
+        'RTM format as bedtime ritual — habit formation driver. Drives daily compliance vs capsule-only alternatives.'
+      ],
+      ingredients:[
+        {lbl:'GABA',name:'Apigenin 50mg (Chamomile 98%)',spec:'OSA starch microencapsulation — same line as other heat-sensitive actives.',mechanism:'Partial GABA-A receptor agonist — same target as benzodiazepines at fraction of affinity → relaxation without dependence.',evidence:'GABA-A receptor binding studies. 98% purity = predictable occupancy. Generic chamomile = only 1–2mg actual apigenin.',signal:'50× active compound difference vs generic chamomile. The dose precision signals clinical intent.'},
+        {lbl:'GABA',name:'Lemon Balm Extract 200mg (10:1, rosmarinic acid)',spec:'Spray dried with maltodextrin 2:1.',mechanism:'GABA transaminase inhibitor — prevents GABA breakdown, raising endogenous GABA independently of receptor agonism.',evidence:'Multiple human RCTs for sleep quality and anxiety. Rosmarinic acid is primary active.',signal:'Mechanism distinct from Apigenin — second independent GABA layer.'},
+        {lbl:'GABA',name:'Taurine 500mg',spec:'Free form, native powder.',mechanism:'Modulates GABA-A and glycine receptors. Inhibitory neurotransmitter. Reduces neural hyperexcitability.',evidence:'CNS inhibitory data. Extremely well-tolerated.',signal:'Third non-overlapping GABA layer at very low cost. 500mg meaningful CNS dose.'},
+        {lbl:'Thermoregulation',name:'Glycine 3,000mg',spec:'Free form amino acid, highly water-soluble, naturally sweet.',mechanism:'Peripheral vasodilation via hypothalamic NMDA modulation → lowers core body temperature 1–2°C. Inhibitory neurotransmitter in brainstem.',evidence:'Bannai et al. RCT: 3g reduced sleep onset latency, improved quality score, significantly reduced next-day fatigue.',signal:'Most sleep formulators have never read glycine sleep literature. Its presence at 3g signals independent research.'},
+        {lbl:'Alpha Waves',name:'L-Theanine 200mg',spec:'Free form, water-soluble. Shared raw material across platform.',mechanism:'Increases alpha brain wave activity → alert relaxation without sedation. Elevates GABA, serotonin, dopamine.',evidence:'Multiple RCTs: sleep quality, anxiety reduction, sleep efficiency. 200mg validated dose.',signal:'Shared platform ingredient — one qualification serves multiple SKUs.'},
+        {lbl:'Cortisol',name:'KSM-66® Ashwagandha 300mg',spec:'5% withanolides, spray dried. Shared batch.',mechanism:'HPA axis modulation — reduces cortisol output via hypothalamic-pituitary-adrenal feedback; blocks evening cortisol spike preventing sleep onset.',evidence:'Langade 2019 RCT: 300mg twice daily → significant improvements in sleep onset latency, total sleep time, quality, WASO vs placebo.',signal:'300mg = sleep-specific dose. 600mg = stress/testosterone dose. Specifying 300mg for sleep proves you read the actual study.'},
+        {lbl:'Magnesium',name:'Magnesium Glycinate 750mg salt (~105mg elemental)',spec:'Chelated, high solubility.',mechanism:'NMDA receptor regulation, reduces neural hyperexcitability. Essential cofactor for AANAT enzyme (melatonin biosynthesis from serotonin). Muscle relaxation.',evidence:'Multiple RCTs: Mg + sleep quality. ~80% bioavailability vs ~4% for oxide. Zero laxative effect at this dose.',signal:'~105mg elemental within documented sleep-benefit range. Glycinate form explicitly specified = clinical grade commitment.'}
+      ],
+      comp:{headers:['Feature','Standard Melatonin Product','Premium Sleep Stack','SomnaMax Pro™'],rows:[
+        ['Contains melatonin','Yes — 5–10mg (supraphysiological)','Yes — often with L-Theanine','NO — supports body\'s own synthesis via GABA + cortisol + temperature pathways'],
+        ['GABA pathway','None','Single ingredient (L-Theanine only)','3-layer: Apigenin + Lemon Balm + Taurine — three independent GABA mechanisms'],
+        ['Thermoregulation (Glycine)','None','Absent','3g Glycine — core body temperature reduction. Mechanism most formulators have never read.'],
+        ['Cortisol suppression','None','Rarely included','KSM-66® 300mg — Langade 2019 RCT. Sleep-specific dose, not testosterone dose.'],
+        ['Format','Capsule only','Capsule only','RTM powder — warm bedtime ritual. Compliance driver.']
+      ]},
+      claims:[
+        {type:'Structure/Function (US)',text:'Supports healthy sleep onset and sleep quality* — Glycine, L-Theanine, Magnesium, KSM-66®'},
+        {type:'Structure/Function (US)',text:'Supports relaxation and calm mind before sleep* — Apigenin, Lemon Balm, Taurine, L-Theanine'},
+        {type:'Factual Label',text:'3g Glycine per serving | Magnesium ~105mg (~25% DV) | KSM-66® 300mg | No melatonin | No added sugar | Stimulant-free | GMP-certified'}
+      ]
+    },
+
+    impulsecore:{
+      stats:[{lbl:'Format',val:'4 HPMC Capsules / Sachet'},{lbl:'Category',val:'First B2B Formula in Class'},{lbl:'Mechanisms',val:'3 (Craving + Impulse + Hedonic)'}],
+      badges:['Zero Stimulants','Zero Competitors','Odor-Masked NAC','Affron® + KSM-66® Branded'],
+      moat:[
+        'Odor-masked NAC 600mg — NAC is the best-evidenced compulsive-behavior ingredient (Grant 2008: 83.3% responder rate) but its sulfurous odour blocks commercial use in consumer formats. Proprietary fluid bed HPMC/EC coating eliminates odour and adds moisture barrier. No commodity manufacturer can replicate this without equivalent processing infrastructure.',
+        'Category-creating — zero commercial competitor exists in the impulse/urge control supplement category. 957k members r/NoFap. Relay app 20k+ reviews. Quittr: millions of users. No purpose-built B2B supplement exists.',
+        'Affron® 28mg (Pharmactive) + KSM-66® 300mg: branded extracts with specific compulsive-snacking and stress-trigger RCT data. Generic saffron ≠ Affron®. Generic ashwagandha ≠ KSM-66®.',
+        'Three-mechanism coverage: craving (glutamate/xCT), impulse threshold (prefrontal/D2), and hedonic deficit (dopamine/serotonin) — all three failure modes in the compulsive behaviour loop addressed simultaneously.'
+      ],
+      ingredients:[
+        {lbl:'Craving (Glutamate)',name:'NAC 600mg (Odor-Masked)',spec:'Fluid bed HPMC/EC coating. ≥92% encapsulation efficiency. Odor fully masked. Moisture barrier confirmed.',mechanism:'xCT antiporter modulation — glutamate homeostasis in nucleus accumbens (craving generation site).',evidence:'Grant 2008 (J Clin Psychiatry): NAC 83.3% responder rate in pathological gambling study.',signal:'Odor masking converts a clinically proven ingredient from commercially unacceptable to shelf-stable consumer product.'},
+        {lbl:'Craving (Serotonin)',name:'Myo-Inositol 1,500mg',spec:'99% purity GC. Free-flowing powder.',mechanism:'5-HT2 receptor sensitisation — reduces compulsive engagement threshold.',evidence:'Fux 1996 OCD crossover RCT. Inositol + compulsive behaviour mechanism established.',signal:'Pairs with NAC for dual craving control: glutamate + serotonergic.'},
+        {lbl:'Impulse (D2)',name:'CDP-Choline 250mg',spec:'≥98% citicoline HPLC.',mechanism:'D2 receptor upregulation + ACh precursor — prefrontal inhibitory control.',evidence:'Secades + Lorenzo citicoline D2 review.',signal:'D2 upregulation = impulse control mechanism. This is the citicoline-specific action, not alpha-GPC.'},
+        {lbl:'Impulse (NGF)',name:"Lion's Mane 500mg (30%)",spec:'10:1 extract, 30% polysaccharides.',mechanism:'NGF stimulation + prefrontal neuroplasticity.',evidence:'Mori 2009 NGF + human RCT.',signal:"NGF drives structural prefrontal repair — long-term impulse threshold improvement."},
+        {lbl:'Impulse (ACh/5HT)',name:'Bacopa Monnieri 250mg (45% bacosides)',spec:'4–6 week onset. Must be on label directions.',mechanism:'Serotonin + ACh modulation, impulsivity reduction.',evidence:'Pase 2012 meta-analysis: impulsivity reduction.',signal:'4–6wk onset Bacopa is patient education embedded in the product specification.'},
+        {lbl:'Impulse (NMDA)',name:'Magnesium Glycinate 200mg',spec:'Chelated, ICP-MS elemental confirmed.',mechanism:'NMDA modulation, limbic stabiliser.',evidence:'Magnesium NMDA + impulse hyperreactivity RCTs.',signal:'Systemic neural stabiliser across all three mechanisms.'},
+        {lbl:'Hedonic (MAO)',name:'Rhodiola Rosea 300mg (3%+1%)',spec:'Dual fraction confirmed.',mechanism:'Mild MAO-A/B inhibition — dopamine/5HT extension.',evidence:'Mao 2015 Rhodiola vs sertraline (J Affect Disord).',signal:'MAO inhibition extends dopamine dwell time — addresses anhedonia driving compulsive behaviour.'},
+        {lbl:'Hedonic (DA/5HT)',name:'Affron® Saffron 28mg',spec:'Pharmactive, ≥3.5% lepticrosalide. Lepticrosalide HPLC per batch.',mechanism:'DA/5HT dual reuptake modulation.',evidence:'Pharmactive published RCTs: mood + compulsive snacking.',signal:'Affron® ≠ generic saffron. Lepticrosalide standardisation is the clinical marker.'},
+        {lbl:'HPA Axis',name:'KSM-66® Ashwagandha 300mg',spec:'5% withanolides. Shared platform.',mechanism:'HPA cortisol attenuation — severs stress-boredom trigger link.',evidence:'Choudhary 2017: cortisol + food craving scores reduced.',signal:'300mg = stress-trigger suppression dose (not 600mg full CalmCore dose). Distinction matters.'}
+      ],
+      comp:{headers:['Feature','Generic NAC','Generic Nootropic','ImpulseCore Pro™'],rows:[
+        ['NAC form','Strong sulphur odour — consumer rejection','NAC absent from nootropics','Odor-masked NAC 600mg — shelf-stable consumer format'],
+        ['Mechanisms','1 (glutamate)','1–2 (cognitive only)','3 Simultaneous: craving + impulse + hedonic deficit'],
+        ['Category','OCD/respiratory (stigma + regulatory risk)','Productivity/cognitive','Behavioural wellness — first B2B compulsive behaviour formula'],
+        ['Branded actives','None','None','Affron® 28mg + KSM-66® 300mg — specific RCT dossiers']
+      ]},
+      claims:[
+        {type:'Structure/Function (US)',text:'Supports healthy impulse control and behavioural self-regulation* — NAC, Myo-Inositol, CDP-Choline (S/F, DSHEA). SSRI/SNRI + nitroglycerin advisory mandatory.'},
+        {type:'Mood (US)',text:'Supports healthy mood and emotional baseline* — KSM-66®, Rhodiola, Affron®. No addiction or disease treatment claims.'},
+        {type:'Factual Label',text:'Odor-masked NAC 600mg | Affron® 28mg | KSM-66® 300mg | Zero stimulants | Adults 18+ only | GMP-certified'}
+      ]
+    },
+
+    visioncore:{
+      stats:[{lbl:'Format',val:'1 Softgel Daily'},{lbl:'Anatomical Targets',val:'3 (Macula + Ciliary + Photoreceptor)'},{lbl:'Branded Actives',val:'Lutemax 2020® + AstaReal®'}],
+      badges:['Lutemax 2020®','AstaReal®','Screen-Age Formula','3 Anatomical Targets'],
+      moat:[
+        'Lutemax 2020® — the only branded ingredient supplying ALL THREE macular carotenoids (Lutein 10mg + Zeaxanthin 2mg + Meso-Zeaxanthin 2mg) from a single source. 12+ peer-reviewed clinical publications on MPOD outcomes. Commodity lutein = one carotenoid.',
+        'AstaReal® Astaxanthin — the ONLY astaxanthin brand with a published RCT specifically on ciliary muscle accommodation fatigue reduction. Generic astaxanthin powder does not have this data; the brand is the moat.',
+        'Three non-overlapping anatomical targets in a single softgel — Macula (carotenoids), Ciliary Muscle (astaxanthin), Rod Photoreceptors (bilberry). This architecture cannot be replicated without both branded ingredients at these specific doses.',
+        'Screen-age positioning — the digital eye strain narrative reaches the 25–45 cohort that AMD-focused products miss entirely.'
+      ],
+      ingredients:[
+        {lbl:'Macula',name:'Lutemax 2020® (OmniActive) 14mg',spec:'Marigold (Tagetes erecta). L:10mg, Z:2mg, MZ:2mg. Softgel fill in sunflower oil. OmniActive COA mandatory per batch.',mechanism:'Densifies macular pigment optical density (MPOD) filtering short-wavelength blue light (415–455nm). All three macular carotenoids in physiological ratio.',evidence:'12+ peer-reviewed clinical publications on MPOD and visual performance.',signal:'Brand matters: Lutemax 2020® vs unlabelled commodity lutein = the difference between 12 clinical trials and a label name.'},
+        {lbl:'Ciliary Muscle',name:'AstaReal® Astaxanthin 6mg',spec:'H. pluvialis microalgae. Pharmaceutical-grade. GRAS affirmed. Light and oxygen sensitive — softgel provides lipid protection.',mechanism:'Reduces ciliary muscle accommodation fatigue via antioxidant protection of ciliary muscle ROS accumulation during continuous screen-focusing.',evidence:'Kajita 2009 J Trad Med: AstaReal® reduces accommodation fatigue in VDT workers.',signal:'AstaReal® is the ONLY astaxanthin brand with RCT evidence on ciliary accommodation fatigue.'},
+        {lbl:'Photoreceptor',name:'Bilberry Extract 160mg (25% anthocyanins)',spec:'Vaccinium myrtillus. Standardised 25% anthocyanins HPLC per batch.',mechanism:'Accelerates rhodopsin regeneration in rod photoreceptors after bleaching — improves visual recovery when transitioning bright screen → dim environment.',evidence:'Multiple studies confirming improved dim-light vision recovery and retinal microcirculation protection.',signal:'Addresses the visual lag when transitioning between bright screens and dim rooms — a specific screen-era symptom.'},
+        {lbl:'Cofactors',name:'Zinc Citrate 5mg + Riboflavin B2 10mg',spec:'USP/BP grade. Heavy metal tested per batch.',mechanism:'Zinc: cofactor for retinol transport protein, rhodopsin formation. Riboflavin: photoreceptor mitochondrial energy cofactor.',evidence:'Zinc deficiency impairs rhodopsin synthesis. Riboflavin deficiency linked to photophobia.',signal:'Functional cofactors included for mechanism, not nutrient coverage.'}
+      ],
+      comp:{headers:['Feature','Commodity Eye Supps','Combination Vitamin Tablets','VisionCore Pro™'],rows:[
+        ['Macular carotenoids','Lutein only (commodity)','Lutein + Zeaxanthin (2)','All THREE: L+Z+MZ via Lutemax 2020® — the complete macular carotenoid set'],
+        ['Ciliary muscle','None','None','AstaReal® RCT-backed ciliary accommodation fatigue reduction — screen-specific mechanism'],
+        ['Photoreceptor support','None','Generic bilberry sometimes','160mg bilberry 25% anthocyanins — rhodopsin regeneration'],
+        ['Anatomical targets','1 (macula only)','1–2','3 Non-overlapping: Macula + Ciliary + Rod Photoreceptors']
+      ]},
+      claims:[
+        {type:'Structure/Function (US)',text:'Supports healthy vision and visual performance* — Lutein, Zeaxanthin, Meso-Zeaxanthin, Bilberry'},
+        {type:'Factual Label',text:'Lutemax 2020® 14mg per softgel | AstaReal® Astaxanthin 6mg | Bilberry 160mg (25% anthocyanins) | Allergen-free | GMP-certified'}
+      ]
+    },
+
+    visioncore_a:{
+      stats:[{lbl:'Format',val:'1 Softgel Daily'},{lbl:'Beta-Carotene',val:'Zero — Confirmed by HPLC'},{lbl:'Protocol',val:'AREDS2-Aligned'}],
+      badges:['AREDS2-Aligned','Zero Beta-Carotene','Safe for Smokers','Kashmiri Saffron'],
+      moat:[
+        'ZERO beta-carotene — explicitly label-stated, confirmed by HPLC per batch. AREDS1 beta-carotene increased lung cancer risk 28% in smokers. Every legacy Indian AMD supplement has not updated from the 1990s AREDS1 protocol.',
+        'AREDS2-aligned formulation — the only Indian supplement explicitly built on the 2013 AREDS2 protocol update (lutein/zeaxanthin replacing beta-carotene; zinc revised from 80mg to 25mg).',
+        'Kashmiri Saffron 20mg (ISO 3632 Grade I) — Falsini 2010 + Marangoni 2013 RCTs: improved photoreceptor function, contrast sensitivity, and 2-year AMD functional stabilisation. No other Indian AMD supplement foregrounds saffron as the differentiating active.',
+        'Zinc 25mg (AREDS2 revised dose, not AREDS1 80mg) + mandatory copper 1mg — the AREDS2 zinc/copper ratio. Absence of copper with high-dose zinc is a clinical formulation error this formula avoids.'
+      ],
+      ingredients:[
+        {lbl:'Macular Carotenoids',name:'Lutemax 2020® 28mg',spec:'L:20mg, Z:4mg, MZ:4mg. AREDS2-aligned carotenoid loading. Doubled vs SKU1.',mechanism:'AREDS2-aligned macular carotenoid loading. Replaces beta-carotene per AREDS2 protocol.',evidence:'AREDS2 Research Group 2013 JAMA 309(19). Nolan 2016.',signal:'AREDS2 dose: 20mg Lutein. Not the 10mg of SKU1. Dose doubling signals AMD-specific clinical intent.'},
+        {lbl:'AMD Differentiator',name:'Kashmiri Saffron Extract 20mg',spec:'ISO 3632 Grade I. Min 2% crocin by UV-Vis. India-domestic origin.',mechanism:'Crocin and crocetin: neuroprotection of photoreceptors. Improves retinal blood flow. Slows early AMD functional decline.',evidence:'Falsini 2010 (Invest Ophthalmol Vis Sci 51:12): saffron 20mg/day improves retinal flicker sensitivity in early AMD. Marangoni 2013: 2-year AMD stabilisation.',signal:'Kashmiri saffron: domestic brand equity + ISO 3632 certification. No other Indian AMD supplement leads with saffron.'},
+        {lbl:'Screen Continuity',name:'AstaReal® Astaxanthin 6mg + Bilberry 160mg',spec:'Retained from SKU1 — complete digital eye strain coverage.',mechanism:'Ciliary accommodation fatigue reduction + rhodopsin regeneration support.',evidence:'Kajita 2009. Anthocyanin retinal vascular protection.',signal:'Dual role: screen fatigue + synergistic retinal antioxidant in AMD context.'},
+        {lbl:'AREDS2 Antioxidant',name:'Vitamin C 250mg + Vitamin E 100 IU (d-alpha)',spec:'Natural d-alpha tocopherol. 2× more bioavailable than synthetic.',mechanism:'AREDS2 components — aqueous and lipid-soluble antioxidant protection of RPE.',evidence:'AREDS2 protocol: Vit C + E included as essential antioxidants. 250mg vs 500mg — equal efficacy, superior tolerability.',signal:'Natural d-alpha vs synthetic dl-alpha — even in micronutrients, form matters.'},
+        {lbl:'AREDS2 Zinc/Copper',name:'Zinc 25mg (Citrate) + Copper 1mg (Gluconate)',spec:'AREDS2-revised dose. Not AREDS1 80mg.',mechanism:'Zinc: retinal antioxidant enzymes + retinol transport. Copper: prevents zinc-induced copper depletion.',evidence:'AREDS2 protocol. 25mg equivalent AMD protection to 80mg with fewer urinary side effects.',signal:'25mg = AREDS2-revised dose. Copper inclusion is mandatory. Its absence with zinc is a clinical formulation error.'},
+        {lbl:'Cofactor',name:'Riboflavin B2 10mg',spec:'USP/BP grade synthetic.',mechanism:'Photoreceptor mitochondrial energy chain. Corneal integrity.',evidence:'B2 deficiency linked to photophobia and eye fatigue.',signal:'Retained from SKU1 baseline — screen fatigue benefit in combined formula.'}
+      ],
+      comp:{headers:['AREDS2 Component','AREDS2 Dose','VisionCore Advanced','Legacy Indian Supps'],rows:[
+        ['Lutein','10mg','20mg (AREDS2 dose met)','Often absent or <5mg'],
+        ['Beta-Carotene','REMOVED in AREDS2','ABSENT — confirmed HPLC per batch','Often present (legacy AREDS1)'],
+        ['Zinc','25mg (revised from 80mg)','25mg Zinc Citrate','80mg (outdated AREDS1)'],
+        ['Copper','2mg (mandatory)','1mg Copper Gluconate','Often omitted — clinical error'],
+        ['Saffron','Not in AREDS2 (added value)','Kashmiri Saffron 20mg, ISO 3632','Absent from all Indian AMD supps']
+      ]},
+      claims:[
+        {type:'Structure/Function (US)',text:'Supports macular health and visual function* — Lutein, Zeaxanthin, Meso-Zeaxanthin, Saffron, Zinc'},
+        {type:'Safety Claim',text:'Contains NO beta-carotene — confirmed by HPLC per batch. Safe for current and former smokers.'},
+        {type:'Factual Label',text:'Lutemax 2020® 28mg | Kashmiri Saffron 20mg (ISO 3632 Grade I) | Zero beta-carotene | AREDS2-aligned | GMP-certified'}
+      ]
+    },
+
+    cardioguard:{
+      stats:[{lbl:'Format',val:'3 HPMC Capsules'},{lbl:'CV Mechanisms',val:'5 Independent'},{lbl:'Key Branded Active',val:'MenaQ7® K2 180mcg'}],
+      badges:['5 CV Mechanisms','MenaQ7® K2','Nattokinase 2000 FU','Homocysteine Triad'],
+      moat:[
+        'Dual AMPK + PCSK9 lipid stack: Berberine extended-release 500mg (AMPK — hepatic LDL-R upregulation) + plant sterols 800mg (intestinal cholesterol absorption block). Non-overlapping mechanisms. No single competitor combines both at these doses.',
+        'Nattokinase at 2,000 FIP units — the published effective dose. Generic nattokinase sold by mg without activity confirmation is mechanistically unreliable. FU-standardised per batch mandatory.',
+        'Complete homocysteine triad: 5-MTHF 400mcg + Methylcobalamin B12 500mcg + P5P 25mg — all three active forms. Folate without B12 is incomplete. B12 without P5P leaves transsulfuration unsupported.',
+        'MenaQ7® K2 at 180mcg — the VitaK-CAC arterial calcification RCT dose confirmed. Generic MK-7 ≠ MenaQ7®.'
+      ],
+      ingredients:[
+        {lbl:'Lipid AMPK',name:'Berberine HCl (Extended-Release) 500mg',spec:'Ethylcellulose fluid bed coat 15–20% weight gain. NMT30%@1hr, NLT75%@4hr. Sustained release.',mechanism:'AMPK activation in hepatocytes — upregulates LDL-R, reduces de novo lipogenesis. Sustained 4–6hr action.',evidence:'Kong 2008; Liu 2008 — hepatic AMPK + lipid reduction.',signal:'Extended-release berberine = sustained AMPK vs commodity immediate-release spike. 4–6hr action vs 1–2hr.'},
+        {lbl:'Lipid PCSK9',name:'Plant Sterols 800mg (40% β-sitosterol)',spec:'Non-esterified. Competitive with dietary cholesterol at intestinal micelle sites.',mechanism:'PCSK9 pathway — competitive inhibition of intestinal cholesterol absorption.',evidence:'Multiple RCTs: ≥10% LDL reduction at 800mg. FDA health claim: cholesterol-lowering (21 CFR 101.83).',signal:'FDA allows "may reduce risk of heart disease" health claim per 21 CFR 101.83.'},
+        {lbl:'Fibrinolysis',name:'Nattokinase 2,000 FU (FIP units)',spec:'FU activity assay mandatory per batch. Weight-only COA rejected.',mechanism:'Fibrin degradation, anti-platelet activity.',evidence:'Suzuki 2003 nattokinase fibrinolysis.',signal:'FU is the clinical measurement. Weight alone = unreliable potency.'},
+        {lbl:'Arterial Calcification',name:'MenaQ7® K2 180mcg (MK-7)',spec:'NattoPharma brand. All-trans MK-7.',mechanism:'Activates Matrix Gla Protein (MGP) — directs calcium away from arterial walls into bone.',evidence:'Schurgers 2007 VitaK-CAC: K2 180mcg reduces arterial calcium in 3-year RCT.',signal:'MenaQ7® at 180mcg = VitaK-CAC RCT dose. Generic MK-7 powder ≠ MenaQ7® brand.'},
+        {lbl:'Antioxidant/Energy',name:'CoQ10 Ubiquinol 100mg + OPC 95% 150mg',spec:'Ubiquinol form — active electron carrier. Not ubiquinone. OPC 95% DMAC method.',mechanism:'CoQ10: mitochondrial electron transport + antioxidant. OPC: vascular endothelial antioxidant.',evidence:'Q-SYMBIO trial CoQ10 CV outcomes. OPC French maritime pine endothelial RCTs.',signal:'Ubiquinol vs ubiquinone: superior absorption in elderly and statin users. Key clinical distinction.'},
+        {lbl:'Homocysteine',name:'5-MTHF 400mcg + MeCbl B12 500mcg + P5P 25mg',spec:'All three active forms. Spray dried premix.',mechanism:'Remethylation (5-MTHF + B12) + transsulfuration (P5P) — complete Hcy clearance via both pathways.',evidence:'Wald 2002 meta-analysis: homocysteine reduction reduces CV events.',signal:'All-active-form spec: folic acid + cyanocobalamin + pyridoxine HCl = three commodity downgrades.'}
+      ],
+      comp:{headers:['Feature','Omega-3/Fish Oil','Bergamot Single Mech','CardioGuard Pro™'],rows:[
+        ['Mechanisms','1 (TG reduction only)','1–2 (lipid ± antioxidant)','5 Independent — lipid×2 + fibrinolysis + calcification + homocysteine'],
+        ['Berberine (AMPK)','ABSENT','ABSENT or immediate-release','Extended-release 500mg — sustained AMPK 4–6hr'],
+        ['Nattokinase','ABSENT','Rare — no FU guarantee','2,000 FU activity-standardised per batch'],
+        ['K2 specification','ABSENT','MK-7 generic, no dose','MenaQ7® 180mcg — VitaK-CAC arterial calcification RCT dose']
+      ]},
+      claims:[
+        {type:'Lipid / Cholesterol',text:'Supports healthy cholesterol levels already in normal range*. Plant sterols: FDA health claim — may reduce risk of heart disease (21 CFR 101.83).'},
+        {type:'Homocysteine',text:'Supports healthy homocysteine levels already within normal range* — 5-MTHF, B12, P5P (S/F, DSHEA).'},
+        {type:'Factual Label',text:'CoQ10 Ubiquinol 100mg | Nattokinase 2,000 FU | MenaQ7® K2 180mcg | No added sugar | Vegan | GMP-certified'}
+      ]
+    },
+
+    renalguard:{
+      stats:[{lbl:'Format',val:'Dissolvable Sachet (8–10g)'},{lbl:'Targets',val:'3 (Stone + UTI + Function)'},{lbl:'E. coli Coverage',val:'Dual Strain (D-Mannose + PAC)'}],
+      badges:['3 Kidney Targets','Chanca Piedra','Dual E. coli Coverage','Non-Antibiotic UTI'],
+      moat:[
+        'Three-target architecture — Stone prevention (4 mechanisms) + UTI prevention (both major E. coli strains) + kidney function protection (2 nephroprotective pathways) in one sachet. Every competitor is single-target.',
+        'Sachet format is a clinical decision: citrate salts dissolve completely in water for superior bioavailability vs capsule compression. The 300–400ml water per dose is a therapeutic component — urine dilution directly reduces stone supersaturation per AUA guidelines.',
+        'Chanca Piedra (Phyllanthus niruri) — crystal nucleation + aggregation inhibitor. Nishiura 2004 Urol Res RCT. Known as "Stone Breaker" in South American medicine. ABSENT from all mainstream US and EU kidney supplements.',
+        'Low-sodium electrolyte base — deliberately formulated. High dietary sodium increases urinary calcium excretion, worsening calcium oxalate stone risk. Most generic electrolyte blends default to high sodium.'
+      ],
+      ingredients:[
+        {lbl:'Stone pH',name:'Potassium Citrate 500mg',spec:'USP grade. ICP-MS elemental K+ per batch. Below OTC/Rx threshold in all markets.',mechanism:'Raises urinary pH toward 6.5–7.0 → reduces calcium oxalate and uric acid crystallisation. Citrate ion directly inhibits crystal nucleation.',evidence:'Ettinger 1997 J Urol: K-Mg citrate vs placebo — significant calcium oxalate recurrence prevention.',signal:'Solution bioavailability superior to capsule/tablet for citrate salts.'},
+        {lbl:'Stone Oxalate Bind',name:'Magnesium Citrate 200mg elemental',spec:'USP grade citrate salt. ICP-MS confirmed.',mechanism:'Binds dietary oxalate in GI tract → reduces urinary oxalate load before renal filtration.',evidence:'Ettinger 1997 K-Mg citrate combination — most validated stone prevention mineral pair.',signal:'K-citrate + Mg-citrate together = most clinically validated stone prevention regimen.'},
+        {lbl:'Stone Production',name:'Vitamin B6 P-5-P 20mg',spec:'Active pyridoxal-5-phosphate form. Bypasses hepatic conversion.',mechanism:'Reduces hepatic oxalate synthesis via glyoxylate aminotransferase cofactor activity.',evidence:'Nguyen 2001 Metabolism: B6 + oxalate metabolism.',signal:'P-5-P vs pyridoxine HCl = active form at the enzyme level. Three-point oxalate coverage.'},
+        {lbl:'Stone Crystal',name:'Chanca Piedra (Phyllanthus niruri) 500mg',spec:'HPLC species identity confirmed. Not P. amarus.',mechanism:'Crystal nucleation + aggregation inhibition. Reduces urinary calcium excretion.',evidence:'Nishiura 2004 Urol Res: Phyllanthus niruri vs placebo — normalising urinary calcium in stone-forming patients.',signal:'Absent from all mainstream US + EU kidney supplements. "Stone Breaker" consumer education opportunity.'},
+        {lbl:'UTI Type 1 E.coli',name:'D-Mannose 1,000mg (pharmaceutical grade)',spec:'Pharmaceutical grade. Optical rotation identity. Non-GMO.',mechanism:'Competitive inhibition of Type 1 fimbriae on uropathogenic E. coli (UPEC). Non-antibiotic.',evidence:'Kranjcec 2014 World J Urol: D-mannose 2g/day vs nitrofurantoin — comparable recurrent UTI prevention.',signal:'Non-antibiotic positioning in era of global antimicrobial resistance concern.'},
+        {lbl:'UTI P-type E.coli',name:'Cranberry Extract 400mg (≥36mg PAC)',spec:'DMAC method PAC quantification per batch (gold standard). Vaccinium macrocarpon species.',mechanism:'PAC specifically prevent P-fimbriated E. coli adhesion — different E. coli strain from Type 1 fimbriae.',evidence:'Howell 2010 BMC: 36mg PAC threshold dose — P-fimbriated E. coli anti-adhesion confirmed.',signal:'D-mannose (Type 1) + cranberry PAC (P-fimbriated) = both major UPEC strains covered.'},
+        {lbl:'Kidney Function',name:'Astragalus 500mg (70% polysaccharides) + Quercetin 98% 250mg',spec:'UV-Vis polysaccharide. Sophora japonica quercetin 98% HPLC.',mechanism:'Astragalus: TGF-beta anti-fibrotic, proteinuria reduction. Quercetin: NF-κB/ROS renal antioxidant.',evidence:'Zhang 2009 Phytother Res; Huang 2019 J Funct Foods.',signal:'Nephroprotection target: absent from UTI and stone products. Two non-overlapping renal mechanisms.'}
+      ],
+      comp:{headers:['Feature','UTI Supplement','Stone Supplement','RenalGuard Pro™'],rows:[
+        ['Target coverage','UTI only (1–2 strains)','Stone only (1–2 mechanisms)','3 TARGETS: stone (4 mechanisms) + UTI (dual E. coli) + kidney function (2 pathways)'],
+        ['Chanca Piedra','ABSENT','ABSENT from all mainstream products','Nishiura 2004 RCT — white space differentiator in Western market'],
+        ['Sachet vs capsule','Capsule (inferior citrate BA)','Capsule (no hydration component)','SACHET: solution bioavailability + 300–400ml water = therapeutic urine dilution'],
+        ['Non-antibiotic UTI','D-Mannose sometimes','ABSENT','Kranjcec 2014: D-mannose vs nitrofurantoin — comparable efficacy, zero AMR risk']
+      ]},
+      claims:[
+        {type:'Structure/Function (US)',text:'Supports urinary tract health and normal kidney function* — D-Mannose, Cranberry, K-Citrate, Astragalus'},
+        {type:'Safety Advisory',text:'Consult physician if on blood thinners or diuretics. Potassium intake: monitor if on potassium-sparing medications.'},
+        {type:'Factual Label',text:'D-Mannose 1g | Cranberry 36mg PAC | Potassium citrate 500mg | Magnesium 200mg (48% DV) | Chanca Piedra 500mg | Vegan | GMP-certified'}
+      ]
+    },
+
+    thyroguard:{
+      stats:[{lbl:'Format',val:'3 HPMC Capsules Daily'},{lbl:'Iodine Content',val:'Zero — ICP-MS Confirmed'},{lbl:'Target',val:'Hashimoto\'s + Subclinical Hypothyroid'}],
+      badges:['Zero Iodine','Hashimoto\'s-Safe','Selenium 200mcg (Toulis Meta-Analysis Dose)','KSM-66® Thyroid RCT'],
+      moat:[
+        'Iodine-free as PRIMARY label claim — not a gap but the central positioning. Hashimoto\'s accounts for the majority of hypothyroidism in developed markets. Iodine supplementation in Hashimoto\'s worsens TPO-Ab and can accelerate follicular destruction.',
+        'Selenium 200mcg + Myo-Inositol 1,200mg combination — Nordio 2013 proves the combination is SUPERIOR to selenium alone for TPO-Ab reduction and TSH normalisation.',
+        'KSM-66® — the only adaptogen with a published thyroid-specific RCT. Sharma 2018: 600mg over 8 weeks → significant increases in serum T3 and T4 AND reduction in TSH in subclinical hypothyroid patients.',
+        'Iodine-free status confirmed by ICP-MS per batch — this is a mandatory QC release criterion, not just a formulation assumption.'
+      ],
+      ingredients:[
+        {lbl:'Hormone Substrate',name:'L-Tyrosine 500mg',spec:'Free form USP. Taken fasted for max thyroid tissue uptake.',mechanism:'Structural amino acid precursor of T3 and T4. Provides raw material backbone for hormone biosynthesis without iodine.',evidence:'Direct biochemical substrate. Fasted dosing maximises availability at thyroid synthesis sites.',signal:'Morning fasted dosing protocol on label — signals mechanistic understanding of LNAA competition.'},
+        {lbl:'T4→T3 Conversion + TPO-Ab',name:'Selenium Selenomethionine 200mcg',spec:'Spray dried premix. ICP-MS verification mandatory per batch.',mechanism:'Activates DIO1/DIO2 deiodinase enzymes (T4→T3 conversion). Reduces TPO-Ab via antioxidant protection of follicular cells.',evidence:'Toulis 2010 Thyroid meta-analysis: selenium reduces TPO-Ab in Hashimoto\'s. Nordio 2013: Se+MI combo superior to Se alone.',signal:'200mcg = upper clinical dose. Selenomethionine = highest bioavailability. Most competitors use selenite at 55mcg.'},
+        {lbl:'T4→T3 Cofactor',name:'Zinc Bisglycinate 15mg elemental',spec:'Chelated mineral bisglycinate USP. Superior GI tolerance.',mechanism:'Essential cofactor for deiodinase enzyme activity and thyroid hormone receptor binding.',evidence:'Betsy 2013: zinc deficiency associated with hypothyroidism.',signal:'Bisglycinate form = absorption-aware formulation. Signals bioavailability knowledge.'},
+        {lbl:'HPT Axis + T3/T4',name:'KSM-66® Ashwagandha 600mg',spec:'Min 5% withanolides by HPLC. KSM-66® COA per batch.',mechanism:'HPT axis modulation. Reduces cortisol — elevated cortisol suppresses TSH and inhibits T4→T3 conversion.',evidence:'Sharma 2018 J Altern Complement Med: 600mg KSM-66® over 8 weeks → significant increases in serum T3 + T4 AND reduction in TSH.',signal:'Only adaptogen with a direct thyroid RCT. 600mg = thyroid-specific dose.'},
+        {lbl:'TPO-Ab Reduction',name:'Myo-Inositol 1,200mg',spec:'99% purity HPLC per batch. Non-GMO.',mechanism:'TSH signal transduction second messenger — improves thyroid cell sensitivity. Synergises with selenium for TPO-Ab reduction via independent pathway.',evidence:'Nordio 2013: myo-inositol + selenium combination superior to Se alone for TPO-Ab and TSH normalisation. 1,200mg = full RCT dose.',signal:'Full 1,200mg RCT dose — not a sub-therapeutic label claim.'},
+        {lbl:'Immune Modulation',name:'Vitamin D3 2,000 IU',spec:'Spray dried cholecalciferol. Therapeutic dose.',mechanism:'VDR expression on thyroid tissue regulates immune tolerance. Low D3 independently associated with Hashimoto\'s.',evidence:'Mazokopakis 2015. Near-universal D3 deficiency in autoimmune thyroid population.',signal:'2,000 IU = therapeutic dose for the target population who are almost universally deficient.'},
+        {lbl:'B12',name:'Methylcobalamin 500mcg',spec:'Active form. Superior neurological uptake vs cyanocobalamin.',mechanism:'Corrects disproportionately high B12 deficiency in hypothyroid patients (reduced gastric acid → impaired intrinsic factor).',evidence:'Jabbar 2008: B12 deficiency common in primary hypothyroidism.',signal:'Active methylcobalamin vs commodity cyanocobalamin — signals awareness of impaired B12 absorption in hypothyroid patients.'}
+      ],
+      comp:{headers:['Feature','Iodine-Containing Thyroid Supps','Selenium-Only','ThyroGuard Pro™'],rows:[
+        ['Iodine content','150–1000mcg (Hashimoto\'s contraindicated)','Often 150mcg+','ZERO IODINE — explicit clinical decision. Safe for majority hypothyroid population.'],
+        ['Selenium dose/form','Absent or 55mcg selenite','55–100mcg various','200mcg Selenomethionine — Toulis meta-analysis dose.'],
+        ['Myo-Inositol','Absent','Not included','1,200mg — full Nordio RCT dose. Se+MI combo superior to Se alone.'],
+        ['Ashwagandha (thyroid RCT)','Absent','Absent','KSM-66® 600mg — Sharma 2018 (only adaptogen with thyroid RCT)']
+      ]},
+      claims:[
+        {type:'Structure/Function (US)',text:'Supports healthy thyroid function and hormone metabolism* — Selenium, Zinc, KSM-66®, Myo-Inositol (S/F, DSHEA)'},
+        {type:'Safety Advisory',text:'Monitor thyroid levels (TSH/T3/T4) when initiating alongside levothyroxine. Selenium UL 400mcg/day — do not combine with other Se supplements.'},
+        {type:'Factual Label',text:'Zero iodine | Selenium 200mcg (Selenomethionine) | KSM-66® 600mg | Myo-Inositol 1,200mg | Methylcobalamin | GMP-certified'}
+      ]
+    },
+
+    transitmax:{
+      stats:[{lbl:'Format',val:'9.7g Once-Nightly Sachet'},{lbl:'HN019 CFU',val:'17.2B (End of Shelf Life)'},{lbl:'Stimulant Status',val:'100% Stimulant-Free'}],
+      badges:['5 Physiological Pathways','HN019 Transit RCT','Stimulant-Free','Triphala India-Exclusive'],
+      moat:[
+        'HN019 at exactly 17.2B CFU — Waller 2011 dose-specific transit-time RCT is the ONLY probiotic strain with this level of clinical specificity. Generic "billions of CFU" claims are mechanistically unreliable.',
+        '5-HTP enteric serotonin mechanism — absent from every competing constipation supplement globally. The gut IS the serotonin organ (95%). No fibre, osmotic agent, or probiotic can replicate this mechanism.',
+        'Artichoke at 640mg — the exact Holtmann 2003 RCT dose. Competitors include artichoke at 150–200mg (label decoration). 640mg is therapeutic.',
+        'Triphala (India-exclusive three-fruit combination) — authentic sourcing from Indian supply chain impossible to replicate from Chinese manufacturers.'
+      ],
+      ingredients:[
+        {lbl:'Stool Bulk',name:'PHGG 5,000mg (Partially Hydrolysed Guar Gum)',spec:'Fluid bed granulated. EFSA reviewed as dietary fibre source.',mechanism:'Soluble fibre increases stool bulk and water content. Produces SCFAs. Minimal bloating vs psyllium.',evidence:'Niv 2016 meta-analysis: PHGG efficacy in IBS-C with superior bloating profile vs psyllium.',signal:'Backbone of formula — superior fibre technology vs basic psyllium.'},
+        {lbl:'Synbiotic',name:'Resistant Starch RS2 3,000mg + B. lactis HN019 17.2B CFU',spec:'HN019: manufactured at 25.8B CFU to guarantee 17.2B at end of shelf life. PCR strain confirmation per batch.',mechanism:'RS2: prebiotic fermentation substrate (Ruminococcus, Faecalibacterium → butyrate). HN019: whole gut transit time reduction.',evidence:'Waller 2011 J Nutr 141(2): 28-day RCT, n=100. 17.2B CFU dose → statistically significant transit time reduction (p<0.05).',signal:'17.2B CFU = EXACT Waller 2011 dose. Not "billions of CFU" generic claim.'},
+        {lbl:'Enteric Serotonin',name:'5-HTP 100mg (Griffonia simplicifolia 98%)',spec:'Standardised 98% extract. Peripheral 5-HTP dose.',mechanism:'Direct precursor to serotonin. ~95% of body serotonin synthesised in gut. Binds 5-HT4 receptors → initiates peristaltic contractions.',evidence:'Gershon 1999: landmark ENS serotonin review. Mawe + Hoffman 2013: 5-HTP raises enteric serotonin.',signal:'5-HTP enteric mechanism: ABSENT from every competing constipation supplement globally — category-first.'},
+        {lbl:'Osmotic',name:'Magnesium Citrate 300mg',spec:'Citrate form — superior GI tolerance vs oxide. 77mg elemental Mg.',mechanism:'Draws water osmotically into intestinal lumen → softens stool, reduces straining.',evidence:'Mori 2021: Mg citrate superior absorption + equivalent/superior laxative effect vs oxide at lower dose.',signal:'Citrate form (not oxide) positions as premium vs commodity OTC.'},
+        {lbl:'Prokinetic',name:'Triphala 600mg (≥35% total polyphenols) + Artichoke 640mg',spec:'Triphala: India-exclusive 3-fruit. ≥35% polyphenols standardised. Artichoke: 640mg = Holtmann RCT dose.',mechanism:'Triphala: prokinetic via cholinergic smooth muscle. Artichoke: bile secretion via cynarin + luteolin → gastrocolic reflex.',evidence:'Holtmann 2003: Artichoke 640mg significantly improved constipation vs placebo. Kumar 2012: Triphala improved bowel frequency.',signal:'640mg = exact clinical dose. Competitors use 150–200mg (decoration).'}
+      ],
+      comp:{headers:['Feature','Psyllium/Fibre Products','Stimulant Laxatives (Senna)','TransitMax Pro™'],rows:[
+        ['Mechanisms','1 (fibre bulk only)','1–2','5 Independent Simultaneous mechanisms'],
+        ['HN019 (transit RCT)','Absent','Generic probiotic, no transit RCT','17.2B CFU — exact Waller 2011 dose-specific transit RCT'],
+        ['5-HTP serotonin peristalsis','Absent','Absent','100mg Griffonia 98% — category-first globally'],
+        ['Artichoke dose','Absent','Often <200mg','640mg — exactly the Holtmann/Bundy clinical dose']
+      ]},
+      claims:[
+        {type:'Structure/Function (US)',text:'Supports healthy gut transit and regularity* — PHGG, B. lactis HN019, 5-HTP, Artichoke, Triphala'},
+        {type:'EU (EFSA)',text:'Magnesium: "Magnesium contributes to normal bowel function." Dietary fibre contribution from PHGG.'},
+        {type:'Factual Label',text:'17.2B CFU B. lactis HN019 | 5g PHGG | 640mg Artichoke | 100mg 5-HTP | Stimulant-free | Non-habit-forming | GMP-certified'}
+      ]
+    },
+
+    longevimax:{
+      stats:[{lbl:'Format',val:'6.8g RTM Stick Pack'},{lbl:'Aging Pathways',val:'7 Non-Redundant'},{lbl:'Competitive Stack Replaced',val:'$327/month → One Product'}],
+      badges:['7 Aging Pathways','NR Not NMN','Ca-AKG 1000mg Taste-Masked','TMG Methylation Safeguard'],
+      moat:[
+        'Ca-AKG 1,000mg — only epigenetic clock ingredient with a published human RCT (Demidenko 2021: average 8-year reduction in biological age markers, Horvath clock). Raw Ca-AKG at 1g in RTM has unacceptable mineral/earthy taste. Proprietary HPMC/EC microencapsulation (taste panel QC mandatory release criterion) eliminates taste. Without this delivery, Ca-AKG is commercially unviable in RTM.',
+        'NR 300mg moisture-barrier coated — not NMN. NMN has active FDA drug-exclusion proceedings. Five human RCTs confirm 300mg NR blood NAD+ elevation. HPMC fluid bed coating mandatory — NR degrades within weeks in RTM without it.',
+        'TMG 500mg — methylation safeguard absent from every NR competitor. High-dose NR consumes SAM → homocysteine accumulation risk. TMG regenerates SAM via BHMT (Olthof 2003 RCT). No other commercial NR product includes TMG.',
+        'Seven non-overlapping pathways vs competitor single-pathway products: Tru Niagen ($79/mo, NAD+ only) + Timeline ($149/mo, mitophagy only) + Primeadine ($99/mo, autophagy only) = $327/month for only 3 of 7 pathways.'
+      ],
+      ingredients:[
+        {lbl:'NAD+ + Methylation',name:'NR 300mg (HPMC coated) + TMG 500mg',spec:'NR: HPMC fluid bed coat 20–25% weight gain. LOD <2%. TMG: plain water-soluble powder.',mechanism:'NR: cellular NAD+ via salvage pathway. TMG: BHMT methyl donation — SAM regeneration. Guards against homocysteine accumulation from chronic NR use.',evidence:'Trammell 2016 (Cell Metabolism); Conze 2019 (Sci Rep): 5 human RCTs; Olthof 2003 (J Nutr): TMG homocysteine RCT.',signal:'NR + TMG together = the only complete NAD+ strategy. Omitting TMG = a known clinical error in chronic NAD+ supplementation.'},
+        {lbl:'Autophagy',name:'Spermidine 5mg (wheat germ 2%, spray dried)',spec:'Spray dried 1:3 extract:maltodextrin. GC-FID assay ≥4.75mg/serving. (GC-FID = only reliable polyamine assay; HPLC cannot resolve polyamines.)',mechanism:'ULK1 autophagy initiation — cellular debris clearance. Only compound extending lifespan across all three model organisms.',evidence:'Wirth 2021 (Alz+Dem): spermidine memory RCT n=85 older adults; Kiechl 2018 CV mortality.',signal:'GC-FID assay specification is the technical signal — HPLC cannot resolve polyamines.'},
+        {lbl:'Mitophagy + Biogenesis',name:'Urolithin A 500mg + PQQ 20mg',spec:'UA: micronised D90 <30µm. PQQ: light-sensitive, added after botanicals.',mechanism:'UA: PINK1/Parkin mitophagy — removes damaged mitochondria (CLEAN). PQQ: PGC-1α biogenesis — builds new mitochondria (BUILD).',evidence:'Liu 2022 (JAMA Network Open): UA 500mg muscle endurance RCT. Harris 2013: PQQ 20mg biomarkers.',signal:'Timeline charges $149/month for UA alone. LongeviMax Pro™ includes same dose + PQQ BUILD mechanism.'},
+        {lbl:'Sirtuins + Epigenetic',name:'Resveratrol 150mg + Pterostilbene 50mg + Ca-AKG 1,000mg (taste-masked)',spec:'Resveratrol: trans-isomer HPLC mandatory (cis = zero SIRT1). Ca-AKG: HPMC/EC coat 70:30, 15% weight gain. Taste panel QC mandatory release criterion.',mechanism:'Resveratrol/Pterostilbene: SIRT1 + AMPK. Pterostilbene 80% oral BA vs <1% resveratrol. Ca-AKG: TET enzyme cofactor for active DNA demethylation (Horvath clock).',evidence:'Howitz 2003 (Nature) SIRT1; Demidenko 2021 (Aging): Ca-AKG 1g RCT n=42 — avg 8yr biological age reduction.',signal:'Ca-AKG at 1g in RTM is only viable with taste-masking encapsulation. Taste panel is a mandatory batch release criterion.'},
+        {lbl:'Mitochondrial Shield',name:'L-Ergothioneine 10mg',spec:'Fermentation ≥99%. Water-soluble crystals. Highly stable.',mechanism:'Only antioxidant with a dedicated evolutionary transporter (OCTN1). Concentrates in highest oxidative-stress tissues without blunting beneficial mitohormetic ROS.',evidence:'Cheah 2016: low plasma ergo = accelerated aging biomarker. FDA GRAS 2019. EFSA Novel Food 2017.',signal:'FDA GRAS + EFSA Novel Food = cleanest regulatory status for novel longevity ingredients. 10mg < EFSA 30mg limit.'}
+      ],
+      comp:{headers:['Feature','Tru Niagen (1 pathway)','Timeline Mitopure (1 pathway)','LongeviMax Pro™ (7 pathways)'],rows:[
+        ['Pathways covered','1 (NAD+ only)','1 (mitophagy only)','7 Independent — NAD++methylation+autophagy+mitophagy+sirtuins+epigenetic+shield'],
+        ['TMG methylation safeguard','ABSENT — documented risk','ABSENT','TMG 500mg — SAM regeneration. The formulation intelligence no NR competitor has acted on.'],
+        ['Epigenetic clock (Ca-AKG)','ABSENT','ABSENT','Ca-AKG 1,000mg taste-masked — Demidenko 2021 RCT. 8-year biological age reduction.'],
+        ['Monthly consumer cost','~$79 (1 pathway)','~$149 (1 pathway)','All 7 pathways at competitive single-product pricing']
+      ]},
+      claims:[
+        {type:'NAD+ / Cellular Energy',text:'Supports healthy cellular energy and NAD+ levels* — NR (5 human RCTs). Supports healthy methylation* — TMG (Olthof 2003).'},
+        {type:'Autophagy / Mitochondria',text:'Supports cellular autophagy* (Spermidine). Supports mitochondrial health* (UA + PQQ). Supports healthy sirtuin activity* (Resveratrol + Pterostilbene).'},
+        {type:'Factual Label',text:'Zero sugar | Vegan | GMP-certified | UA ≤500mg/day EU Novel Food compliant | Ergothioneine ≤30mg/day EFSA limit | NR (not NMN — no FDA drug-exclusion risk)'}
+      ]
+    },
+
+    metaguard:{
+      stats:[{lbl:'Format',val:'13.5g RTM Stick Pack'},{lbl:'Target Population',val:'GLP-1 Drug Users (15M+ Americans)'},{lbl:'GLP-1 Problems Addressed',val:'5 Independent'}],
+      badges:['GLP-1 Companion','Creatine® Monohydrate 5g','L-Leucine 3g mTOR Dose','Gallbladder Stack'],
+      moat:[
+        'Gallbladder risk addressed — Wegovy prescribing information documents 2–3× gallstone risk vs placebo. No other supplement brand cites the Wegovy PI as formulation rationale, because no other formula has a bile support stack.',
+        'Triple muscle preservation mechanism: Creatine monohydrate 5g (phosphocreatine ATP) + L-Leucine 3g (mTOR threshold dose — must be 3g, not 1g) + HMB Calcium 1.5g (anti-catabolic). No protein powder covers all three.',
+        'Microencapsulated ginger: 5-HT3 receptor antagonism (same pathway as ondansetron). Encapsulation eliminates taste while preserving mechanism.',
+        'First B2B formula purpose-built specifically for GLP-1 companion use. 15M Americans on GLP-1 drugs. Five biological problems. One daily serving.'
+      ],
+      ingredients:[
+        {lbl:'Muscle Preservation',name:'Creatine Monohydrate 5g + L-Leucine 3g + HMB-Ca 1.5g',spec:'Creatine: hygroscopic, added second-to-last. HMB-Ca salt — stable vs free acid.',mechanism:'Creatine: phosphocreatine ATP preservation. Leucine 3g: mTOR MPS threshold (must be 3g, not 1g). HMB: ubiquitin anti-catabolic pathway.',evidence:'~300 creatine RCTs lean mass; Norton 2012 leucine 3g mTOR threshold; Stout 2013 HMB caloric deficit.',signal:'L-Leucine at 3g = the mTOR threshold dose. Under 2g = insufficient mTOR activation. Specifying 3g proves you read Norton 2012.'},
+        {lbl:'Liver / Bile',name:'Sunflower PC 400mg + Artichoke 300mg (5% cynarin) + Milk Thistle 200mg (80%)',spec:'PC: sunflower-derived (soy-free). Artichoke + Milk Thistle spray dried.',mechanism:'PC: bile phospholipid composition (reduces lithogenicity). Cynarin: choleretic. Silymarin: hepatoprotection from bile acid stress.',evidence:'Wegovy PI: 2–3× gallstone risk vs placebo. Artichoke Commission E choleretic monograph.',signal:'Bile support block = no competitor has built this. Requires reading the Wegovy PI, not the promotional material.'},
+        {lbl:'GI Comfort',name:'Enzyme Blend 500mg (activity-validated) + Ginger 150mg (microencapsulated)',spec:'Enzymes: FIP lipase, USP protease, SKB amylase confirmed per batch. Weight-only COA rejected. Ginger: OSA starch microencapsulation.',mechanism:'Enzymes: compensate delayed gastric emptying. Ginger gingerols: 5-HT3 receptor antagonism — same pathway as pharmaceutical anti-nausea drugs.',evidence:'Ginger 5-HT3 RCTs (chemo nausea equivalent mechanism).',signal:'Activity-validated enzymes only. Weight-specified blend = unknown actual activity.'},
+        {lbl:'Micronutrient Rescue',name:'Mg Glycinate 300mg + MeCbl B12 500mcg + D3 1000 IU + Zinc Bisglycinate 8mg',spec:'All active forms. Spray dried premix.',mechanism:'Mg: most depleted in caloric restriction. B12 MeCbl: documented depletion in GLP-1 users. D3: fat-soluble absorption impaired on GLP-1.',evidence:'B12 depletion documented in GLP-1 drug literature. Mg glycinate: zero laxative, superior bioavailability.',signal:'All 4 in active forms — no inactive forms anywhere.'},
+        {lbl:'Electrolytes',name:'Sodium 200mg (citrate) + Potassium 200mg (citrate)',spec:'Citrate salts for clean taste and solubility.',mechanism:'Rapid fluid-shift electrolyte depletion from accelerated weight loss. Fatigue/dizziness partly sodium-mediated.',evidence:'GLP-1 drug fatigue/dizziness: prescribing info adverse event.',signal:'Electrolyte replenishment at therapeutic (not token) levels.'}
+      ],
+      comp:{headers:['Feature','Generic Protein Powder','Generic Multivitamin','MetaGuard Pro™'],rows:[
+        ['GLP-1 companion positioning','No — generic sports product','No — generic wellness','First B2B formula purpose-built for GLP-1 companion'],
+        ['Muscle preservation','Protein only — no mTOR guarantee','ABSENT','Creatine 5g + L-Leucine 3g (mTOR threshold) + HMB 1.5g — three independent mechanisms'],
+        ['Gallbladder/bile support','ABSENT','ABSENT','PC + Artichoke + Milk Thistle — Wegovy PI gallstone risk addressed'],
+        ['Serving format','30–40g protein-centric','Small capsule','13.5g RTM — right-sized for GLP-1 appetite suppression']
+      ]},
+      claims:[
+        {type:'Muscle / Structure',text:'Supports lean muscle maintenance during caloric restriction* — Creatine, L-Leucine, HMB (S/F). 5g Creatine per serving.'},
+        {type:'Liver + GI',text:'Supports healthy bile flow and liver health* — Artichoke, Milk Thistle, PC. Supports digestive comfort* — Enzymes, Ginger.'},
+        {type:'Factual Label',text:'No added sugar | Stimulant-free | Magnesium 300mg (71% DV) | Creatine Monohydrate 5g | No GLP-1 drug names on label | GMP-certified'}
+      ]
+    },
+
+    satietyglp:{
+      stats:[{lbl:'Format',val:'30g RTM Drink Mix'},{lbl:'GLP-1 Pathways',val:'3 (Ileal Brake + SCFA + Protein)'},{lbl:'FDA Claim',val:'Chromium Picolinate 21 CFR 101.72'}],
+      badges:['FDA Qualified Health Claim','Encapsulated Glucomannan','Ileal Brake Activation','GLP-1 Pathway Natural'],
+      moat:[
+        'Ileal brake activation via sodium alginate — forms acid gel in stomach → triggers endogenous GLP-1, PYY, CCK from intestinal L-cells. Same physiological GLP-1 pathway as Ozempic/Wegovy via endogenous mechanism, not synthetic agonism.',
+        'Encapsulated glucomannan — unencapsulated glucomannan at 2g instantly gels in any glass of water = product failure. Ethylcellulose moisture-barrier coat delays gelation until gastric acid exposure. This encapsulation is the enabling technology for the entire product.',
+        'FDA Qualified Health Claim 21 CFR 101.72: Chromium picolinate 200mcg — "may reduce the risk of insulin resistance." Legally usable on US labels with qualification statement. Only ingredient in this formulation with explicit FDA claim.',
+        'ACV encapsulated in OSA starch: eliminates vinegar taste entirely in neutral/citrus drink format while preserving acetic acid mechanism.'
+      ],
+      ingredients:[
+        {lbl:'Viscous / Ileal Brake',name:'Glucomannan 2g (EC-encapsulated) + Psyllium 1g + Sodium Alginate 1.5g',spec:'Glucomannan: EC moisture-barrier coat. Viscosity ≥20,000 cps. Gels at gastric pH only. EFSA satiety claim dose ≥1g — formula delivers 2g.',mechanism:'Gastric gel distension (glucomannan/psyllium) + ileal brake activation (alginate) → endogenous GLP-1/PYY/CCK → satiety + delayed gastric emptying.',evidence:'EFSA approved satiety claim EC 1924/2006 (≥1g/serving). Maljaars 2008/2010: ileal brake + sodium alginate — GLP-1/CCK release confirmed.',signal:'EC encapsulation = free-flowing drink that gels in stomach. Unencapsulated = product failure in RTM format.'},
+        {lbl:'SCFA/GLP-1 Sustained',name:'RS2 Resistant Starch 4g + Inulin HP 4g + Acacia Fiber 2g',spec:'RS2: not gelatinised. Inulin HP grade (predictable fermentation kinetics). Acacia: slow fermentation buffer.',mechanism:'Proximal colon fermentation → butyrate/propionate/acetate (SCFAs) → L-cell GLP-1 + PYY. Sustained 4–8h. Acacia buffers bloat risk.',evidence:'Tolhurst 2012 Diabetes: SCFAs + GLP-1 from L-cells (landmark mechanistic paper).',signal:'10g total prebiotic platform = sustained GLP-1 via SCFA at 4–8h — extends satiety window.'},
+        {lbl:'Protein Incretin',name:'WPI 90% 12g (instantised) + L-Leucine 500mg + L-Glutamine 1g',spec:'WPI: fluid bed granulated with sunflower lecithin. Kjeldahl protein ≥90%.',mechanism:'Whey: strongest food-based GLP-1/GIP/PYY incretin secretagogue. Leucine: mTOR hypothalamic satiety. Glutamine: gut lining integrity during fibre adaptation.',evidence:'Frid 2005 AJCN: whey superiority over other proteins for incretin secretion.',signal:'Third independent GLP-1 mechanism. Three GLP-1 pathways simultaneously.'},
+        {lbl:'Metabolic / FDA Claim',name:'Cinnamon Extract 200mg + ACV Powder 1g (OSA-masked) + Chromium Picolinate 200mcg',spec:'ACV: OSA starch microencapsulation — vinegar taste fully eliminated. Acetic acid 5% by GC per batch.',mechanism:'Cinnamon: AMPK activation + insulin receptor sensitisation. ACV: delayed gastric emptying + pancreatic amylase inhibition. Chromium: insulin receptor tyrosine kinase cofactor.',evidence:'Khan 2003 Diabetes Care (cinnamon). Johnston 2004 Diabetes Care (ACV). FDA 21 CFR 101.72 (chromium).',signal:'FDA Qualified Health Claim = legally usable US label claim. Outsized regulatory value at trace dose.'}
+      ],
+      comp:{headers:['Feature','Fibre Supplement','Protein + Fibre Combo','SatietyGLP Max™'],rows:[
+        ['Ileal brake / endogenous GLP-1','ABSENT','ABSENT','Sodium alginate 1.5g: ileal brake → GLP-1/PYY/CCK. Same pathway as Ozempic via natural mechanism.'],
+        ['RTM-safe glucomannan','Gels in glass — product failure','ABSENT','EC-encapsulated: free-flowing drink. Gels in stomach only. EFSA satiety claim.'],
+        ['FDA Qualified Health Claim','ABSENT','ABSENT','Chromium 21 CFR 101.72: "may reduce risk of insulin resistance." Only supplement category product with FDA claim.'],
+        ['SCFA Prebiotic GLP-1','0–1 ingredient','0–1','RS2 4g + Inulin HP 4g + Acacia 2g = 10g prebiotic platform. Sustained GLP-1 via SCFA at 4–8h.']
+      ]},
+      claims:[
+        {type:'FDA Qualified Claim',text:'Chromium picolinate may reduce the risk of insulin resistance and type 2 diabetes (21 CFR 101.72 — with required qualification statement)'},
+        {type:'EU EFSA Approved',text:'Glucomannan contributes to maintenance of normal body weight in context of energy-restricted diet (EC 1924/2006, ≥1g/serving)'},
+        {type:'Structure/Function',text:'Supports healthy blood sugar levels already within normal range*. Supports feelings of fullness and satiety*. 12g WPI | 2g glucomannan | 200mcg chromium | 1.5g sodium alginate | GMP-certified'}
+      ]
+    },
+
+    cravezero:{
+      stats:[{lbl:'Format',val:'HPMC Capsule'},{lbl:'Eating Drivers',val:'4 Non-Overlapping'},{lbl:'Branded Active',val:'Satiereal® 90mg'}],
+      badges:['4 Eating Drivers','Satiereal® 90mg','Zero Stimulants','Stimulant-Free Appetite'],
+      moat:[
+        'Satiereal® 90mg — the specific branded saffron extract used in Noureddin 2017 RCT: 78% reduction in snacking urge. Generic saffron ≠ Satiereal®. Lepticrosalide standardisation differentiates at clinical level.',
+        'Extended-release berberine 200mg addresses the blood sugar → hunger loop. Sustained AMPK activation 4–6hr. Non-overlapping with Gymnema mechanism.',
+        'Post-meal Gymnema timing — mechanistically critical, not optional. Gymnema 400mg taken POST-meal blunts sweet taste receptor activation on L-cells, reducing GLP-1 overstimulation and subsequent hunger rebound.'
+      ],
+      ingredients:[
+        {lbl:'Hormonal Hunger',name:'Caralluma fimbriata 500mg (1% pregnane glycosides)',spec:'India-endemic succulent cactus. Identity confirmed by pregnane glycoside HPLC.',mechanism:'CCK + PYY satiety hormone elevation. Hypothalamic neuropeptide modulation.',evidence:'Kuriyan 2007 (Appetite, n=50, 60-day RCT): significant waist + appetite reduction.',signal:'India-endemic species — India supply chain provides proximity advantage.'},
+        {lbl:'Glycaemic Control',name:'Berberine HCl (Extended-Release) 200mg',spec:'Ethylcellulose fluid bed coat. Sustained release NMT30%@1hr, NLT75%@4hr.',mechanism:'AMPK activation reduces blood glucose oscillations that trigger hunger.',evidence:'Liu 2008: AMPK-hepatic glucose and lipid. Sustained 4–6hr action.',signal:'Extended-release = 4–6hr sustained AMPK vs immediate-release spike.'},
+        {lbl:'Glycaemic Absorption',name:'Gymnema sylvestre 400mg (75% gymnemic acids)',spec:'Gravimetric ≥75% gymnemic acids. Taken POST-meal — timing is mechanistic, not optional.',mechanism:'Post-meal: blunts intestinal L-cell sweet receptor activation, modulates incretin response.',evidence:'Baskaran 1990; gymnemic acid L-cell mechanism characterised.',signal:'Post-meal timing is the protocol differentiator. Pre-meal = GlucoGuard. Post-meal = CraveZero.'},
+        {lbl:'Serotonin / Hedonic',name:"Satiereal® 90mg + 5-HTP 100mg",spec:'Satiereal® Inoreal brand, lepticrosalide-standardised. 5-HTP light-sensitive, added after botanicals.',mechanism:'Satiereal®: DA/5HT dual reuptake — snacking urge reduction. 5-HTP: serotonin precursor → satiety.',evidence:'Noureddin 2017: 78% snacking urge reduction (Satiereal®). Cangiano 1992: 5-HTP weight loss RCT.',signal:'Satiereal® 90mg = clinical trial dose — not the 30mg label presence versions.'},
+        {lbl:'Stress Eating',name:'KSM-66® 300mg + L-Theanine 200mg',spec:'Shared platform raw materials.',mechanism:'KSM-66®: cortisol reduction severs stress-eating trigger. L-Theanine: calm focus.',evidence:'Choudhary 2017: cortisol + food craving scores reduced.',signal:'Platform raw material — shared across 5+ SKUs = procurement leverage.'}
+      ],
+      comp:{headers:['Feature','GLP-1 Drug','Appetite Suppressant (PhenQ type)','CraveZero Pro™'],rows:[
+        ['Mechanism','GLP-1 agonist (Rx only)','Stimulants + thermogenics (caffeine-heavy)','4 Non-overlapping eating drivers: hormonal + glycaemic + serotonergic + stress-eating'],
+        ['Satiereal® saffron','ABSENT','Absent or generic saffron','Satiereal® 90mg — Noureddin 2017: 78% snacking urge reduction'],
+        ['Stimulants','N/A','Jitteriness, heart rate dependency','Zero stimulants | No Rx required | DSHEA compliant']
+      ]},
+      claims:[
+        {type:'Appetite (US)',text:'Supports healthy appetite and food intake* — Caralluma, Gymnema, Satiereal® (S/F, DSHEA). No drug claims.'},
+        {type:'Mood / Cravings',text:'Supports healthy mood and reduced food cravings* — 5-HTP, Satiereal®, KSM-66®. SSRI consult advisory.'},
+        {type:'Factual Label',text:'No stimulants | No caffeine | Satiereal® 90mg per serving | Stimulant-free | Vegan | GMP-certified'}
+      ]
+    },
+
+    femimax:{
+      stats:[{lbl:'Format',val:'RTM Sachet / HPMC Capsule'},{lbl:'Age Span',val:'Fertility 25–38 + Perimenopause 38–55'},{lbl:'Inositol Ratio',val:'40:1 (Clinical Standard)'}],
+      badges:['2025 Shatavari RCT','40:1 Inositol Ratio','Ubiquinol 200mg','All 8 Micronutrients Active'],
+      moat:[
+        '2025 Shatavari RCT — first B2B formula incorporating most current RCT data on Shatavari for female hormonal balance. First-mover clinical positioning before competitors identify the study.',
+        '40:1 myo-inositol:D-chiro ratio — the physiological plasma ratio confirmed across multiple PCOS RCTs. Any other ratio is not the clinical standard. Most formulas use arbitrary ratios or single inositol.',
+        'Ubiquinol 200mg at oocyte-relevant dose — Ben-Meir 2015: improved oocyte quality and fertilisation rates. Absent from all mainstream women\'s supplements.',
+        'Dual age-span positioning: fertility (25–38) + perimenopause (38–55) in one formula. 2-for-1 doubles total addressable market.'
+      ],
+      ingredients:[
+        {lbl:'Hormonal Balance',name:'Shatavari 500mg (5% steroidal saponins) + KSM-66® 300mg',spec:'Asparagus racemosus. 5% saponins HPLC confirmed.',mechanism:'Shatavari: phytoestrogenic action + FSH production modulation. Bidirectional adaptogen: fertility + perimenopause. KSM-66®: HPA cortisol reduction → hormonal axis.',evidence:'Shatavari 2025 RCT (hormonal balance). KSM-66® cortisol ≥6 RCTs.',signal:'First B2B formula with 2025 Shatavari data. Competitors haven\'t updated yet.'},
+        {lbl:'PCOS / Insulin',name:'Myo-Inositol 2000mg + D-chiro Inositol 50mg (40:1)',spec:'Free flowing powder. GC or enzymatic assay. 40:1 = physiological plasma ratio.',mechanism:'PI3K-mediated insulin signalling in ovarian follicles + FSH receptor restoration.',evidence:'Gerli 2003; Iuorno 2002; multiple PCOS RCTs confirming 40:1 as clinical standard.',signal:'40:1 is the ratio. Cheaper formulas use 5:1 or single inositol. This spec shows PCOS literature knowledge.'},
+        {lbl:'Oocyte Quality',name:'Ubiquinol 200mg + NAC 300mg',spec:'Ubiquinol (not ubiquinone). NAC microencapsulated — odor masked.',mechanism:'Ubiquinol: mitochondrial ATP in developing oocytes. NAC: glutathione + antioxidant reproductive protection.',evidence:'Ben-Meir 2015 (HFEA Congress): ubiquinol improves oocyte quality + fertilisation. Salehpour 2011 NAC.',signal:'Ubiquinol vs ubiquinone: active electron-carrier form. 200mg at oocyte-relevant dose — not label presence.'},
+        {lbl:'Micronutrients',name:'5-MTHF 800mcg + MeCbl 500mcg + P5P 20mg + Zinc Bisglycinate + Mg Glycinate',spec:'All 8 active forms: 5-MTHF, MeCbl, P5P, Zn bisglycinate, Mg glycinate. Spray dried premix.',mechanism:'MTHFR-compatible methylation + progesterone cofactors + iron utilisation + thyroid function.',evidence:'5-MTHF vs folic acid: bypasses MTHFR polymorphism in ~40% population.',signal:'8 micronutrients ALL active forms. No folic acid, no cyanocobalamin, no oxide zinc. Every form upgraded.'}
+      ],
+      comp:{headers:['Feature','Prenatal Vitamin (Basic)','Women\'s Adaptogen','FemiMax Pro™'],rows:[
+        ['Age span','Pregnancy only (narrow)','Pre-menopause only','DUAL: fertility 25–38 + perimenopause 38–55 — doubles TAM'],
+        ['Inositol specification','ABSENT or single inositol','Variable ratio (often wrong)','Myo + D-chiro at 40:1 — PCOS clinical plasma ratio'],
+        ['Ubiquinol oocyte quality','ABSENT','Absent','Ubiquinol 200mg — Ben-Meir 2015 oocyte mitochondria RCT'],
+        ['Micronutrient forms','Folic acid, cyanocobalamin (inactive)','Variable — often inactive','ALL 8 active forms: 5-MTHF, MeCbl, P5P, bisglycinate chelates — MTHFR-safe by design']
+      ]},
+      claims:[
+        {type:'Fertility/Hormonal',text:'Supports healthy hormonal balance and female reproductive health* — Shatavari, Myo-Inositol (S/F, DSHEA)'},
+        {type:'Oocyte/Antioxidant',text:'Supports egg cell health and antioxidant protection* — Ubiquinol, NAC (S/F)'},
+        {type:'EU (EFSA)',text:'Vitamin C contributes to normal collagen formation (EFSA approved). Folate contributes to normal amino acid synthesis.'},
+        {type:'Factual Label',text:'Methylfolate (5-MTHF) 800mcg | Ubiquinol 200mg | Myo-Inositol 2000mg | No folic acid | All active forms | Vegan | GMP-certified'}
+      ]
+    },
+
+    follimax:{
+      stats:[{lbl:'Format',val:'3 HPMC Capsules'},{lbl:'DHT Pathways',val:'3 Non-Overlapping'},{lbl:'Pumpkin Seed Oil',val:'400mg (Cho 2014 Exact Dose)'}],
+      badges:['Cho 2014 RCT','Beoy 2010 RCT','Procyanidin B-2','EVNol Tocotrienols','No Biotin Lead'],
+      moat:[
+        'Cho 2014 RCT — pumpkin seed oil at exactly 400mg/day in a published RCT: significant hair count increase vs placebo at 24 weeks. This is the exact dose. Pumpkin seed oil at any other dose is not this study.',
+        'Procyanidin B-2 from grape seed — Takahashi 2005: superior to minoxidil in follicle stimulation. Absent from every mainstream DHT-blocker formula on the US market. Category differentiator.',
+        'EVNol-grade tocotrienols — Beoy 2010 RCT: tocotrienol supplementation (specific MPOB-certified grade) → 34.5% hair count increase vs -0.1% placebo at 8 months. Generic tocopherol (Vitamin E) does not replicate this study.',
+        'Biotin is NOT the lead — it appears as the 5th ingredient. This is the sophistication signal: no biotin on the front panel.'
+      ],
+      ingredients:[
+        {lbl:'DHT 5-AR',name:'Saw Palmetto 320mg (45% fatty acids, lipid extract)',spec:'Lipid extract form — not dry powder (inferior for fatty acids). GC ≥85–95% fatty acids per batch.',mechanism:'5-alpha-reductase inhibition — Type I + Type II dual isoform coverage. Reduces intraprostatic DHT conversion.',evidence:'Rossi 2012 meta-analysis (J Eur Acad Derm). Commission E approved.',signal:'Lipid extract vs dry powder is the spec that matters. Fatty acid content drives mechanism — not weight alone.'},
+        {lbl:'DHT Competition',name:'β-Sitosterol 200mg (40% purity)',spec:'Native powder. 40% β-sitosterol HPLC confirmed.',mechanism:'Androgen receptor competition at follicle level — competes with DHT for receptor binding.',evidence:'Prager 2002: SP + β-sitosterol combination hair loss RCT.',signal:'Three DHT mechanisms: 5-AR Type I + Type II + AR competition. No single-ingredient product covers all three.'},
+        {lbl:'Follicle Growth',name:'Pumpkin Seed Oil 400mg + Procyanidin B-2 150mg',spec:'PSO: 400mg = Cho 2014 exact dose. Procyanidin B-2 from grape seed standardised.',mechanism:'PSO: additional 5-AR inhibition + DHT competition. Procyanidin B-2: VEGF + growth factor expression in follicle epithelial cells.',evidence:'Cho 2014 (EBCAM): PSO 400mg/day, n=76, 24-week RCT: significant hair count increase. Takahashi 2005: Procyanidin B-2 vs minoxidil.',signal:'Procyanidin B-2 is the category differentiator — absent from every competitor.'},
+        {lbl:'Oxidative Scalp',name:'EVNol Mixed Tocotrienols 100mg (delta+gamma)',spec:'MPOB-certified EVNol-grade. Spray dried onto silica. Light-sensitive packaging.',mechanism:'Delta/gamma tocotrienols: scalp antioxidant + follicle microcirculation. Not tocopherol.',evidence:'Beoy 2010 (Trop Life Sci Res): tocotrienol 34.5% hair count increase vs -0.1% placebo at 8 months.',signal:'EVNol = the specific grade from the Beoy RCT. Generic "Vitamin E" (tocopherol) does not reproduce this study.'},
+        {lbl:'Micronutrient',name:'Zinc Bisglycinate 15mg + Biotin 5mg',spec:'Zinc bisglycinate chelate. Biotin as cofactor, not lead claim.',mechanism:'Zinc: metalloenzyme cofactor for 5-alpha-reductase. Biotin: keratin synthesis cofactor.',evidence:'Dreno 2011 zinc in alopecia.',signal:'Biotin appears 5th — this is the sophistication signal. Formula is DHT-centric.'}
+      ],
+      comp:{headers:['Feature','Biotin-Led Supplement','Saw Palmetto Single','FolliMax Pro™'],rows:[
+        ['DHT mechanisms','ZERO — biotin has no DHT mechanism','1 (5-AR Type II only)','3 Simultaneous: 5-AR Type I+II + AR competition + DHT competition'],
+        ['Pumpkin seed oil 400mg','ABSENT','ABSENT','400mg PSO — Cho 2014 exact RCT dose (n=76, 24-week)'],
+        ['Procyanidin B-2','ABSENT','ABSENT — no formula includes it','150mg Procyanidin B-2 — absent from ALL US market competitors. Takahashi 2005: superior to minoxidil.'],
+        ['Tocotrienol grade','Absent or generic Vit E','ABSENT','EVNol-grade tocotrienols 100mg — Beoy 2010 specific grade. Generic tocopherol does not replicate.']
+      ]},
+      claims:[
+        {type:'Hair Health (US)',text:'Supports healthy hair growth and follicle health* — Saw Palmetto, PSO, Procyanidin B-2 (S/F, DSHEA). No drug claims.'},
+        {type:'EU (EFSA)',text:'Zinc contributes to normal hair maintenance. Biotin contributes to normal maintenance of hair (EFSA approved nutrient function claims).'},
+        {type:'Factual Label',text:'Pumpkin Seed Oil 400mg | EVNol Tocotrienols 100mg | Zero minoxidil | No drug claims | Vegan option | GMP-certified'}
+      ]
+    },
+
+    glucoguard:{
+      stats:[{lbl:'Format',val:'4 HPMC Capsules (Pre-Meal)'},{lbl:'Timing',val:'15–20 Minutes Before Meals'},{lbl:'Activity Standards',val:'WKB ≥3000 AIU + Mulberry ≥2% DNJ'}],
+      badges:['Pre-Meal 15min Window','WKB ≥3000 AIU','Mulberry 2% DNJ','Ceylon Cinnamon Only'],
+      moat:[
+        'Mulberry DNJ 2% HPLC — mandatory batch release. 15mg active DNJ per daily dose. Commodity mulberry powder without DNJ HPLC confirmation is mechanistically unreliable.',
+        'White kidney bean ≥3,000 AIU — activity, not weight. Potency varies 5–10× across suppliers when specified by weight only. Activity measurement is the clinical standard.',
+        'Pre-meal 15–20 minute window — pharmacokinetic, not convenience. Alpha-glucosidase inhibitors must reach brush border before carbohydrate. GLUT4 translocation via Banaba requires 15-minute initiation window.',
+        'Ceylon cinnamon exclusively — EFSA-flagged cassia coumarin hepatotoxicity risk at supplemental doses eliminated.'
+      ],
+      ingredients:[
+        {lbl:'Stage 1 Digestion',name:'WKB Extract 500mg (≥3,000 AIU)',spec:'Activity assay per batch mandatory. Weight-only COA rejected.',mechanism:'Alpha-amylase inhibition — blocks starch hydrolysis in mouth + duodenum.',evidence:'Celleno 2007 (Int J Med Sci): standardised WKB — significant body composition reduction.',signal:'AIU is the differentiator. 90% of market sells by weight. AIU = you know how this works.'},
+        {lbl:'Stage 2 Digestion',name:'Mulberry Leaf 750mg (Morus alba, 2% DNJ = 15mg)',spec:'2% 1-DNJ by HPLC = mandatory batch release. Commodity mulberry without HPLC not acceptable.',mechanism:'Alpha-glucosidase inhibition at brush border. Structural analogue of glucose — competitive.',evidence:'Mudra 2007 (Diabetes Care): mulberry blunted postprandial glucose in NIDDM subjects.',signal:'15mg DNJ/day within 6–12mg per meal clinical range. 2% HPLC confirmation is the release gate.'},
+        {lbl:'Absorption',name:'Gymnema 400mg (75% gymnemic) + Ceylon Cinnamon 250mg',spec:'Ceylon: DNA barcode or coumarin <10mg/kg mandatory.',mechanism:'SGLT modulation + incretin (GLP-1) response. Ceylon slows gastric emptying.',evidence:'Baskaran 1990 Gymnema NIDDM; Anderson 2004 type-A polyphenols.',signal:'Ceylon vs Cassia: EFSA 2008 flagged cassia coumarin hepatotoxicity at supplemental doses.'},
+        {lbl:'Peripheral Uptake',name:'Banaba 200mg (1% corosolic acid) + Chromium Picolinate 400mcg',spec:'Banaba: 1% corosolic HPLC. 400mcg Cr(III) ICP-MS per batch.',mechanism:'GLUT4 pre-positioning via PI3K/Akt (15-min window). Chromium: LMWCr amplifies insulin receptor signalling.',evidence:'Miura 2006 GLUT4 in T2D; Broadhurst 2006 chromium DM.',signal:'400mcg = 4× DV — therapeutic intent signalled.'}
+      ],
+      comp:{headers:['Feature','Acarbose (Pharma Reference)','Once-Daily Glucose Supp','GlucoGuard Pro™'],rows:[
+        ['Timing / mechanism','Must be at meal start (GI effects 30–40%)','Once daily regardless of meals','Pre-meal 15–20 min — pharmacokinetic requirement. Not a convenience instruction.'],
+        ['Activity standardisation','Pharmaceutical (prescription)','Weight-only spec (unreliable)','WKB ≥3,000 AIU + Mulberry ≥2% DNJ HPLC — both confirmed per batch'],
+        ['Mechanisms covered','1 (alpha-glucosidase)','1–2 (variable)','3 Independent: digestion + absorption + peripheral uptake'],
+        ['Ceylon vs Cassia','N/A','Cassia typically used (coumarin risk)','Ceylon cinnamon exclusively — coumarin <10mg/kg confirmed per batch']
+      ]},
+      claims:[
+        {type:'Postprandial',text:'Supports healthy blood sugar levels after meals* — all 6 ingredients (S/F). Take 15–20 min before carbohydrate-containing meals.'},
+        {type:'Activity Claims',text:'Mulberry leaf: 15mg 1-DNJ daily* | WKB ≥3,000 AIU* | Chromium 400mcg (1,143% DV) — factual.'},
+        {type:'Safety Advisory',text:'MANDATORY: Consult physician if on diabetes medication or insulin — postprandial glucose-lowering may require medication adjustment.'}
+      ]
+    },
+
+    hepatguard:{
+      stats:[{lbl:'Format',val:'3 HPMC Capsules (Multi-Population Bead)'},{lbl:'NAFLD Pathways',val:'3 Simultaneous'},{lbl:'EU Claim Anchor',val:'EFSA Reg 432/2012 (Choline)'}],
+      badges:['3-Population Mixed Bead','Enteric TUDCA','Extended-Release Berberine','EFSA EU Claim'],
+      moat:[
+        '3-Population mixed-bead: Enteric TUDCA (Pop A, Eudragit L30D-55) + Extended-Release Berberine (Pop B, ethylcellulose) + uncoated granules (Pop C) blended into one size-00 HPMC capsule. No blending-only manufacturer can replicate without fluid bed coating infrastructure.',
+        'Enteric TUDCA 250mg — without enteric coating, bile acid degrades in gastric acid. Standard TUDCA capsules = inconsistent bioavailability. Eudragit L30D-55 coating: NMT 10% release at gastric pH / NLT 75% at intestinal pH.',
+        'EFSA Reg 432/2012 choline EU health claim: "Choline contributes to normal lipid metabolism" — one of very few EFSA-approved liver lipid claims. Sunflower choline 300mg = legally defensible EU claim.',
+        '2024 FDA approval of Rezdiffra (resmetirom) for NASH created the consumer awareness wave. HepaGuard Pro™ is the clinically coherent supplement response.'
+      ],
+      ingredients:[
+        {lbl:'Pop A (Enteric)',name:'TUDCA 250mg (Eudragit L30D-55)',spec:'Eudragit L30D-55 fluid bed coat, 15% weight gain. NMT10%@pH1.2/120min; NLT75%@pH6.8/45min.',mechanism:'ER stress reduction in lipid-overloaded hepatocytes. Anti-apoptotic + bile acid pool normalisation.',evidence:'Ratziu 2012 (Gastroenterology): TUDCA improved liver enzymes in NASH patients.',signal:'Enteric coat mandatory: bile acid degrades completely at gastric pH. Standard TUDCA = guesswork bioavailability.'},
+        {lbl:'Pop C (Uncoated)',name:'Silymarin Phytosome 300mg (30% silybin, 4.6× BA)',spec:'Phytosome = silybin-phosphatidylcholine complex. Fluid bed granulated on MCC.',mechanism:'Hepatocyte membrane stabilisation + antifibrotic (HSC inhibition) + antioxidant.',evidence:'Multiple NAFLD RCTs: phytosome significantly superior to standard silymarin. 4.6× BA.',signal:'300mg phytosome > 1,500mg standard silymarin in bioavailable dose.'},
+        {lbl:'Pop B (Extended-Release)',name:'Berberine HCl 300mg (Extended-Release)',spec:'EC fluid bed coat 15–20% weight gain. NMT30%@1hr; NLT75%@4hr.',mechanism:'AMPK activation — fatty acid oxidation + de novo lipogenesis reduction. 4–6hr sustained.',evidence:'Kong 2004; Ke 2015 berberine NAFLD clinical.',signal:'Extended-release eliminates GI intolerance of immediate-release berberine.'},
+        {lbl:'Pop C (Uncoated)',name:'Choline Bitartrate 300mg (sunflower) + Betaine TMG 500mg',spec:'Choline: sunflower (soy-free). 41% elemental. TMG: sugar beet-derived.',mechanism:'Choline: VLDL assembly — exports hepatic triglycerides. TMG: methyl donor BHMT → preserves choline.',evidence:'EFSA 432/2012: choline lipid metabolism (approved EU claim). Miglio 2000 (Gut): betaine NASH RCT.',signal:'EFSA claim + sunflower (soy-free) = two competitive advantages in one raw material spec.'},
+        {lbl:'Pop C (Uncoated)',name:'Tocotrienols 200mg + Quercetin Phytosome 250mg',spec:'Tocotrienols: spray dried. QuercefitⓇ grade (~20× BA).',mechanism:'Tocotrienols: NF-κB suppression + HSC inhibition. Quercetin phytosome: NF-κB + antifibrotic.',evidence:'Tocotrienol NAFLD RCTs at 200mg/day: ALT, AST, hepatic fat MRI reduction at 12M. Quercefit ~20× BA.',signal:'Phytosome mandatory: standard quercetin oral absorption <2%.'}
+      ],
+      comp:{headers:['Feature','Commodity Milk Thistle','Single-Ingredient TUDCA','HepaGuard Pro™'],rows:[
+        ['NAFLD mechanisms','1 (antioxidant only)','1 (bile acid/ER stress)','3 Simultaneous — hepatocyte protection + hepatic fat export + inflammation. All three NAFLD pathophysiology axes.'],
+        ['Delivery system','Simple powder — no BA engineering','Simple powder — gastric acid risk','3-population mixed-bead: enteric TUDCA + extended-release berberine + uncoated'],
+        ['Berberine (AMPK)','ABSENT','ABSENT','300mg extended-release — 4–6hr sustained AMPK. Zero GI intolerance.'],
+        ['EFSA EU claim','No approved EU claim','No approved EU claim','"Choline contributes to normal lipid metabolism" — EFSA Reg 432/2012 approved']
+      ]},
+      claims:[
+        {type:'Hepatocyte / Bile',text:'Supports liver cell health and function* — Silymarin (Commission E traditional herbal). Supports healthy bile acid metabolism* — TUDCA (S/F).'},
+        {type:'EU Anchor (EFSA)',text:'"Choline contributes to normal lipid metabolism" — EFSA Regulation 432/2012 (approved EU claim). Primary EU claim anchor.'},
+        {type:'Factual Label',text:'Vegan | Soy-free (sunflower choline) | HPMC capsule | No animal-derived TUDCA (synthetic) | GMP-certified'}
+      ]
+    },
+
+    respircore:{
+      stats:[{lbl:'Format',val:'3 HPMC Capsules (4-Population Bead)'},{lbl:'EU Claims',val:'2 Independent (EFSA + EMA HMPC)'},{lbl:'NAC',val:'Zero — Regulatory Risk Eliminated'}],
+      badges:['4-Population Bead','NAC-Free','EU Dual Regulatory Anchor','Glucoraphanin/Myrosinase Co-Release'],
+      moat:[
+        'Dual-bead sulforaphane system: glucoraphanin (Pop B, 10% EC) physically isolated from myrosinase (Pop C, 8% EC) during manufacture and storage. 2% coat differential ensures myrosinase releases before substrate → in-situ sulforaphane conversion ≥60% at pH 6.8/37°C.',
+        'NAC-free positioning — FDA actively reviewing NAC supplement status (21 CFR 101.36 potential drug exclusion, multiple warning letters). RespiCore Pro™ provides mechanistically superior alternative with multi-mechanism clinical architecture.',
+        'EU dual regulatory anchor: Vitamin D3 EFSA Regulation 432/2012 (immune function) + Ivy Leaf EMA HMPC monograph (bronchial catarrh). Two independent EU legal claim pillars in one product.',
+        'Acid-protected bromelain (Eudragit L30D-55, Population A): enzyme completely loses activity at gastric pH in standard capsule. Enteric bead is the only viable delivery for active mucolytic bromelain.'
+      ],
+      ingredients:[
+        {lbl:'Pop A (Enteric)',name:'Bromelain 500mg (≥2,400 GDU/g)',spec:'Eudragit L30D-55 enteric bead. NMT 10%@pH 1.2. NLT 75%@pH 6.8. ≥85% GDU activity retained at 12M. Process temp <40°C.',mechanism:'Proteolytic enzyme degrades mucus glycoprotein networks → reduces sputum viscosity → improves airway clearance.',evidence:'Commission E (bromelain). Published data in chronic bronchitis and sinusitis.',signal:'Enteric coat mandatory — bromelain completely loses enzymatic activity at gastric pH. Standard bromelain = denatured enzyme.'},
+        {lbl:'Pop D (Immediate)',name:'Ivy Leaf 200mg (≥5% hederacoside C)',spec:'Hedera helix L. HPLC ≥5% hederacoside C per batch. EMA HMPC monograph product.',mechanism:'Triterpene saponins reduce surface tension of airway mucus → improves mucociliary transport. Distinct from bromelain.',evidence:'EMA HMPC monograph — traditional herbal medicinal for bronchial catarrh.',signal:'EU Regulatory Anchor #2: EMA HMPC monograph = strongest EU reference for respiratory herbals.'},
+        {lbl:'Pop B (Substrate)',name:'Glucoraphanin 400mg (≥10% GR, broccoli seed)',spec:'Ethylcellulose 10% coat weight. Humidity <40% mandatory. Physical separation from Pop C at ALL stages.',mechanism:'Stable sulforaphane precursor — inactive alone. Requires myrosinase (Pop C) for activation. On co-release: Nrf2-ARE → GSH biosynthesis, HO-1, NQO1.',evidence:'Sussan 2015; Hopkins 2017 COPD RCT: sulforaphane restores pulmonary glutathione in COPD patients.',signal:'Process architecture: Pop B and Pop C NEVER contact each other in manufacturing or storage.'},
+        {lbl:'Pop C (Enzyme)',name:'Myrosinase 35mg (≥50 units/mg)',spec:'Ethylcellulose 8% coat (DELIBERATELY LIGHTER than Pop B 10%). D50 350–500µm.',mechanism:'Catalyses glucoraphanin → sulforaphane in intestinal lumen. 35mg = 20–25% stoichiometric excess of myrosinase as buffer for GI variability.',evidence:'In-vitro conversion: NLT 60% at pH 6.8/37°C/60min.',signal:'2% coat weight differential is the manufacturing moat: lighter Pop C releases before substrate, ensuring enzyme is available in lumen when glucoraphanin arrives.'},
+        {lbl:'Pop D',name:'Sodium R-Lipoate 250mg (≥99% R-isomer) + BosPure® 300mg + Quercetin Phytosome 300mg + Vitamin D3 2,000 IU',spec:'Sodium salt (not free R-ALA — polymerisation instability). R-isomer chiral HPLC. BosPure® branded, water-dispersible.',mechanism:'R-Lipoate: GSH recycling (GSSG→GSH). BosPure® AKBA: 5-LOX/LTB4 inhibition. Quercetin phytosome: NF-κB/mast cell. D3: Th2 suppression.',evidence:'Hagen 2002 FASEB (R-lipoate). EFSA 432/2012 (D3 immune). EMA HMPC (Boswellia).',signal:'EU dual anchor: EFSA (D3 immune) + EMA HMPC (Ivy Leaf). Two independent EU legal claim pillars.'}
+      ],
+      comp:{headers:['Feature','Standard NAC Respiratory','Premium Herbal Blend','RespiCore Pro™'],rows:[
+        ['NAC regulatory risk','HIGH — FDA drug-exclusion proceedings, warning letters','Not applicable','ZERO — NAC-free. Brand partners eliminate regulatory vulnerability.'],
+        ['Sulforaphane delivery','ABSENT','ABSENT','Dual-bead co-release: glucoraphanin (10% EC) + myrosinase (8% EC). In-situ conversion ≥60%.'],
+        ['EU regulatory anchors','0 (NAC: no EU health claim)','0–1 (sometimes Vit D)','2 Independent: EFSA 432/2012 (Vit D3) + EMA HMPC (Ivy Leaf bronchial catarrh)'],
+        ['Bromelain delivery','Absent or unprotected (enzyme destroyed)','ABSENT','Enteric bead (Pop A, Eudragit L30D-55). GDU activity confirmed per batch.']
+      ]},
+      claims:[
+        {type:'EU EFSA Approved',text:'"Vitamin D contributes to the normal function of the immune system." (Regulation 432/2012)'},
+        {type:'EU EMA HMPC Reference',text:'Ivy Leaf: traditional use for bronchial catarrh (EMA HMPC monograph). For HCP communication.'},
+        {type:'US Structure/Function',text:'Supports respiratory function and healthy airways* — all ingredients (S/F, DSHEA). 2,000 IU Vitamin D3 | Ivy Leaf 200mg | Boswellia 300mg (≥10% AKBA) | 400mg broccoli seed extract.'}
+      ]
+    },
+
+    virimax:{
+      stats:[{lbl:'Format',val:'4 HPMC Capsules (~5g active payload)'},{lbl:'Fertility Market',val:'$2.7bn Global'},{lbl:'India-Exclusive Botanicals',val:'Trifecta (KSM-66® + Primavie™ + Fenugreek)'}],
+      badges:['Primavie™ Shilajit','KSM-66® 600mg','Ubiquinol 200mg','5-MTHF (Not Folic Acid)'],
+      moat:[
+        'Ubiquinol CoQ10 at 200mg — 2–3× superior bioavailability vs ubiquinone. Men over 40 cannot efficiently convert ubiquinone to ubiquinol. Having the clinical conviction to specify ubiquinol on the label is the hardest differentiator to match.',
+        'Primavie™ Shilajit 250mg — patented purified fulvic acid complex with published human RCT showing +23.5% testosterone vs placebo. Not raw shilajit powder with variable fulvic acid and contamination risk.',
+        'NAC 600mg — most male fertility formulas omit NAC despite human RCT data on sperm morphology and motility. Including it at clinical dose proves R&D read the research, not competitor labels.',
+        '5-MTHF methylfolate (not folic acid) — 10–15% of men have MTHFR variants and cannot convert folic acid. Formula works for all genotypes. Choosing 5-MTHF over folic acid is a clinical decision.',
+        'Boron 3mg calcium fructoborate — virtually all competitors ignore boron despite SHBG reduction and free testosterone increase at this dose.'
+      ],
+      ingredients:[
+        {lbl:'Ayurvedic Foundation',name:'KSM-66® Ashwagandha 600mg + Primavie™ Shilajit 250mg + Fenugreek 300mg (50% fenusides)',spec:'KSM-66® spray dried. Primavie™: cyclodextrin complex spray dried. Fenugreek: microencapsulated OSA starch — bitterness masked.',mechanism:'KSM-66®: testosterone +15–17% via LH stimulation + cortisol reduction + sperm motility. Primavie™: testosterone +23.5% + sperm count + motility. Fenugreek: SHBG inhibition → increases FREE testosterone without raising total.',evidence:'KSM-66® multiple RCTs. Primavie™ human RCT (+23.5% testosterone). Fenugreek fenusides free-T RCTs.',signal:'India-exclusive botanical trifecta: KSM-66® + Primavie™ + Fenugreek. No Chinese supply chain can authentically replicate all three.'},
+        {lbl:'Sperm Motility Engine',name:'L-Carnitine 1,000mg + ALCAR 500mg + CoQ10 Ubiquinol 200mg + Lycopene 10mg',spec:'LC: tartrate salt for stability. ALCAR: crosses mitochondrial membrane. Ubiquinol: microencapsulated — O₂-sensitive. Lycopene: 6% standardised.',mechanism:'L-Carnitine + ALCAR: combined 1,500mg total = validated motility RCT dose. Ubiquinol: mitochondrial ATP in sperm. Lycopene: carotenoid antioxidant specific to testes and seminal plasma.',evidence:'Sperm motility 15%→50% at 1,500mg total carnitine (RCT). Ben-Meir CoQ10 sperm. Giovannucci 2002 lycopene prostate/sperm.',signal:'1,000mg L-Carnitine + 500mg ALCAR = the RCT-validated combined dose. Not interchangeable.'},
+        {lbl:'Oxidative Protection',name:'NAC 600mg + Vitamin C 500mg + Vitamin E 200mg (d-alpha) + Selenium 100mcg',spec:'NAC: microencapsulated (odor-masked). Vit E: natural d-alpha (2× more bioavailable than synthetic). Se: selenomethionine organic form.',mechanism:'NAC: glutathione precursor → reduces sperm DNA fragmentation. Vit C + E: synergistic antioxidant cycle in seminal plasma. Se: GPx cofactor in sperm.',evidence:'NAC RCT: sperm morphology and motility improvement. 100mcg Se selenomethionine = therapeutic dose.',signal:'Most male fertility formulas OMIT NAC despite strong RCT data. 600mg clinical dose signals research depth.'},
+        {lbl:'Hormonal Micronutrients',name:'Zinc Bisglycinate 20mg + D3 2,000 IU + P5P 5mg + 5-MTHF 400mcg + Boron 3mg',spec:'All active forms. Spray dried premix. Boron: calcium fructoborate.',mechanism:'Zinc: testosterone synthesis + LH + sperm DNA packaging. D3: testosterone receptor expression. P5P: testosterone metabolism cofactor. 5-MTHF: sperm DNA methylation. Boron: SHBG reduction → free T increase.',evidence:'Multiple studies per micronutrient. Boron 3mg: SHBG reduction and free testosterone increase validated.',signal:'5-MTHF vs synthetic folic acid — MTHFR awareness. Boron at 3mg: the invisible differentiator virtually all competitors miss.'}
+      ],
+      comp:{headers:['Feature','Typical Market Formula','Premium Competitors','ViriMax Pro™'],rows:[
+        ['CoQ10 form','Ubiquinone 100mg','Ubiquinone 200mg','Ubiquinol 200mg — 2–3× more bioavailable. Men 40+ cannot convert.'],
+        ['Ashwagandha','Generic 2.5% extract','KSM-66® 300mg (sub-dose)','KSM-66® 600mg — validated testosterone + sperm RCT dose'],
+        ['Shilajit','Absent','Generic powder (variable fulvic acid)','Primavie™ 250mg — >50% fulvic acid, patented, human RCT (+23.5% T)'],
+        ['Folate form','Folic acid','Folic acid','5-MTHF — bypasses MTHFR; works for 100% of men'],
+        ['NAC inclusion','Absent','Absent','600mg — strongest motility/morphology RCT data; omitted by all competitors']
+      ]},
+      claims:[
+        {type:'Reproductive Health',text:'Supports healthy male reproductive function and hormone balance* — KSM-66®, Shilajit, Fenugreek, Zinc (S/F, DSHEA)'},
+        {type:'Antioxidant',text:'Supports antioxidant protection of cells from oxidative stress* — Vitamin C, E, NAC, Selenium, Lycopene (S/F)'},
+        {type:'Factual Label',text:'KSM-66® 600mg | Ubiquinol 200mg | NAC 600mg | 5-MTHF Methylfolate | Primavie™ Shilajit 250mg | Vegan option | GMP-certified'}
+      ]
+    },
+
+    prostacare:{
+      stats:[{lbl:'Format',val:'2 HPMC Capsules Daily'},{lbl:'DHT Pathways',val:'3 Non-Overlapping'},{lbl:'Week 1–3 Onset',val:'Anti-Discontinuation Architecture'}],
+      badges:['Commission E Approved','JAMA Evidence Base','LycoRed® Lycopene','Berges 1995 Lancet Form'],
+      moat:[
+        'Anti-discontinuation architecture — pumpkin seed extract 500mg delivers perceptible urinary improvement in weeks 1–3 while DHT modulators (saw palmetto, β-sitosterol) accumulate over 4–8 weeks. Prostate supplements lose 40–60% of customers in weeks 1–3 when nothing is felt. Pumpkin seed bridges this gap. No other multi-ingredient prostate formula has speed-stratified onset engineering.',
+        'Triple DHT pathway: (1) Saw palmetto — 5-alpha reductase Type I + II inhibition; (2) Stinging nettle root — SHBG binding → free androgen reduction; (3) Zinc citrate — 5-AR enzyme cofactor regulation. Three non-overlapping DHT mechanisms.',
+        'LycoRed® branded lycopene — all-trans lycopene ≥6%, batch-specific COA per lot. Clinical publication dossier supports HCP leave-behinds. Prostate gland has the highest lycopene concentration of any organ in the body.',
+        'Free β-sitosterol equivalent — Berges 1995 Lancet RCT exact form. Esterified plant sterol blends ≠ free β-sitosterol — different pharmacokinetics, no BPH-specific RCT data.'
+      ],
+      ingredients:[
+        {lbl:'DHT 5-AR',name:'Saw Palmetto 320mg (85–95% fatty acids, lipid extract)',spec:'Lipid extract (not dry powder). GC ≥85–95% fatty acids per batch. Commission E approved.',mechanism:'5-alpha-reductase Type I + II dual isoform inhibition → reduces intraprostatic DHT conversion from testosterone.',evidence:'Wilt 1998 JAMA systematic review: 18 RCTs, 2,939 men. Commission E approved. European Urological Association guidelines reference.',signal:'Dual isoform (Type I+II) vs finasteride (Type II only) — arguable clinical superiority.'},
+        {lbl:'IPSS / Flow Rate',name:'β-Sitosterol (free equivalent) 100mg',spec:'Free form by HPLC confirmed — NOT esterified plant sterol blend.',mechanism:'Improves IPSS and peak urinary flow rate.',evidence:'Berges 1995 Lancet: n=200, DB-RCT, 130mg/day free β-sitosterol — significant IPSS + flow rate improvement.',signal:'FREE EQUIVALENT FORM = Berges 1995 Lancet exact clinical form. Esterified blend ≠ free sitosterol.'},
+        {lbl:'Anti-Inflammation / Nocturia',name:'Pygeum africanum 100mg (14% triterpenes, 0.5% sterols)',spec:'Dual marker standardised. CITES sustainably sourced.',mechanism:'5-LOX + COX inhibition in prostate → reduces prostatic inflammation. Reduces bladder detrusor irritability → addresses nocturia.',evidence:'Ishani 2000 Am J Med systematic review. ESCOP monograph.',signal:'Nocturia is the most quality-of-life impairing BPH symptom — this mechanism has the highest HCP recommendation value.'},
+        {lbl:'Fast Onset Week 1–3',name:'Pumpkin Seed Extract 500mg',spec:'Commission E approved for irritable bladder. Amino acid fraction (glycine + alanine + glutamic acid).',mechanism:'Bladder sphincter muscle tone support → perceptible urinary improvement in weeks 1–3.',evidence:'Commission E approved. Controlled clinical data: urinary symptom improvement in 1–3 weeks.',signal:'Anti-discontinuation design: prostate supplement market loses 40–60% of customers before slower ingredients build. Pumpkin seed bridges this gap.'},
+        {lbl:'Antioxidant',name:'LycoRed® Lycopene 15mg (all-trans, ≥6% HPLC)',spec:'LycoRed® brand. All-trans lycopene ≥6% HPLC. Batch-specific COA.',mechanism:'Antioxidant protection of prostate epithelial cells. Prostate = highest lycopene concentration organ.',evidence:'Giovannucci 2002 JNCI: prospective cohort, 47,000+ men, lycopene + prostate cancer risk.',signal:'Branded ingredient with clinical dossier — supports HCP educational leave-behinds in urologist and andrologist channels.'},
+        {lbl:'DHT 5-AR Cofactor',name:'Zinc Citrate 15mg (~10.5mg elemental)',spec:'Citrate form (not oxide). ICP-MS elemental per batch.',mechanism:'5-alpha-reductase enzyme co-factor regulation. Prostate gland has highest zinc concentration of any body organ.',evidence:'Leake 1984 J Steroid Biochem: zinc + 5-AR + hyperplastic prostate tissue.',signal:'Citrate vs oxide = absorption-aware. Zinc at 136% DV = declarable therapeutic label claim.'},
+        {lbl:'DHT SHBG',name:'Stinging Nettle ROOT 300mg (standardised)',spec:'ROOT extract specifically (not leaf). Root contains SHBG-binding lectins.',mechanism:'Binds SHBG → reduces free androgen (DHT + testosterone) availability to prostate tissue.',evidence:'Lopatkin 2005 BJU Int (1-year combined saw palmetto + Urtica dioica RCT).',signal:'ROOT specification (not generic "nettle extract") = fourth DHT mechanism via SHBG binding.'}
+      ],
+      comp:{headers:['Feature','Basic Prostate (Saw Palmetto only)','Premium Multi-Ingredient','ProstaCare Pro™'],rows:[
+        ['Week 1–3 onset','None — 4–8 weeks before felt result. High dropout.','None — all slow-accumulation','PUMPKIN SEED 500mg — perceptible urinary improvement weeks 1–3. Anti-discontinuation architecture.'],
+        ['DHT pathways','1 (5-AR Type II only)','1–2 (5-AR ± sitosterol)','3 Non-overlapping: Type I+II 5-AR + SHBG binding + 5-AR cofactor'],
+        ['β-Sitosterol form','Absent','Plant sterol ester blend (no BPH RCT)','FREE EQUIVALENT — Berges 1995 Lancet exact clinical form. HPLC per batch.'],
+        ['Branded lycopene','Absent','Generic or absent','LycoRed® — batch COA + clinical dossier. HCP recommendation anchor.']
+      ]},
+      claims:[
+        {type:'US DSHEA',text:'Supports healthy prostate function*. Supports urinary tract health and normal urinary flow*'},
+        {type:'EU Phytomedicine References',text:'Commission E (Serenoa repens, Cucurbita pepo for BPH/irritable bladder). ESCOP monograph (Pygeum). For HCP communication only.'},
+        {type:'Factual Label',text:'Zinc 15mg (136% DV) | Saw Palmetto 320mg | LycoRed® Lycopene 15mg | Pumpkin Seed 500mg | Pygeum 100mg | Vegan | GMP-certified'}
+      ]
+    },
+
+    jointmax:{
+      stats:[{lbl:'Format',val:'5.0g RTM Stick Pack'},{lbl:'Joint Mechanisms',val:'5 Non-Overlapping'},{lbl:'Clinical Decision',val:'ZERO Glucosamine (NIH GAIT 2006)'}],
+      badges:['Zero Glucosamine','UC-II 40mg','BosPure®','um-PEA 400mg D90<10µm'],
+      moat:[
+        'UC-II at exactly 40mg — Crowley 2009: 40mg UC-II outperformed 1,500mg glucosamine + 1,200mg chondroitin on all WOMAC outcomes. Oral tolerization via Peyer\'s patches. 40mg is the tolerization dose — higher doses trigger immune stimulation instead. Heat-sensitive: added LAST in blend.',
+        'BosPure® 50mg AKBA — negligible beta-boswellic acid (COX inhibitor). Generic boswellia = β-BA present = GI risk. BosPure® = pure 5-LOX, zero GI risk. NSF/Kosher/Halal/Prop 65.',
+        'um-PEA 400mg D90 <10µm — only grade with Paladini 2016 meta-analysis (12 RCTs, n=786). Standard PEA D90 >100µm = poor oral bioavailability and zero human RCT data at efficacy.',
+        'Explicit rejection of glucosamine and chondroitin on the basis of NIH GAIT 2006 published trial — this is the boldest clinical positioning statement available in joint supplements.'
+      ],
+      ingredients:[
+        {lbl:'Immune Tolerization',name:'UC-II® 40mg (undenatured, 25%)',spec:'Plain powder. Added LAST in blend. Heat-sensitive — no heat exposure. No carrier.',mechanism:'Oral tolerization via Peyer\'s patches. Treg induction suppresses autoimmune cartilage attack.',evidence:'Crowley 2009 (Int J Med Sci): 40mg UC-II outperformed 2,700mg G+C on all WOMAC outcomes. n=52, 6-month DB-RCT.',signal:'40mg is the tolerization dose. Higher doses lose tolerization and trigger immune stimulation — a counter-intuitive clinical fact.'},
+        {lbl:'5-LOX Anti-Inflammation',name:'BosPure® AKBA 500mg (50mg AKBA, negligible β-BA)',spec:'Water-dispersible grade from Arjuna Natural. AKBA HPLC confirmed per batch.',mechanism:'Selective 5-LOX inhibition — blocks LTB4 in synovial joints. No COX = no GI side effects.',evidence:'Kimmatkar 2003 (Phytomedicine): knee OA crossover DB-RCT — pain, swelling, flexion improved.',signal:'BosPure® ≠ generic boswellia. β-BA absent = no NSAID-class GI risk. NSF/Kosher/Halal/Prop 65.'},
+        {lbl:'Synovial Lubrication',name:'Sodium Hyaluronate 120mg (>1MDa)',spec:'MW confirmed by viscometry per batch. Fermentation-derived (vegan).',mechanism:'HA restores synovial fluid viscoelasticity. High MW (>1MDa) = anti-inflammatory. Low MW = pro-inflammatory.',evidence:'Tashiro 2012 (Med Food): oral HA 80mg/day — significant knee VAS + ROM improvement.',signal:'Most competitors: low-MW HA (cheaper) or MW undeclared. >1MDa + viscometry confirmed = clinical specification.'},
+        {lbl:'Neuroinflammatory Pain',name:'um-PEA 400mg (D90 <10µm laser diffraction)',spec:'Pre-micronized by supplier. D90 <10µm per incoming lot confirmation mandatory.',mechanism:'PPAR-α agonist — downregulates neuroinflammatory pain sensitisation at joint afferents.',evidence:'Paladini 2016 (Pain Physician): meta-analysis 12 RCTs n=786 — chronic pain VAS reduction.',signal:'Absent from every mainstream US joint supplement. D90 <10µm = only grade with RCT data.'},
+        {lbl:'Matrix Synthesis',name:'MSM 1,500mg (distilled 99%) + Vitamin C 200mg',spec:'Pharmaceutical-grade distilled MSM. Vit C ascorbic acid.',mechanism:'MSM: organic sulfur for GAG synthesis (cartilage matrix). Vit C: prolyl/lysyl hydroxylase cofactor.',evidence:'Kim 2006 (Osteoarth Cartilage): 3,000mg MSM RCT WOMAC improvement. EU: Vit C collagen claim.',signal:'Vitamin C in joint formula = almost universally absent. Prolyl/lysyl hydroxylase biochemistry demonstrates research depth.'}
+      ],
+      comp:{headers:['Feature','Glucosamine + Chondroitin (Osteo Bi-Flex)','Boswellia-Turmeric','JointMax Pro™'],rows:[
+        ['Core mechanism','GAIT 2006: G+C no better than placebo (NEJM)','1–2 mechanisms, generic boswellia','5 Independent: tolerization + 5-LOX + lubrication + pain + matrix'],
+        ['UC-II tolerization','ABSENT','ABSENT','UC-II® 40mg — Crowley 2009: outperformed 2,700mg G+C'],
+        ['BosPure® AKBA','ABSENT','Generic boswellia (β-BA undeclared = GI risk)','BosPure® 50mg AKBA — Arjuna Natural Kerala. NSF/Kosher/Halal/Prop 65.'],
+        ['um-PEA neuroinflammatory','ABSENT','ABSENT','um-PEA 400mg D90 <10µm — Paladini 2016 meta-analysis (12 RCTs, n=786)']
+      ]},
+      claims:[
+        {type:'Joint / Cartilage',text:'Supports healthy joint cartilage*. Supports a healthy inflammatory response in joints*. Supports joint comfort and mobility* (S/F, DSHEA)'},
+        {type:'EU Claims',text:'"Vitamin C contributes to normal collagen formation for the function of cartilage" — EFSA nutrient function claim. BosPure® co-documentation for EU.'},
+        {type:'Safety / Factual',text:'ZERO glucosamine | ZERO chondroitin | BosPure® 500mg | UC-II® 40mg | um-PEA 400mg | Contains: Chicken (UC-II) — FALCPA declaration mandatory'}
+      ]
+    },
+
+    premax:{
+      stats:[{lbl:'Format',val:'16g Scoop / RTM'},{lbl:'Release Architecture',val:'3-Phase Engineered'},{lbl:'Citrulline Dose',val:'6g (Pérez-Guisado 2010 Exact)'}],
+      badges:['3-Phase Release','Encapsulated Caffeine T50 35–45min','Delayed Beta-Alanine Tingle','6g Citrulline'],
+      moat:[
+        'Three-phase sequenced release — Phase 1 (beetroot/citrulline, 0–15min) → Phase 2 (encapsulated caffeine + tyrosine, 30–45min) → Phase 3 (encapsulated beta-alanine tingle, 60–75min). No competitor pre-workout engineers sequential release windows. Requires GMP fluid bed.',
+        'Phase 3 sensory confirmation marker — delayed beta-alanine tingle at 60–75min confirms formula is still biologically active at the peak fatigue window. Zero other products deliver this delayed sensory proof.',
+        'Free-form citrulline at clinical 6g — Pérez-Guisado 2010 exact dose. Proprietary blends hide 2–4g actual citrulline behind label weight.',
+        'Encapsulated caffeine T50 35–45min — smooth 3–4hr plasma profile eliminates spike-crash. Consumer trains better and returns.'
+      ],
+      ingredients:[
+        {lbl:'Phase 1 (0–15min)',name:'Beetroot Extract (10% nitrate) 1,500mg + L-Citrulline Malate 2:1 6,000mg',spec:'Beetroot: HPLC ≥10% nitrate. ~150mg dietary NO3- per serving. Citrulline: free L-isomer USP. Not L-arginine.',mechanism:'Beetroot: dietary nitrate → salivary nitrite → NO via enterosalivary circuit. Vasodilation + blood flow onset 10–15min. Citrulline: bypasses hepatic arginine extraction → renal conversion → amplifies eNOS substrate.',evidence:'Jones 2010 J Physiol; Larsen 2011 Acta Physiol. Pérez-Guisado 2010 J Strength Cond Res: 6g dose RCT.',signal:'6g = exact RCT dose. Proprietary blends hide 2–4g actual. Full dose transparency.'},
+        {lbl:'Phase 2 (30–45min)',name:'Caffeine (Encapsulated) 200mg + L-Tyrosine 1,500mg',spec:'Caffeine: EC/HPMC fluid bed coat. T50: 35–45min. NMT 30%@1hr. Dissolution per batch. Tyrosine: free L-isomer (not N-acetyl).',mechanism:'Phase 2: adenosine receptor antagonism — smooth 3–4hr plasma profile. Tyrosine: DA/NE precursor — peak plasma aligned with end of warm-up.',evidence:'ISSN 2021 Position Stand; EFSA 200mg single dose safe. Deijen 1994; Neri 1995.',signal:'T50 35–45min not replicable by commodity blenders. Tyrosine: free L-isomer (superior CNS conversion) vs budget N-acetyl form.'},
+        {lbl:'Phase 3 (60–75min)',name:'Beta-Alanine (Encapsulated) 3,200mg',spec:'Modified starch/wax fluid bed coat. T50: 65–75min. NMT 20%@15min gastric. D90 ≤800µm.',mechanism:'Carnosine precursor — buffers H+ during high-intensity sets → delays fatigue. Paresthesia at 60–75min = unique felt Phase 3 sensory confirmation.',evidence:'Hobson 2012 meta-analysis (26 RCTs). Harris 2006 original dose-response. 3.2g = minimum effective chronic dose.',signal:'Delayed tingle at 60–75min: zero other products deliver this. Phase 3 sensory proof at 75min is the repeat-purchase driver.'},
+        {lbl:'Hydration',name:'Sodium Citrate 300mg',spec:'Food grade powder.',mechanism:'Pre-exercise sodium priming + pH buffering in RTM drink.',evidence:'Standard electrolyte science. AHA/ACSM guidelines.',signal:'~5% DV sodium — meaningful pre-exercise electrolyte priming.'}
+      ],
+      comp:{headers:['Feature','Standard Pre-Workout (C4, Ghost)','Premium Evidence-Based','PreMax Pro™'],rows:[
+        ['Release architecture','All simultaneous. Caffeine peak 15–20min, crash at 45–60min','All immediate release','3-Phase Engineered: Caffeine Phase 2 T50 35–45min + Beta-alanine Phase 3 T50 65–75min'],
+        ['Phase 3 sensory confirmation','Immediate tingle or absent','Absent','DELAYED TINGLE at 60–75min = felt proof formula still active at fatigue peak'],
+        ['Caffeine profile','Immediate spike → crash','Immediate release only','Smooth 3–4hr profile. Peak at end of warm-up. No crash.'],
+        ['Citrulline dose','Proprietary blend: 2–4g hidden','Usually 8g (above clinical, marketing)','6,000mg = Pérez-Guisado 2010 exact RCT dose. Free L-isomer. HPLC confirmed per batch.']
+      ]},
+      claims:[
+        {type:'US Structure/Function',text:'Supports athletic performance and endurance*. Contains 3,200mg beta-alanine and 200mg caffeine per serving (factual).'},
+        {type:'Factual Label',text:'Caffeine: 200mg/serving | Beta-alanine: 3,200mg | Citrulline malate 2:1: 6,000mg | No proprietary blends | GMP-certified'},
+        {type:'Required Disclosure',text:'Contains caffeine (200mg/serving). Beta-alanine may cause a harmless tingling sensation (paresthesia). Note: Tingling begins at 60–75min — this is normal and confirms beta-alanine activity.'}
+      ]
+    },
+
+    postmax:{
+      stats:[{lbl:'Format',val:'12g Scoop / RTM'},{lbl:'Creatine Stability',val:'≥95% Retention at 72hr/25°C (Aqueous)'},{lbl:'EU Claims',val:'Creatine (EFSA) + Magnesium (EFSA)'}],
+      badges:['RTD-Compatible Creatine','≥95% Aqueous Stability','Tart Cherry 480mg RCT Dose','Dual EFSA Claims'],
+      moat:[
+        'RTD-stable microencapsulated creatine — only supply solution. Standard creatine degrades 10–20% in 24h at pH 3–4; up to 80% loss over 12-month RTD shelf life. Modified starch/lipid moisture-barrier encapsulation: ≥95% creatine retention at 72h/25°C in aqueous solution. Opens the entire RTD creatine beverage manufacturing segment.',
+        'Tart cherry at 480mg standardised extract (≥15% anthocyanins) — the exact Howatson 2010 RCT dose. Consumer FEELS less DOMS next morning → repeat purchase. Most post-workouts use tart cherry POWDER (0.1–2% anthocyanins) — same weight, 1/20th the active dose.',
+        'EFSA creatine claim qualifies at ≥3g/serving: "Creatine increases physical performance in successive bursts of short-term, high-intensity exercise." PostMax at 5g qualifies. Second anchor: magnesium contributes to normal muscle function.'
+      ],
+      ingredients:[
+        {lbl:'PCr Resynthesis',name:'Creatine Monohydrate (Microencapsulated) 5,000mg',spec:'Modified starch/lipid moisture-barrier shell. ≥95% creatine retention at 72h/25°C in aqueous. HPLC ≥99.9% creatine. ≤100ppm creatinine. ≤100ppm dicyandiamide.',mechanism:'RTD stability core. Post-release: PCr replenishment → faster ATP resynthesis. EFSA approved claim at ≥3g/serving.',evidence:'Lanhers 2017 J Strength Cond Res (meta-analysis). ISSN 2017 Position Stand. EFSA Reg 432/2012.',signal:'SOLE RTD-compatible creatine supply. Standard creatine destroys RTD products via creatinine degradation + gritty texture.'},
+        {lbl:'DOMS Reduction',name:'Tart Cherry Extract 480mg (≥15% anthocyanins)',spec:'Standardised extract (NOT powder). HPLC ≥15% anthocyanins confirmed. Cyanidin-3-glucosylrutinoside profile confirmed.',mechanism:'Anthocyanins inhibit COX-1, COX-2, reduce NF-κB. Measurably lowers CK + LDH at 24h and 48h post-exercise. Consumer trains again sooner.',evidence:'Howatson 2010 Eur J Appl Physiol: n=20 marathon runners, 480mg standardised extract, CK+LDH+DOMS reduction confirmed. Bell 2014 Scand J Med.',signal:'Tart cherry POWDER at 480mg delivers <10mg anthocyanins — therapeutically inert. Only product with felt next-morning DOMS reduction.'},
+        {lbl:'Recovery / Sleep',name:'Magnesium Glycinate (Bisglycinate) 200mg',spec:'Bisglycinate chelate. ICP-MS elemental Mg per batch. Zero laxative effect.',mechanism:'Cofactor for >300 reactions: muscle protein synthesis, ATP, muscle relaxation. Sleep quality = the overnight recovery window.',evidence:'Nielsen + Lukaski 2006 Mg + exercise. Abbasi 2012 Mg + sleep quality RCT. EFSA approved: "Mg contributes to normal muscle function."',signal:'Dual EFSA claim product: creatine + magnesium. Bisglycinate over oxide.'},
+        {lbl:'Hydration',name:'Coconut Water Powder 1,500mg (≥12% K+) + Sodium Citrate 200mg',spec:'Spray dried (not drum dried — inferior solubility). ≥12% potassium. No added sugars.',mechanism:'Natural potassium + sodium electrolyte replenishment. Comparable to sports drink rehydration.',evidence:'Ismail 2007 J Physiol Biochem: coconut water vs commercial sports drink — comparable outcomes.',signal:'Clean label: no synthetic electrolytes. Natural K+/Na+/Mg²+ matrix. Tree nut declaration required US labels.'}
+      ],
+      comp:{headers:['Feature','Standard Post-Workout','Premium Science-Based (Momentous/Thorne)','PostMax Pro™'],rows:[
+        ['RTD-compatible creatine','Standard creatine — degrades in liquid','Same degradation issue — no RTD product','ONLY SOLUTION: ≥95% retention at 72h/25°C aqueous. Opens RTD creatine segment.'],
+        ['EFSA Creatine Claim','✓ at ≥3g but degrades before delivery in RTD','✓ capsule only','✓ 5g/serving qualifies. RTD-stable. Claim delivered at intended dose.'],
+        ['Tart Cherry dose','Absent or POWDER (<10mg anthocyanins)','Sometimes — rarely at 480mg extract','480mg ≥15% anthocyanins = Howatson 2010 exact dose. HPLC per batch. Felt DOMS.'],
+        ['Magnesium form','Magnesium oxide (poor absorption, laxative)','Sometimes glycinate','Bis-glycinate chelate. EFSA muscle function claim. No laxative.']
+      ]},
+      claims:[
+        {type:'EU EFSA Approved',text:'"Creatine increases physical performance in successive bursts of short-term, high-intensity exercise." (Reg. 432/2012, ≥3g — PostMax 5g qualifies). "Magnesium contributes to normal muscle function." (Reg. 432/2012)'},
+        {type:'US DSHEA',text:'Supports post-workout muscle recovery*. 5,000mg creatine monohydrate | 480mg tart cherry (≥72mg anthocyanins) | Magnesium glycinate 200mg (factual).'},
+        {type:'Factual Label',text:'Creatine 5g | Tart Cherry 480mg (≥72mg anthocyanins) | Mg glycinate 200mg | Coconut water 1,500mg | No added sugar | GMP-certified'}
+      ]
+    }
+  };
+
+  // ── STRATUM COSMETIC SKUS ──
+  const stratumExt = {
+    scalpsync:{
+      moat:[
+        'Melatonin in a scalp serum requires encapsulation — free melatonin photodegrades within days. Shellac/maltodextrin fluid bed coating ensures the active reaches follicle tissue intact.',
+        'Dual postbiotic layer: Lactobacillus ferment filtrate 4% (60–70% Malassezia suppression in scalp models) + Vitreoscilla ferment 1.5% (43% scalp microbiome diversity improvement, 8-week study). Two distinct published evidence bases.',
+        'Postbiotic (not probiotic) = shelf-stable at room temperature without refrigeration. No viability loss over 24 months. No drug classification complications.',
+        'pH 4.5 is acid mantle-aligned — critical for postbiotic stability AND melatonin encapsulation integrity. Alkaline hair care products would inactivate this formula.'
+      ],
+      ingredients:[
+        {lbl:'Microbiome',name:'Lactobacillus Ferment Filtrate 4%',spec:'Spray-dried powder rehydrated into aqueous phase.',mechanism:'Competitively suppresses Malassezia. Downregulates keratinocyte pro-inflammatory cytokines (IL-1α, TNF-α). Restores scalp microbiome diversity.',evidence:'60–70% Malassezia suppression in in-vitro scalp models. Bacteriocin activity vs opportunistic scalp flora.',signal:'4% loading is pharmacologically active concentration — not cosmetic decoration. Postbiotic = refrigeration-free.'},
+        {lbl:'Microbiome',name:'Vitreoscilla Ferment (V. filiformis lysate) 1.5%',spec:'Cosmetic-grade standardised lysate.',mechanism:'Enhances scalp microbiome diversity score via keratinocyte beta-defensin expression.',evidence:'Peer-reviewed study: V. filiformis lysate — 43% improvement in scalp microbiome diversity score vs placebo at 8 weeks.',signal:'Species-specific data — not generic "ferment filtrate." Specific species = specific RCT.'},
+        {lbl:'Follicle Protection',name:'Melatonin 0.05% (as Shellac/Maltodextrin Microcapsules)',spec:'Fluid bed coating. Wall: maltodextrin DE 10–14 / shellac composite. Particle size D50 150–300µm. Melatonin assay ≥90% at 24M. Photostability tested per ICH Q1B.',mechanism:'Melatonin receptors (MT1/MT2) expressed in outer root sheath of hair follicles. Antioxidant shield. Reduces oxidative stress shortening anagen phase.',evidence:'Fischer 2004 (British J Dermatology): topical melatonin 0.003–0.1% — statistically significant hair fall score reduction vs placebo (6-month RCT). Dreher 2005: corroborating RCT.',signal:'Encapsulation is essential: melatonin photodegrades rapidly in clear aqueous formula. This is manufacturing infrastructure advantage.'},
+        {lbl:'Supporting',name:'Niacinamide 2% + Sodium PCA 1% + Panthenol 1% + Zinc PCA 0.5%',spec:'All cosmetic USP grade.',mechanism:'Niacinamide: scalp barrier + sebum regulation + anti-inflammatory. Sodium PCA: hygroscopic physiological humectant. Panthenol: anti-irritant. Zinc PCA: sebum + secondary Malassezia control.',evidence:'Niacinamide 2% barrier/anti-inflammatory well-documented. Zinc PCA antifungal mechanism.',signal:'Multi-layer Malassezia control: Lactobacillus ferment + Vitreoscilla + Zinc PCA — three simultaneous pathways.'}
+      ],
+      comp:{headers:['Feature','Anti-Hairfall Shampoos','Biotin/Nutrient Serums','ScalpSync™'],rows:[
+        ['Melatonin delivery','None','Free melatonin (photodegrades)','Shellac/maltodextrin encapsulated — 24M stability, photostable per ICH Q1B'],
+        ['Anti-Malassezia','Antifungal actives (drug risk)','Single ingredient (piroctone)','Dual postbiotic: Lactobacillus 4% + Vitreoscilla 1.5% — no drug classification'],
+        ['Mechanisms','1','1–2','2 Simultaneous: follicle oxidative protection + microbiome rebalancing'],
+        ['Scalp pH','Uncontrolled or alkaline','Variable','pH 4.5 — acid mantle aligned. Critical for postbiotic + melatonin stability.']
+      ]},
+      claims:[
+        {type:'Cosmetic (India/EU/US)',text:'Leave-on scalp serum. Cosmetic classification in all markets. Melatonin at 0.05% topical: cosmetic-listed in EU. Negligible systemic absorption confirmed.'},
+        {type:'Factual',text:'pH 4.5 ± 0.3 | Shelf life 24 months | Fragrance-free | EU 26 allergen-free | Vegan option (zein wall available) | Not tested on animals'}
+      ]
+    },
+    bondrestore:{
+      moat:[
+        'Shellac oxygen-barrier encapsulation of 18-MEA analog — 18-MEA analogs oxidize rapidly in open aqueous formula. Shellac wall is the only delivery maintaining active functionality through 24-month shelf life. Manufacturing infrastructure advantage.',
+        'Shellac encapsulation of cystine dipeptide — cystine oxidizes in open formula, losing disulfide-forming capability. Encapsulated cystine delivers active thiols to cortex during 15–20 min contact. The Olaplex category proves demand.',
+        'Four simultaneous hair shaft repair mechanisms — no other consumer product combines cuticle 18-MEA + cortex cystine crosslinking + NMF amino acid replenishment + friction-release humectancy.',
+        'Friction-release glycerin + panthenol beadlets — ethylcellulose capsules rupture under combing friction. Usage instructions make this consumer-visible: "Comb to activate beadlets."',
+        'pH 3.8 is critical: acid pH required for cystine crosslink kinetics, cuticle sealing, and glyoxylic acid activity. Alkaline conditioners (pH 5–7) cannot facilitate this chemistry.'
+      ],
+      ingredients:[
+        {lbl:'Cuticle Repair',name:'18-MEA Analog (Shellac Microcapsules) 1.5%',spec:'Shellac wall — oxygen-barrier. Contact angle restoration: ~40° (damaged) → ~90° (healthy).',mechanism:'Re-deposits 18-methyleicosanoic acid lipid layer onto damaged cuticle. Restores surface hydrophobicity. Closes cuticle scales from inside out.',evidence:'Leeder et al. AgResearch NZ: 18-MEA loss is primary driver of cuticle hydrophilicity in damaged hair.',signal:'Shellac encapsulation prevents oxidation before product reaches hair shaft.'},
+        {lbl:'Cortex Crosslinking',name:'Cystine Dipeptide (Shellac Microcapsules) 0.8%',spec:'Shellac wall — oxygen-barrier. Releases at acid pH 3.8 during contact time.',mechanism:'Cystine provides substrate for disulfide (-S-S-) bond reformation in cortex. Restores tensile strength.',evidence:'Tensile strength studies: 30–45% improvement in break force after disulfide-restoring treatments.',signal:'Cystine = body\'s own crosslink substrate vs Olaplex (synthetic crosslinker). Encapsulated = oxidation-protected.'},
+        {lbl:'NMF Replenishment',name:'L-Serine + L-Glutamic Acid + Glycine (NMF Amino Complex) 3%',spec:'Free-form amino acids. MW <150 Da each — penetrates cuticle into cortex at pH 3.8.',mechanism:'Re-establishes cortex natural moisturising factor amino acid pool. Serine + glutamic acid hygroscopic — restore internal water-binding.',evidence:'Hair cortex NMF depleted 30–50% in chemical/heat damaged hair. Low-MW amino acid redeposition improves internal hydration.',signal:'MW <150 Da = guaranteed cortex penetration. Not "hydrolysed protein" (too large to penetrate).'},
+        {lbl:'Friction-Release',name:'Glycerin Beadlets (Maltodextrin/EC) 3% + Panthenol Beadlets 1%',spec:'Ethylcellulose beadlets. Mechanical rupture on combing friction.',mechanism:'On-demand humectant delivery throughout combing and styling — not washed away during rinsing.',evidence:'Friction-release cosmetic encapsulation principle validated.',signal:'Usage instruction Step 3 ("distribute with wide-tooth comb — activates beadlets") = consumer technology education moment.'},
+        {lbl:'Supporting',name:'Hydrolysed Keratin <1kDa 3% + Glyoxylic Acid 1% + Camellia Seed Oil 2%',spec:'Keratin MW <1kDa critical for cortex penetration. Glyoxylic acid at 1% (EU rinse-off: up to 2% — cleanly cosmetic).',mechanism:'Keratin: structural gap-filling. Glyoxylic acid: additional crosslinks in damaged cortex. Camellia oil: cuticle lipid replenishment.',evidence:'Glyoxylic acid professional smoothing treatment mechanism well-documented.',signal:'MW specification for keratin is stated in TDS — signals penetration physics understanding.'}
+      ],
+      comp:{headers:['Feature','Standard Hair Masks','Bond-Building (Olaplex category)','BondRestore™'],rows:[
+        ['18-MEA cuticle restoration','None','None (cuticle coating only)','Shellac-encapsulated 18-MEA analog — O₂-barrier delivery. Contact angle ~40°→~90°.'],
+        ['Cortex bond crosslinking','None','Olaplex (synthetic crosslinker)','Encapsulated cystine dipeptide — body\'s own substrate. O₂-barrier shellac.'],
+        ['Internal moisture (NMF amino acids)','None','Marketing ingredient','L-Serine + L-Glutamic Acid + Glycine (<150 Da) — cortex-penetrating NMF repletion.'],
+        ['Friction-release delivery','None','None','Maltodextrin/EC beadlets — combing-activated on-demand release.']
+      ]},
+      claims:[
+        {type:'Cosmetic (All Markets)',text:'India: Cosmetic (D&C Act 1940). EU: EC 1223/2009 — all actives cosmetic-listed. US: OTC cosmetic. Glyoxylic acid at 1.0%: within EU limits.'},
+        {type:'Safety',text:'pH 3.8 — avoid scalp application and eye contact. Wide-mouth container essential (beadlets must not be disrupted by narrow nozzle). Metallic closures: avoid (low pH corrodes).'}
+      ]
+    },
+    sagecalm:{
+      moat:[
+        'Sage diterpenes with M3 receptor modulation — the ONLY cosmetic active with a published human clinical trial (Bommer 2011: 50% hyperhidrosis score reduction) for sweat volume reduction. Every natural deodorant claims odour control. None can claim mechanism-validated sweat moderation.',
+        'M3 receptor modulation is the same receptor class targeted by prescription anticholinergic hyperhidrosis drugs (glycopyrronium bromide, oxybutynin) — botanical cosmetic route, no drug classification, no prescription barrier.',
+        'HPLC standardisation of sage (min 2.5% rosmarinic acid + 0.5% ursolic acid per batch) guarantees batch-to-batch efficacy. Generic sage without this specification is biologically unreliable.',
+        'Three-layer action with onset bridge — zinc ricinoleate provides immediate Day 1 efficacy while progressive mechanisms (sage M3, postbiotic S. hominis suppression) build over 5–10 days. Without the bridge, consumers abandon before clinical mechanisms take effect.'
+      ],
+      ingredients:[
+        {lbl:'Sweat Moderation',name:'Sage Leaf Extract (Salvia officinalis) 3%',spec:'Standardised HPLC: min 2.5% rosmarinic acid + 0.5% ursolic acid per batch.',mechanism:'Diterpenes modulate muscarinic M3 receptors on eccrine gland secretory cells — reduces sweat output WITHOUT blocking the duct. Effect progressive over 5–10 days.',evidence:'Bommer 2011 (Advances in Therapy): fresh sage preparation 50% hyperhidrosis score reduction at 4 weeks. Hammar et al.: statistically significant sweat frequency/intensity reduction.',signal:'M3 receptor modulation = same receptor as prescription anticholinergic hyperhidrosis drugs. Botanical cosmetic route.'},
+        {lbl:'Odour Neutralisation',name:'Lactobacillus Ferment Filtrate 4%',spec:'Spray-dried powder. Postbiotic = shelf-stable, 24-month viability.',mechanism:'Competitively suppresses Staphylococcus hominis — the bacteria converting odourless sweat precursors to thioalcohol odorants.',evidence:'Underarm odour mechanism: S. hominis enzymatic conversion documented (Natsch et al., Trimmer et al.).',signal:'Postbiotic odour control vs essential oil masking: mechanism vs cosmetic overlay. Masking fails in 2hr; postbiotic suppression builds progressively.'},
+        {lbl:'Controlled Astringency',name:'Tannic Acid (Shellac Microcapsules) 0.7%',spec:'Shellac encapsulation — slow release 6–8hr. Free tannic acid <5% at 30min — below irritation threshold.',mechanism:'Sustained mild astringency — transient skin protein complexes providing tactile dryness feedback. Releases over 6–8hr.',evidence:'Tannic acid astringency in cosmetics well-documented.',signal:'Encapsulated = converts concentrated contact irritant into sustained low-dose comfort agent.'},
+        {lbl:'Onset Bridge Day 1',name:'Zinc Ricinoleate 1%',spec:'Cosmetic grade zinc salt of ricinoleic acid. Stable at pH 5.0.',mechanism:'Physically traps and binds odour molecules (aldehydes, thioalcohols) — immediate Day 1 effect while biological mechanisms build.',evidence:'Zinc ricinoleate odour molecule trapping mechanism well-documented.',signal:'Bridge mechanism prevents early abandonment before clinical mechanisms take full effect at 5–10 days.'},
+        {lbl:'Supporting',name:'Cyclomethicone 2% + Witch Hazel Water (Alcohol-Free) 1% + Niacinamide 2% + Sodium PCA 1%',spec:'Witch hazel: ultra-refined aqueous distillate — NOT tincture (40–60% ethanol).',mechanism:'Cyclomethicone: zero-cast, zero-residue delivery. Witch hazel: mild astringency + skin comfort. Niacinamide: barrier support. Sodium PCA: moisture balance.',evidence:'Cyclomethicone EU leave-on restriction: D5 restriction applies to rinse-off only — leave-on formula not restricted.',signal:'Alcohol-free specification critical — ethanol on post-shave underarm causes immediate sensitisation.'}
+      ],
+      comp:{headers:['Feature','Aluminium Antiperspirants','Natural Deodorants (Baking Soda/Crystal)','SageCalm™'],rows:[
+        ['Sweat volume reduction','None — pore blocking only','None (masking only)','M3 receptor modulation — Bommer 2011: 50% hyperhidrosis RCT. Only cosmetic with this evidence.'],
+        ['Odour control','Aluminium + fragrance','Essential oil masking (2hr)','S. hominis postbiotic suppression + zinc ricinoleate physical trapping (Day 1 immediate)'],
+        ['Aluminium-free','No','Yes but ineffective','Yes — sage M3 modulation is the aluminium-replacement mechanism with published RCT'],
+        ['Regulatory category','OTC Drug (antiperspirant)','Cosmetic','Cosmetic in ALL markets — zero drug classification hurdles. Opens post-aluminium segment.']
+      ]},
+      claims:[
+        {type:'Cosmetic Claims (All Markets)',text:'India: Cosmetic. EU: EC 1223/2009 — all actives cosmetic-listed. US: OTC COSMETIC — NOT an antiperspirant. PROHIBITED: "antiperspirant", "stops sweat", "blocks perspiration". PERMITTED: "moderates", "reduces appearance of", "supports underarm comfort".'},
+        {type:'Safety',text:'Alcohol-free formula. Tannic acid: 0.7% total, <5% free at 30min — below irritation threshold. HRIPT recommended before commercial launch. Not recommended under age 12.'}
+      ]
+    },
+    toneq:{
+      moat:[
+        'Three simultaneous pigmentation drivers: friction-induced melanocyte stimulation (encapsulated azelaic acid, anti-inflammatory), hormonal melanocyte hyperactivity (tranexamic acid — only cosmetic active with published evidence on hormonal pigmentation), and PIH residue (alpha-arbutin + niacinamide).',
+        'Azelaic acid encapsulation eliminates the sting making 5% azelaic acid non-viable in intimate zone daily use. Converts a clinically superior ingredient from practically unusable to daily compliant.',
+        'Alpha-arbutin shellac encapsulation at pH 4.0 — mandatory chemistry: free alpha-arbutin hydrolyzes to hydroquinone at this pH. Encapsulation maintains alpha-arbutin integrity AND safety. Most formulators avoid alpha-arbutin at low pH rather than solving it.',
+        'Intimate skin permeability is 10–40× higher than forearm — every active concentration was selected with this in mind.'
+      ],
+      ingredients:[
+        {lbl:'Driver 1: Friction',name:'Azelaic Acid (Ethylcellulose Microcapsules) 5%',spec:'EC sustained-release microcapsules. Sting eliminated by encapsulation. pH 4.0 formula.',mechanism:'Selectively targets overactive melanocytes only. Anti-inflammatory — interrupts friction-induced keratinocyte cytokine cascade. Inhibits 5-alpha-reductase locally.',evidence:'Multiple published studies: azelaic acid for post-inflammatory hyperpigmentation. EU approved cosmetic at ≤10%.',signal:'Encapsulation converts non-viable ingredient (stinging) into daily compliant formula. Cosmetic at 5% — not Rx.'},
+        {lbl:'Driver 2: Hormonal',name:'Tranexamic Acid 2.5%',spec:'Free form, water-soluble. Stable at pH 4.0. Confirmed cosmetic at 2.5% topical.',mechanism:'Blocks keratinocyte-melanocyte communication via hormonal stimulation pathway. Inhibits plasminogen activator → reduces prostaglandin → reduces MC1R upregulation.',evidence:'Published clinical evidence for topical tranexamic acid in hormonally-driven pigmentation (PCOS, OCP, pregnancy).',signal:'Only cosmetic active with published evidence on hormonal pigmentation — the mechanism alpha-arbutin and azelaic acid cannot address.'},
+        {lbl:'Driver 3: PIH',name:'Alpha-Arbutin (Shellac Microcapsules) 1.5%',spec:'Shellac microcapsules — pH-stable at formula pH 4.0. Prevents hydrolysis to hydroquinone.',mechanism:'Tyrosinase inhibitor — blocks rate-limiting enzyme in melanin synthesis. Specific for post-inflammatory hyperpigmentation.',evidence:'Alpha-arbutin well-documented as tyrosinase inhibitor.',signal:'Shellac encapsulation at pH 4.0 is not optional — free alpha-arbutin hydrolyzes to hydroquinone at this pH. Encapsulation protects both efficacy and safety.'},
+        {lbl:'Transfer Inhibition',name:'Niacinamide 4%',spec:'Cosmetic USP. Stable at pH 4.0.',mechanism:'Inhibits melanosome transfer from melanocytes to keratinocytes — the actual visible darkening step.',evidence:'Niacinamide 4% melanosome transfer inhibition well-documented. Downstream step coverage.',signal:'4% is the active dose for melanosome transfer (not 2% which is maintenance dosing).'},
+        {lbl:'Exfoliation',name:'Lactic Acid (Maltodextrin/EC Microcapsules) 3%',spec:'Controlled-release. Free acid <10% at manufacture.',mechanism:'Sustained mild AHA exfoliation — accelerates hyperpigmented keratinocyte turnover. Encapsulation prevents acute irritation on intimate skin.',evidence:'AHA exfoliation efficacy on pigmented keratinocyte turnover.',signal:'Free lactic acid at 3% on intimate skin = compliance-destroying irritation. Encapsulation makes this concentration safe for daily use.'},
+        {lbl:'Anti-Irritation',name:'Centella Asiatica 1% + Dipotassium Glycyrrhizate 0.5% + Panthenol 1%',spec:'Standardised Centella.',mechanism:'Centella: anti-inflammatory + barrier repair. Glycyrrhizate: phospholipase A2 inhibition + secondary tyrosinase inhibition (glabridin). Panthenol: anti-irritant + barrier repair.',evidence:'Centella wound healing and anti-inflammatory documented.',signal:'Intimate skin permeability 10–40× higher = every anti-irritant ingredient is a higher-stakes inclusion.'}
+      ],
+      comp:{headers:['Feature','Fairness/Brightening Creams','Kojic Acid/Vitamin C Serums','TonEQ™'],rows:[
+        ['Pigmentation drivers addressed','1 (surface lightening)','1–2 (friction or sun)','ALL 3: friction-induced + hormonal + PIH residue — simultaneously'],
+        ['Hydroquinone-free','Often contains HQ','Some','100% hydroquinone-free — alpha-arbutin encapsulated to prevent HQ conversion at pH 4.0'],
+        ['Intimate skin pH','No (generic formulation)','No','pH 4.0 — intimate skin acid mantle. All encapsulations stable at this pH.'],
+        ['Hormonal pigmentation','None','Absent','Tranexamic acid 2.5% — only cosmetic active with published hormonal pigmentation evidence']
+      ]},
+      claims:[
+        {type:'Cosmetic (All Markets)',text:'India: D&C Act 1940. EU: EC 1223/2009 — all actives cosmetic at stated concentrations. Azelaic acid at 5%: cosmetic in EU (≤10%).'},
+        {type:'Warnings (Mandatory)',text:'Do not apply to freshly shaved/waxed or broken skin. Wait 24 hours after hair removal. Fragrance-free. Alcohol-free. Not for children.'}
+      ]
+    },
+    ashzero:{
+      moat:[
+        'Pre-wet silica processing sequence is a batch-release-gated manufacturing specification — silica added dry to emulsion aggregates and produces white cast on deep skin tones. The 40°C high-shear pre-wet in CCT + cyclomethicone + lauroyl lysine before emulsification achieves zero-cast on Fitzpatrick V–VI.',
+        'Mandatory sensory quality gates — four gates constitute batch release criteria, including rub-out on Fitzpatrick V–VI forearm (Gate 1) and pre/post photography on Fitzpatrick V panelist (Gate 4). A batch that passes chemistry but fails the sensory gate is rejected. Dark-skin-first quality architecture.',
+        '3:1:1 ceramide:cholesterol:fatty acid ratio — the scientifically validated ratio at which SC lipids spontaneously form lamellar bilayers matching native skin architecture. Off-ratio ceramide formulas cannot achieve this phase.',
+        'Friction-release glycerin beadlets — ethylcellulose capsules rupture under body movement throughout the day. Standard body lotion glycerin evaporates at the skin surface within 90 minutes. This product releases continuously with movement.'
+      ],
+      ingredients:[
+        {lbl:'Optical Correction',name:'Dimethicone/Silica (Pre-wet) 2%',spec:'CRITICAL PRE-WET: silica pre-wetted in CCT 3% + cyclomethicone 2% + lauroyl lysine 0.5% at 40°C under HIGH SHEAR before emulsification.',mechanism:'Silicone-treated silica microspheres convert diffuse light scatter from dehydrated corneocytes into even reflection. Ash eliminated within 60 seconds on Fitzpatrick IV–VI.',evidence:'Ash is caused by dehydrated corneocytes scattering light diffusely. Correct dispersion: zero white cast on Fitzpatrick V–VI.',signal:'Pre-wet process is batch-release-gated: Gate 1 (rub-out on Fitzpatrick V–VI) mandatory. Failure = full batch rejection.'},
+        {lbl:'Sustained Hydration',name:'Glycerin Beadlets (Maltodextrin/EC) 4%',spec:'Ethylcellulose beadlets. Free glycerin <10% in unopened bottle at 24M confirmed.',mechanism:'Sustained all-day humectancy released by body movement — not a surface application that evaporates. 12-hour hydration because release continues with motion.',evidence:'Standard body lotion glycerin evaporates by midday as TEWL exceeds surface humectancy.',signal:'Consumer complaint ("ashy again by midday") solved mechanistically by this ingredient.'},
+        {lbl:'Barrier Architecture',name:'Ceramide NP + Cholesterol + Capryloyl Sphingosine (3:1:1)',spec:'3:1:1 = ONLY ratio forming lamellar phase. Pre-dissolved at 70°C. TEWL reduction ≥20% vs baseline at 12hr as efficacy marker.',mechanism:'Rebuilds stratum corneum lamellar lipid barrier — permanently reduces TEWL rather than just surface moisturising.',evidence:'Elias + Feingold SC lipid biology: 3:1:1 ratio in SC self-assembly publications.',signal:'Off-ratio ceramides do not form lamellar phase. Most "ceramide" claims are single ceramide without cholesterol partners.'},
+        {lbl:'Deep Hydration',name:'Sodium Hyaluronate <50kDa 0.3% + Squalane 2%',spec:'Low MW specification critical: <50kDa penetrates dermis. Squalane: sugarcane-derived, 100% vegan.',mechanism:'Low-MW HA: deep dermal hydration reservoir. Squalane: zero-shine occlusive seal that locks in ceramide repair.',evidence:'Low-MW HA dermal penetration vs high-MW surface retention documented.',signal:'MW <50kDa specified — understands penetration physics. Squalane: zero shine on Fitzpatrick V–VI skin.'},
+        {lbl:'Supporting',name:'Niacinamide 3% + Polyglutamic Acid 0.5% + Lauroyl Lysine 0.5%',spec:'Niacinamide at 3% (anti-inflammatory + ceramide synthesis stimulation).',mechanism:'Niacinamide: ceramide synthesis stimulation — boosts the ceramide complex efficacy. PGA: non-sticky surface film. Lauroyl lysine: silica anti-agglomeration.',evidence:'Niacinamide 2–5% ceramide synthesis stimulation documented.',signal:'Lauroyl lysine maintains optical performance through 24-month shelf life.'}
+      ],
+      comp:{headers:['Feature','Standard Body Lotions','Premium Ceramide Lotions','AshZero™'],rows:[
+        ['Ash elimination','Surface moisturisation only','Same — surface moisturisation','Instant optical correction via pre-wet silicone silica — ash eliminated within 60 seconds'],
+        ['Hydration duration','90–120 min (evaporates)','90–120 min','12-hour sustained via friction-release glycerin beadlets (movement-activated)'],
+        ['Ceramide system','Absent or single ceramide','Single ceramide (no lamellar)','Ceramide NP + Cholesterol + FA at 3:1:1 — only ratio forming true SC lamellar bilayer'],
+        ['Dark skin zero-cast','Often white cast','Varies','Mandatory Fitzpatrick V–VI sensory gate testing. Full batch rejection on cast failure.']
+      ]},
+      claims:[
+        {type:'Cosmetic (All Markets)',text:'India: Cosmetic. EU: EC 1223/2009 — cyclomethicone leave-on restriction (D5 applies to rinse-off only, not this leave-on formula). US: OTC Cosmetic. AICIS compliant.'},
+        {type:'Sensory QC Gates',text:'Gate 1: Rub-out on Fitzpatrick V–VI — zero cast at 30s/2min/5min. Gate 2: Absorbed ≤120s. Gate 3: 4-hr no powdering/residue. Gate 4: Pre/post photography Fitzpatrick V panelist. FULL BATCH REJECTION on any gate failure.'}
+      ]
+    }
+  };
+
+  // Merge SKUS extensions
+  for (const id in E) {
+    if (SKUS && SKUS[id]) {
+      Object.assign(SKUS[id], E[id]);
+    }
+  }
+
+  // Merge Stratum extensions (into PLATFORM_PRODUCTS.kapzostratum)
+  if (typeof PLATFORM_PRODUCTS !== "undefined" && PLATFORM_PRODUCTS.kapzostratum) {
+    PLATFORM_PRODUCTS.kapzostratum.forEach(sku => {
+      if (stratumExt[sku.id]) {
+        Object.assign(sku, stratumExt[sku.id]);
+      }
+    });
+  }
+
+})();
+
+
 // ─── ROUTER ─────────────────────────────────────────────────────────────────
 let currentPage = 'home';
 let currentPlatform = 'kapzopro';
@@ -1482,57 +2383,128 @@ function renderSkuGridDirect(platformId, filter) {
 }
 
 
+
 // ─── PRODUCT DETAIL ──────────────────────────────────────────────────────────
 function renderProduct(id) {
   const el = document.getElementById('det-content');
-  // Check standard SKUs
   let s = SKUS[id];
   let isPlatformProd = false;
   let ppData = null;
 
   if (!s) {
-    // Check PLATFORM_PRODUCTS
     for (const pid in PLATFORM_PRODUCTS) {
       const found = PLATFORM_PRODUCTS[pid].find(p => p.id === id);
       if (found) { ppData = found; isPlatformProd = true; break; }
     }
   }
 
-  if (isPlatformProd && ppData) {
-    // If structured data (problem/mechanisms/diffs) use the same rich template as SKUS
-    if (ppData.problem) {
-      const mechsHTML = (ppData.mechanisms||[]).map(m => `
-        <div class="mech-card">
-          <div class="mech-lbl">${m.lbl}</div>
-          <div class="mech-name">${m.name}</div>
-          <p class="mech-desc">${m.desc}</p>
-        </div>`).join('');
-      const diffsHTML = (ppData.diffs||[]).map(d => `
-        <li class="diff-item">
-          <div class="diff-chk">✓</div>
-          <div class="diff-txt">${d}</div>
-        </li>`).join('');
-      const supplyHTML = (ppData.supply||[]).map(([model,detail]) => `
-        <tr><td>${model}</td><td>${detail}</td></tr>`).join('');
-      el.innerHTML = `
-        <div class="det-hero">
-          <div class="wrap">
-            <div class="det-back" onclick="goBack()">← Back to Products</div>
-            <div class="det-cat">${ppData.cat}</div>
-            <div class="det-name">${ppData.name}</div>
-            <p class="det-tagline">${ppData.tagline}</p>
-            <div class="det-stats">
-              <div class="det-stat"><div class="det-s-lbl">Format</div><div class="det-s-val">${ppData.fmt}</div></div>
-            </div>
-          </div>
+  // ── helper: build full rich detail for any SKU object ──
+  function buildRichDetail(obj, backFn) {
+    const mechsHTML = (obj.mechanisms||[]).map(m => `
+      <div class="mech-card">
+        <div class="mech-lbl">${m.lbl}</div>
+        <div class="mech-name">${m.name}</div>
+        <p class="mech-desc">${m.desc}</p>
+      </div>`).join('');
+
+    const diffsHTML = (obj.diffs||[]).map(d => `
+      <li class="diff-item">
+        <div class="diff-chk">✓</div>
+        <div class="diff-txt">${d}</div>
+      </li>`).join('');
+
+    // MOAT section
+    const moatHTML = (obj.moat||[]).length ? `
+      <div class="d-section moat-section">
+        <div class="moat-title">Why This Formula Cannot Be Replicated</div>
+        <div class="moat-grid">
+          ${(obj.moat||[]).map(m=>`<div class="moat-item"><div class="moat-star">★</div><div class="moat-txt">${m}</div></div>`).join('')}
         </div>
-        <div class="det-body"><div class="wrap">
-          <div class="d-section"><div class="d-title">The Problem</div><p class="d-text">${ppData.problem}</p></div>
-          <div class="d-section"><div class="d-title">The Solution</div><p class="d-text">${ppData.solution}</p><div class="mech-grid">${mechsHTML}</div></div>
-          ${diffsHTML ? `<div class="d-section"><div class="d-title">What Makes This Different</div><ul class="diff-list">${diffsHTML}</ul></div>`:''}
-          ${supplyHTML ? `<div class="d-section"><div class="d-title">B2B Supply Models</div><table class="sup-table"><thead><tr><th>Supply Model</th><th>Detail</th></tr></thead><tbody>${supplyHTML}</tbody></table></div>`:''}
-          <div class="d-section" style="background:var(--warm);padding:40px;border-radius:6px;margin-top:40px"><div class="d-title">Interested in this product?</div><p class="d-text">Contact our team to discuss formulation requirements, regulatory documentation, and supply specifications.</p><button class="btn btn-gold" onclick="nav('contact')">Get in Touch →</button></div>
-        </div></div>`;
+      </div>` : '';
+
+    // INGREDIENT TABLE
+    const ingHTML = (obj.ingredients||[]).length ? `
+      <div class="d-section">
+        <div class="d-title">Complete Ingredient Architecture</div>
+        <div class="ing-wrap">
+          <table class="ing-table">
+            <thead><tr>
+              <th>Block</th><th>Ingredient &amp; Dose</th><th>Specification / Process</th>
+              <th>Mechanism of Action</th><th>Clinical Evidence</th><th>Formulation Signal</th>
+            </tr></thead>
+            <tbody>
+              ${(obj.ingredients||[]).map(i=>`<tr>
+                <td class="ing-lbl">${i.lbl||''}</td>
+                <td class="ing-name">${i.name||''}</td>
+                <td>${i.spec||''}</td>
+                <td>${i.mechanism||''}</td>
+                <td>${i.evidence||''}</td>
+                <td class="ing-signal">${i.signal||''}</td>
+              </tr>`).join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>` : '';
+
+    // COMPARISON TABLE
+    const compHTML = (obj.comp) ? `
+      <div class="d-section comp-section">
+        <div class="d-title">Competitive Comparison</div>
+        <div class="ing-wrap">
+          <table class="comp-tbl" style="min-width:560px">
+            <thead><tr>${(obj.comp.headers||[]).map(h=>`<th>${h}</th>`).join('')}</tr></thead>
+            <tbody>${(obj.comp.rows||[]).map(row=>`<tr>${row.map((cell,i)=>`<td>${cell}</td>`).join('')}</tr>`).join('')}</tbody>
+          </table>
+        </div>
+        <p class="comp-note">✓ = Kapzo advantage confirmed per batch COA.</p>
+      </div>` : '';
+
+    // CLAIMS
+    const claimsHTML = (obj.claims||[]).length ? `
+      <div class="d-section claims-section">
+        <div class="d-title">Regulatory Claims Framework</div>
+        <div class="claims-grid">
+          ${(obj.claims||[]).map(c=>`<div class="claim-card"><div class="claim-type">${c.type}</div><div class="claim-text">${c.text}</div></div>`).join('')}
+        </div>
+        <p class="comp-note" style="margin-top:12px">*Not evaluated by FDA. Not intended to diagnose, treat, cure or prevent disease. All claims are structure/function claims under DSHEA unless otherwise noted.</p>
+      </div>` : '';
+
+    // STATS row
+    const statsArr = obj.stats || [];
+    const statsHTML = statsArr.length ? statsArr.map(s=>`<div class="det-stat"><div class="det-s-lbl">${s.lbl}</div><div class="det-s-val">${s.val}</div></div>`).join('') : `<div class="det-stat"><div class="det-s-lbl">Format</div><div class="det-s-val">${obj.fmt}</div></div>`;
+
+    const badgesHTML = (obj.badges||[]).length ? `<div class="det-badges">${obj.badges.map(b=>`<div class="det-badge">${b}</div>`).join('')}</div>` : '';
+
+    return `
+      <div class="det-hero">
+        <div class="wrap">
+          <div class="det-back" onclick="${backFn}">← Back to Products</div>
+          <div class="det-cat">${obj.cat}</div>
+          <div class="det-name">${obj.name}</div>
+          <p class="det-tagline">${obj.tagline}</p>
+          <div class="det-stats">${statsHTML}</div>
+          ${badgesHTML}
+        </div>
+      </div>
+      <div class="det-body"><div class="wrap">
+        <div class="d-section"><div class="d-title">The Problem</div><p class="d-text">${obj.problem||''}</p></div>
+        <div class="d-section"><div class="d-title">The Solution</div><p class="d-text">${obj.solution||''}</p>${mechsHTML?`<div class="mech-grid">${mechsHTML}</div>`:''}</div>
+        ${moatHTML}
+        ${ingHTML}
+        ${diffsHTML ? `<div class="d-section"><div class="d-title">What This Formula Signals to an Evidence-Based R&amp;D Buyer</div><ul class="diff-list">${diffsHTML}</ul></div>` : ''}
+        ${compHTML}
+        ${claimsHTML}
+        <div class="d-section" style="background:var(--warm);padding:40px;border-radius:6px;margin-top:40px">
+          <div class="d-title">Interested in this formula?</div>
+          <p class="d-text">Contact our team to discuss formulation requirements, regulatory documentation, technical specifications, and supply details.</p>
+          <button class="btn btn-gold" onclick="nav('contact')">Get in Touch →</button>
+        </div>
+      </div></div>`;
+  }
+
+  if (isPlatformProd && ppData) {
+    if (ppData.problem) {
+      el.innerHTML = buildRichDetail(ppData, 'goBack()');
       return;
     }
     // Legacy content-string branch (GheePlus, JaggerPlus, Psyllium)
@@ -1543,89 +2515,24 @@ function renderProduct(id) {
           <div class="det-cat">${ppData.cat}</div>
           <div class="det-name">${ppData.name}</div>
           <p class="det-tagline">${ppData.tagline}</p>
-          <div class="det-stats">
-            <div class="det-stat"><div class="det-s-lbl">Format</div><div class="det-s-val">${ppData.fmt}</div></div>
-          </div>
+          <div class="det-stats"><div class="det-stat"><div class="det-s-lbl">Format</div><div class="det-s-val">${ppData.fmt}</div></div></div>
         </div>
       </div>
-      <div class="det-body">
-        <div class="wrap">
-          ${ppData.content}
-          <div class="d-section">
-            <div class="d-title">Interested in this product?</div>
-            <p class="d-text">Contact our team to discuss formulation requirements, technical specifications, and supply details.</p>
-            <button class="btn btn-gold" onclick="nav('contact')">Get in Touch →</button>
-          </div>
-        </div>
-      </div>`;
+      <div class="det-body"><div class="wrap">
+        ${ppData.content}
+        <div class="d-section"><div class="d-title">Interested in this product?</div><p class="d-text">Contact our team to discuss formulation requirements, technical specifications, and supply details.</p><button class="btn btn-gold" onclick="nav('contact')">Get in Touch →</button></div>
+      </div></div>`;
     return;
   }
 
-  if (!s) return;
+  if (!s) {
+    el.innerHTML = `<div class="det-hero"><div class="wrap"><div class="det-back" onclick="goBack()">← Back</div><div class="det-name">Product not found</div></div></div>`;
+    return;
+  }
 
-  const mechsHTML = (s.mechanisms||[]).map(m => `
-    <div class="mech-card">
-      <div class="mech-lbl">${m.lbl}</div>
-      <div class="mech-name">${m.name}</div>
-      <p class="mech-desc">${m.desc}</p>
-    </div>
-  `).join('');
-
-  const diffsHTML = (s.diffs||[]).map(d => `
-    <li class="diff-item">
-      <div class="diff-chk">✓</div>
-      <div class="diff-txt">${d}</div>
-    </li>
-  `).join('');
-
-  const supplyHTML = (s.supply||[]).map(([model, detail]) => `
-    <tr><td>${model}</td><td>${detail}</td></tr>
-  `).join('');
-
-  el.innerHTML = `
-    <div class="det-hero">
-      <div class="wrap">
-        <div class="det-back" onclick="goBack()">← Back to Products</div>
-        <div class="det-cat">${s.cat}</div>
-        <div class="det-name">${s.name}</div>
-        <p class="det-tagline">${s.tagline}</p>
-        <div class="det-stats">
-          <div class="det-stat"><div class="det-s-lbl">Format</div><div class="det-s-val">${s.fmt}</div></div>
-          
-        </div>
-      </div>
-    </div>
-    <div class="det-body">
-      <div class="wrap">
-        <div class="d-section">
-          <div class="d-title">The Problem</div>
-          <p class="d-text">${s.problem}</p>
-        </div>
-        <div class="d-section">
-          <div class="d-title">The Solution</div>
-          <p class="d-text">${s.solution}</p>
-          <div class="mech-grid">${mechsHTML}</div>
-        </div>
-        ${diffsHTML ? `<div class="d-section">
-          <div class="d-title">What This Formula Signals to an R&D Buyer</div>
-          <ul class="diff-list">${diffsHTML}</ul>
-        </div>` : ''}
-        ${supplyHTML ? `<div class="d-section">
-          <div class="d-title">B2B Supply Models</div>
-          <table class="sup-table">
-            <thead><tr><th>Supply Model</th><th>Detail</th></tr></thead>
-            <tbody>${supplyHTML}</tbody>
-          </table>
-          <div style="margin-top:16px;padding:16px;background:var(--warm);border-radius:4px;font-size:13px;color:var(--mid)">
-            <strong style="color:var(--navy)">Lead Time:</strong> 4–6 weeks (trial batch) · 6–8 weeks (commercial batch) &nbsp;|&nbsp;
-            <strong style="color:var(--navy)">Documentation:</strong> COA, COO, TDS, MSDS, Allergen Declaration, Regulatory Dossier
-          </div>
-        </div>` : ''}
-        <div class="d-section" style="background:var(--warm);padding:40px;border-radius:6px;margin-top:40px"><div class="d-title">Interested in this product?</div><p class="d-text">Contact our team to discuss formulation requirements, regulatory documentation, and supply specifications.</p><button class="btn btn-gold" onclick="nav('contact')">Get in Touch →</button></div>
-      </div>
-    </div>
-  `;
+  el.innerHTML = buildRichDetail(s, 'goBack()');
 }
+
 
 // ─── CONTACT FORM ────────────────────────────────────────────────────────────
 function submitForm() {
@@ -1695,11 +2602,22 @@ function resetForm() {
   document.getElementById('cf-message').value = '';
   document.getElementById('form-fields').style.display = 'block';
   document.getElementById('form-success').style.display = 'none';
+  document.getElementById('form-error').style.display = 'none';
 }
 
+// ─── BOOT ─────────────────────────────────────────────────────────────────
+(function init() {
+  // Set home page active
+  document.getElementById('page-home').classList.add('active');
+  currentPage = 'home';
 
-renderHomePlatforms();
-renderFooters();
+  // Render home platform cards
+  renderHomePlatforms();
+
+  // Render all footers
+  renderFooters();
+
+})();
 </script>
 </body>
 </html>
