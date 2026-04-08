@@ -734,7 +734,7 @@ const PLATFORMS = [
   {id:'kapzopro', name:'KapzoHumPro™', icon:'⚗️', tag:'24 Oral Supplement SKUs · 15 Organ Systems', desc:'Science-led white-label oral supplements across 15 organ systems — brain, eye, heart, kidney, liver, thyroid, gut, metabolic, reproductive, prostate, hair, musculoskeletal, respiratory, performance, and longevity. Every SKU at published clinical doses.'},
   {id:'kapzostratum', name:'KapzoHumStratum™', icon:'🧴', tag:'5 Personal Care SKUs · 4 Body Areas', desc:'Clinical personal care ingredients for scalp, hair, underarm, intimate skin, and body — built on published clinical evidence, proprietary delivery science, and genuine category white space.'},
   {id:'kapzosphere', name:'Kapzo Precision Systems™', icon:'🔬', tag:'KapzoSphere™ + KapzoBase™', desc:'Proprietary engineered ingredient delivery platforms. KapzoSphere™ — seven precision sensory delivery systems for oral consumer products. KapzoBase™ — six-layer beverage sensory engineering system. No equivalent delivery architecture exists in the Indian ingredient market.'},
-  {id:'gheeplus', name:'KapzoNatCore™', icon:'🌿', tag:'GheePlus™ · JaggerPlus™ · Kapzo Psyllium', desc:'Origin food ingredient platforms built on authentic Indian raw materials — microencapsulated ghee (23 SKUs across 3 tiers), amorphous jaggery & palm sugar powder, and pharmaceutical-to-food grade psyllium husk.'},
+  {id:'natcore', name:'KapzoNatCore™', icon:'🌿', tag:'GheePlus™ · JaggerPlus™ · Kapzo Psyllium', desc:'Origin food ingredient platforms built on authentic Indian raw materials — microencapsulated ghee (23 SKUs across 3 tiers), amorphous jaggery & palm sugar powder, and pharmaceutical-to-food grade psyllium husk.'},
 ];
 
 const PLATFORM_META = {
@@ -761,6 +761,10 @@ const PLATFORM_META = {
   psyllium:{
     hdg:'Kapzo Psyllium · KapzoNatCore™', sub:'Psyllium husk and seed powder platform for pharmaceutical, food, and nutraceutical applications. Full analytical documentation and regulatory support for all major international market requirements.',
     tabs:['All Products','Food & Nutraceutical Grade','Pharmaceutical Grade']
+  },
+  natcore:{
+    hdg:'KapzoNatCore™', sub:'Three origin food ingredient platforms built on authentic Indian raw materials — microencapsulated ghee (23 SKUs), precision jaggery & palm sugar powder, and pharmaceutical-to-food grade psyllium.',
+    tabs:[]
   },
   kapzostratum:{
     hdg:'KapzoHumStratum™', sub:'Five clinical personal care ingredients across scalp, hair, underarm, intimate skin, and body — built on published clinical evidence, proprietary delivery science, and genuine category white space.',
@@ -2115,6 +2119,434 @@ const PLATFORM_PRODUCTS = {
 })();
 
 
+
+// ─── SENSORY + NATCORE EXTENDED DATA ────────────────────────────────────────
+(function(){
+
+  // ── KapzoSphere extensions ──────────────────────────────────────────────
+  const S = {
+
+    alkasync: {
+      stats:[
+        {lbl:'Active Compounds',val:'NaHCO₃ (outer) + Na₂CO₃ (inner)'},
+        {lbl:'pH Delivered (Oral)',val:'8.8–9.2'},
+        {lbl:'Incumbent Replaced',val:'Raw Chuna Ca(OH)₂ pH 11–12'}
+      ],
+      badges:['First Globally Available','Food-Safe pH 8.8–9.2','Both GRAS / FSSAI','Zero Premature Reaction'],
+      moat:[
+        'No commercially available sequentially layered NaHCO₃/Na₂CO₃ bead exists globally for oral applications — AlkaSync™ is the first and only. Not a reformulation; a new product category.',
+        'Food-safe pH 8.8–9.2 delivers equivalent alkaloid free-basing pharmacokinetics as raw Chuna\'s pH 11–12 — without the caustic mucosal erosion. Same pharmacokinetic outcome. Regulatory-defensible profile.',
+        'Both sodium compounds are GRAS-listed food-grade. Direct regulatory future-proofing as India and export markets tighten restrictions on raw lime in oral products.',
+        'Encapsulated bead: zero premature reaction with Kattha in blend. Raw Chuna reacts with Kattha pre-consumption, wasting both actives. AlkaSync™ is inert until saliva contact.',
+        'Nicotine pouch majors (Zyn, Velo, On!) use analogous buffered sodium systems as proprietary internal formats. AlkaSync™ makes this technology available as an independent GMP-certified ingredient for the first time.',
+        'Maximum potency pairing: AlkaSync™ (pH control) + FlowSeq™ (salivation volume) simultaneously optimise both alkaloid absorption variables — compounding effect, not additive.'
+      ],
+      ingredients:[
+        {lbl:'Outer Shell',name:'Sodium Bicarbonate (NaHCO₃)',spec:'Food-grade GRAS. Fast-dissolve outer shell. precision-engineered encapsulation.',mechanism:'Phase 1 (T=3–5s): mild effervescence on saliva contact, pH rise to ~7.8. Initiates alkaloid free-basing.',evidence:'Well-established alkalinity chemistry. pH titration per batch. Phase 1 onset confirmed in-mouth.',signal:'Rapid onset layer — the first pharmacokinetic event. Controls timing of alkaloid bioavailability initiation.'},
+        {lbl:'Inner Core',name:'Sodium Carbonate (Na₂CO₃)',spec:'Food-grade GRAS. Moisture-barrier coated inner core. Precision coat weight controls phase interval.',mechanism:'Phase 2 (T=8–12s): pH rise to 8.8–9.2. Sustained alkaloid free-basing at optimal pharmacokinetic range. Phase 3: natural salivary clearance.',evidence:'Na₂CO₃ alkalinity studies. pH 8.8–9.2 validated as optimal free-basing range without caustic mucosal contact.',signal:'Phase interval between outer and inner release is the core engineering variable — adjustable per customer specification. This is the proprietary manufacturing fingerprint.'}
+      ],
+      comp:{headers:['Parameter','Raw Chuna Ca(OH)₂','AlkaSync™'],rows:[
+        ['Oral pH delivered','11–12 (caustic range)','pH 8.8–9.2 — food-safe controlled range ✓'],
+        ['Mucosal effect','Direct tissue contact. Erosive with repeat use.','Buffered. No direct caustic mucosal contact ✓'],
+        ['Release profile','Immediate, uncontrolled, irreversible','Two-phase programmed release with defined interval ✓'],
+        ['Storage stability','Hygroscopic. Absorbs moisture. Clumps in blend.','Encapsulated. Moisture-protected. Free-flowing ✓'],
+        ['Inter-ingredient reaction','Reacts with Kattha in blend, wasting both actives','Isolated until saliva contact. Zero premature reaction ✓'],
+        ['Regulatory status','Under increasing scrutiny — multiple jurisdictions','Both compounds GRAS food-grade. Clean regulatory profile ✓'],
+        ['Batch consistency','Variable — particle size and moisture dependent','Uniform bead size. Defined coat weight. Reproducible ✓'],
+        ['Application versatility','Limited to traditional formats','Pan masala, NRT lozenges, nicotine pouches, OTC pharma ✓']
+      ]},
+      claims:[
+        {type:'B2B Product Statement',text:'Precision pH delivery system for oral consumer products. pH 8.8–9.2 food-safe range. Both actives GRAS-listed. FSSAI-compliant.'},
+        {type:'Regulatory Status',text:'NaHCO₃ and Na₂CO₃ are GRAS (21 CFR) and FSSAI-permitted food-grade compounds. No regulatory barrier in India, US, EU, or export markets.'},
+        {type:'Documentation',text:'COA (pH confirmation, particle size, coat weight), TDS, MSDS, allergen declaration, stability data — per batch.'}
+      ]
+    },
+
+    cryolayer: {
+      stats:[
+        {lbl:'Active Compounds',val:'WS-23 (outer) + Natural Menthol (inner)'},
+        {lbl:'Phase 1 Onset',val:'T = 0–5s (WS-23 snap)'},
+        {lbl:'Phase 2 Onset',val:'T = 10–20s (menthol arc)'}
+      ],
+      badges:['Only Dual-Compound Sequential Cooling Bead','Adjustable Contrast Interval','Habituation-Resistant','India-Origin Natural Menthol'],
+      moat:[
+        'Only dual-compound sequentially layered cooling bead in the world. No commercial equivalent exists in pan masala, confectionery, oral care, or nicotine pouch applications. CryoLayer™ is first.',
+        'Contrast is the product — WS-23 and menthol are individually commodity. The temporal gap and phase transition between them is what CryoLayer™ engineers. Cannot be replicated by blending or co-spraying.',
+        'Adjustable contrast interval: barrier layer thickness is a controllable manufacturing variable. Each customer\'s specification becomes their proprietary cooling arc — their bead — their brand identity.',
+        'Dual TRPM8 engagement with different binding kinetics: WS-23 (sharp, immediate, aroma-free) → menthol (warm, aromatic, sustained). Perceptually distinct experience resistant to habituation.',
+        'India menthol advantage: UP natural menthol supplies 80%+ of world natural menthol. Traceable, price-stable, origin-authentic versus synthetic alternatives.'
+      ],
+      ingredients:[
+        {lbl:'Outer Shell',name:'WS-23 (N-Methyl-2-isopropyl-5-methylcyclohexanecarboxamide)',spec:'Fast-dissolve outer coating. Saliva-triggered burst release T=0–5s.',mechanism:'TRPM8 receptor activation — sharp, immediate, clean cool sensation with zero aroma interference. Phase 1 sensory event: the snap.',evidence:'WS-23 TRPM8 binding kinetics well-established. Cooling without menthol aroma allows complex flavour systems to be preserved.',signal:'WS-23 as Phase 1 delivers a clean signal. Its aroma-neutrality is the reason Phase 2 menthol aromatics can emerge distinctly.'},
+        {lbl:'Inner Core',name:'Natural L-Menthol (Uttar Pradesh origin)',spec:'controlled-release matrix inner core. Controlled-erosion release T=10–20s onset. 18-month ambient stability.',mechanism:'TRPM8 receptor activation — warm aromatic cooling rise. Phase 2 sensory event: contrast arc from Phase 1 clean snap to Phase 2 menthol character.',evidence:'Menthol TRPM8 binding studies. 80%+ of world natural menthol sourced from UP India. Origin-authentic traceability available.',signal:'The interval between WS-23 release and menthol emergence is the engineering moat. This interval is adjustable per customer coat weight specification.'}
+      ],
+      comp:{headers:['Parameter','Raw Menthol Spray','Single-Compound WS-23 Bead','CryoLayer™'],rows:[
+        ['Cooling type','Single compound','Single compound','Dual compound, sequential ✓'],
+        ['Sensory arc','One note, fades linearly','One note, no aroma','Two-phase contrast arc — memorable ✓'],
+        ['Habituation resistance','Low — one receptor','Low — one receptor','High — two pathways, contrast prevents habituation ✓'],
+        ['Shelf life stability','Poor: 4–8 weeks','Good in bead form','Excellent — both compounds encapsulated ✓'],
+        ['Customisation','None','None','Barrier thickness = adjustable cooling signature per customer ✓']
+      ]},
+      claims:[
+        {type:'B2B Product Statement',text:'Dual-compound sequential cooling system. WS-23 (outer) + Natural Menthol (inner). TRPM8 dual activation. Adjustable contrast interval per specification.'},
+        {type:'Regulatory',text:'WS-23 and Natural Menthol are globally permitted flavouring compounds. FSSAI-compliant. Full COA, TDS, stability per batch.'}
+      ]
+    },
+
+    arcticdure: {
+      stats:[
+        {lbl:'Active',val:'Natural L-Menthol (Uttar Pradesh)'},
+        {lbl:'Duration (oral)',val:'3–5 minutes (vs 10–25 seconds competitors)'},
+        {lbl:'Shelf Life',val:'18 months ambient — zero aroma loss'}
+      ],
+      badges:['3–5 Min Duration vs 10–25s Competitors','controlled-release matrix (Not immediate-release shell)','18-Month Ambient Stable','Export-Ready'],
+      moat:[
+        'controlled-release matrix (not immediate-release shell) — pharmaceutical-grade controlled-release applied to food flavour. The market default for menthol beads is water-soluble burst coating. ArcticDure™ is fundamentally different technology.',
+        '3–5 minute duration versus 10–25 seconds for ALL competitor menthol formats. Duration is testable, documentable, and labelable. "Cool that lasts" is a measurable specification, not a marketing claim.',
+        '18-month ambient shelf stability versus 4–8 weeks raw spray. Zero menthol release before oral contact — locked regardless of temperature, humidity, vibration, or storage duration.',
+        'Inert in blend: no menthol migration to adjacent ingredients. Cardamom stays cardamom. Flavour architecture preserved. Critical for multi-bead KapzoSphere™ systems.',
+        'Adjustable coat weight = adjustable release profile per customer specification. Each customer\'s spec is their proprietary ArcticDure™ — no two customers need the same bead.'
+      ],
+      ingredients:[
+        {lbl:'Active',name:'Natural L-Menthol (Uttar Pradesh cultivation)',spec:'precision sustained-release matrix. NOT water-soluble immediate-release shell. 18-month ambient stability confirmed.',mechanism:'TRPM8 receptor activation via controlled matrix erosion (not burst). Rising wave onset T=8–12s; plateau T=30s; sustained 3–5 minutes total. Mechanism distinct from all burst-release competitors.',evidence:'controlled-release matrix erosion kinetics validated. Duration data: 3–5 minutes versus 10–25 seconds for burst-shell and raw spray competitors. Shelf stability data: 18 months ambient.',signal:'The controlled-release matrix is pharmaceutical-grade controlled-release technology applied to a food flavouring context. This is the manufacturing moat — the same equipment and process knowledge that serves pharma extended-release applies here.'}
+      ],
+      comp:{headers:['Parameter','Raw Menthol Spray','Standard Menthol Bead (Market)','ArcticDure™'],rows:[
+        ['Release type','Uncontrolled surface evaporation','Burst release on oral contact','Controlled matrix erosion — sustained ✓'],
+        ['Duration (oral)','10–15 seconds','15–25 seconds','3–5 minutes ✓'],
+        ['Shelf life (ambient)','Significant loss by week 6','Moderate loss by month 3','Stable 18 months ambient ✓'],
+        ['Warm storage (35°C/70%RH)','Critical loss by week 3','Noticeable loss by month 2','Stable 12 months warm storage ✓'],
+        ['Blend contamination','High — menthol migrates','Moderate','None — inert until oral contact ✓'],
+        ['Export suitability','Poor — degrades in transit','Moderate','Excellent — designed for long supply chains ✓'],
+        ['Customisation','None','None','Coat weight = adjustable onset/duration per spec ✓']
+      ]},
+      claims:[
+        {type:'B2B Product Statement',text:'Sustained-release natural menthol system. controlled-release matrix. 3–5 minute oral duration. 18-month ambient shelf life. Adjustable coat weight specification.'},
+        {type:'Regulatory',text:'Natural L-Menthol FEMA/GRAS/FSSAI-permitted flavouring. Full COA (menthol content, particle size, dissolution), TDS, MSDS per batch.'}
+      ]
+    },
+
+    cryobase: {
+      stats:[
+        {lbl:'Active',val:'WS-23 (N-Methyl-2-isopropyl-5-methylcyclohexanecarboxamide)'},
+        {lbl:'Release',val:'Burst T=3–5s on saliva contact'},
+        {lbl:'Supply Chain',val:'India GMP — non-Chinese origin'}
+      ],
+      badges:['India GMP — Non-Chinese WS-23','Defined Payload per Bead with CoA','Free-Flowing Non-Clumping','CryoFamily™ Entry Product'],
+      moat:[
+        'India GMP-certified WS-23 bead — virtually all commodity WS-23 beads globally are Chinese-origin. For US/EU/AU buyers de-risking supply chains, Indian-origin GMP-certified WS-23 is unavailable from any other supplier.',
+        'Specification-controlled WS-23 payload per bead with CoA documentation. Critical for manufacturers making label claims or regulatory filings based on cooling compound concentration.',
+        'Free-flowing, non-clumping — raw WS-23 crystal is waxy and clumps at ambient humidity. CryoBase™ solves blending inconsistency completely.',
+        'CryoFamily™ upgrade path: CryoBase™ → ArcticDure™ → CryoLayer™. Same platform, same regulatory position. First purchase equals full platform qualification. Built-in buyer journey.',
+        'Compatible with full KapzoSphere™ portfolio (AlkaSync™, FlowSeq™, ZingCore™, AromaVault™) in multi-bead systems. Entry product into the most sophisticated sensory architecture available.'
+      ],
+      ingredients:[
+        {lbl:'Active',name:'WS-23 (N-Methyl-2-isopropyl-5-methylcyclohexanecarboxamide)',spec:'Moisture-resistant immediate-release shell. India GMP-certified. Defined payload range per gram with CoA per batch. D50 controlled particle size.',mechanism:'TRPM8 receptor burst activation. Clean burst T=3–5s on saliva contact. Pure cold sensation — no aroma, no taste interference. More potent than menthol at equivalent concentration.',evidence:'WS-23 TRPM8 potency vs menthol well-established in flavour science. Burst kinetics validated. 18-month ambient shelf stability — zero premature WS-23 migration confirmed.',signal:'India-origin GMP documentation is the primary supply chain moat. CoA confirming defined WS-23 payload per gram is the technical differentiation over unspecified commodity beads.'}
+      ],
+      comp:{headers:['Parameter','Raw WS-23 Crystal','Generic WS-23 Bead (Market)','CryoBase™'],rows:[
+        ['Physical form','Waxy crystal. Clumps.','Bead — varies by supplier','Uniform bead. Free-flowing. Spec-controlled ✓'],
+        ['Blend uniformity','Poor — uneven distribution','Good to moderate','Excellent — defined bead count per gram ✓'],
+        ['Dose consistency','High batch-to-batch variation','Moderate','High — CoA per batch, defined payload range ✓'],
+        ['Premature release','Yes — surface migration in blend','Low to moderate','None — shell is dry-stable ✓'],
+        ['Shelf life','Moderate — surface loss over time','Good in bead form','Excellent — shell protects 18 months ambient ✓'],
+        ['Supply chain origin','Primarily Chinese','Primarily Chinese','India GMP — non-Chinese, fully traceable ✓'],
+        ['Documentation','Basic CoA','Variable','Full TDS, CoA, MSDS, Stability Data ✓']
+      ]},
+      claims:[
+        {type:'B2B Product Statement',text:'WS-23 burst-release cooling bead. India GMP-certified. Defined payload per gram. Non-Chinese supply chain. FSSAI-compliant.'},
+        {type:'Regulatory',text:'WS-23 is a globally permitted flavouring compound. FSSAI-compliant. COA per batch confirming WS-23 payload, particle size, moisture.'}
+      ]
+    },
+
+    flowseq: {
+      stats:[
+        {lbl:'Active Compounds',val:'Citric Acid (outer) + Malic Acid (inner)'},
+        {lbl:'Phase 1',val:'T=3–6s: immediate salivation flood (citric)'},
+        {lbl:'Phase 2',val:'T=15–25s: sustained salivary flow (malic)'}
+      ],
+      badges:['Only Sequential Dual-Acid Bead Globally','Critical AlkaSync™ Synergy','TAS2R Salivation Engineering','GRAS E330/E296'],
+      moat:[
+        'Only commercially available sequentially layered dual-acid salivation bead globally. No equivalent in pan masala, tobacco, nicotine pouch, or confectionery applications. FlowSeq™ is first.',
+        'Critical AlkaSync™ synergy: AlkaSync™ converts alkaloids to free-base form; FlowSeq™ engineers saliva volume and timing to transport them to mucosa. Combined = compounding absorption, not additive.',
+        'The Pulse candy insight: the entire commercial success of Pulse candy was built on intense salivation-triggering sourness. FlowSeq™ engineers that response with precision, consistency, and dose control.',
+        'Solves blend incompatibility: raw acids are hygroscopic and react with AlkaSync™ beads pre-consumption. FlowSeq™ is isolated until oral contact — acid and alkaline beads coexist in the same blend for the first time.',
+        'Wide industry applicability: same bead architecture applies to pan masala (alkaloid absorption), confectionery (salivation sensation), nicotine pouches (nicotine delivery), nutraceutical lozenges (active absorption).'
+      ],
+      ingredients:[
+        {lbl:'Outer Shell',name:'Citric Acid (GRAS E330)',spec:'Fast-dissolve outer coating. Food-grade. GRAS E330.',mechanism:'TAS2R (sour receptor) activation — immediate intense salivation flood Phase 1 (T=3–6s). Triggers reflex salivary gland response. Creates the transport medium for co-administered actives.',evidence:'Citric acid TAS2R sour receptor pharmacology well-established. Salivation reflex confirmed in sensory studies.',signal:'Phase 1 citric flood creates the salivary transport medium. Without salivation, alkaloid or nicotine transport to mucosa is incomplete.'},
+        {lbl:'Inner Core',name:'Malic Acid (GRAS E296)',spec:'Controlled-release inner core. Food-grade. GRAS E296.',mechanism:'TAS2R sustained sour activation — Phase 2 sustained salivary flow (T=15–25s). Maintains transport medium through full consumption window. Phase 3: gentle salivary clearance.',evidence:'Malic acid slower dissolution kinetics versus citric acid — natural basis for sequenced release. Salivation sustain profile validated.',signal:'The interval between citric and malic activation is the engineering variable. AlkaSync™ paired: same saliva that transports alkaloids is now precisely timed and volume-controlled.'}
+      ],
+      comp:{headers:['Parameter','Unencapsulated Acid Blend','FlowSeq™'],rows:[
+        ['Release sequence','Simultaneous — both acids release together','Sequential: citric first, malic second — programmed interval ✓'],
+        ['Salivation profile','Single wave — peaks then drops rapidly','Two-phase arc: immediate trigger then sustained flow ✓'],
+        ['Dose control','Variable — particle size and mixing determines dose','Defined — bead count per gram, consistent dose per unit ✓'],
+        ['Blend stability','Hygroscopic — absorbs moisture, causes caking','Encapsulated — moisture-resistant, free-flowing in blend ✓'],
+        ['Interaction with AlkaSync™','Acids neutralise alkaline beads in blend prematurely','Fully compatible — releases in mouth, not in blend ✓'],
+        ['Formulation flexibility','Fixed ratio — both acids present or neither','Independent phase control — adjustable interval per spec ✓'],
+        ['Commercial novelty','Commodity ingredient — zero differentiation','No global equivalent — new product category ✓']
+      ]},
+      claims:[
+        {type:'B2B Product Statement',text:'Sequential dual-acid salivation system. Citric (outer) + Malic (inner). TAS2R programmed salivation arc. GRAS E330/E296. FSSAI-compliant. AlkaSync™ synergy validated.'},
+        {type:'Documentation',text:'COA (acid payload per phase, particle size), TDS, MSDS, blend compatibility data per batch.'}
+      ]
+    },
+
+    aromavault: {
+      stats:[
+        {lbl:'Active',val:'Cardamom Essential Oil — Idukki District, Kerala'},
+        {lbl:'Flavour Duration (oral)',val:'3–4 minutes vs 5–15 seconds spray'},
+        {lbl:'Shelf Life',val:'18 months ambient — zero aroma loss'}
+      ],
+      badges:['Idukki-Origin GC-MS Standardised','controlled-release matrix (Not Burst)','18-Month Zero Aroma Loss','Mechanical Release Only'],
+      moat:[
+        'Only encapsulated cardamom bead with precision controlled-release matrix (not water-soluble immediate-release shell) commercially available. controlled-release polymer requires mechanical erosion for release — pharmaceutical-grade mechanism applied to food flavour.',
+        'Idukki-origin standardised specification: higher 1,8-cineole + complex secondary terpene profile (α-terpinyl acetate, linalool, linalyl acetate) versus Guatemalan (flatter profile) or Chinese Amomum species (entirely different plant). Cannot be replicated.',
+        '18-month shelf stability versus 4–8 weeks raw spray. Product tastes the same at 14 months post-manufacture as week one — zero volatilisation before oral contact.',
+        '3–4 minute flavour duration versus 5–15 seconds for spray application. Consumer experiences cardamom through the entire chewing arc — not just the first 10 seconds.',
+        'Zero cross-contamination in blend: AromaVault™ is inert until chewing. Enables complex multi-bead formulations with AlkaSync™, FlowSeq™, CryoLayer™, ZingCore™ simultaneously without any aroma interference.'
+      ],
+      ingredients:[
+        {lbl:'Active',name:'Cardamom Essential Oil — Idukki District, Kerala',spec:'precision controlled-release matrix. Mechanical (chewing) release only. GC-MS standardised: 1,8-cineole + α-terpinyl acetate. 18-month ambient stability.',mechanism:'Controlled matrix erosion on mechanical action (chewing) — not water-soluble, not heat-triggered, not saliva-triggered. Release onset T=8–12s; aromatic plateau 3–4 minutes; clean finish.',evidence:'Idukki-district cardamom GC-MS standardisation: distinct terpene fingerprint documented. Shelf stability data: 18 months ambient versus 4–8 weeks raw oil spray. Duration data: 3–4 minutes sustained versus 5–15 seconds spray.',signal:'Idukki geographic origin cannot be replicated by Guatemalan or Chinese supply. GC-MS standardisation confirms the specific terpene ratio that delivers authentic Indian cardamom character.'}
+      ],
+      comp:{headers:['Parameter','Liquid Cardamom Oil Spray','AromaVault™'],rows:[
+        ['Oil protection','None — exposed to air from application','Complete — oil inside matrix until oral contact ✓'],
+        ['Shelf life stability','4–8 weeks — significant aroma loss','18 months — no measurable aroma loss ✓'],
+        ['Blend contamination','High — migrates to adjacent ingredients','None — beads inert until chewing ✓'],
+        ['Flavour duration (oral)','5–15 seconds — front-loaded then flat','3–4 minutes — progressive release through full chew ✓'],
+        ['Batch uniformity','Variable — spray pattern determines dose','Excellent — defined oil load per bead, counted dose ✓'],
+        ['Manufacturing loss','5–15% oil lost to equipment/air during spray','Near zero — oil sealed until use ✓'],
+        ['Origin traceability','Variable — mixed origin common in commodity','Idukki, Kerala — standardised, GC-MS documented ✓'],
+        ['Export suitability','Poor — aroma degraded before destination','Excellent — stable through long shipping cycles ✓']
+      ]},
+      claims:[
+        {type:'B2B Product Statement',text:'Controlled-release cardamom essential oil system. Idukki-origin GC-MS standardised. controlled-release polymer mechanical-release matrix. 3–4 minute oral flavour duration. 18-month ambient stable.'},
+        {type:'Documentation',text:'COA (cardamom oil content, 1,8-cineole + α-terpinyl acetate GC-MS), TDS, MSDS, shelf stability data per batch.'}
+      ]
+    },
+
+    zingcore: {
+      stats:[
+        {lbl:'Active',val:'Spilanthol ≥1.5% — Acmella oleracea (Akarkara)'},
+        {lbl:'Duration',val:'5–10 minutes — longest of any oral sensory compound'},
+        {lbl:'Receptor Pathway',val:'TRPA1 + TRPV1 (entirely distinct from menthol/WS-23)'}
+      ],
+      badges:['Only Food-Grade Spilanthol Bead Globally','TRPA1 — New Receptor Pathway','5–10 Min Duration','India-Cultivated — Zero Chinese Equivalent','Dual Function: Sensation + Salivation'],
+      moat:[
+        'Completely new receptor pathway — TRPA1 activation. All existing oral sensory compounds use TRPM8 (cooling) or TRPV1 (warming). ZingCore™ opens a receptor category that zero competitors occupy in this market.',
+        'No commercial equivalent globally — standardised food-grade GMP-certified spilanthol bead for oral FMCG/tobacco/nicotine applications does not exist from any supplier worldwide. This is the first.',
+        'India cultivation advantage: Acmella oleracea (NE India / South India) — Chinese spilanthol exists at lab scale only, not at food-grade standardised specifications for oral consumer products. Non-replicable.',
+        '5–10 minute duration — dramatically longer than any competing sensory compound. At 8 minutes post-use, consumer still feels the sensation. Perceived as exceptional quality. No competitor can claim this.',
+        'Dual function: TRPA1 tingle sensation + strong salivation reflex from a single ingredient. In alkaloid absorption formulations, one ingredient provides sensation plus pharmacokinetic benefit simultaneously.',
+        'Ayurvedic Akarkara heritage — classical herb for oral health, salivation, neurological stimulation. Regulatory legitimacy in AYUSH. EU/US natural product buyers: botanical TRPA1-activating oral ingredients are an active interest area.'
+      ],
+      ingredients:[
+        {lbl:'Active',name:'Spilanthol ≥1.5% w/w — Acmella oleracea (Paracress/Akarkara)',spec:'precision encapsulated. Saliva-triggered immediate-release shell. India-cultivated. HPLC standardised ≥1.5% spilanthol. Food-grade specification.',mechanism:'Dual TRPA1 + TRPV1 receptor agonism. Unlike capsaicin (TRPV1 only), spilanthol produces electric tingle, buzz, and mild oral anaesthesia — not heat. Strong parasympathetic salivation reflex via receptor stimulation. Duration 5–10 minutes — longest of any oral sensory compound in this category.',evidence:'Spilanthol receptor pharmacology established (TRPA1 + TRPV1 dual agonism). Duration data: 5–10 minutes versus 10–90 seconds for menthol/WS-23. Ayurvedic Akarkara classical use for oral stimulation documented.',signal:'TRPA1 is the moat receptor — completely unoccupied in the oral consumer product space. ZingCore™ is the only B2B ingredient that activates it. The sensation is novel to every consumer who encounters it.'}
+      ],
+      comp:{headers:['Dimension','Menthol / WS-23','Capsaicin / Piperine','ZingCore™ — Spilanthol'],rows:[
+        ['Receptor activated','TRPM8 (cold)','TRPV1 (heat/pain)','TRPA1 + TRPV1 (tingle/irritant) + salivary reflex ✓'],
+        ['Primary sensation','Cold / Cool','Warm / Burn','Electric tingle + buzz + mild oral anaesthesia ✓'],
+        ['Salivation trigger','Low','Moderate','HIGH — strong salivation reflex from gland stimulation ✓'],
+        ['Numbness component','None','None','Yes — mild localised oral anaesthesia (pleasant, novel) ✓'],
+        ['Duration','Short–Medium (10–90s)','Medium','Long — 5–10 minutes ✓'],
+        ['Consumer familiarity','Very familiar — commodity','Familiar','Novel — unfamiliar to any consumer in any oral product ✓'],
+        ['Aroma interference','Menthol: yes. WS-23: no.','Capsaicin: low','None — spilanthol is flavour-neutral ✓'],
+        ['Habituation risk','High — one receptor','Moderate','Low — TRPA1 activation less subject to rapid habituation ✓'],
+        ['Commercial availability','Commodity — all suppliers','Commodity','Zero commercial equivalent anywhere globally ✓'],
+        ['India supply chain','UP natural menthol','None','India-cultivated botanical — non-Chinese, endemic ✓']
+      ]},
+      claims:[
+        {type:'B2B Product Statement',text:'Spilanthol burst-release bead. TRPA1 + TRPV1 dual agonist. Electric tingle, buzz, mild oral anaesthesia, strong salivation. 5–10 minute duration. India-cultivated Acmella oleracea.'},
+        {type:'Regulatory',text:'FSSAI: natural flavouring preparation — traditional use basis (Akarkara). India and Africa: traditional use sufficient for commercial entry. EU: EFSA Novel Food dossier recommended before EU market entry. Full COA (spilanthol content HPLC), TDS, MSDS per batch.'}
+      ]
+    }
+  };
+
+  // ── KapzoBase extension ──────────────────────────────────────────────────
+  const B = {
+    kapzobase: {
+      stats:[
+        {lbl:'Sensory Layers',val:'6 Layers — 4 of 6 Encapsulated'},
+        {lbl:'Standard Dosage',val:'0.08% w/v in IMFL whisky'},
+        {lbl:'Shelf Life',val:'24 months sealed; 24 months in dissolved spirit matrix'}
+      ],
+      badges:['First Multi-Layer Encapsulated Spirits System Globally','KapzoKick™ Spilanthol — Zero Competitors','Graded Release Architecture','Blind Panel Validated','FSSAI + GRAS-Affirmed Actives'],
+      moat:[
+        'First multi-layer encapsulated sensory engineering system at B2B level for Indian IMFL and African spirits — no comparable product exists from any global or domestic flavour house in encapsulated format.',
+        'KapzoKick™ proprietary raw material moat: spilanthol from India-endemic Spilanthes acmella is not available as organised B2B extract in encapsulated format in India. Zero Chinese equivalent at food-grade specification.',
+        'Four of six layers require precision encapsulation process with independently validated shell systems and graded release profiles. No commodity flavour house in India operates this format for spirits applications.',
+        'Global flavour houses (IFF, Givaudan, Symrise) serve only large distilleries — minimum quantities exclude mid-tier buyers. KapzoBase™ serves exactly the distilleries they cannot. Zero overlap in buyer universe.',
+        'Graded release architecture — burst / delayed / extended — in a single blended powder requires validated shell formulations across multiple active types simultaneously. This is precision temporal engineering, not blending.',
+        'Sensory timeline: T=0s tingle → T=1–3s body → T=3–5s warmth → T=8–15s finish → T=15–60s extended base note — seven discrete physiological moments engineered in one addition.'
+      ],
+      ingredients:[
+        {lbl:'Layer 1',name:'KapzoClean™ — Defect Correction: molecular inclusion complex + Cu Scavenger + Aldehyde Balancer',spec:'inclusion complex inclusion complex (direct-add). Cu-bound scavenger (precision-encapsulated). Aldehyde balancer (ascorbic acid + ester blend, direct-add).',mechanism:'inclusion complex hydrophobic cavity permanently encapsulates fusel alcohols (isoamyl alcohol, n-propanol, n-butanol) — sequesters from vapour phase and taste receptor exposure. Cu²⁺ irreversibly binds sulphur compounds (H₂S, dimethyl sulphide, mercaptans). Ascorbic acid reduces oxidative conditions generating acetaldehyde. Acts continuously from dissolution — eliminates harshness before palate encounters any positive character.',evidence:'inclusion complex fusel inclusion: GRAS 21 CFR 172.515; EU E459. Cu scavenging of H₂S: food-grade processing aid within FSSAI and EU limits (2 mg/L max in spirits). Aldehyde reduction: ascorbic acid E300 globally permitted antioxidant.',signal:'Entry-point product standalone: KapzoClean™ alone provides immediate demonstrable proof-of-value. Blind panel test: harshness removed versus control. Consumer-perceivable in 5 minutes. Zero capital risk for distillery buyer.'},
+        {lbl:'Layer 2',name:'KapzoFeel™ — Mouthfeel: Pharmaceutical-grade Glycerol + Hydrolysed Ellagitannin',spec:'Glycerol converted to free-flowing powder (12–18% w/w in blend). Ellagitannin fraction precision powder-converted on inert carrier (5–9% w/w). Free-flowing formats.',mechanism:'Glycerol increases dynamic viscosity — engages trigeminal mechanoreceptors producing "thickness" perception. Ellagitannin polyphenols bind salivary proline-rich proteins → structured astringency indistinguishable from barrel tannin by trained panel. Delivers grip, weight, and backbone absent from cheap spirits.',evidence:'Glycerol E422 globally permitted humectant/carrier. GRAS-affirmed. Combined glycerol in final spirit not to exceed 20g/L (above this viscosity becomes organoleptically unpleasant). Ellagitannin GRAS for flavour use; EU natural flavouring preparations; FSSAI permitted natural extract.',signal:'T=1–3s mid-palate. The immediate perception that "this is not thin." Absence of this layer is the primary complaint about cheap spirits — product feels watery and weak on the palate.'},
+        {lbl:'Layer 3',name:'KapzoAge™ — Barrel Aging Simulant: Vanillin + cis/trans-Oak Lactones + Guaiacol (trace)',spec:'Vanillin precision encapsulated — controlled-release shell. cis/trans-Oak lactones precision encapsulated — natural enteric barrier shell (oxidation barrier). Guaiacol micro-dosed at 0.15 ppm equivalent in final spirit. CRITICAL DOSE CONTROL: guaiacol assay every batch, no concession.',mechanism:'Vanillin: forms naturally from lignin degradation in oak over 5–10 years — controlled-release shell protects volatile during storage, releases on palate temperature (37°C). cis-Oak lactone: primary barrel character compound in Scotch and bourbon — coconut, woody, new barrel character via shellac oxidation barrier shell. Guaiacol (trace): smoky depth undertone — present 0.1–1.0 ppm in aged Scotch. At validated dose: depth signal without dominance.',evidence:'Vanillin FEMA 3107/GRAS; EU FL 04.046; FSSAI permitted. cis-Oak lactone FEMA 3799/GRAS; EU FL 10.053. Guaiacol FEMA 2532/GRAS at validated dose. Shellac wall: Indian lac shellac — same supply chain moat as nutraceutical GP-104 portfolio.',signal:'Nosing at T=−2s: oak, vanilla, subtle barrel complexity rising from glass headspace. The "before first sip" impression. ⚠ Guaiacol critical: doses above validated threshold produce medicinal/antiseptic character. Full batch rejection on out-of-spec.'},
+        {lbl:'Layer 4',name:'KapzoFinish™ — Sustained Finish: Ethyl Hexanoate (delayed burst) + Fatty Acid Esters (extended)',spec:'Ethyl hexanoate precision encapsulated — delayed-release shell (enzymatic degradation at physiological pH). Ethyl palmitate + oleate precision encapsulated — sustained-release shell (mechanical disruption in GI tract).',mechanism:'Ethyl hexanoate: apple-anise fruity mid-note emerging T=8–15s post-swallow. precision shell undergoes enzymatic degradation at physiological pH post-swallow — rapid-delayed burst. Long-chain fatty acid esters: rich base note — the "length" signal of premium spirits. Sustained retronasal aroma 30–60 seconds post-swallow via vapour phase.',evidence:'Ethyl hexanoate FEMA 2439/GRAS; EU FL 09.038. Ethyl palmitate/oleate FEMA affirmed GRAS. delayed-release shell: maize-derived, gluten-free, food-grade. controlled-release polymer: USP/food-grade. Duration data: 30–60 seconds retronasal persistence versus 5 seconds for cheap spirits.',signal:'T=8–15s: the "fruity mid-note" that emerges. T=15–60s: the premium length signal. Cheap spirits are dead in 5 seconds. KapzoFinish™ extends to 60 seconds.'},
+        {lbl:'Layer 5',name:'KapzoKick™ — Trigeminal Activation: Spilanthol (Spilanthes acmella)',spec:'precision encapsulated — rapid burst immediate-release shell. Saliva contact triggers shell dissolution and full payload release within 3–5 seconds. 3–6% w/w in blend (HPLC-UV 254nm or LC-MS/MS — critical every batch).',mechanism:'Dual TRPV1 + TRPA1 agonist. Unlike capsaicin (TRPV1 only), spilanthol produces electric tingle not heat. Immediate parasympathetic salivation reflex via receptor stimulation. Duration 8–12 seconds. India-endemic source — not available as organised B2B encapsulated extract from any other Indian or Chinese supplier.',evidence:'Spilanthol receptor pharmacology: TRPV1 + TRPA1 dual agonism established. FSSAI: natural flavouring preparation — traditional use basis (Akarkara). India + Africa: traditional use sufficient. EU: EFSA Novel Food dossier recommended before EU commercial entry.',signal:'IMMEDIATE — T=0s tongue contact. The "first impression" layer. Signals life, strength, and character before warmth or finish layers activate. Proprietary moat: not available from any competing B2B ingredient supplier.'},
+        {lbl:'Layer 6',name:'KapzoWarm™ — Trigeminal Warmth: Capsaicin (micro-dose)',spec:'precision encapsulated — thermal-delayed controlled-release shell. Shell activates at body temperature (37°C) post-swallow. Does NOT release on tongue contact — zero spice character on palate. 0.03–0.12% w/w in blend (HPLC-UV 280nm — CRITICAL every batch, no concession).',mechanism:'Selective TRPV1 agonist at sub-heat threshold. At validated dose (0.05–0.10 ppm in final spirit): warmth perception without heat, pungency, or capsaicin flavour. Consumer experiences "spreading chest warmth" — indistinguishable from premium aged spirit character by blind panel.',evidence:'Capsaicin FEMA 3404/GRAS at food use levels; EU FL 16.061; FSSAI permitted flavouring. Final matrix 0.05–0.10 ppm — well within international food safety limits. Encapsulation prevents tongue receptor exposure.',signal:'T=3–20s post-swallow. Throat to chest warmth spread. ⚠ Capsaicin critical: any dose increase above validated level must be panel-tested. Out-of-spec produces detectable spice — full batch rejection.'}
+      ],
+      comp:{headers:['Parameter','Raw Caramel Colour','Bulk Liquid Flavourings','Global Flavour Houses','Extended Barrel Aging','KapzoBase™'],rows:[
+        ['What it solves','Visual appearance only','Basic aroma addition','Sophisticated flavour profiles','Full premium character','Defect correction + mouthfeel + aging + finish + kick + warmth ✓'],
+        ['Mouthfeel engineering','None','None','Some — liquid only','Natural from barrel','Glycerol + ellagitannin — engineered body, weight, grip ✓'],
+        ['Trigeminal activation (kick)','None','None','None in encapsulated format','Natural from congeners','Spilanthol TRPV1+TRPA1 — immediate tingle, salivation ✓'],
+        ['Warmth engineering','None','None','None','Natural from alcohol','Micro-dosed capsaicin TRPV1 — chest warmth not spice ✓'],
+        ['Finish extension','None','None — immediate release','None — no encapsulation','Natural from barrel','Zein/EC encapsulated esters — 60 seconds verified ✓'],
+        ['Temporal layering','None','None — simultaneous release','None — no temporal engineering','Natural emergence over years','Seven moments engineered across 60-second arc ✓'],
+        ['Access for mid-tier distilleries','Universal — commodity','Universal — commodity','NO — minimum quantities exclude 90% of IMFL distilleries','NO — 8–18 years / capital-intensive','YES — designed for 500K–5M case distilleries ✓'],
+        ['Encapsulation format','N/A','No','No','N/A','Four of six layers precision encapsulated ✓']
+      ]},
+      claims:[
+        {type:'Regulatory Status',text:'FSSAI-compliant natural flavouring preparation (Food Products Standards and Food Additives Regulations, 2011). All actives GRAS-affirmed. FSSAI-permitted. Application: spirits at 0.06–0.10% w/v.'},
+        {type:'Critical Assay Compounds',text:'Guaiacol (0.05–0.20% w/w) and Capsaicin (0.03–0.12% w/w) are flagged as critical-assay compounds. Both verified every batch — out-of-specification results in full batch rejection. No concession applicable. Final spirit concentrations: Guaiacol ~0.15 ppm | Capsaicin 0.05–0.10 ppm.'},
+        {type:'Application Protocol',text:'Add at spirits bottling stage AFTER charcoal filtration, AFTER dilution to target ABV. Do NOT pre-mix with water. No high-shear mixing — damages encapsulation shells. Gentle paddle/recirculation only. Do not add above 45°C. Dissolve 30 minutes minimum.'},
+        {type:'Documentation',text:'COA per batch (all 10 active compound assays), TDS, MSDS, allergen declaration, microbial panel, heavy metals (ICP-MS), particle size. In-spirits sensory panel check vs Kapzo-supplied frozen reference standard — mandatory at batch release.'}
+      ]
+    }
+  };
+
+  // ── Merge KapzoSphere extensions into SKUS ───────────────────────────────
+  for (const id in S) {
+    if (SKUS && SKUS[id]) Object.assign(SKUS[id], S[id]);
+  }
+
+  // ── Merge KapzoBase extension into SKUS ─────────────────────────────────
+  if (SKUS && SKUS.kapzobase) Object.assign(SKUS.kapzobase, B.kapzobase);
+
+  // ── Update PLATFORM_PRODUCTS content with full intelligence brief data ───
+  if (typeof PLATFORM_PRODUCTS !== 'undefined') {
+
+    // ── GheePlus T1 ─────────────────────────────────────────────────────
+    const gp1 = (PLATFORM_PRODUCTS.gheeplus||[]).find(p=>p.id==='gheeplus_t1');
+    if (gp1) {
+      gp1.stats=[{lbl:'SKUs',val:'5 Carrier Formats'},{lbl:'Spotlight',val:'GP-104 Enteric (Patentable)'},{lbl:'Fat Load Range',val:'60–75%'}];
+      gp1.badges=['GP-104 Shellac-Enteric — First Globally','India Lac Monopoly','23-SKU Platform','23-Month Shelf Life (GP-102)'];
+      gp1.problem = 'The precision nutritional ingredient market has long lacked a ghee-based carrier system that delivers authentic India-origin fat with measurable, reproducible performance properties. Raw ghee is hygroscopic, variable batch-to-batch, and incompatible with modern blending and dosing lines. The category has defaulted to synthetic triglycerides and non-origin fat carriers — sacrificing both authenticity and the native bioactive profile of real ghee.';
+      gp1.solution = 'GheePlus™ Carrier Systems delivers five precision-engineered ghee powder platforms — each with a defined wall system, fat load, and release mechanism. One supplier relationship covers every ghee-based formulation need from bakery premix to pharma nutraceutical.';
+      gp1.mechanisms = [
+        {lbl:'GP-101 Standard',name:'water-soluble carrier system wall — 65% fat load',desc:'Heat + moisture release. Surface fat <8%. 12-month shelf life. Bakery premixes, instant food, curry mixes.'},
+        {lbl:'GP-102 Ultra',name:'modified starch + protein complex wall — 70% fat load',desc:'Oral + moisture release. Surface fat <2%. 24-month shelf life. Flavour houses, nutraceutical CMOs, premium food.'},
+        {lbl:'GP-103 Keto',name:'WPI + modified starch carrier wall — 75% fat load',desc:'Oral release. Protein co-delivery matrix. Keto meal replacements, sports nutrition.'},
+        {lbl:'GP-104 ★ Enteric',name:'Indian lac shellac wall — pH >7.0/lipase — 68% fat load',desc:'Small intestine release (pH >7). Butyrate + CLA targeted delivery. Pharma nutraceutical, gut health supplements. PATENTABLE — no commercially available shellac-encapsulated ghee product identified globally. India holds structural global monopoly on raw lac supply.'},
+        {lbl:'GP-105 Instantized',name:'natural emulsifier system — 60% fat load',desc:'Cold water dispersible (<30 seconds). Instant beverages, RTD mixes, instant food.'}
+      ];
+      gp1.diffs = [
+        'GP-104 GheePlus™ Enteric: shellac-wall enteric ghee — no commercially available shellac-encapsulated ghee product identified globally. Patentable formulation in development with NIT Trichy.',
+        'India holds structural global monopoly on raw lac supply — shellac sourced from Indian lac insects. Zero Chinese supply chain exposure for the enteric coating wall material.',
+        'India-origin buffalo ghee cannot be replicated by Chinese, European, or Oceanic dairy. CLA content is native to the raw material — no synthetic enrichment required.',
+        'Fat-soluble vitamins (A, D, E, K2) achieve substantially higher bioavailability when delivered in native ghee fat matrix versus aqueous or powder blends. The carrier itself is the clinical differentiator.',
+        'Five base carriers from one supplier — standard through pharmaceutical excipient grade. One NDA, one qualification, one supply relationship.'
+      ];
+    }
+
+    // ── GheePlus T2 ─────────────────────────────────────────────────────
+    const gp2 = (PLATFORM_PRODUCTS.gheeplus||[]).find(p=>p.id==='gheeplus_t2');
+    if (gp2) {
+      gp2.stats=[{lbl:'SKUs',val:'5 Bioactive Co-Loads'},{lbl:'Fat Matrix Advantage',val:'Substantially Higher BA vs Aqueous'},{lbl:'Origin',val:'India-origin Buffalo Ghee'}];
+      gp2.badges=['Fat-Matrix Bioavailability','D3+K2 Co-Encapsulated','CLA Native — No Synthetic Enrichment','Clean Label'];
+      gp2.problem = 'Fat-soluble vitamins (A, D, E, K2) and functional lipids (CLA, butyrate) are routinely delivered in aqueous emulsions or simple powder blends — formats that systematically underperform native fat-matrix delivery. The clean-label buyer also requires authentic origin ingredients. Neither requirement is met by commodity synthetic fat carriers.';
+      gp2.solution = 'GheePlus™ Functional Co-Load Systems encapsulate clinically validated bioactives within the native India-origin ghee fat matrix — delivering both the bioavailability advantage of fat-matrix delivery and the authentic-origin positioning that US/EU clean-label buyers require.';
+      gp2.mechanisms = [
+        {lbl:'GP-201',name:'GheePlus™ K2 — Vitamin K2 (MK-7) in native ghee',desc:'Fat-soluble K2 in ghee fat matrix achieves substantially higher bioavailability versus aqueous delivery. Bone health capsules, vitamin blends. US/EU bone health category.'},
+        {lbl:'GP-202',name:'GheePlus™ CLA — Concentrated CLA from buffalo ghee',desc:'CLA meta-analyses: body composition, metabolic health benefits. Buffalo ghee is natural CLA source — no synthetic enrichment required. Sports nutrition, weight management.'},
+        {lbl:'GP-203',name:'GheePlus™ Butyrate — Short-chain fatty acid enriched ghee',desc:'Butyrate: documented colonocyte fuel source; gut epithelial integrity support (published GI/microbiome literature). Gut health supplements, functional nutrition brands.'},
+        {lbl:'GP-204',name:'GheePlus™ D3K2 — Vitamins D3 + K2 co-encapsulated in ghee',desc:'D3+K2 synergy: K2 directs D3-mobilised calcium to bone; reduces arterial calcification risk. Fat-matrix delivery enhances both simultaneously. Premium supplement stacks, pharma nutraceutical.'},
+        {lbl:'GP-205',name:'GheePlus™ A+D — Vitamins A + D naturally from ghee matrix',desc:'Native A+D from buffalo ghee: authentic origin. Pediatric/maternal nutrition category — clean label positioning versus synthetic vitamin blends. Infant formula, women\'s health.'}
+      ];
+      gp2.diffs = [
+        'Fat-soluble vitamins in native ghee fat matrix — substantially higher bioavailability versus aqueous emulsions. The carrier itself is the clinical differentiator.',
+        'India-origin buffalo ghee: authentic origin that cannot be replicated by Chinese, European, or Oceanic dairy sources. CLA is native — no synthetic enrichment required.',
+        'GP-203 Butyrate + GP-204 D3K2 combination: gut health and bone health in the same ghee carrier platform. One supplier, complete coverage.',
+        'Clean-label positioning: ghee is one of the most sought-after natural fat sources among US/EU buyers. No synthetic triglyceride compromise.'
+      ];
+    }
+
+    // ── GheePlus T3 ─────────────────────────────────────────────────────
+    const gp3 = (PLATFORM_PRODUCTS.gheeplus||[]).find(p=>p.id==='gheeplus_t3');
+    if (gp3) {
+      gp3.stats=[{lbl:'SKUs',val:'13 Flavour Fat Systems'},{lbl:'Categories',val:'Savory + Bakery + Premium'},{lbl:'Origin',val:'India-origin Ghee Volatile Profile'}];
+      gp3.badges=['Authentic Ghee Volatile Profile','Roti Ghee — Origin-Irreplaceable','13 Systems One Supplier','Savory + Bakery + Specialty'];
+      gp3.problem = 'Ghee\'s authentic volatile aroma profile — diacetyl, delta-lactones, free fatty acids — is destroyed by conventional precision powder-converted and loses its character in open fat applications within weeks. Snack and bakery manufacturers who want the authentic Indian ghee top note currently have no shelf-stable, free-flowing B2B ingredient option that preserves this profile.';
+      gp3.solution = 'GheePlus™ Flavour Fat Systems delivers 13 encapsulated ghee-based flavour platforms across savory, bakery, and premium specialty categories — each preserving the native ghee volatile profile in a shelf-stable, free-flowing powder for industrial seasoning and bakery formulation.';
+      gp3.mechanisms = [
+        {lbl:'Savory GF-301',name:'Butter Popcorn — diacetyl-forward buttery aroma on ghee base',desc:'Heat activation during popping/coating. Popcorn seasoning, snack coatings, RTE snacks.'},
+        {lbl:'Savory GF-302',name:'Roasted Garlic — caramelised garlic on clean ghee fat base',desc:'Heat + mechanical activation. Savory snacks, seasoning mixes, marinades.'},
+        {lbl:'Savory GF-303',name:'Curry Butter — turmeric, cumin, ghee — authentic Indian masala',desc:'Heat during cooking activation. Indian snacks, instant curry mixes, ready meals. Ethnic food manufacturers.'},
+        {lbl:'Savory GF-304',name:'Onion Cream — roasted onion sweetness + dairy roundness',desc:'Moisture + heat activation. Soup bases, dip mixes, sauce powders.'},
+        {lbl:'Savory GF-305',name:'Smoked Butter — hickory smoke on rich ghee carrier',desc:'Mechanical + heat activation. Chips, crackers, premium popcorn, BBQ snacks. US and EU snack brands.'},
+        {lbl:'Bakery GF-401',name:'Croissant Fat — lactic + buttery lamination note, slow melt',desc:'Melts during baking 160–200°C. Croissant premix, puff pastry, laminated dough.'},
+        {lbl:'Bakery GF-402',name:'Brioche Butter — sweet cream + yeast warmth',desc:'Heat during proofing and baking. Brioche, enriched dough, soft rolls.'},
+        {lbl:'Bakery GF-403',name:'Cookie Butter — brown butter + lactone-forward baked cookie',desc:'Heat during baking. Cookie dough premixes, biscuit manufacturing.'},
+        {lbl:'Bakery GF-404',name:'Roti Ghee — authentic Indian ghee top note, origin-irreplaceable',desc:'Mechanical during kneading. Roti and paratha mixes, Indian flatbread manufacturing.'},
+        {lbl:'Premium GF-501',name:'Truffle Butter — black truffle earthiness on clean ghee base',desc:'Mechanical + moisture activation. Premium snacks, gourmet seasoning, specialty food.'},
+        {lbl:'Premium GF-502',name:'Herb Butter — rosemary, thyme, ghee — European herb butter',desc:'Heat during cooking/baking. Frozen premium meals, specialty bakery, sauces.'},
+        {lbl:'Premium GF-503',name:'Cheese Butter — aged cheddar + ghee fat roundness',desc:'Mechanical + heat activation. Cheese puffs, cracker seasoning, savory snacks.'}
+      ];
+      gp3.diffs = [
+        'Ghee volatile profile (diacetyl, delta-lactones, free fatty acids) in shelf-stable, free-flowing powder — impossible with raw ghee or simple precision powder-converted. Encapsulation preserves aromatics.',
+        'Authentic Indian ghee top note (GF-404 Roti Ghee) is irreplaceable by any other origin. No Chinese, European, or Oceanic dairy equivalent.',
+        '13 systems from one supplier — savory, bakery, and premium specialty. One qualification, one NDA, one supply relationship covering all ghee flavour applications.',
+        'Kosher, Halal, Non-GMO available on request for applicable SKUs.'
+      ];
+    }
+
+    // ── JaggerPlus ───────────────────────────────────────────────────────
+    const jp = (PLATFORM_PRODUCTS.jaggerplus||[]).find(p=>p.id==='jaggerplus_mg100');
+    if (jp) {
+      jp.stats=[{lbl:'SKUs',val:'9 (Jaggery + Palm Sugar × Powder/Granule + Variants)'},{lbl:'Cold Water Solubility',val:'60 seconds at 20°C — no agitation'},{lbl:'Shelf Life',val:'24 months sealed ambient'}];
+      jp.badges=['Only B2B precision-encapsulated Jaggery Globally','Cold-Water Soluble 60s','Electrolyte-Rich (K/Mg/Fe/Ca/P)','Free-Flowing — Line Compatible'];
+      jp.problem = 'Raw jaggery and palm sugar are hygroscopic, prone to crystallisation, and completely incompatible with modern automated dosing, sachet-filling, and blending lines. Conventional jaggery powder is poorly soluble in cold water, loses volatile aromatics during processing, and has no standardised electrolyte documentation. This has kept authentic jaggery — one of the most sought-after natural sweeteners among US, EU, and ANZ clean-label buyers — almost entirely out of industrial formulation.';
+      jp.solution = 'JaggerPlus™ MG-100 converts jaggery and palm sugar into a free-flowing, shelf-stable, cold-water-soluble ingredient system with a fully documented native electrolyte matrix — repositioned as an Electrolyte-Rich Carbohydrate Base for functional food, sports nutrition, and specialty beverage applications.';
+      jp.mechanisms = [
+        {lbl:'Solubility',name:'Full cold-water dispersion — 60 seconds at 20°C, no agitation',desc:'Enables RTD beverages, ORS sachets, electrolyte mixes, protein powders, sports drinks — all formats raw jaggery cannot enter. Cold-water solubility confirmed per batch.'},
+        {lbl:'Free-Flowing',name:'precision precision processing — anti-caking, non-hygroscopic',desc:'Runs flawlessly through automated dosing, sachet-filling, and blending lines. Raw jaggery clogs all industrial processing equipment. Moisture <2.0% (w/w). Water Activity <0.40.'},
+        {lbl:'Aroma Retention',name:'precision encapsulation — volatile aromatic compound preservation',desc:'Proprietary precision encapsulation retains volatile aromatic compounds during processing — consistent flavour release and extended shelf stability. Conventional precision powder-converted jaggery loses aromatics.'},
+        {lbl:'Electrolyte Matrix',name:'Native mineral profile — documented per COA',desc:'K 110–160mg/100g, Mg 40–80mg/100g, Fe 3.5–11mg/100g, Ca 40–100mg/100g, P 20–40mg/100g. No synthetic electrolyte blending required for sports nutrition positioning. Standardised per batch.'}
+      ];
+      jp.diffs = [
+        'No Indian manufacturer supplies precision-encapsulated precision-precision-processed jaggery to US/EU in standardised B2B ingredient format. Zero Chinese supplier holds this formulation — India-exclusive raw material and process knowledge.',
+        'Cold water solubility: fully disperses in chilled water at 20°C within 60 seconds without mechanical agitation. Conventional jaggery and palm sugar completely fail this test.',
+        'Electrolyte matrix native to the ingredient: K, Mg, Fe, Ca, P documented per COA. No synthetic electrolyte blending required for sports nutrition positioning.',
+        'Triple value proposition at sweetener-level formulation cost: taste + solubility + front-of-pack mineral/electrolyte marketing story simultaneously — commands premium positioning at 5–10% of total formulation cost.',
+        '9-SKU architecture: Jaggery/Palm Sugar × Powder/Granule + fortified variants (B12, Reb M) + co-processed flavour variants (cardamom, cinnamon, ginger, lemon).'
+      ];
+      jp.supply = [
+        ['White Label Ingredient','Full B2B ingredient supply — standardised batch, COA, TDS, MSDS, nutritional analysis, allergen declaration.'],
+        ['Custom Variants','B12 fortified, Reb M-sweetened (zero-sugar parity), co-processed cardamom/cinnamon/ginger/lemon flavour variants available.']
+      ];
+    }
+
+    // ── Psyllium ─────────────────────────────────────────────────────────
+    const psy = (PLATFORM_PRODUCTS.psyllium||[]).find(p=>p.id==='psyllium_husk');
+    if (psy) {
+      psy.stats=[{lbl:'SKUs',val:'6 — Beverage-Grade to Pharma Ultrafine'},{lbl:'India Supply',val:'85%+ of World Psyllium Husk'},{lbl:'Particle Range',val:'Sub-30µm to 350–500µm'}];
+      psy.badges=['PsyliFine™ 30 — Sub-30µm Pharma Grade','PsyliFlow™ — ≤30s Wetting Time','GLP-1 Satiety Positioning','FDA / EFSA / TGA Compliant'];
+      psy.problem = 'India supplies 85%+ of the world\'s psyllium husk — but most export product is undifferentiated raw commodity with inconsistent particle size, poor flowability, and no precision processing for specific applications. Functional beverage manufacturers face clumping and floating. Pharma excipient buyers require sub-30µm particle precision unavailable from commodity processors. The nutraceutical market needs beverage-grade instantised grades that simply do not exist from most suppliers.';
+      psy.solution = 'Kapzo Psyllium delivers a six-SKU precision-milled and precision-processed psyllium platform — from beverage-grade instantised IDP (350–500µm) through pharmaceutical ultrafine (sub-30µm) — covering every psyllium application from GLP-1 satiety formulations to pharma excipient grade.';
+      psy.mechanisms = [
+        {lbl:'PsyliFlow™',name:'KB-PSY-IDP-001 — 350–500µm precision-processed | Wetting time ≤30 seconds',desc:'precision-precision-processed IDP. Non-clumping beverage-grade. 100–400cP @ 1% w/v. GLP-1 satiety sachets, protein shakes, fiber drink powders, meal replacements, isotonic blends.'},
+        {lbl:'PsyliFine™ 150',name:'Sub-150µm standard micronized | Pin mill',desc:'Controlled particle distribution. Smooth dispersion. Keto bread, fiber bars, bakery fortification, clean-label baked goods.'},
+        {lbl:'PsyliFine™ 75',name:'Sub-75µm fine micronized | precision classifiered',desc:'Tight PSD. Smooth mouthfeel. Capsule/tablet compatible. Nutraceutical supplement capsule fill, tablet compression, clean-label supplement powders.'},
+        {lbl:'PsyliFine™ 30',name:'Sub-30µm ultrafine | ACM high-precision classification',desc:'Pharmaceutical particle profile. Pharma excipient, premium powder blends, dispersible tablet applications. Most competitors cannot achieve sub-30µm psyllium without precision processing or quality loss.'},
+        {lbl:'PsyliPure™ 90',name:'≥90% mucilage content | Decorticator + aspirator + purification',desc:'High soluble fibre. Strong gel-forming. Supplement-grade purity. High-potency fibre supplements, cholesterol-management products, prebiotic blends.'},
+        {lbl:'PsyliPure™ 95',name:'≥95% mucilage content | Multi-stage purification',desc:'Pharma-grade purity. Maximum soluble fibre. USP-aligned. Pharmaceutical psyllium products, OTC laxatives, clinical-grade fibre supplementation.'}
+      ];
+      psy.diffs = [
+        'India supplies 85%+ of world\'s psyllium husk — native raw material advantage is structural and non-replicable. Processing at source eliminates supply chain intermediaries and secures traceability from Gujarat farm to export shipment.',
+        'precision particle classification: sub-30µm PsyliFine™ 30 via high-precision precision particle classification — pharmaceutical excipient grade. Most competitors cannot achieve this particle size with psyllium without precision processing.',
+        'PsyliFlow™ beverage-grade IDP: precision precision processing with wetting agents produces 350–500µm granules with ≤30 second wetting time. Eliminates clumping, floating, and uneven gelling of all raw psyllium — enables GLP-1 satiety, sports nutrition, and RTD applications.',
+        'GLP-1 market positioning: PsyliFlow™ positioned for GLP-1 satiety formulations — highest-growth nutraceutical category globally. Clean-label, natural, proven satiety mechanism.',
+        'Six-SKU precision ladder: one supplier covers every psyllium application from functional beverage to pharma excipient. Full regulatory documentation for US FDA (21 CFR Part 111), EU Reg 396/2005, USDA NOP Organic, Halal, Kosher.'
+      ];
+      psy.supply = [
+        ['White Label Ingredient','Full B2B ingredient supply. COA per batch, TDS, MSDS, Nutritional Analysis, Allergen Declaration. Heavy metals ICP-MS. Pesticide screening per EU Reg 396/2005.'],
+        ['Regulatory Documentation','US FDA dietary supplement documentation. EU novel food and traditional food ingredient compliance. Australia TGA and Canada NHP documentation support available on request.']
+      ];
+    }
+  }
+
+})();
+
+
 // ─── ROUTER ─────────────────────────────────────────────────────────────────
 let currentPage = 'home';
 let currentPlatform = 'kapzopro';
@@ -2284,7 +2716,7 @@ function renderProducts(platformId) {
     tabsEl.innerHTML = meta.tabs.map((t,i) =>
       `<button class="ptab ${i===0?'active':''}" onclick="filterSkusDirect('${platformId}','${t}',this)">${t}</button>`
     ).join('');
-    renderSkuGridDirect(platformId, meta.tabs[0]);
+    renderSkuGridDirect(platformId, meta.tabs[0] || 'All');
   }
 }
 
@@ -2406,6 +2838,21 @@ function renderSkuGridDirect(platformId, filter) {
     const catMap = {'Carrier Systems':['gheeplus_t1'],'Functional Co-Loads':['gheeplus_t2'],'Flavour Fat Systems':['gheeplus_t3']};
     const ids = filter === 'All Products' ? ['gheeplus_t1','gheeplus_t2','gheeplus_t3'] : (catMap[filter] || ['gheeplus_t1','gheeplus_t2','gheeplus_t3']);
     el.innerHTML = ids.map(id => { const p = PLATFORM_PRODUCTS.gheeplus.find(x => x.id === id); return p ? mkPpCard(p) : ''; }).join('');
+    return;
+  }
+  if (platformId === 'natcore') {
+    // Show three sub-platform entry cards
+    el.innerHTML = [
+      {id:'gheeplus', icon:'🥛', name:'GheePlus™', tag:'23 SKUs · 3 Tiers', desc:'Precision-encapsulated ghee ingredient platform — carrier systems, functional bioactive co-loads, and flavour fat systems for food and nutraceutical applications.'},
+      {id:'jaggerplus', icon:'🍯', name:'JaggerPlus™ MG-100', tag:'9 SKUs · Cold-Water Soluble', desc:'Microencapsulated fluid bed granulated jaggery and palm sugar — free-flowing, shelf-stable, electrolyte-rich carbohydrate base for sports, functional food, and beverage.'},
+      {id:'psyllium', icon:'🌾', name:'Kapzo Psyllium', tag:'6 SKUs · Precision Milled', desc:'Pharmaceutical-to-beverage grade psyllium husk platform — from sub-30µm pharma excipient to beverage-grade instantised IDP for GLP-1 satiety formulations.'}
+    ].map(p => `<div class="sku-card" onclick="nav('products','${p.id}')">
+      <div class="sku-cat" style="font-size:24px;margin-bottom:8px">${p.icon}</div>
+      <div class="sku-name">${p.name}</div>
+      <div class="sku-cat" style="font-size:10px;letter-spacing:1px;margin-bottom:8px">${p.tag}</div>
+      <p class="sku-tag">${p.desc}</p>
+      <div class="sku-foot"><span class="sku-fmt">View Platform →</span></div>
+    </div>`).join('');
     return;
   }
   if (platformId === 'jaggerplus') { el.innerHTML = mkPpCard(PLATFORM_PRODUCTS.jaggerplus[0]); return; }
