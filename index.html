@@ -363,6 +363,14 @@ a{color:inherit;text-decoration:none}
               <a onclick="nav('products','psyllium')">Kapzo Psyllium</a>
             </div>
           </div>
+          <div class="nav-dd-item">
+            <a onclick="nav('products','foodactive')">KapzoFoodActive™</a>
+            <div class="nav-sub">
+              <div class="nav-sub-section">Food Ingredient Actives · 3 SKUs</div>
+              <a onclick="navToCat('foodactive','antioxidants')">Natural Antioxidants</a>
+              <a onclick="navToCat('foodactive','postbiotics')">Postbiotic Systems</a>
+            </div>
+          </div>
 
         </div>
       </li>
@@ -428,6 +436,14 @@ a{color:inherit;text-decoration:none}
     <div class="mob-child" onclick="mobNav('products','psyllium')">Kapzo Psyllium</div>
   </div>
 
+  <div class="mob-parent" onclick="toggleMobAccordion('acc-foodactive',this)">
+    KapzoFoodActive™ <span class="mob-parent-arr">›</span>
+  </div>
+  <div class="mob-children" id="acc-foodactive">
+    <div class="mob-child" onclick="mobNavCat('foodactive','antioxidants')">Natural Antioxidants</div>
+    <div class="mob-child" onclick="mobNavCat('foodactive','postbiotics')">Postbiotic Systems</div>
+  </div>
+
   <div class="mob-section">Company</div>
   <div class="mob-item" onclick="mobNav('about')">About Us</div>
   <div class="mob-item" onclick="mobNav('capabilities')">Capabilities</div>
@@ -440,14 +456,14 @@ a{color:inherit;text-decoration:none}
     <div class="hero-c">
       <div class="h-lbl">Precision Ingredient Manufacturing · B2B Supply</div>
       <h1 class="h-title">Designed,<br>Not Assembled.</h1>
-      <p class="h-sub">Precision-engineered bioactive systems across supplements, personal care, and delivery platforms — built on controlled release, validated mechanisms, and export-grade manufacturing.</p>
+      <p class="h-sub">Precision-engineered bioactive systems across supplements, personal care, sensory delivery, origin ingredients, and functional food ingredient actives — built on controlled release, validated mechanisms, and export-grade manufacturing.</p>
       <div class="h-btns">
         <button class="btn btn-gold" onclick="document.getElementById('all-platforms').scrollIntoView({behavior:'smooth'})">Explore Platforms</button>
         
       </div>
       <div class="h-stats">
-        <div><div class="h-stat-val">4</div><div class="h-stat-lbl">Platform Groups</div></div>
-        <div><div class="h-stat-val">29+</div><div class="h-stat-lbl">B2B SKUs</div></div>
+        <div><div class="h-stat-val">5</div><div class="h-stat-lbl">Platform Groups</div></div>
+        <div><div class="h-stat-val">32+</div><div class="h-stat-lbl">B2B SKUs</div></div>
         <div><div class="h-stat-val">4</div><div class="h-stat-lbl">Global Markets</div></div>
         <div><div class="h-stat-val">NIT</div><div class="h-stat-lbl">Trichy R&D Partner</div></div>
       </div>
@@ -487,7 +503,7 @@ a{color:inherit;text-decoration:none}
   <section class="sec sec-alt" id="all-platforms">
     <div class="wrap">
       <div class="lbl">Our Platforms</div>
-      <div class="hdg">Four Platforms. One Formulation Architecture.</div>
+      <div class="hdg">Five Platforms. One Formulation Architecture.</div>
       <div class="gline"></div>
       <p class="sub">Each platform is built on the same core principle — engineered delivery, controlled release, and mechanism-driven design — applied across different product categories.</p>
       <div class="plat-grid" id="home-plats"></div>
@@ -539,7 +555,7 @@ a{color:inherit;text-decoration:none}
       <div class="lbl">About Us</div>
       <h1 class="hdg" style="color:var(--white);font-size:clamp(36px,5vw,60px)">Precision at every stage.<br>From raw material to export.</h1>
       <div class="gline"></div>
-      <p style="font-size:15px;color:rgba(255,255,255,.62);max-width:640px;line-height:1.78">Kapzo Bioactives is a GMP-certified B2B ingredient manufacturer based at SIDCO Industrial Estate, Tiruchirappalli, Tamil Nadu, with an active R&D partnership with NIT Trichy. We operate a suite of proprietary precision delivery and powder processing platforms under a single roof — serving export markets in the US, EU, Australia/NZ, and the Middle East.</p>
+      <p style="font-size:15px;color:rgba(255,255,255,.62);max-width:640px;line-height:1.78">Kapzo Bioactives is a GMP-certified B2B ingredient manufacturer based at SIDCO Industrial Estate, Tiruchirappalli, Tamil Nadu, with an active R&D partnership with NIT Trichy. We operate five proprietary product platforms under a single roof — oral supplements, clinical personal care, sensory delivery systems, origin food ingredients, and functional food ingredient actives — serving export markets in the US, EU, Australia/NZ, and the Middle East.</p>
     </div>
   </section>
 
@@ -553,7 +569,7 @@ a{color:inherit;text-decoration:none}
           <div class="f-init">A</div>
           <div class="f-name">Dr. Arun</div>
           <div class="f-role">MBBS · Co-Founder, Kapzo Bioactives</div>
-          <p class="f-desc">Brings clinical science and formulation logic to every product in the Kapzo portfolio. Responsible for the evidence-based ingredient selection, claim substantiation, and B2B commercialisation strategy across all six platforms. Leads business development and export outreach.</p>
+          <p class="f-desc">Brings clinical science and formulation logic to every product in the Kapzo portfolio. Responsible for the evidence-based ingredient selection, claim substantiation, and B2B commercialisation strategy across all five platforms. Leads business development and export outreach.</p>
         </div>
         <div class="f-card">
           <div class="f-init">K</div>
@@ -607,7 +623,7 @@ a{color:inherit;text-decoration:none}
       <div class="lbl">Manufacturing Capabilities</div>
       <h1 class="hdg" style="color:var(--white);font-size:clamp(34px,4.5vw,58px)">The technology behind<br>every Kapzo product</h1>
       <div class="gline"></div>
-      <p style="font-size:15px;color:rgba(255,255,255,.6);max-width:580px;line-height:1.78">Four proprietary processing platforms. One facility. The delivery science behind every Kapzo product — from white-label supplement formulations to sensory delivery systems and speciality food ingredients.</p>
+      <p style="font-size:15px;color:rgba(255,255,255,.6);max-width:580px;line-height:1.78">Five proprietary product platforms. One facility. The delivery science behind every Kapzo product — from white-label supplement formulations to sensory delivery systems, origin food ingredients, and functional food ingredient actives.</p>
     </div>
   </section>
 
@@ -714,6 +730,8 @@ a{color:inherit;text-decoration:none}
               <option>GheePlus™</option>
               <option>JaggerPlus™</option>
               <option>Kapzo Psyllium</option>
+              <option>KapzoFoodActive™ — Natural Antioxidants (KapzoAox-C™ / KapzoAox-MAX™)</option>
+              <option>KapzoFoodActive™ — Postbiotic Systems (ButyrCore™)</option>
               <option>Custom / Multiple Platforms</option>
             </select>
             <textarea id="cf-message" placeholder="Tell us about your product requirement, volume estimate, and any specific formulation needs."></textarea>
@@ -735,6 +753,7 @@ const PLATFORMS = [
   {id:'kapzostratum', name:'KapzoHumStratum™', icon:'🧴', tag:'5 Personal Care SKUs · 4 Body Areas', desc:'Clinical personal care ingredients for scalp, hair, underarm, intimate skin, and body — built on published clinical evidence, proprietary delivery science, and genuine category white space.'},
   {id:'kapzosphere', name:'Kapzo Precision Systems™', icon:'🔬', tag:'KapzoSphere™ + KapzoBase™', desc:'Proprietary engineered ingredient delivery platforms. KapzoSphere™ — seven precision sensory delivery systems for oral consumer products. KapzoBase™ — six-layer beverage sensory engineering system. No equivalent delivery architecture exists in the Indian ingredient market.'},
   {id:'natcore', name:'KapzoNatCore™', icon:'🌿', tag:'GheePlus™ · JaggerPlus™ · Kapzo Psyllium', desc:'Origin food ingredient platforms built on authentic Indian raw materials — microencapsulated ghee (23 SKUs across 3 tiers), amorphous jaggery & palm sugar powder, and pharmaceutical-to-food grade psyllium husk.'},
+  {id:'foodactive', name:'KapzoFoodActive™', icon:'🧬', tag:'KapzoAox-C™ · KapzoAox-MAX™ · ButyrCore™', desc:'Three food-process-grade functional ingredient systems: India-origin natural antioxidant platform replacing rosemary extract in oils and complex food matrices, and an odour-free microencapsulated postbiotic SCFA system for functional food and clinical nutrition manufacturers globally.'},
 ];
 
 const PLATFORM_META = {
@@ -769,6 +788,11 @@ const PLATFORM_META = {
   kapzostratum:{
     hdg:'KapzoHumStratum™', sub:'Five clinical personal care ingredients across scalp, hair, underarm, intimate skin, and body — built on published clinical evidence, proprietary delivery science, and genuine category white space.',
     tabs:[], useCats:true
+  },
+  foodactive:{
+    hdg:'KapzoFoodActive™ — Functional Food Ingredient Systems',
+    sub:'Three B2B food ingredient actives for functional food, clinical nutrition, edible oil, and processed food manufacturers — India-origin natural antioxidant systems and an odour-free microencapsulated postbiotic SCFA. GMP-certified. Export-ready.',
+    tabs:[], useCats:true
   }
 };
 
@@ -796,6 +820,11 @@ const STRATUM_CATS = [
   {id:'underarm',   name:'Underarm',             skus:['sagecalm']},
   {id:'intimate',   name:'Intimate Skin',        skus:['toneq']},
   {id:'body',       name:'Body Skin',            skus:['ashzero']},
+];
+
+const FOOD_CATS = [
+  {id:'antioxidants', name:'Natural Antioxidants', skus:['kapzoaoxc','kapzoaoxmax']},
+  {id:'postbiotics',  name:'Postbiotic Systems',   skus:['butyrcore']},
 ];
 
 
@@ -1255,6 +1284,50 @@ const PLATFORM_PRODUCTS = {
     }
   ]
 };
+
+PLATFORM_PRODUCTS.foodactive = [
+    {id:'kapzoaoxc', platform:'foodactive', cat:'Natural Antioxidants', name:'KapzoAox-C™',
+     tagline:'Standardised Curry Leaf Antioxidant Concentrate — OSI exceeds BHT, zero colour, zero flavour.',
+     fmt:'Spray-dried powder | OSA-starch carrier | 10 kg foil-laminate, N₂-flushed',
+     problem:'Every edible oil refinery, ghee manufacturer, frying oil processor, and high-fat food manufacturer globally needs to replace TBHQ and BHT with a natural alternative that performs in pure lipid systems. Rosemary extract is the current default but brings yellow-green colour tint disqualifying it from neutral white oil applications, and a herbaceous flavour note limiting use in neutral-flavoured products.',
+     solution:'KapzoAox-C™ delivers oil-phase antioxidant performance exceeding BHT at 110°C OSI with zero colour (ΔE < 2.0, CIE Lab batch-release criterion) and zero flavour (GC-verified dearomatization, β-caryophyllene ≤ 50 ppm). First commercially standardised curry leaf antioxidant extract from any Indian manufacturer, HPLC-certified to carbazole alkaloid content per batch.',
+     mechanisms:[
+       {lbl:'Active',name:'Dearomatized Carbazole Alkaloids (Murraya koenigii)',desc:'Mahanine and euchrestine B — lipophilic carbazole alkaloids — partition into oil phase and terminate peroxyl radical chains. OSI at 110°C exceeds α-tocopherol and BHT (Tachibana JAFC 2001/2003). Zero colour, zero flavour. India-endemic raw material.'},
+       {lbl:'Specification',name:'HPLC Certification Per Batch',desc:'Total carbazoles NLT 6.0% w/w. Mahanine NLT 2.5%. β-caryophyllene ≤ 50 ppm GC-FID. RANCIMAT vs commercial rosemary extract (carnosic acid ≥60%) at NIT Trichy supplied with every commercial order.'},
+     ],
+     diffs:['OSI > BHT from a botanical GRAS extract. Inverts the natural-is-weaker narrative permanently.','Zero colour ΔE < 2.0 in refined oil. Owns the neutral white oil market that rosemary cannot enter.','Zero flavour GC-verified. Works in neutral-flavoured food systems where rosemary fails.','India-endemic Murraya koenigii. Structural geographic moat.','HPLC carbazole cert per batch. Auditable specification, not a marketing claim.'],
+     supply:[['Bulk Powder','10 kg N₂ foil-laminate. Full CoA + RANCIMAT data vs rosemary per batch.'],['Analytical Sample','100g with CoA, HPLC cert, colour and odour data. 3-week lead time.'],['Custom','Higher carbazole loading grades or liquid formats on request.']]
+    },
+    {id:'kapzoaoxmax', platform:'foodactive', cat:'Natural Antioxidants', name:'KapzoAox-MAX™',
+     tagline:'Multi-Mechanism Food Antioxidant System — three India-origin actives, four oxidation mechanisms, every food matrix.',
+     fmt:'Spray-dried powder | OSA-starch + sunflower lecithin hybrid | 10 kg foil-laminate, N₂-flushed',
+     problem:'Food manufacturers with complex matrices need multi-mechanism antioxidant protection simultaneously across oil and aqueous phases. Rosemary partially covers this. Nothing covers it completely.',
+     solution:'Three-active system in one powder: curry leaf carbazoles (oil-phase OSI > BHT), sesame sesamol (thermal hydroperoxide decomposition, survives frying/baking), tulsi rosmarinic acid (aqueous metal chelation + interfacial scavenging + active regeneration). OSA-starch + sunflower lecithin anchors RA at the oil-water interface where emulsion oxidation originates.',
+     mechanisms:[
+       {lbl:'Active 1 — Oil Phase',name:'Curry Leaf Carbazoles',desc:'Lipophilic, OSI > BHT. India-endemic. Zero colour, zero flavour. NLT 4.5% in finished powder.'},
+       {lbl:'Active 2 — Thermal',name:'Sesame Sesamol + Sesaminol',desc:'Peroxyl scavenging + hydroperoxide decomposition. Survives microwave/frying where rosemary degrades. NLT 2.5% in finished powder.'},
+       {lbl:'Active 3 — Aqueous',name:'Tulsi Rosmarinic Acid',desc:'Identical molecule to rosemary RA. Fe²⁺/Cu²⁺ chelation + interfacial scavenging + regenerates oxidised carbazoles and sesamol. NLT 1.5% in finished powder.'},
+       {lbl:'Carrier',name:'OSA-Starch + Sunflower Lecithin Hybrid',desc:'OSA enables oil AND water dispersion. Lecithin anchors RA at oil-water interface. Total actives NLT 8.5%.'},
+     ],
+     diffs:['Four mechanisms vs rosemary two. Out-architectured, not just outcompeted.','Genuine synergy: RA regenerates oxidised carbazoles and sesamol. Performance exceeds additive effect.','Performs in bulk oil AND O/W emulsion AND meat AND dairy. Rosemary drops in emulsions.','All three raw materials India-origin with structural supply moats.','High buyer switching cost: multi-matrix shelf-life validation embedded in formulation.'],
+     supply:[['Bulk Powder','10 kg N₂ foil-laminate. CoA with 3-active HPLC + multi-matrix RANCIMAT data.'],['Analytical Sample','200g with CoA, 3-active HPLC cert, dual-matrix RANCIMAT report. 4-week lead time.'],['Application Support','Inclusion rate consultation included with commercial engagement.']]
+    },
+    {id:'butyrcore', platform:'foodactive', cat:'Postbiotic Systems', name:'ButyrCore™',
+     tagline:'Odour-Free Microencapsulated Sodium Butyrate — Zein/EC/Shellac triple-wall, food-process grade to 110°C, full GI release map.',
+     fmt:'Free-flowing beadlets | Grade A: 250–400 µm | Grade B: 400–600 µm | 10 kg foil-laminate, N₂-flushed',
+     problem:'Sodium butyrate is the most clinically validated SCFA postbiotic but unusable in food manufacturing: butyric acid odour is detectable below 0.1 ppm. Existing encapsulated products ($80–120/kg) are supplement-grade only and fail under food manufacturing thermal stress.',
+     solution:'Zein/EC/Shellac triple-wall achieves headspace GC butyric acid vapour below 0.05 ppm (certified per batch, buyer QC verifiable) and maintains wall integrity to 110°C short-dwell baking. Full five-point GI release map per batch: <5% at pH 1.2 (gastric), >85% at pH 7.0 (colonic).',
+     mechanisms:[
+       {lbl:'Core Active',name:'Sodium Butyrate 55% w/w',desc:'Colonocyte primary energy substrate (~70% from butyrate β-oxidation, Scharlau 2009). Tight junction protein upregulation restores intestinal barrier (Peng 2009). NF-κB + HDAC inhibition reduces pro-inflammatory cytokines (Canani 2011). ISAPP 2021 postbiotic classification.'},
+       {lbl:'Inner Wall',name:'Zein + Oleic Acid — Tg ~140°C',desc:'Highest Tg food-grade film-former. Standard wax/EC/shellac softens at 65–80°C. Zein enables 110°C baking. Vapour-impermeable in glassy state — primary odour barrier.'},
+       {lbl:'Middle Wall',name:'Ethylcellulose N100 + TEC',desc:'Flexible shock-absorber. TEC at 15% of EC weight. Absorbs manufacturing shear stress without cracking the Zein film.'},
+       {lbl:'Outer Wall',name:'Shellac E904 + TEC — pH Release',desc:'Insoluble pH <7.0 (<5% release in 2h). Dissolves pH 7.0–7.4 (>85% release in 45 min). Five-point dissolution map supplied per batch.'},
+       {lbl:'Odour Spec',name:'Headspace GC <0.05 ppm Per Batch',desc:'Validated HS-GC-FID. 40°C/2h. GC cert on every CoA. Independently testable by buyer QC. No other Indian manufacturer offers this specification.'},
+     ],
+     diffs:['Headspace GC <0.05 ppm certified per batch. Independently verifiable. The spec IS the product.','110°C baking (Zein Tg ~140°C). Supplement-channel products fail at 65–80°C.','Full five-point GI release map per batch supports targeted gut delivery label claims.','Dry powder two-grade format. Tributyrin is a liquid oil — incompatible with dry blends and bars.','$30–45/kg vs $80–120/kg — first viable food manufacturer cost point for postbiotic butyrate.'],
+     supply:[['Grade A 250–400 µm','Protein powders, clinical nutrition, dairy, capsule fills. CoA: assay + headspace GC cert + 5-point dissolution.'],['Grade B 400–600 µm','Nutrition bars, fortified biscuits, functional foods. Same documentation.'],['Analytical Sample','500g with full CoA + headspace GC cert + 5-point dissolution. 3-week lead time.'],['Custom','Vegan wall (HPMC/zein, shellac-free) on request.']]
+    },
+];
 
 
 // ─── SKU EXTENDED DATA (moat, ingredients, comp, claims, badges) ────────────
@@ -2116,6 +2189,165 @@ const PLATFORM_PRODUCTS = {
     });
   }
 
+
+  // ── KapzoFoodActive SKU Extensions ──────────────────────────────────────
+  const foodactiveExt = {
+    kapzoaoxc:{
+      stats:[
+        {lbl:'Total Carbazoles',val:'NLT 6.0% w/w'},
+        {lbl:'Mahanine',val:'NLT 2.5% w/w'},
+        {lbl:'OSI vs Rosemary',val:'Exceeds BHT at 110°C'},
+        {lbl:'Colour in Oil',val:'ΔE < 2.0 (CIE Lab)'},
+        {lbl:'Flavour',val:'β-caryophyllene ≤ 50 ppm GC'},
+        {lbl:'Shelf Life',val:'24 Months | N₂ Foil'},
+      ],
+      badges:['OSI Exceeds BHT','Zero Colour in Oil','GC-Verified Flavour-Free','HPLC Per Batch','India-Endemic Source','GRAS'],
+      moat:[
+        'OSI at 110°C: mahanine and euchrestine B classified above α-tocopherol and BHT in JAFC peer-reviewed literature (Tachibana 2001, 2003). Positions KapzoAox-C™ not as a natural compromise but as mechanistically superior to the synthetic standard with a botanical clean label.',
+        'Zero colour in refined oil: ΔE < 2.0 vs control, mandatory batch-release criterion. Rosemary yellow-green tint disqualifies it from neutral white oil, white-fat, and white-product applications. KapzoAox-C™ owns this market because rosemary cannot enter it.',
+        'Zero flavour: GC-verified β-caryophyllene ≤ 50 ppm per batch. Dearomatization chemically separates the volatile curry aroma terpenes (no antioxidant activity) from the non-volatile carbazole alkaloids (all antioxidant activity). These are two chemically distinct fractions in the same leaf.',
+        'Murraya koenigii grows commercially only in South/Southeast Asia. India dominates supply. No European or US manufacturer has domestic access. Unlike rosemary (Mediterranean, accessible to all competitors), this moat is structural and permanent.',
+      ],
+      ingredients:[
+        {lbl:'Active',name:'Dearomatized Curry Leaf Carbazoles (Murraya koenigii)',
+         spec:'Total carbazoles NLT 6.0% w/w HPLC-UV 290nm. Mahanine NLT 2.5%. β-caryophyllene ≤ 50 ppm GC-FID per batch. OSA starch carrier. Carr Index ≤ 25 batch release.',
+         mechanism:'Lipophilic carbazoles (logP ~3.5) partition into oil phase. Terminate peroxyl radical (ROO•) chain reactions. Non-volatile and thermally stable through food processing temperatures that partially degrade carnosic acid.',
+         evidence:'Tachibana JAFC 2001: OSI at 110°C — euchrestine B = mahanine > α-tocopherol > BHT > control. Rao Food Chem 2006: 83.2% activity at 100 ppm vs BHA 90.2%.',
+         signal:'OSI > BHT from a GRAS botanical ends the natural-is-weaker objection. RANCIMAT vs commercial rosemary (carnosic acid ≥60%) at NIT Trichy supplied with every commercial order.'},
+        {lbl:'Carrier',name:'OSA-Modified Starch (E1450)',
+         spec:'Food-grade amphiphilic starch. Complete uniform dispersion in vegetable oil at 200–500 ppm — batch release criterion.',
+         mechanism:'OSA groups enable oil-phase dispersion without pre-solvent. Physical oxidative shield protecting carbazoles during 24-month storage.',
+         evidence:'E1450 GRAS FDA 21 CFR 172.892. EU listed.',
+         signal:'Oil dispersibility is a mandatory batch release spec. An ingredient that clumps in the oil tank fails regardless of HPLC certificate.'},
+      ],
+      comp:{headers:['Feature','Rosemary Extract','Mixed Tocopherols','KapzoAox-C™'],rows:[
+        ['OSI at 110°C','Strong — carnosic acid lipophilic','Moderate','Carbazoles — OSI > BHT (Tachibana 2001)'],
+        ['Colour in refined oil','Yellow-green tint — disqualified in white oils','None','ΔE < 2.0 — batch release criterion'],
+        ['Flavour','Herbaceous rosemary note','None','Zero — GC-verified β-caryophyllene ≤ 50 ppm'],
+        ['Raw material moat','Mediterranean — globally accessible','Global commodity','India-endemic — structural geographic moat'],
+        ['Price','$50–90/kg','$30–60/kg','$25–40/kg — 40–60% cost advantage'],
+      ]},
+      claims:[
+        {type:'Food Antioxidant',text:'Natural antioxidant (curry leaf extract). Retards lipid oxidation. BHA/BHT/TBHQ-free.'},
+        {type:'Regulatory',text:'India FSSAI compliant. US FDA GRAS botanical. EU — buyer confirms Novel Food per application. OSA starch E1450. Halal cert on request. AU/NZ FSANZ permitted.'},
+        {type:'Allergen',text:'Free from all 14 major EU allergens. GMO-free. Vegan.'},
+      ]
+    },
+    kapzoaoxmax:{
+      stats:[
+        {lbl:'Active 1 Carbazoles',val:'NLT 4.5% w/w'},
+        {lbl:'Active 2 Sesamol+Sesaminol',val:'NLT 2.5% w/w'},
+        {lbl:'Active 3 Rosmarinic Acid',val:'NLT 1.5% w/w'},
+        {lbl:'Total Actives',val:'NLT 8.5% w/w'},
+        {lbl:'Mechanisms',val:'4 (Lipid+Thermal+Aqueous+Interfacial)'},
+        {lbl:'Shelf Life',val:'18 Months | ≤20°C / ≤55% RH'},
+      ],
+      badges:['3 India-Origin Actives','4 Mechanisms','Oil+Emulsion+Dairy+Meat','Zero Colour','Lecithin Interface','First-in-Class'],
+      moat:[
+        'Four mechanisms vs rosemary two: carbazoles (oil-phase OSI > BHT), sesamol (thermal hydroperoxide decomposition, survives frying/baking), rosmarinic acid (aqueous metal chelation + interfacial scavenging), lecithin-anchored interfacial positioning. Rosemary is out-architectured, not just outcompeted.',
+        'Genuine synergy: rosmarinic acid regenerates oxidised carbazole and sesamol radicals — extending their active life. Three-active system at optimised ratio outperforms equivalent doses of any single or two-active combination. Ratio optimised at NIT Trichy is the primary formulation IP.',
+        'Lecithin converts rosmarinic acid from dissolved-in-aqueous-bulk to stationed-at-the-oil-droplet-surface. Emulsion oxidation initiates at the oil-water interface. Lecithin-anchored RA is nanometres from the site. Unanchored RA is metres away. O/W emulsion RANCIMAT ≥ rosemary is the measurable proof.',
+        'Buyer switching barrier is structural. Multi-matrix shelf-life validation embedded in the buyer formulation. Switching requires full reformulation and complete repeat stability studies.',
+      ],
+      ingredients:[
+        {lbl:'Active 1',name:'Curry Leaf Carbazoles (Murraya koenigii)',
+         spec:'NLT 4.5% total carbazoles HPLC-UV 290nm. Dearomatized β-caryophyllene ≤ 50 ppm GC-FID.',
+         mechanism:'Lipophilic carbazoles partition into oil phase. Peroxyl radical chain termination. OSI > BHT. Thermally stable at food processing temperatures.',
+         evidence:'Tachibana JAFC 2001/2003: mahanine/euchrestine B OSI exceeds α-tocopherol and BHT.',
+         signal:'Lipid-phase anchor. With sesamol: two-layer protection — chain termination + hydroperoxide decomposition.'},
+        {lbl:'Active 2',name:'Sesame Sesamol + Sesaminol (Sesamum indicum)',
+         spec:'NLT 2.5% sesamol + sesaminol combined HPLC-UV 290nm.',
+         mechanism:'Peroxyl radical scavenging + lipid hydroperoxide decomposition. Sesamol survives microwave conditions significantly better than tocopherols (p<0.05, Nakatani). Covers frying and baking where rosemary degrades.',
+         evidence:'Sesame oil stability paradox — 80%+ unsaturated yet remarkable oxidative stability — attributed to lignans (Yoshida & Fukuda JAOCS 1999). India 70% world sesame supply.',
+         signal:'Thermal stability insurance. When heat stresses other actives, sesamol continues.'},
+        {lbl:'Active 3',name:'Tulsi Rosmarinic Acid (Ocimum tenuiflorum)',
+         spec:'NLT 1.5% rosmarinic acid HPLC-UV 330nm. Identical molecule to rosemary RA.',
+         mechanism:'Three functions: (1) Fe²⁺/Cu²⁺ chelation preventing Fenton oxidation; (2) interfacial scavenging at oil droplet surfaces; (3) regenerates oxidised carbazoles and sesamol — source of genuine synergy.',
+         evidence:'RA interfacial activity: Frankel JAFC — more active in O/W emulsion than bulk oil. India-endemic Ocimum tenuiflorum.',
+         signal:'Same molecule as rosemary RA — same clinical evidence applies. Adds metal chelation critical for dairy and iron-fortified nutrition.'},
+        {lbl:'Carrier',name:'OSA-Starch + Sunflower Lecithin Hybrid',
+         spec:'Complete dispersion in oil AND water at 500 ppm — both batch-release tested. Storage ≤20°C / ≤55% RH mandatory — lecithin hygroscopic.',
+         mechanism:'OSA: universal dispersibility. Lecithin: anchors RA at oil-water interface in emulsified food systems.',
+         evidence:'E1450, E322. GRAS FDA.',
+         signal:'ALLERGEN: Sunflower lecithin — declare EU. ALLERGEN: Sesame — declare per market. Active ratio is trade secret IP.'},
+      ],
+      comp:{headers:['Feature','Rosemary Extract','Mixed Tocopherols','KapzoAox-MAX™'],rows:[
+        ['Mechanisms','2 (lipid + partial hydrophilic)','1 (lipid only)','4 — lipid + thermal + aqueous + interfacial'],
+        ['O/W emulsion','Reduced vs bulk oil','Poor','All 3 actives + lecithin interface — superior'],
+        ['Thermal frying/baking','Moderate — carnosic partially volatile','Poor','Sesamol thermally stable — verified'],
+        ['Metal chelation dairy','Absent','Absent','RA Fe²⁺/Cu²⁺ chelation — prevents Fenton'],
+        ['Buyer switching cost','Medium','Very low','High — multi-matrix validation embedded'],
+      ]},
+      claims:[
+        {type:'Food Antioxidant',text:'Natural multi-mechanism antioxidant system. Retards lipid oxidation across oil, emulsified, dairy, meat, and protein nutrition matrices. BHA/BHT/TBHQ-free.'},
+        {type:'Regulatory',text:'US FDA: all 3 actives GRAS. OSA starch GRAS. Sunflower lecithin GRAS. EU: RA from Ocimum (EU Reg 2015/2283); sesamol (food component); curry leaf (buyer confirms Novel Food). E1450, E322. India FSSAI compliant.'},
+        {type:'Allergen',text:'MANDATORY: Sesame — declare per market threshold. Sunflower lecithin — declare in EU. Active ratio is proprietary trade secret.'},
+      ]
+    },
+    butyrcore:{
+      stats:[
+        {lbl:'SB Load',val:'55% w/w of Beadlet'},
+        {lbl:'Odour (Headspace GC)',val:'< 0.05 ppm at 40°C/2h'},
+        {lbl:'Wall',val:'Zein / EC N100 / Shellac'},
+        {lbl:'Thermal Ceiling',val:'110°C Short-Dwell Baking'},
+        {lbl:'Gastric (pH 1.2, 2h)',val:'< 5% Release'},
+        {lbl:'Colonic (pH 7.0, 45min)',val:'> 85% Release'},
+      ],
+      badges:['GC <0.05 ppm Per Batch','Food-Process Grade 110°C','Full 5-Point GI Map','55% SB Load','Zein Thermal Anchor','No Indian Equivalent'],
+      moat:[
+        'Headspace GC certification <0.05 ppm butyric acid vapour at 40°C/2h — provided per batch, every batch, independently verifiable by buyer QC with headspace GC equipment. Butyric acid odour threshold is among the lowest of any food compound. Without this specification no food manufacturer can use this ingredient. No Indian manufacturer offers it.',
+        'Zein inner wall Tg ~140°C: highest glass transition of any food-grade film-former. Standard supplement encapsulation (wax, EC, shellac alone) softens at 65–80°C and fails at baking temperatures. ButyrCore™ survives 110°C short-dwell baking with wall integrity confirmed by post-bake headspace GC and dissolution. Enables fortified biscuits, clinical nutrition powders, protein bars.',
+        'Full five-point GI release map — pH 1.2 (<5%), 6.0, 6.8, 7.0 (>85%), 7.4 — supplied with every commercial batch. This dataset is what regulatory affairs teams cite to substantiate targeted gut delivery and intestinal barrier support claims on finished product labels.',
+        'Dry powder beadlet format in two particle grades. Tributyrin (nearest competitor) is a liquid oil requiring emulsification. For protein powders, sachets, bars, and capsule fills — the most important food postbiotic formats — ButyrCore™ wins on format alone.',
+      ],
+      ingredients:[
+        {lbl:'Core Active',name:'Sodium Butyrate 55% w/w (CAS 156-54-7)',
+         spec:'Food-grade NLT 99.0% purity. Pre-granulated onto MCC before triple-wall coating — mandatory step producing dense 250–400 µm granules. Most encapsulation failures occur because this step is skipped.',
+         mechanism:'Colonocytes derive ~70% energy from butyrate β-oxidation (Scharlau 2009). Tight junction protein upregulation restores intestinal barrier (Peng 2009). NF-κB + HDAC inhibition reduces IL-6, TNF-α (Canani 2011). ISAPP 2021 postbiotic.',
+         evidence:'Scharlau Mol Nutr Food Res 2009. Peng Clin Sci 2009. Canani J Pediatr Gastroenterol Nutr 2011. Hamer Aliment Pharmacol Ther 2008. Salminen Nat Rev Gastroenterol Hepatol 2021.',
+         signal:'Five indexed references across four mechanisms. Clinical evidence justifies the postbiotic claim on the finished product label.'},
+        {lbl:'Inner Wall',name:'Zein + Oleic Acid — Tg ~140°C Thermal Anchor',
+         spec:'Food-grade corn prolamin. Oleic acid plasticizer. Tg ~140°C. Fluid bed application. Anti-tack agent during coating.',
+         mechanism:'Below Tg: vapour-impermeable glassy state — primary odour barrier. Above Tg: film softens, odour permeates. Standard EC+shellac softens at 80–115°C. Zein raises thermal ceiling to ~140°C.',
+         evidence:'Zein Tg DSC: ~165°C dry, ~140°C plasticized. GRAS FDA. EU permitted in food coatings (EC 1333/2008).',
+         signal:'Absent from every existing encapsulated butyrate product globally. This decision unlocks 110°C baking applications.'},
+        {lbl:'Middle Wall',name:'Ethylcellulose N100 + TEC — Mechanical Protection',
+         spec:'TEC at 15% of EC weight — specified and pre-dissolved. Spray rate reduced vs Zein step for complete coalescence.',
+         mechanism:'Flexible shock-absorber between rigid Zein and outer Shellac. Absorbs shear stress from manufacturing operations without cracking the Zein film.',
+         evidence:'EC N100 GRAS FDA 21 CFR 172.872, EU E462. TEC GRAS.',
+         signal:'TEC at 15% of EC weight signals process engineering knowledge vs commodity encapsulation.'},
+        {lbl:'Outer Wall',name:'Shellac E904 + TEC — pH-Triggered Release',
+         spec:'TEC at 8% of shellac weight mandatory. Post-coat cure 60°C/30 min. N₂ drying: residual EtOH ≤ 500 ppm per batch. Incoming acid value 60–90 mg KOH/g (out-of-spec batch rejected).',
+         mechanism:'Insoluble pH <7.0: <5% release in 2h at pH 1.2. Dissolves pH 7.0–7.4: >85% release in 45 min. Direct colonic delivery without systemic absorption.',
+         evidence:'Shellac E904 EU, GRAS FDA 21 CFR 184.1677. pH solubility: pharmaceutical enteric coating literature.',
+         signal:'Five-point dissolution map per batch supports targeted gut delivery claims. No other encapsulated butyrate manufacturer supplies this.'},
+        {lbl:'Odour Spec',name:'Headspace GC <0.05 ppm Certification',
+         spec:'Validated HS-GC-FID per batch. 5g sealed vial, 40°C/2h. LOQ ≤0.01 ppm. Release criterion: <0.05 ppm. Certificate on CoA every shipment.',
+         mechanism:'Butyric acid threshold: ~0.001 mg/m³ — among lowest of any food compound. Spec set 5x below sensory borderline for statistical buffer. 40°C test simulates worst-case tropical warehouse.',
+         evidence:'Butyric acid threshold: Devos et al. 1990. GC-sensory correlation R² ≥0.95 validated at NIT Trichy.',
+         signal:'This certificate IS the product. Buyer QC confirms independently on receipt. No trust required.'},
+      ],
+      comp:{headers:['Feature','US/EU Encapsulated Butyrate','Tributyrin','ButyrCore™'],rows:[
+        ['Odour certification','No spec offered','N/A — oil form','GC <0.05 ppm — per batch, every batch'],
+        ['Thermal ceiling','65–80°C supplement only','Oil form','110°C — Zein Tg ~140°C'],
+        ['Physical format','Dry powder','Liquid oil — needs emulsification','Beadlets: A 250–400µm | B 400–600µm'],
+        ['GI release map','Partial','Different route','5-point: pH 1.2/6.0/6.8/7.0/7.4 per batch'],
+        ['Price','$80–120/kg','$50–80/kg','$30–45/kg — food manufacturer viable'],
+      ]},
+      claims:[
+        {type:'Postbiotic Food',text:'US FDA: Zein GRAS, EC GRAS 21 CFR 172.872, Shellac GRAS 21 CFR 184.1677. EU: Shellac E904, EC E462, Zein permitted food coatings. India FSSAI compliant. Buyer packaging: foil-laminate or PVDC mandatory.'},
+        {type:'Gut Health',text:'Supports colonocyte energy metabolism* (Scharlau 2009). Supports intestinal barrier integrity* (Peng 2009). Supports gut microbiome balance*. EU postbiotic claim — confirm per application.'},
+        {type:'Allergen',text:'Free from all 14 EU allergens. SHELLAC insect-derived E904 — declare where vegan required. Vegan HPMC/zein wall on request.'},
+      ]
+    },
+  };
+
+  if (typeof PLATFORM_PRODUCTS !== 'undefined' && PLATFORM_PRODUCTS.foodactive) {
+    PLATFORM_PRODUCTS.foodactive.forEach(function(sku) {
+      if (foodactiveExt[sku.id]) { Object.assign(sku, foodactiveExt[sku.id]); }
+    });
+  }
+
 })();
 
 
@@ -2647,6 +2879,7 @@ function renderFooters() {
           <li><a onclick="nav('products','kapzostratum')">KapzoHumStratum™</a></li>
           <li><a onclick="nav('products','kapzosphere')">Kapzo Precision Systems™</a></li>
           <li><a onclick="nav('products','gheeplus')">KapzoNatCore™</a></li>
+          <li><a onclick="nav('products','foodactive')">KapzoFoodActive™</a></li>
         </ul>
       </div>
       <div>
@@ -2708,7 +2941,7 @@ function renderProducts(platformId) {
 
   if (meta.useCats) {
     // 3-level: show category grid
-    const cats = platformId === 'kapzopro' ? ORGAN_CATS : STRATUM_CATS;
+    const cats = platformId === 'kapzopro' ? ORGAN_CATS : platformId === 'foodactive' ? FOOD_CATS : STRATUM_CATS;
     renderCategoryGrid(platformId, cats);
   } else {
     // Direct tab + SKU grid
@@ -2729,7 +2962,9 @@ function renderCategoryGrid(platformId, cats) {
     const names = skuIds.map(id => {
       if (SKUS[id]) return SKUS[id].name;
       const pp = (PLATFORM_PRODUCTS.kapzostratum||[]).find(p => p.id === id);
-      return pp ? pp.name : id;
+      if (pp) return pp.name;
+      const fa = (PLATFORM_PRODUCTS.foodactive||[]).find(p => p.id === id);
+      return fa ? fa.name : id;
     });
     return `<div class="org-card" onclick="selectCategory('${platformId}','${c.id}')">
       <div class="org-card-n">${count}</div>
@@ -2741,7 +2976,7 @@ function renderCategoryGrid(platformId, cats) {
 }
 
 function selectCategory(platformId, catId) {
-  const cats = platformId === 'kapzopro' ? ORGAN_CATS : STRATUM_CATS;
+  const cats = platformId === 'kapzopro' ? ORGAN_CATS : platformId === 'foodactive' ? FOOD_CATS : STRATUM_CATS;
   const cat = cats.find(c => c.id === catId);
   if (!cat) return;
 
@@ -2779,6 +3014,14 @@ function selectCategory(platformId, catId) {
       <p class="sku-tag">${pp.tagline}</p>
       <div class="sku-foot"><span class="sku-fmt">${pp.fmt}</span><span class="sku-view">View Details →</span></div>
     </div>`;
+    // Check PLATFORM_PRODUCTS.foodactive
+    const fa = (PLATFORM_PRODUCTS.foodactive||[]).find(p => p.id === id);
+    if (fa) return `<div class="sku-card" onclick="nav('product','${fa.id}')">
+      <div class="sku-cat">${fa.cat}</div>
+      <div class="sku-name">${fa.name}</div>
+      <p class="sku-tag">${fa.tagline}</p>
+      <div class="sku-foot"><span class="sku-fmt">${fa.fmt}</span><span class="sku-view">View Details →</span></div>
+    </div>`;
     return '';
   });
   el.innerHTML = items.join('');
@@ -2792,7 +3035,7 @@ function backToCategories() {
   const meta = PLATFORM_META[platformId];
   document.getElementById('prod-hdg').textContent = meta.hdg;
   document.getElementById('prod-sub').textContent = meta.sub;
-  const cats = platformId === 'kapzopro' ? ORGAN_CATS : STRATUM_CATS;
+  const cats = platformId === 'kapzopro' ? ORGAN_CATS : platformId === 'foodactive' ? FOOD_CATS : STRATUM_CATS;
   renderCategoryGrid(platformId, cats);
   document.getElementById('prod-platform-back').innerHTML =
     '<button class="cat-back" onclick="navToAllPlatforms()" style="margin-bottom:4px">← All Platforms</button>';
